@@ -1,0 +1,397 @@
+@@include("partials/main.html")
+
+<head>
+
+    @@include("partials/title-meta.html", {"title": "Layouts"})
+
+    @@include("partials/head-css.html")
+
+</head>
+
+<body>
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+
+        @@include("partials/menu.html")
+
+        @@include("partials/sidebar.html")
+
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+
+            <div class="page-content">
+                <div class="container-fluid">
+
+                    <h3 class="mb-4">How to use pre-built layouts?</h3>
+                    <p>
+                        You have the flexibility to modify the template according to your specific needs. To customize
+                        it, you can make use of the "reducer.ts" file. The file is located within the <code>
+                            src/slices/layouts/reducer.ts</code> directory.
+                    </p>
+                    <pre class="p-3 rounded mb-4 bg-ligh position-relative language-markup" tabindex="0">
+                        <button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard">Copy</button><code class="language-markup">
+export const initialState: LayoutState = {
+    layoutTypes: LAYOUT_TYPES.VERTICAL,
+    layoutModeTypes: LAYOUT_MODE_TYPES.LIGHT,
+    layoutWidthTypes: LAYOUT_WIDTH_TYPES.FLUID,
+    topbarThemeTypes: TOPBAR_THEME_TYPES.LIGHT,
+    leftSidebarTypes: LEFT_SIDEBAR_TYPES.DEFAULT,
+    leftSideBarThemeTypes: LEFT_SIDEBAR_THEME_TYPES.DARK,
+    leftSidebarImageTypes: LEFTBAR_THEME_IMAGES_TYPES.NONE
+};</code></pre>
+
+                    <div class="mb-4">
+                        <h5 class="text-decoration-underline mt-0">Layout Type:</h5>
+                        <p>
+                            There are 2 types of Layout : 1. Horizontal Layout 2. Vertical Layout. please visit Layouts
+                            for more details. you would change the layoutType variable's value if you want to change
+                            layout Type.
+                        </p>
+                        <div class="row">
+                            <div class="col-lg-4 col-md-6">
+                                <div class="border p-3 text-center mb-3">
+                                    <img src="/assets/images/demo/vertical-6.png" alt="image" class="img-fluid shadow">
+                                    <h5 class="font-size-16 mt-3">
+                                        Vertical Layout
+                                    </h5>
+                                    layoutType: LAYOUT_TYPES.VERTICAL
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <div class="border p-3 text-center mb-3">
+                                    <img src="/assets/images/demo/horizontal-1.png" alt="image"
+                                        class="img-fluid shadow">
+                                    <h5 class="font-size-16 mt-3">
+                                        Horizontal Layout
+                                    </h5>
+                                    layoutType: LAYOUT_TYPES.HORIZONTAL
+                                </div>
+                            </div>
+                        </div><!--end row-->
+                    </div>
+
+                    <div id="layout-modes" class="mb-4">
+                        <h5 class="text-decoration-underline mt-0">Layout Mode Types</h5>
+                        <p class="">
+                            There are 2 types of Layout Mode : 1. Light
+                            Layout 2. Dark Layout. you would change the
+                            <strong>layoutModeTypes</strong> variable's value if
+                            you want to change layout Mode.
+                        </p>
+                        <div class="row">
+                            <div class="col-lg-4 col-md-6">
+                                <div class="border p-3 text-center mb-3">
+                                    <img src="/assets/images/demo/vertical-6.png" alt="image" class="img-fluid shadow">
+                                    <h5 class="font-size-16 mt-3">
+                                        Light Layout
+                                    </h5>
+                                    layoutModeTypes: LAYOUT_MODE_TYPES.LIGHT
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <div class="border p-3 text-center mb-3">
+                                    <img src="/assets/images/demo/dark-mode.png" alt="image" class="img-fluid shadow">
+                                    <h5 class="font-size-16 mt-3">
+                                        Dark Layout
+                                    </h5>
+                                    layoutModeTypes: LAYOUT_MODE_TYPES.DARK
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="layout-width" class="mb-4">
+                        <h5 class="text-decoration-underline mt-0">Layout Width</h5>
+                        <p class="">
+                            There are 2 types of Layout Width : 1. Fluid
+                            Layout Width 2. Boxed Width. you would change
+                            the <strong>layoutWidth</strong> variable's
+                            value if you want to change layout width.
+                        </p>
+                        <div class="row">
+                            <div class="col-lg-4 col-md-6">
+                                <div class="border p-3 text-center mb-3">
+                                    <img src="/assets/images/demo/vertical-6.png" alt="image" class="img-fluid shadow">
+                                    <h5 class="font-size-16 mt-3">
+                                        Fluid Layout
+                                    </h5>
+                                    layoutWidthTypes: LAYOUT_WIDTH_TYPES.FLUID
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <div class="border p-3 text-center mb-3">
+                                    <img src="/assets/images/demo/vertical-4.png" alt="image" class="img-fluid shadow">
+                                    <h5 class="font-size-16 mt-3">
+                                        Boxed Layout
+                                    </h5>
+                                    layoutWidthTypes: LAYOUT_WIDTH_TYPES.BOXED
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="topbar-theme" class="mb-4">
+                        <h5 class="text-decoration-underline mt-0">Topbar Theme</h5>
+                        <p class="">
+                            There are 3 types of Topbar Theme : 1. Light
+                            Topbar 2. Dark Topbar 3. Colored Topbar. you
+                            would change the
+                            <strong>topbarThemeTypes</strong> variable's value if
+                            you want to change layout topbar theme color.
+                        </p>
+                        <div class="row">
+                            <div class="col-lg-4 col-md-6">
+                                <div class="border p-3 text-center mb-3">
+                                    <img src="/assets/images/demo/vertical-2.png" alt="image" class="img-fluid shadow">
+                                    <h5 class="font-size-16 mt-3">
+                                        Light Topbar
+                                    </h5>
+                                    topbarThemeTypes: TOPBAR_THEME_TYPES.LIGHT
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <div class="border p-3 text-center mb-3">
+                                    <img src="/assets/images/demo/vertical-1.png" alt="image" class="img-fluid shadow">
+                                    <h5 class="font-size-16 mt-3">
+                                        Dark Topbar
+                                    </h5>
+                                    topbarThemeTypes: TOPBAR_THEME_TYPES.DARK
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <div class="border p-3 text-center mb-3">
+                                    <img src="/assets/images/demo/horizontal-3.png" alt="image"
+                                        class="img-fluid shadow">
+                                    <h5 class="font-size-16 mt-3">
+                                        Colored Topbar
+                                    </h5>
+                                    <p class="mb-1 font-size-14">
+                                        (it's available for horizontal layout
+                                        only)
+                                    </p>
+                                    topbarThemeTypes: TOPBAR_THEME_TYPES.COLORED
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="left-sidebar-types" class="mb-4">
+                        <h5 class="text-decoration-underline mt-0">
+                            Sidebar Type
+                            <span class="font-size-15">(Available for Vertical Layout Only)</span>
+                        </h5>
+                        <p class="">
+                            There are 3 types of Sidebar Types : 1. Default
+                            2. Compact 3. Icon . you would change the
+                            <strong>leftSidebarTypes</strong> variable's
+                            value if you want to change layout sidebar type.
+                        </p>
+                        <div class="row">
+                            <div class="col-lg-4 col-md-6">
+                                <div class="border p-3 text-center mb-3">
+                                    <img src="/assets/images/demo/vertical-1.png" alt="image" class="img-fluid shadow">
+                                    <h5 class="font-size-16 mt-3">
+                                        Default Sidebar
+                                    </h5>
+                                    leftSidebarTypes: LEFT_SIDEBAR_TYPES.DEFAULT
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <div class="border p-3 text-center mb-3">
+                                    <img src="/assets/images/demo/vertical-2.png" alt="image" class="img-fluid shadow">
+                                    <h5 class="font-size-16 mt-3">
+                                        Compact Sidebar
+                                    </h5>
+                                    leftSidebarTypes: LEFT_SIDEBAR_TYPES.COMPACT
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <div class="border p-3 text-center mb-3">
+                                    <img src="/assets/images/demo/vertical-3.png" alt="image" class="img-fluid shadow">
+                                    <h5 class="font-size-16 mt-3">
+                                        Icon Sidebar
+                                    </h5>
+                                    leftSidebarTypes: LEFT_SIDEBAR_TYPES.ICON
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="left-sidebar-colors" class="mb-4">
+                        <h5 class="text-decoration-underline mt-0">
+                            Sidebar Color
+                            <span class="font-size-15">(Available for Vertical Layout Only)</span>
+                        </h5>
+                        <p class="">
+                            There are total 8 colors available for sidebar.
+                            you would change the
+                            <strong>leftSideBarThemeTypes</strong> variable's
+                            value if you want to change layout width.
+                        </p>
+                        <div class="row">
+                            <div class="col-lg-4 col-md-6">
+                                <div class="border p-3 text-center mb-3">
+                                    <img src="/assets/images/demo/vertical_leftsidebar_white.png" alt="image"
+                                        class="img-fluid shadow">
+                                    <h5 class="font-size-16 mt-3">
+                                        Light Color Sidebar
+                                    </h5>
+                                    leftSideBarThemeTypes:
+                                    LEFT_SIDEBAR_THEME_TYPES.LIGHT
+                                </div>
+                            </div>
+
+                            <div class="col-lg-4 col-md-6">
+                                <div class="border p-3 text-center mb-3">
+                                    <img src="/assets/images/demo/vertical_leftsidebar_dark.png" alt="image"
+                                        class="img-fluid shadow">
+                                    <h5 class="font-size-16 mt-3">
+                                        DARK Color Sidebar
+                                    </h5>
+                                    leftSideBarThemeTypes: LEFT_SIDEBAR_THEME_TYPES.COLORED
+                                </div>
+                            </div>
+
+                            <div class="col-lg-4 col-md-6">
+                                <div class="border p-3 text-center mb-3">
+                                    <img src="/assets/images/demo/vertical_leftsidebar_brand.png" alt="image"
+                                        class="img-fluid shadow">
+                                    <h5 class="font-size-16 mt-3">
+                                        Brand Color Sidebar
+                                    </h5>
+                                    leftSideBarThemeTypes:
+                                    LEFT_SIDEBAR_THEME_TYPES.DARK
+                                </div>
+                            </div>
+
+                            <div class="col-lg-4 col-md-6">
+                                <div class="border p-3 text-center mb-3">
+                                    <img src="/assets/images/demo/vertical_leftsidebar_greatwhale.png" alt="image"
+                                        class="img-fluid shadow">
+                                    <h5 class="font-size-16 mt-3">
+                                        Greatwhale Color Sidebar
+                                    </h5>
+                                    leftSideBarThemeTypes:
+                                    LEFT_SIDEBAR_THEME_TYPES.WINTER
+                                </div>
+                            </div>
+
+                            <div class="col-lg-4 col-md-6">
+                                <div class="border p-3 text-center mb-3">
+                                    <img src="/assets/images/demo/vertical_leftsidebar_strongbliss.png" alt="image"
+                                        class="img-fluid shadow">
+                                    <h5 class="font-size-16 mt-3">
+                                        Strongbliss Color Sidebar
+                                    </h5>
+                                    leftSideBarThemeTypes:
+                                    LEFT_SIDEBAR_THEME_TYPES.LADYLIP
+                                </div>
+                            </div>
+
+                            <div class="col-lg-4 col-md-6">
+                                <div class="border p-3 text-center mb-3">
+                                    <img src="/assets/images/demo/vertical_leftsidebar_plumplate.png" alt="image"
+                                        class="img-fluid shadow">
+                                    <h5 class="font-size-16 mt-3">
+                                        Plumplate Color Sidebar
+                                    </h5>
+                                    leftSideBarThemeTypes:
+                                    LEFT_SIDEBAR_THEME_TYPES.PLUMPLATE
+                                </div>
+                            </div>
+
+                            <div class="col-lg-4 col-md-6">
+                                <div class="border p-3 text-center mb-3">
+                                    <img src="/assets/images/demo/vertical_leftsidebar_ladylip.png" alt="image"
+                                        class="img-fluid shadow">
+                                    <h5 class="font-size-16 mt-3">
+                                        Ladylip Color Sidebar
+                                    </h5>
+                                    leftSideBarThemeTypes:
+                                    LEFT_SIDEBAR_THEME_TYPES.STRONGBLISS
+                                </div>
+                            </div>
+
+                            <div class="col-lg-4 col-md-6">
+                                <div class="border p-3 text-center mb-3">
+                                    <img src="/assets/images/demo/vertical_leftsidebar_winter.png" alt="image"
+                                        class="img-fluid shadow">
+                                    <h5 class="font-size-16 mt-3">
+                                        Winter Color Sidebar
+                                    </h5>
+                                    leftSideBarThemeTypes:
+                                    LEFT_SIDEBAR_THEME_TYPES.GREATWHALE
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="left-sidebar-image" class="mb-4">
+                        <h5 class="text-decoration-underline mt-0">
+                          Sidebar Image
+                          <span class="font-size-15">(Available for Vertical Layout Only)</span>
+                        </h5>
+                        <p class="mb-1">
+                          There are total 8 colors available for sidebar.
+                          you would change the
+                          <strong>leftSidebarImageTypes</strong>
+                          variable's value if you want to change layout
+                          width.
+                        </p>
+                        <p>
+                          if you do not want a background image for
+                          sidebar, then you can set leftSidebarImageTypes:
+                          LEFTBAR_THEME_IMAGES_TYPES.NONE .
+                        </p>
+                        <div class="row">
+                          <div class="col-lg-3 col-md-6">
+                            <div class="border p-3 text-center mb-3">
+                              <h5 class="font-size-16">Image 1</h5>
+                              leftSidebarImageTypes:
+                              LEFTBAR_THEME_IMAGES_TYPES.IMG1
+                            </div>
+                          </div>
+                          <div class="col-lg-3 col-md-6">
+                            <div class="border p-3 text-center mb-3">
+                              <h5 class="font-size-16">Image 2</h5>
+                              leftSidebarImageTypes:
+                              LEFTBAR_THEME_IMAGES_TYPES.IMG2
+                            </div>
+                          </div>
+                          <div class="col-lg-3 col-md-6">
+                            <div class="border p-3 text-center mb-3">
+                              <h5 class="font-size-16">Image 3</h5>
+                              leftSidebarImageTypes:
+                              LEFTBAR_THEME_IMAGES_TYPES.IMG3
+                            </div>
+                          </div>
+                          <div class="col-lg-3 col-md-6">
+                            <div class="border p-3 text-center mb-3">
+                              <h5 class="font-size-16">Image 4</h5>
+                              leftSidebarImageTypes:
+                              LEFTBAR_THEME_IMAGES_TYPES.IMG4
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+                <!--end row-->
+
+                @@include("partials/footer.html")
+            </div>
+        </div>
+        <!-- end main content-->
+
+    </div>
+    <!-- END layout-wrapper -->
+
+    @@include("partials/vendor-scripts.html")
+
+    <!-- App js -->
+    <script src="https://themesbrand.com/docs/app.js"></script>
+</body>
+
+</html>

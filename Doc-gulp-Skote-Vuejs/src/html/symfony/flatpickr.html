@@ -1,0 +1,191 @@
+@@include("partials/main.html")
+
+<head>
+
+    @@include("partials/title-meta.html", {"title": "Flatpickr"})
+
+    @@include("partials/head-css.html")
+
+</head>
+
+<body>
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+
+        @@include("partials/menu.html")
+        @@include("partials/sidebar.html")
+
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+
+            <div class="page-content">
+                <div class="container">
+                    <h3 class="mb-3">Overview<a href="https://flatpickr.js.org/examples/" target="_blank" class="float-end badge bg-success-subtle link-success fs-6">Official Website <i class="ri-external-link-line"></i></a> </h3>
+                    <p class="text-muted mb-4">flatpickr is a lightweight and powerful datetime picker.</p>
+
+                    <div>
+                        <h5 class="mb-3">Javascript</h5>
+                        <pre class="language-markup p-3 rounded mb-3"><code>&lt;!-- flatpickr.js --&gt;
+&lt;script type='text/javascript' src='assets/libs/flatpickr/flatpickr.min.js'&gt;&lt;/script&gt;</code></pre>
+
+                        <h5 class="mb-3">Note</h5>
+<pre class="language-markup p-3 rounded mb-3"><code>Flatpickr js file is loaded in &lt;script src=&quot;assets/js/pluggin.js&quot;&gt;&lt;/script&gt;.</code></pre>
+
+                        <h5 class="mb-3">Initjs (Custom js)</h5>
+                        <pre class="language-markup p-3 rounded mb-3"><code>&lt;!-- app js --&gt;
+&lt;script src=&quot;assets/js/app.js&quot;&gt;&lt;/script&gt;</code></pre>
+
+                        <h5 class="mb-3">Add Package</h5>
+                        <div class="alert bg-light border-start border-3 rounded-start-0 border-primary-subtle border-0 mb-4">yarn add flatpickr --save</div>
+
+                        <h5 class="mb-3">Remove Package</h5>
+                        <div class="alert bg-light border-start border-3 rounded-start-0 border-primary-subtle border-0 mb-4">yarn remove flatpickr or you can remove package by removing specific package from package.json</div>
+                    </div>
+                    
+                    <h5 class="mb-3">Flatpickr Examples:</h5>
+
+                    <div class="table-responsive">
+                        <table class="table mb-0">
+                            <thead>
+                                <tr>
+                                    <th scope="col" style="width:40%">Title</th>
+                                    <th scope="col">HTML</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Basic</th>
+                                    <td>
+                                        <pre class="language-markup p-3 rounded"><code>&lt;input type=&quot;text&quot; class=&quot;form-control&quot; data-provider=&quot;flatpickr&quot; data-date-format=&quot;d M, Y&quot;&gt;</code></pre>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <th scope="row">DateTime</th>
+                                    <td>
+                                        <pre class="language-markup p-3 rounded"><code>&lt;input type=&quot;text&quot; class=&quot;form-control&quot; data-provider=&quot;flatpickr&quot; data-date-format=&quot;d.m.y&quot; data-enable-time  &gt;</code></pre>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Human-Friendly Dates</th>
+                                    <td>
+                                        <pre class="language-markup p-3 rounded"><code>&lt;input type=&quot;text&quot; class=&quot;form-control flatpickr-input&quot; data-provider=&quot;flatpickr&quot;  data-altFormat=&quot;F j, Y&quot;&gt;</code></pre>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">MinDate and MaxDate</th>
+                                    <td>
+                                        <pre class="language-markup p-3 rounded"><code>&lt;input type=&quot;text&quot; class=&quot;form-control&quot; data-provider=&quot;flatpickr&quot; data-date-format=&quot;d M, Y&quot; data-minDate=&quot;25 12, 2021&quot; data-maxDate=&quot;29 12,2021&quot;&gt;</code></pre>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Default Date</th>
+                                    <td>
+                                        <pre class="language-markup p-3 rounded"><code>&lt;input type=&quot;text&quot; class=&quot;form-control&quot; data-provider=&quot;flatpickr&quot; data-date-format=&quot;d M, Y&quot; data-deafult-date=&quot;25 12,2021&quot;&gt;</code></pre>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Disabling Dates</th>
+                                    <td>
+                                        <pre class="language-markup p-3 rounded"><code>&lt;input type=&quot;text&quot; class=&quot;form-control&quot; data-provider=&quot;flatpickr&quot; data-date-format=&quot;d M, Y&quot; data-disable-date=&quot;15 12,2021&quot; &gt;</code></pre>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Selecting Multiple Dates</th>
+                                    <td>
+                                        <pre class="language-markup p-3 rounded"><code>&lt;input type=&quot;text&quot; class=&quot;form-control&quot; data-provider=&quot;flatpickr&quot; data-date-format=&quot;d M, Y&quot; data-multiple-date=&quot;true&quot; &gt;</code></pre>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Range</th>
+                                    <td>
+                                        <pre class="language-markup p-3 rounded"><code>&lt;input type=&quot;text&quot; class=&quot;form-control&quot; data-provider=&quot;flatpickr&quot; data-date-format=&quot;d M, Y&quot; data-range-date=&quot;true&quot;&gt;</code></pre>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Inline</th>
+                                    <td>
+                                        <pre class="language-markup p-3 rounded"><code>&lt;input type=&quot;text&quot; class=&quot;form-control&quot; data-provider=&quot;flatpickr&quot; data-date-format=&quot;d M, Y&quot; data-deafult-date=&quot;25 01,2021&quot; data-inline-date=&quot;true&quot;&gt;</code></pre>
+                                    </td>
+                                </tr>
+
+
+                            </tbody>
+                        </table>
+                        <!-- end table -->
+                    </div>
+                    <h5 class="mb-3 mt-4">Timepickr Examples:</h5>
+
+                    <div class="table-responsive">
+                        <table class="table align-middle mb-0">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Title</th>
+                                    <th scope="col">HTML</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Basic Timepicker</th>
+                                    <td>
+                                        <pre class="language-markup p-3 rounded"><code>&lt;input type=&quot;text&quot; class=&quot;form-control&quot; data-provider=&quot;timepickr&quot; data-time-basic=&quot;true&quot;&gt;</code></pre>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <th scope="row">24-hour Time Picker</th>
+                                    <td>
+                                        <pre class="language-markup p-3 rounded"><code>&lt;input type=&quot;text&quot; class=&quot;form-control&quot; data-provider=&quot;flatpickr&quot; data-date-format=&quot;d.m.y&quot; data-enable-time  &gt;</code></pre>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Time Picker w/ Limits</th>
+                                    <td>
+                                        <pre class="language-markup p-3 rounded"><code>&lt;input type=&quot;text&quot; class=&quot;form-control flatpickr-input&quot; data-provider=&quot;flatpickr&quot;  data-altFormat=&quot;F j, Y&quot;&gt;</code></pre>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Preloading Time</th>
+                                    <td>
+                                        <pre class="language-markup p-3 rounded"><code>&lt;input type=&quot;text&quot; class=&quot;form-control&quot; data-provider=&quot;timepickr&quot; data-default-time=&quot;16:45&quot;&gt;</code></pre>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Inline</th>
+                                    <td>
+                                        <pre class="language-markup p-3 rounded"><code>&lt;input type=&quot;text&quot; class=&quot;form-control&quot; data-provider=&quot;timepickr&quot; data-time-inline=&quot;11:42&quot;&gt;</code></pre>
+                                    </td>
+                                </tr>
+
+
+                            </tbody>
+                        </table>
+                        <!-- end table -->
+                    </div>
+
+                </div>
+                @@include("partials/footer.html")
+            </div>
+            <!-- End Page-content -->
+
+        </div>
+        <!-- end main content-->
+
+    </div>
+    <!-- END layout-wrapper -->
+
+
+
+    @@include("partials/vendor-scripts.html")
+
+    <!-- prismjs plugin -->
+    <script src="../assets/libs/prismjs/prism.js"></script>
+
+    <!-- App js -->
+    <script src="https://themesbrand.com/docs/app.js"></script>
+</body>
+
+</html>

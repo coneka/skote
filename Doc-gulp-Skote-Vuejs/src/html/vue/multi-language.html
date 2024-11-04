@@ -1,0 +1,164 @@
+@@include("partials/main.html")
+
+<head>
+
+  @@include("partials/title-meta.html", {"title": "Multi Language"})
+
+  @@include("partials/head-css.html")
+
+</head>
+
+<body>
+
+  <!-- Begin page -->
+  <div id="layout-wrapper">
+
+    @@include("partials/menu.html")
+
+    @@include("partials/sidebar.html")
+
+    <!-- ============================================================== -->
+    <!-- Start right Content here -->
+    <!-- ============================================================== -->
+    <div class="main-content">
+
+      <div class="page-content">
+        <div class="container">
+
+          <h3 class="mb-4">Multi Language Settings</h3>
+
+          <ul class="nav nav-tabs mb-3 bg-light" role="tablist">
+            <li class="nav-item">
+              <a class="nav-link fw-bold active" data-bs-toggle="tab" href="#vue1" role="tab">
+                Vue
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fw-bold" data-bs-toggle="tab" href="#laravel1" role="tab">
+                Vue + Laravel
+              </a>
+            </li>
+          </ul>
+
+          <div class="tab-content text-muted">
+            <div class="tab-pane active" id="vue1" role="tabpanel">
+              <p>
+                <b>How to add new language?</b> Let add French language in the existing language.
+              </p>
+
+              <ol>
+                <li> Create <code>de.json</code> file in <code>src/locales</code> folder.</li>
+                <li>
+                  <p class="mb-2">Add new language property in <code>/src/components/nav-bar.vue</code> file.</p>
+                  <pre class="p-3 rounded mb-3 bg-ligh position-relative language-markup" tabindex="0">
+<button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard">Copy</button><code class="language-markup">languages = [{
+    flag: require("~/assets/images/flags/germany.jpg"),
+    language: "gr",
+    title: "German",
+}];  </code></pre>
+                </li>
+                <li class="mt-2">
+                  update the below code in the <code>src/i18n.js</code> file. <br />
+                  <pre class="p-3 rounded mb-3 bg-ligh position-relative language-markup" tabindex="0">
+<button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard">Copy</button><code class="language-markup">import { createI18n } from "vue-i18n";
+  function loadLocaleMessages() {
+    const locales = require.context('./locales', true, /[A-Za-z0-9-_,\s]+\.json$/i)
+    const messages = {}
+    locales.keys().forEach(key => {
+      const matched = key.match(/([A-Za-z0-9-_]+)\./i)
+      if (matched && matched.length > 1) {
+        const locale = matched[1]
+        messages[locale] = locales(key)
+      }
+    })
+    return messages
+  }
+  
+  export default createI18n({
+    locale: process.env.VUE_APP_I18N_LOCALE || 'en',
+    legacy: false,
+    globalInjection: true,
+    fallbackLocale: process.env.VUE_APP_I18N_FALLBACK_LOCALE || 'en',
+    messages: loadLocaleMessages()
+  }) </code></pre>
+
+
+                  <p class="mb-3 mt-2">The translationGr JSON originates from the file located at
+                    <code>src/locales/gr/translation.json</code>.
+                  </p>
+                </li>
+              </ol>
+            </div>
+            <div class="tab-pane" id="laravel1" role="tabpanel">
+              <p>
+                <b>How to add new language?</b> Let add French language in the existing language.
+              </p>
+              <ol>
+                <li> Create <code>de.json</code> file in <code>resources/js/locales</code> folder.</li>
+                <li>
+                  <p class="mb-2">Add new language property in <code>/resources/js/components/nav-bar.vue</code> file.</p>
+                  <pre class="p-3 rounded mb-3 bg-ligh position-relative language-markup" tabindex="0">
+<button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard">Copy</button><code class="language-markup">languages = [{
+    flag: require("~/assets/images/flags/germany.jpg"),
+    language: "gr",
+    title: "German",
+}];  </code></pre>
+                </li>
+                <li class="mt-2">
+                  update the below code in the <code>resources/js/i18n.js</code> file. <br />
+                  <pre class="p-3 rounded mb-3 bg-ligh position-relative language-markup" tabindex="0">
+<button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard">Copy</button><code class="language-markup">import {createI18n} from 'vue-i18n'
+import en from './locales/en.json'
+import fr from './locales/fr.json'
+import ar from './locales/ar.json'
+import es from './locales/es.json'
+import zh from './locales/zh.json'
+
+const messages = {
+  en,
+  fr,
+  ar,
+  es,
+  zh
+}
+
+const locale = localStorage.getItem("locale");
+const i18n = createI18n({
+  locale:  locale || "en",
+  fallbackLocale: "en",
+  messages: messages
+});
+
+export default i18n;
+</code></pre>
+
+
+                  <p class="mb-3 mt-2">The translationGr JSON originates from the file located at
+                    <code>resources/js/locales/gr/translation.json</code>.
+                  </p>
+                </li>
+              </ol>
+            </div>
+          </div>
+
+        </div>
+        @@include("partials/footer.html")
+      </div>
+      <!-- End Page-content -->
+
+    </div>
+    <!-- end main content-->
+
+  </div>
+  <!-- END layout-wrapper -->
+
+  @@include("partials/vendor-scripts.html")
+
+  <!-- prismjs plugin -->
+  <script src="../assets/libs/prismjs/prism.js"></script>
+
+  <!-- App js -->
+  <script src="https://themesbrand.com/docs/app.js"></script>
+</body>
+
+</html>

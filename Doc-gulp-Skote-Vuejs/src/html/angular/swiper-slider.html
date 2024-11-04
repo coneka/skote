@@ -1,0 +1,334 @@
+@@include("partials/main.html")
+
+<head>
+
+  @@include("partials/title-meta.html", {"title": "Swiper-Slider"})
+
+  @@include("partials/head-css.html")
+
+</head>
+
+<!-- Begin page -->
+<div id="layout-wrapper">
+
+  @@include("partials/menu.html")
+
+  @@include("partials/sidebar.html")
+  <!-- ============================================================== -->
+  <!-- Start right Content here -->
+  <!-- ============================================================== -->
+  <div class="main-content">
+
+    <div class="page-content">
+      <div class="container">
+
+        <h3 class="mb-3">Overview <a href="https://www.npmjs.com/package/ngx-owl-carousel-o" target="_blank" class="float-end badge bg-success-subtle link-success fs-6">Official Website <i class="ri-external-link-line"></i></a></h3>
+
+        <p class="text-muted mb-4">Swiper is the most modern slider with hardware accelerated transitions and amazing native behavior.</p>
+
+        <div>
+          <h5 class="mb-3">Add Package</h5>
+          <div class="alert bg-light border-start border-3 rounded-start-0 border-primary-subtle border-0 mb-4">npm i ngx-owl-carousel-o</div>
+
+          <h5 class="mb-3">Add the swiper styles to the app styles in angular.json.</h5>
+          <div class="alert bg-light border-start border-3 rounded-start-0 border-primary-subtle border-0 mb-4">"styles" : [ "node_modules/ngx-owl-carousel-o/lib/styles/prebuilt-themes/owl.carousel.min.css" <br> "node_modules/ngx-owl-carousel-o/lib/styles/prebuilt-themes/owl.theme.default.min.css" , ]</code>
+          </div>
+
+
+          <h5 class="mb-3">Remove Package</h5>
+          <div class="alert bg-light border-start border-3 rounded-start-0 border-primary-subtle border-0 mb-4">npm uninstall ngx-owl-carousel-o or you can remove package by removing specific package from package.json</div>
+
+        </div>
+
+        <h5 class="mb-3">Examples:</h5>
+
+        <div class="table-responsive">
+          <table class="table mb-0">
+            <thead>
+              <tr>
+                <th scope="col" style="width:40%">Title</th>
+                <th scope="col">Template</th>
+                <th scope="col">TypeScript</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Default Swiper</th>
+                <td>
+                  <pre class="language-js p-3 rounded"><code>&lt;owl-carousel-o [options]=&quot;controls&quot;&gt;
+&lt;ng-template carouselSlide&gt;
+  &lt;img src=&quot;assets/images/small/img-4.jpg&quot; alt=&quot;first slide&quot; class=&quot;d-block img-fluid&quot;&gt;
+&lt;/ng-template&gt;
+&lt;ng-template carouselSlide&gt;
+  &lt;img src=&quot;assets/images/small/img-5.jpg&quot; alt=&quot;second slide&quot; class=&quot;d-block img-fluid&quot;&gt;
+&lt;/ng-template&gt;
+&lt;ng-template carouselSlide&gt;
+  &lt;img src=&quot;assets/images/small/img-6.jpg&quot; alt=&quot;third slide&quot; class=&quot;d-block img-fluid&quot;&gt;
+&lt;/ng-template&gt;
+&lt;/owl-carousel-o&gt;</code></pre>
+                </td>
+                <td>
+                  <pre class="language-js p-3 rounded"><code>customOptions: OwlOptions = {
+ loop: true,
+ mouseDrag: true,
+ touchDrag: false,
+ pullDrag: false,
+ dots: false,
+ navSpeed: 700,
+ navText: ['', ''],
+ responsive: {
+  0: {
+    items: 1
+  }
+},
+</code></pre>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Navigation & Pagination Swiper</th>
+                <td>
+                  <pre class="language-js p-3 rounded"><code>&lt;owl-carousel-o [options]=&quot;customOptions&quot;&gt;
+&lt;ng-template carouselSlide&gt;
+  &lt;img src=&quot;assets/images/small/img-1.jpg&quot; alt=&quot;Random first slide&quot;&gt;
+&lt;/ng-template&gt;
+&lt;ng-template carouselSlide&gt;
+  &lt;img src=&quot;assets/images/small/img-2.jpg&quot; alt=&quot;Random second slide&quot;&gt;
+&lt;/ng-template&gt;
+&lt;ng-template carouselSlide&gt;
+  &lt;img src=&quot;assets/images/small/img-3.jpg&quot; alt=&quot;Random third slide&quot;&gt;
+&lt;/ng-template&gt;
+&lt;/owl-carousel-o&gt</code></pre>
+                </td>
+                <td>
+                  <pre class="language-js p-3 rounded"><code>controls: OwlOptions = {
+ loop: true,
+ mouseDrag: true,
+ touchDrag: true,
+ pullDrag: true,
+ dots: false,
+ nav: true, // Enable navigation
+ // navigation: true,
+ navSpeed: 700,
+ navText: ['<', '>'],
+ responsive: {
+   0: {
+     items: 1
+   }
+ },
+}</code></pre>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Pagination Dynamic Swiper</th>
+                <td>
+                  <pre class="language-js p-3 rounded"><code>  &lt;owl-carousel-o [options]=&quot;pagination&quot;&gt;
+&lt;ng-template carouselSlide&gt;
+  &lt;img src=&quot;assets/images/small/img-1.jpg&quot; alt=&quot;first slide&quot; class=&quot;d-block img-fluid&quot;&gt;
+&lt;/ng-template&gt;
+&lt;ng-template carouselSlide&gt;
+  &lt;img src=&quot;assets/images/small/img-2.jpg&quot; alt=&quot;second slide&quot; class=&quot;d-block img-fluid&quot;&gt;
+&lt;/ng-template&gt;
+&lt;ng-template carouselSlide&gt;
+  &lt;img src=&quot;assets/images/small/img-3.jpg&quot; alt=&quot;third slide&quot; class=&quot;d-block img-fluid&quot;&gt;
+&lt;/ng-template&gt;
+&lt;/owl-carousel-o&gt;</code></pre>
+                </td>
+                <td>
+                  <pre class="language-js p-3 rounded"><code>pagination: OwlOptions = {
+loop: true,
+mouseDrag: true,
+touchDrag: true,
+pullDrag: true,
+dots: true,
+responsive: {
+  0: {
+    items: 1
+  }
+},
+}</code></pre>
+                </td>
+              </tr>
+
+              <tr>
+                <th scope="row">Pagination Dynamic Swiper</th>
+                <td>
+                  <pre class="language-js p-3 rounded"><code>&lt;owl-carousel-o [options]=&quot;paginationDots&quot;&gt;
+&lt;ng-template carouselSlide&gt;
+  &lt;img src=&quot;assets/images/small/img-5.jpg&quot; alt=&quot;first slide&quot; class=&quot;d-block img-fluid&quot;&gt;
+  &lt;div class=&quot;carousel-caption d-none d-md-block&quot;&gt;
+    &lt;h5 class=&quot;text-white&quot;&gt;First slide label&lt;/h5&gt;
+    &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/ng-template&gt;
+&lt;ng-template carouselSlide&gt;
+  &lt;img src=&quot;assets/images/small/img-3.jpg&quot; alt=&quot;second slide&quot; class=&quot;d-block img-fluid&quot;&gt;
+  &lt;div class=&quot;carousel-caption d-none d-md-block&quot;&gt;
+    &lt;h5 class=&quot;text-white&quot;&gt;Second slide label&lt;/h5&gt;
+    &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/ng-template&gt;
+&lt;ng-template carouselSlide&gt;
+  &lt;img src=&quot;assets/images/small/img-2.jpg&quot; alt=&quot;third slide&quot; class=&quot;d-block img-fluid&quot;&gt;
+  &lt;div class=&quot;carousel-caption d-none d-md-block&quot;&gt;
+    &lt;h5 class=&quot;text-white&quot;&gt;Third slide label&lt;/h5&gt;
+    &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/ng-template&gt;
+&lt;/owl-carousel-o&gt;
+                            </code></pre>
+                </td>
+                <td>
+                  <pre class="language-js p-3 rounded"><code>paginationDots: OwlOptions = {
+ loop: true,
+ mouseDrag: true,
+ touchDrag: true,
+ pullDrag: true,
+ dots: false,
+ nav: true, // Enable navigation
+ navSpeed: 700,
+ navText: ['<', '>'],
+ responsive: {
+  0: {
+    items: 1
+  }
+},
+                                    </code></pre>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Pagination Dynamic Swiper</th>
+                <td>
+                  <pre class="language-js p-3 rounded"><code> &lt;owl-carousel-o [options]=&quot;animation&quot;&gt;
+&lt;ng-template carouselSlide&gt;
+  &lt;img src=&quot;assets/images/small/img-1.jpg&quot; alt=&quot;first slide&quot; class=&quot;animated fadeIn d-block img-fluid&quot;&gt;
+&lt;/ng-template&gt;
+&lt;ng-template carouselSlide&gt;
+  &lt;img src=&quot;assets/images/small/img-2.jpg&quot; alt=&quot;second slide&quot; class=&quot;animated fadeIn d-block img-fluid&quot;&gt;
+&lt;/ng-template&gt;
+&lt;ng-template carouselSlide&gt;
+  &lt;img src=&quot;assets/images/small/img-3.jpg&quot; alt=&quot;third slide&quot; class=&quot;animated fadeIn d-block img-fluid&quot;&gt;
+&lt;/ng-template&gt;
+&lt;/owl-carousel-o&gt;
+                            </code></pre>
+                </td>
+                <td>
+                  <pre class="language-js p-3 rounded"><code> animation: OwlOptions = {
+loop: true,
+mouseDrag: false,
+touchDrag: false,
+pullDrag: true,
+dots: false,
+nav: true, // Enable navigation
+navSpeed: 700,
+navText: ['<', '>'],
+responsive: {
+  0: {
+    items: 1
+  }
+},
+animateOut: 'fadeOut', // Add fade out animation
+animateIn: 'fadeIn' // Add fade in animation
+}
+                                    </code></pre>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Pagination Dynamic Swiper</th>
+                <td>
+                  <pre class="language-js p-3 rounded"><code> &lt;owl-carousel-o [options]=&quot;navDots&quot;&gt;
+&lt;ng-template carouselSlide&gt;
+  &lt;img src=&quot;assets/images/small/img-1.jpg&quot; alt=&quot;first slide&quot; class=&quot;animated fadeIn d-block img-fluid&quot;&gt;
+&lt;/ng-template&gt;
+&lt;ng-template carouselSlide&gt;
+  &lt;img src=&quot;assets/images/small/img-2.jpg&quot; alt=&quot;second slide&quot; class=&quot;animated fadeIn d-block img-fluid&quot;&gt;
+&lt;/ng-template&gt;
+&lt;ng-template carouselSlide&gt;
+  &lt;img src=&quot;assets/images/small/img-3.jpg&quot; alt=&quot;third slide&quot; class=&quot;animated fadeIn d-block img-fluid&quot;&gt;
+&lt;/ng-template&gt;
+&lt;/owl-carousel-o&gt;  </code></pre>
+                </td>
+                <td>
+                  <pre class="language-js p-3 rounded"><code>  navDots = {
+loop: true,
+margin: 10,
+nav: true,
+navText: ['<', '>'],
+navSpeed: 700,
+responsive: {
+  0: {
+    items: 1
+  }
+},
+// Add the following options to make the carousel vertical
+items: 1, // Set the number of items to display (1 for a vertical carousel)
+dots: true, // Disable dots navigation
+autoplay: true, // Optionally, disable autoplay
+autoplayTimeout: 1000, // Set the time interval between slides in milliseconds (e.g., 3000ms or 3 seconds)
+autoplayHoverPause: true
+};
+                                    
+                                    </code></pre>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Pagination Dynamic Swiper</th>
+                <td>
+                  <pre class="language-js p-3 rounded"><code> &lt;owl-carousel-o [options]=&quot;animation&quot;&gt;
+&lt;ng-template carouselSlide&gt;
+  &lt;img src=&quot;assets/images/small/img-1.jpg&quot; alt=&quot;first slide&quot; class=&quot;animated fadeIn d-block img-fluid&quot;&gt;
+&lt;/ng-template&gt;
+&lt;ng-template carouselSlide&gt;
+  &lt;img src=&quot;assets/images/small/img-2.jpg&quot; alt=&quot;second slide&quot; class=&quot;animated fadeIn d-block img-fluid&quot;&gt;
+&lt;/ng-template&gt;
+&lt;ng-template carouselSlide&gt;
+  &lt;img src=&quot;assets/images/small/img-3.jpg&quot; alt=&quot;third slide&quot; class=&quot;animated fadeIn d-block img-fluid&quot;&gt;
+&lt;/ng-template&gt;
+&lt;/owl-carousel-o&gt;
+                            </code></pre>
+                </td>
+                <td>
+                  <pre class="language-js p-3 rounded"><code> animation: OwlOptions = {
+loop: true,
+mouseDrag: false,
+touchDrag: false,
+pullDrag: true,
+dots: false,
+nav: true, // Enable navigation
+navSpeed: 700,
+navText: ['<', '>'],
+responsive: {
+  0: {
+    items: 1
+  }
+},
+animateOut: 'fadeOut', // Add fade out animation
+animateIn: 'fadeIn' // Add fade in animation
+}
+                                    </code></pre>
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+          <!-- end table -->
+        </div>
+      </div>
+      @@include("partials/footer.html")
+    </div>
+    <!-- End Page-content -->
+  </div>
+  <!-- end main content-->
+
+</div>
+<!-- END layout-wrapper -->
+
+@@include("partials/vendor-scripts.html")
+
+<!-- prismjs plugin -->
+<script src="../assets/libs/prismjs/prism.js"></script>
+
+<!-- App js -->
+<script src="https://themesbrand.com/docs/app.js"></script>
+</body>
+
+</html>

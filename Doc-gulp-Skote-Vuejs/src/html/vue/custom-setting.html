@@ -1,0 +1,286 @@
+@@include("partials/main.html")
+
+<head>
+
+    @@include("partials/title-meta.html", {"title": "ENV"})
+
+    @@include("partials/head-css.html")
+
+</head>
+
+<body>
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+
+        @@include("partials/menu.html")
+        @@include("partials/sidebar.html")
+
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+
+            <div class="page-content">
+                <div class="container">
+                    <h3 class="mb-4">.env File</h3>
+
+                    <ul class="nav nav-tabs mb-3 bg-light" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link fw-bold active" data-bs-toggle="tab" href="#vue1" role="tab">
+                                Vue
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fw-bold" data-bs-toggle="tab" href="#laravel1" role="tab">
+                                Vue + Laravel
+                            </a>
+                        </li>
+                    </ul>
+
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="vue1" role="tabpanel">
+                            <div>
+                                <p>Env files are used to store credentials such as API keys, Firebase Credentials. An
+                                    environment variable supports storing the API link at one location so that we do not
+                                    need to
+                                    change the Link in each file manually.</p>
+
+                                <div class="alert alert-warning">Warning: Env file do not store any secrets (such as
+                                    private
+                                    API
+                                    keys) in your Vue app's environment
+                                    file (env file). Keep in mind that environment variables are included in the app's
+                                    build,
+                                    making
+                                    them accessible to anyone who inspects your app's files.
+                                </div>
+
+                                <p>
+                                    Environment variables is used to create clean and well-organized code with
+                                    separating
+                                    configuration from application logic, which yielding a codebase that's easier to
+                                    maintain,
+                                    read and debug.
+                                </p>
+
+
+
+                                <div>
+                                    <h5>
+                                        Is a .env file secure?
+                                    </h5>
+                                    <p>
+                                        -: env file is a good way to keep it secure and separate from the rest of your
+                                        code.
+                                        Defining
+                                        your API key in a .env file has several benefits: Security: Keeping your API key
+                                        in
+                                        a
+                                        separate file ensures that it does not get accidentally committed to a public
+                                        repository.
+                                    </p>
+                                </div>
+                            </div>
+                            <div>
+                                <h5>
+                                    Where should .env file go in the project?
+                                </h5>
+                                <p>
+                                    -: Open the project root directory and create a .env file inside that directory.
+                                </p>
+                            </div>
+
+                            <div>
+                                <h5>
+                                    How can use .env files?
+                                </h5>
+                                <p>
+                                    Default we have set fake-backend authentication in this template. You can simply
+                                    change
+                                    to firebase or fakebackend by changing in <code>.env</code> file.<br />
+                                    <strong>Fake-backend : </strong> VUE_APP_DEFAULT_AUTH=fakebackend
+                                </p>
+
+                                <p>
+                                    To setup firebase authentication fill the below details in the <code>.env</code>
+                                    file.<br />
+                                    <strong>Firebase : </strong> VUE_APP_DEFAULT_AUTH=firebase
+                                </p>
+                                <pre class="language-markup"><code>VUE_APP_URL= "YOUR_API"
+VUE_APP_I18N_LOCALE=en
+VUE_APP_I18N_FALLBACK_LOCALE=en
+
+VUE_APP_DEFAULT_AUTH=firebase                                                  
+VUE_APP_APIKEY=
+VUE_APP_AUTHDOMAIN=
+VUE_APP_DATABASEURL=
+VUE_APP_PROJECTId=
+VUE_APP_STORAGEBUCKET=
+VUE_APP_MESSAGINGSENDERID=
+VUE_APP_APPId=
+VUE_APP_MEASUREMENTID=
+                        </code></pre>
+                            </div>
+
+                            <div>
+                                <h5 class="mt-3">
+                                    How to create subdirectory build?
+                                </h5>
+                                <p>
+                                    -: To create a subdirectory named build, you can specify the desired public URL for
+                                    your
+                                    project within the .env file by setting the <code>publicPath</code>. This
+                                    configuration
+                                    will
+                                    effectively generate the build subdirectory for your project. Additionally, the
+                                    <code>publicPath</code> will
+                                    provide access to the project from the <code>vue.config.js</code> file.
+                                </p>
+                                <pre class="language-markup"><code>publicPath: '/skote/vuejs/v-light/'</code></pre>
+
+                                <p class="mt-2 mb-0">These environment variables will be defined for you on process.env.
+                                    The
+                                    below example for
+                                    process.env is from <code>src/router/index.js</code> file.</p>
+                                <p>
+                                <pre class="language-markup"><code>const router = createRouter({
+    history: createWebHistory('/skote/vuejs/v-light/'),
+    ... // your code here
+});</code></pre>
+                                </p>
+                            </div>
+
+                            const router = createRouter({
+                            history: createWebHistory(),
+                            ... //
+                            });
+                        </div>
+                        <div class="tab-pane" id="laravel1" role="tabpanel">
+                            <div>
+                                <p>Env files are used to store credentials such as API keys, Firebase Credentials. An
+                                    environment variable supports storing the API link at one location so that we do not
+                                    need to
+                                    change the Link in each file manually.</p>
+
+                                <div class="alert alert-warning">Warning: Env file do not store any secrets (such as
+                                    private
+                                    API
+                                    keys) in your Vue app's environment
+                                    file (env file). Keep in mind that environment variables are included in the app's
+                                    build,
+                                    making
+                                    them accessible to anyone who inspects your app's files.
+                                </div>
+
+                                <p>
+                                    Environment variables is used to create clean and well-organized code with
+                                    separating
+                                    configuration from application logic, which yielding a codebase that's easier to
+                                    maintain,
+                                    read and debug.
+                                </p>
+
+
+
+                                <div>
+                                    <h5>
+                                        Is a .env file secure?
+                                    </h5>
+                                    <p>
+                                        -: env file is a good way to keep it secure and separate from the rest of your
+                                        code.
+                                        Defining
+                                        your API key in a .env file has several benefits: Security: Keeping your API key
+                                        in
+                                        a
+                                        separate file ensures that it does not get accidentally committed to a public
+                                        repository.
+                                    </p>
+                                </div>
+                            </div>
+                            <div>
+                                <h5>
+                                    Where should .env file go in the project?
+                                </h5>
+                                <p>
+                                    -: Open the project root directory and create a .env file inside that directory.
+                                </p>
+                            </div>
+                            <div>
+                                <pre class="language-markup"><code>APP_NAME=Laravel
+APP_ENV=local
+APP_KEY=base64:IKhrcDxGHORbzZbJXI1qHPCFtQcIaoFoyYgyVHy7pLQ=
+APP_DEBUG=true
+APP_URL=http://localhost
+
+LOG_CHANNEL=stack
+LOG_DEPRECATIONS_CHANNEL=null
+LOG_LEVEL=debug
+
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=skote_laravel_vue
+DB_USERNAME=root    
+DB_PASSWORD=
+
+BROADCAST_DRIVER=log
+CACHE_DRIVER=file
+FILESYSTEM_DISK=local
+QUEUE_CONNECTION=sync
+SESSION_DRIVER=file
+SESSION_LIFETIME=120
+
+MEMCACHED_HOST=127.0.0.1
+
+REDIS_HOST=127.0.0.1
+REDIS_PASSWORD=null
+REDIS_PORT=6379
+
+MAIL_MAILER=smtp
+MAIL_HOST=mailhog
+MAIL_PORT=1025
+MAIL_USERNAME=null
+MAIL_PASSWORD=null
+MAIL_ENCRYPTION=null
+MAIL_FROM_ADDRESS=null
+MAIL_FROM_NAME="${APP_NAME}"
+
+AWS_ACCESS_KEY_ID=
+AWS_SECRET_ACCESS_KEY=
+AWS_DEFAULT_REGION=us-east-1
+AWS_BUCKET=
+AWS_USE_PATH_STYLE_ENDPOINT=false
+
+PUSHER_APP_ID=
+PUSHER_APP_KEY=
+PUSHER_APP_SECRET=
+PUSHER_APP_CLUSTER=mt1
+
+MIX_PUSHER_APP_KEY="${PUSHER_APP_KEY}"
+MIX_PUSHER_APP_CLUSTER="${PUSHER_APP_CLUSTER}"</code></pre> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @@include("partials/footer.html")
+            </div>
+            <!-- End Page-content -->
+
+        </div>
+        <!-- end main content-->
+
+    </div>
+    <!-- END layout-wrapper -->
+
+    @@include("partials/vendor-scripts.html")
+
+    <!-- prismjs plugin -->
+    <script src="../assets/libs/prismjs/prism.js"></script>
+
+    <!-- App js -->
+    <script src="https://themesbrand.com/docs/app.js"></script>
+</body>
+
+</html>

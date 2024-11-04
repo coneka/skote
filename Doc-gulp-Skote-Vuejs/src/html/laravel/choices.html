@@ -1,0 +1,206 @@
+@@include("partials/main.html")
+
+<head>
+
+    @@include("partials/title-meta.html", {"title": "Choices"})
+
+    @@include("partials/head-css.html")
+
+</head>
+
+<body>
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+
+        @@include("partials/menu.html")
+        @@include("partials/sidebar.html")
+
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+
+            <div class="page-content">
+                <div class="container">
+                    <h3 class="mb-3">Overview<a href="https://choices-js.github.io/Choices/" target="_blank" class="float-end badge bg-success-subtle link-success fs-6">Official Website <i class="ri-external-link-line"></i></a> </h3>
+                    <p class="text-muted mb-4">Choices.js is a vanilla JavaScript plugin that converts the
+                        normal select or input into customizable select inputs with multi-select and
+                        autocomplete support.</p>
+
+                    <div>
+                        <h5 class="mb-3">Javascript</h5>
+                        <pre class="language-markup rounded p-3 mb-3"><code>&lt;!-- choices.js --&gt;
+&lt;script type='text/javascript' src='assets/libs/choices.js/public/assets/scripts/choices.min.js'&gt;&lt;/script&gt; //html file
+&lt;script type='text/javascript' src='{{ URL::asset('build/libs/choices.js/public/assets/scripts/choices.min.js') }}'&gt;&lt;/script&gt; // laravel file
+</code></pre>
+
+                        <h5 class="mb-3">Note</h5>
+                        <pre class="language-markup rounded p-3 mb-3"><code>Choices js file is loaded in &lt;script src=&quot;assets/js/plugins.js&quot;&gt;&lt;/script&gt; //html file
+Choices js file is loaded in &lt;script src=&quot;{{ URL::asset('build/js/plugins.js') }}&quot;&gt;&lt;/script&gt; // laravel file
+                        </code></pre>
+
+                        <h5 class="mb-3">Initjs (Custom js)</h5>
+                        <pre class="language-markup rounded p-3 mb-3"><code>&lt;!-- app js --&gt;
+&lt;script src=&quot;assets/js/app.js&quot;&gt;&lt;/script&gt; //html file
+&lt;script src=&quot;{{ URL::asset('build/js/app.js') }}&quot;&gt;&lt;/script&gt; // laravel file
+</code></pre>
+
+                        <h5 class="mb-3">Add Package</h5>
+                        <div class="alert bg-light border-start border-3 rounded-start-0 border-primary-subtle border-0 mb-4">yarn add choices.js --save</div>
+
+                        <h5 class="mb-3">Remove Package</h5>
+                        <div class="alert bg-light border-start border-3 rounded-start-0 border-primary-subtle border-0 mb-4">yarn remove choices.js or you can remove package by removing specific package from package.json</div>
+                    </div>
+
+                    <h5 class="mb-3">Examples:</h5>
+
+                    <div class="table-responsive">
+                        <table class="table mb-0">
+                            <thead>
+                                <tr>
+                                    <th scope="col" style="width:40%">Title</th>
+                                    <th scope="col">HTML</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Default Choice</th>
+                                    <td>
+                                        <pre class="language-markup p-3 rounded"><code>&lt;select class=&quot;form-control&quot; data-choices name=&quot;choices-single-default&quot;&gt;
+&lt;option value=&quot;&quot;&gt;This is a placeholder&lt;/option&gt;
+&lt;option value=&quot;Choice 1&quot;&gt;...&lt;/option&gt;
+&lt;option value=&quot;Choice 2&quot;&gt;...&lt;/option&gt;
+&lt;/select&gt;</code></pre>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <th scope="row">Option Groups</th>
+                                    <td>
+                                        <pre class="language-markup p-3 rounded"><code>&lt;select class=&quot;form-control&quot; data-choices data-choices-groups  data-placeholder=&quot;Select City&quot; name=&quot;choices-single-groups&quot;&gt;
+&lt;option value=&quot;&quot;&gt;Choose a city&lt;/option&gt;
+&lt;optgroup label=&quot;UK&quot;&gt;
+&lt;option value=&quot;London&quot;&gt;London&lt;/option&gt;
+&lt;option value=&quot;Manchester&quot;&gt;Manchester&lt;/option&gt;
+&lt;option value=&quot;Liverpool&quot;&gt;Liverpool&lt;/option&gt;
+&lt;/optgroup&gt;
+&lt;optgroup label=&quot;Country&quot;&gt;
+&lt;option value=&quot;...&quot;&gt;...&lt;/option&gt;
+&lt;option value=&quot;...&quot;&gt;...&lt;/option&gt;
+&lt;option value=&quot;...&quot;&gt;...&lt;/option&gt;
+&lt;/optgroup&gt;
+&lt;/select&gt;</code></pre>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Options added with no search</th>
+                                    <td>
+                                        <pre class="language-markup p-3 rounded"><code>&lt;select class=&quot;form-control&quot; name=&quot;choices-single-no-search&quot; data-choices data-choices-search-false  data-choices-removeItem&gt;
+&lt;option value=&quot;Zero&quot;&gt;Zero&lt;/option&gt;
+&lt;option value=&quot;One&quot;&gt;One&lt;/option&gt;
+&lt;option value=&quot;...&quot;&gt;...&lt;/option&gt;
+
+&lt;/select&gt;</code></pre>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Options added with no sorting</th>
+                                    <td>
+                                        <pre class="language-markup p-3 rounded"><code>&lt;select class=&quot;form-control&quot; name=&quot;choices-single-no-sorting&quot; data-choices data-choices-sorting-false&gt;
+&lt;option value=&quot;Madrid&quot;&gt;Madrid&lt;/option&gt;
+&lt;option value=&quot;Toronto&quot;&gt;Toronto&lt;/option&gt;
+&lt;option value=&quot;Vancouver&quot;&gt;Vancouver&lt;/option&gt;
+&lt;option value=&quot;London&quot;&gt;London&lt;/option&gt;
+&lt;option value=&quot;Manchester&quot;&gt;Manchester&lt;/option&gt;
+&lt;option value=&quot;...&quot;&gt;...&lt;/option&gt;
+&lt;/select&gt;</code></pre>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Default Multiple Select</th>
+                                    <td>
+                                        <pre class="language-markup p-3 rounded"><code>&lt;select class=&quot;form-control&quot; data-choices name=&quot;choices-multiple-default&quot; multiple&gt;
+&lt;option value=&quot;Choice 1&quot; selected&gt;Choice 1&lt;/option&gt;
+&lt;option value=&quot;Choice 2&quot;&gt;Choice 2&lt;/option&gt;
+&lt;option value=&quot;...&quot;&gt;...&lt;/option&gt;
+&lt;option value=&quot;...&quot; disabled&gt;...&lt;/option&gt;
+&lt;/select&gt;</code></pre>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Multiple Select with remove button</th>
+                                    <td>
+                                        <pre class="language-markup p-3 rounded"><code> &lt;select class=&quot;form-control&quot; data-choices data-choices-removeItem name=&quot;choices-multiple-remove-button&quot;multiple&gt;
+&lt;option value=&quot;Choice 1&quot; selected&gt;Choice 1&lt;/option&gt;
+&lt;option value=&quot;Choice 2&quot;&gt;Choice 2&lt;/option&gt;
+&lt;option value=&quot;...&quot;&gt;...&lt;/option&gt;    
+&lt;/select&gt;</code></pre>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Multiple Select with options group.</th>
+                                    <td>
+                                        <pre class="language-markup p-3 rounded"><code> &lt;select class=&quot;form-control&quot; name=&quot;choices-multiple-groups&quot; data-choices data-choices-multiple-groups=&quot;true&quot; multiple&gt;
+&lt;option value=&quot;&quot;&gt;Choose a city&lt;/option&gt;
+&lt;optgroup label=&quot;UK&quot;&gt;
+&lt;option value=&quot;London&quot;&gt;London&lt;/option&gt;
+&lt;option value=&quot;Manchester&quot;&gt;Manchester&lt;/option&gt;
+&lt;option value=&quot;Liverpool&quot;&gt;Liverpool&lt;/option&gt;
+&lt;/optgroup&gt;
+&lt;optgroup label=&quot;Country&quot;&gt;
+&lt;option value=&quot;...&quot;&gt;...&lt;/option&gt;
+&lt;option value=&quot;...&quot;&gt;...&lt;/option&gt;
+&lt;option value=&quot;...&quot;&gt;...&lt;/option&gt;
+&lt;/optgroup&gt;                                                           
+
+&lt;/select&gt;</code></pre>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Choices select limit with text input & removebutton</th>
+                                    <td>
+                                        <pre class="language-markup p-3 rounded"><code>&lt;input class=&quot;form-control&quot; data-choices data-choices-limit=&quot;your required limit&quot; data-choices-removeItem type=&quot;text&quot;value=&quot;Task-1&quot; /&gt;</code></pre>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Choices unique value only, no pasting</th>
+                                    <td>
+                                        <pre class="language-markup p-3 rounded"><code>&lt;input class=&quot;form-control&quot; data-choices data-choices-text-unique-true type=&quot;text&quot; value=&quot;Project-A, Project-B&quot; /&gt;</code></pre>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Choices with disable option</th>
+                                    <td>
+                                        <pre class="language-markup p-3 rounded"><code>&lt;input class=&quot;form-control&quot; data-choices data-choices-text-disabled-true type=&quot;text&quot; value=&quot;josh@joshuajohnson.co.uk, joe@bloggs.co.uk&quot; /&gt;</code></pre>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                        <!-- end table -->
+                    </div>
+
+                </div>
+                @@include("partials/footer.html")
+            </div>
+            <!-- End Page-content -->
+
+        </div>
+        <!-- end main content-->
+
+    </div>
+    <!-- END layout-wrapper -->
+
+
+
+    @@include("partials/vendor-scripts.html")
+
+    <!-- prismjs plugin -->
+    <script src="../assets/libs/prismjs/prism.js"></script>
+
+    <!-- App js -->
+    <script src="https://themesbrand.com/docs/app.js"></script>
+</body>
+
+</html>

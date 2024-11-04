@@ -1,0 +1,265 @@
+@@include("partials/main.html")
+
+<head>
+
+    @@include("partials/title-meta.html", {"title": "Folder Structure"})
+
+    @@include("partials/head-css.html")
+
+</head>
+
+<body>
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+
+        @@include("partials/menu.html")
+
+        @@include("partials/sidebar.html")
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+
+            <div class="page-content">
+                <div class="container">
+                    <h3 class="mb-4">Folder Structure</h3>
+
+                    <div class="alert alert-danger text-danger">
+                        Presented here is the Angular rendition of the folder arrangement. To facilitate layout management and expedite development through Angular CLI, we've meticulously designed partials. Incorporating a starter kit that serves as a launchpad for commencing projects from the ground up.
+                    </div>
+                    <div class="verti-sitemap">
+                        <ul class="list-unstyled mb-0">
+                            <li class="p-0 parent-title"><a href="javascript: void(0);" class="fw-medium fs-14">Admin</a>
+                            </li>
+                            <li>
+                                <div class="first-list">
+                                    <div class="list-wrap">
+                                        <a href="javascript: void(0);" class="fw-medium text-primary"><i class=" bi bi-folder2 me-1 align-bottom text-warning"></i>src</a>
+                                    </div>
+                                    <ul class="second-list list-unstyled">
+                                        <li>
+                                            <a href="javascript: void(0);"><i class=" bi bi-folder2 me-1 align-bottom text-warning"></i>app &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // <span class="text-muted"> includes all pages, layouts files for the development. </span></a>
+                                            <ul class="second-list list-unstyled">
+                                                <li>
+                                                    <a href="javascript: void(0);"><i class=" bi bi-folder2 me-1 align-bottom text-warning"></i>account &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // <span class="text-muted"> includes all auth files</span></a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript: void(0);"><i class=" bi bi-folder2 me-1 align-bottom text-warning"></i>core </a>
+                                                    <ul class="second-list list-unstyled">
+                                                        <li>
+                                                            <a href="javascript: void(0);"><i class=" bi bi-folder2 me-1 text-warning align-bottom"></i>data &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="text-muted"> // includes all json data files</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="javascript: void(0);"><i class=" bi bi-folder2 me-1 text-warning align-bottom"></i>guards &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="text-muted"> // checks for user authentication files</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="javascript: void(0);"><i class=" bi bi-folder2 me-1 text-warning align-bottom"></i>helpers &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="text-muted"> // includes all interceptor files</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="javascript: void(0);"><i class=" bi bi-folder2 me-1 text-warning align-bottom"></i>services &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="text-muted"> // includes all service file</a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript: void(0);"><i class=" bi bi-folder2 me-1 align-bottom text-warning"></i>cyptolanding &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="text-muted"> </a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript: void(0);"><i class=" bi bi-folder2 me-1 align-bottom text-warning"></i>extrapages &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="text-muted"> // includes all extra pages </a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript: void(0);"><i class=" bi bi-folder2 me-1 align-bottom text-warning"></i>layouts &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="text-muted"> // includes all layouts files</a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript: void(0);"><i class=" bi bi-folder2 me-1 align-bottom text-warning"></i>pages &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="text-muted"> // includes the all pages</a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript: void(0);"><i class=" bi bi-folder2 me-1 align-bottom text-warning"></i>shared &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="text-muted"> // includes all common files like breadcrumbs</a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript: void(0);"><i class=" bi bi-file-earmark-text me-1 text-info align-bottom"></i>app-routing.module.ts &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="text-muted"> // manage all routing from here </span></a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript: void(0);"><i class=" bi bi-file-earmark-text me-1 text-info align-bottom"></i>app.component.html </a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript: void(0);"><i class=" bi bi-file-earmark-text me-1 text-info align-bottom"></i>app.component.scss </a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript: void(0);"><i class=" bi bi-file-earmark-text me-1 text-info align-bottom"></i>app.component.spec.ts </a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript: void(0);"><i class=" bi bi-file-earmark-text me-1 text-info align-bottom"></i>app.component.ts</a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript: void(0);"><i class=" bi bi-file-earmark-text me-1 text-info align-bottom"></i>app.module.ts </a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript: void(0);"><i class=" bi bi-file-earmark-text me-1 text-info align-bottom"></i>authUtils.ts &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="text-muted"> // handling firebase authentication and user management </span></a>
+                                                </li>
+                                            </ul>
+                                        <li>
+                                            <a href="javascript: void(0);"><i class=" bi bi-folder2 me-1 align-bottom text-warning"></i>assets</a>
+                                            <ul class="third-list list-unstyled">
+                                                <li>
+                                                    <a href="javascript: void(0);"><i class=" bi bi-folder2 me-1 align-bottom text-warning"></i>fonts &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="text-muted"> // includes all icons font </span></a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript: void(0);"><i class=" bi bi-folder2 me-1 align-bottom text-warning"></i>i18n <span class="text-muted"> // includes all language json data.</span></a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript: void(0);"><i class=" bi bi-folder2 me-1 align-bottom text-warning"></i>images </a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript: void(0);"><i class=" bi bi-folder2 me-1 align-bottom text-warning"></i>scss </a>
+                                                    <ul class="third-list list-unstyled">
+                                                        <li>
+                                                            <a href="javascript: void(0);"><i class=" bi bi-folder2 me-1 align-bottom text-warning"></i>custom &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="text-muted"> // includes all apps scss with separate files </span></a>
+                                                        </li>
+                                                        <ul class="third-list list-unstyled">
+                                                            <li>
+                                                                <a href="javascript: void(0);"><i class=" bi bi-folder2 me-1 align-bottom text-warning"></i>components <span class="text-muted"> // all components scss files will be in this folder.</span></a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="javascript: void(0);"><i class=" bi bi-folder2 me-1 align-bottom text-warning"></i>fonts &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="text-muted"> // includes all google font family</span></a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="javascript: void(0);">
+                                                                    <i class=" bi bi-folder2 me-1 align-bottom text-warning"></i>pages &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="text-muted"> // includes all pages scss with separate files</span></a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="javascript: void(0);"><i class=" bi bi-folder2 me-1 align-bottom text-warning"></i>plugins &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="text-muted"> // includes all plugins scss with separate files </span></a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="javascript: void(0);"><i class=" bi bi-folder2 me-1 align-bottom text-warning"></i>rtl &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="text-muted"> // includes all rtl scss with separate files </span></a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="javascript: void(0);"><i class=" bi bi-folder2 me-1 align-bottom text-warning"></i>structure &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="text-muted"> // includes all structure scss with separate files </span></a>
+                                                            </li>
+                                                        </ul>
+                                                        <li>
+                                                            <a href="javascript: void(0);"><i class=" bi bi-file-earmark-text me-1 text-info align-bottom"></i>custom.scss &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="text-muted"> // Write Custom SCSS for Personalized Styling Adjustments </span></a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="javascript: void(0);"><i class=" bi bi-file-earmark-text me-1 text-info align-bottom"></i>_variables.scss &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="text-muted"> // includes all variables for quick change colors, spacing etc </span></a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="javascript: void(0);"><i class=" bi bi-file-earmark-text me-1 text-info align-bottom"></i>_variables-dark.scss &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="text-muted"> // includes all dark variables for quick change colors, spacing etc </span></a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="javascript: void(0);"><i class=" bi bi-file-earmark-text me-1 text-info align-bottom"></i>app.scss &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="text-muted"> // it has imported all other scss files and create app.min.css file. </span></a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="javascript: void(0);"><i class=" bi bi-file-earmark-text me-1 text-info align-bottom"></i>bootstrap.scss &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="text-muted"> // it has imported all bootstrap's scss files </span></a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="javascript: void(0);"><i class=" bi bi-file-earmark-text me-1 text-info align-bottom"></i>icons.scss &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="text-muted"> // Includes all icons files </span></a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="javascript: void(0);"><i class=" bi bi-folder2 me-1 align-bottom text-warning"></i>environments &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="text-muted"> // firebase & fackbackend configuration </span></a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript: void(0);"><i class=" bi bi-file-earmark-text me-1 text-info align-bottom"></i>favicon.ico </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript: void(0);"><i class=" bi bi-file-earmark-text me-1 text-info align-bottom"></i>index.html &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="text-muted"> // defining structure and loading the app's components and scripts </span></a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript: void(0);"><i class=" bi bi-file-earmark-text me-1 text-info align-bottom"></i>main.ts &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="text-muted"> // initialized and the root module is bootstrapped.c </span></a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript: void(0);"><i class=" bi bi-file-earmark-text me-1 text-info align-bottom"></i>polyfills.ts &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="text-muted"> // modern JavaScript features and APIs in the application. </span></a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript: void(0);"><i class=" bi bi-file-earmark-text me-1 text-info align-bottom"></i>styles.scss &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="text-muted"> // global stylesheet used to define common styling </span></a>
+                                        </li>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="first-list">
+                        <div class="list-wrap">
+                            <a href="javascript: void(0);" class="fw-medium text-primary"><i class="bi bi-file-earmark-text me-1 text-info align-bottom"></i>.browserslistrc </a>
+                        </div>
+                    </div>
+                    <div class="first-list">
+                        <div class="list-wrap">
+                            <a href="javascript: void(0);" class="fw-medium text-primary"><i class="bi bi-file-earmark-text me-1 text-info align-bottom"></i>.editorconfig </a>
+                        </div>
+                    </div>
+
+                    <div class="first-list">
+                        <div class="list-wrap">
+                            <a href="javascript: void(0);" class="fw-medium text-primary"><i class="bi bi-file-earmark-text me-1 text-info align-bottom"></i>.gitignore</a>
+                        </div>
+                    </div>
+                    <div class="first-list">
+                        <div class="list-wrap">
+                            <a href="javascript: void(0);" class="fw-medium text-primary"><i class="bi bi-file-earmark-text me-1 text-info align-bottom"></i>.npmrc</a>
+                        </div>
+                    </div>
+                    <div class="first-list">
+                        <div class="list-wrap">
+                            <a href="javascript: void(0);" class="fw-medium text-primary"><i class="bi bi-file-earmark-text me-1 text-info align-bottom"></i>angular.json &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="text-muted"> // defines project settings, build options, and dependencies.</span></a>
+                        </div>
+                    </div>
+                    <div class="first-list">
+                        <div class="list-wrap">
+                            <a href="javascript: void(0);" class="fw-medium text-primary"><i class="bi bi-file-earmark-text me-1 text-info align-bottom"></i>karma.conf.js&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="text-muted"> // defines project settings, build options, and dependencies.</span></a>
+                        </div>
+                    </div>
+                    <div class="first-list">
+                        <div class="list-wrap">
+                            <a href="javascript: void(0);" class="fw-medium text-primary"><i class="bi bi-file-earmark-text me-1 text-info align-bottom"></i>package-lock.json</a>
+                        </div>
+                    </div>
+                    <div class="first-list">
+                        <div class="list-wrap">
+                            <a href="javascript: void(0);" class="fw-medium text-primary"><i class="bi bi-file-earmark-text me-1 text-info align-bottom"></i>package.json &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="text-muted"> // all the packages are in this file and you can add new packges.</span></a>
+                        </div>
+                    </div>
+                    <div class="first-list">
+                        <div class="list-wrap">
+                            <a href="javascript: void(0);" class="fw-medium text-primary"><i class="bi bi-file-earmark-text me-1 text-info align-bottom"></i>README.md</a>
+                        </div>
+                    </div>
+                    <div class="first-list">
+                        <div class="list-wrap">
+                            <a href="javascript: void(0);" class="fw-medium text-primary"><i class="bi bi-file-earmark-text me-1 text-info align-bottom"></i>tsconfig.app.json &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="text-muted"> // TypeScript configuration file specific to the application.</span></a>
+                        </div>
+                    </div>
+                    <div class="first-list">
+                        <div class="list-wrap">
+                            <a href="javascript: void(0);" class="fw-medium text-primary"><i class="bi bi-file-earmark-text me-1 text-info align-bottom"></i>tsconfig.json &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="text-muted"> // TypeScript configuration file for an entire project.</span></a>
+                        </div>
+                    </div>
+                    </li>
+                    <div class="first-list">
+                        <div class="list-wrap">
+                            <a href="javascript: void(0);" class="fw-medium text-primary"><i class="bi bi-file-earmark-text me-1 text-info align-bottom"></i>tslint.json &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="text-muted"> // TypeScript configuration file used specifically for testing.</span></a>
+                        </div>
+                    </div>
+                    </ul>
+                </div>
+
+            </div>
+            @@include("partials/footer.html")
+        </div>
+        <!-- End Page-content -->
+
+    </div>
+    <!-- end main content-->
+
+    </div>
+    <!-- END layout-wrapper -->
+
+    @@include("partials/vendor-scripts.html")
+
+    <!-- App js -->
+    <script src="https://themesbrand.com/docs/app.js"></script>
+</body>
+
+</html>

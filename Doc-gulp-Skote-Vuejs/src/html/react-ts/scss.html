@@ -1,0 +1,322 @@
+@@include("partials/main.html")
+
+<head>
+
+    @@include("partials/title-meta.html", {"title": "Customization SCSS"})
+
+    @@include("partials/head-css.html")
+
+</head>
+
+<body>
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+
+        @@include("partials/menu.html")
+
+        @@include("partials/sidebar.html")
+
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+
+            <div class="page-content">
+                <div class="container">
+
+                    <h3 class="mb-4">Customization SCSS</h3>
+
+                    <h5 class="mb-3">Structure</h5>
+                    <p class="text-muted mb-4">Skote has managed the scss file in the
+                        <code>( Skote_v*/src/assets/scss )</code> folder. We have used scss compilation.
+                        You can add your custom scss in the <code>custom.scss</code> file instead of doing changes in
+                        the <code>app.scss</code> or other scss files as it will create conflicts in future updates.
+                    </p>
+ 
+                    <div class="verti-sitemap mb-5">
+                        <ul class="list-unstyled mb-0">
+                            <li class="p-0 parent-title">
+                                <a href="javascript: void(0);" class="fw-medium fs-14"><i
+                                        class="bi bi-folder2 me-1 text-warning align-bottom"></i>scss</a>
+                            </li>
+                            <li>
+                                <div class="first-list">
+                                    <div class="list-wrap">
+                                        <a href="javascript: void(0);" class="fw-medium text-primary"><i
+                                                class="bi bi-folder2 me-1 text-warning align-bottom"></i>custom</a>
+                                        <ul class="second-list list-unstyled">
+                                            <li>
+                                                <a href="javascript: void(0);"><i
+                                                        class="bi bi-folder2 me-1 text-warning align-bottom"></i>components</a>
+                                                        <ul class="second-list list-unstyled">
+                                                            <li>
+                                                                <a href="javascript: void(0);"><i
+                                                                        class="bi bi-folder2 me-1 text-warning align-bottom"></i>All pages related components used are here.</a>
+                                                            </li>
+                                                        </ul>
+                                            </li>
+                                            <li>
+                                                <a href="javascript: void(0);"><i
+                                                        class="bi bi-folder2 me-1 text-warning align-bottom"></i>fonts</a>
+                                                <ul class="second-list list-unstyled">
+                                                    <li>
+                                                        <a href="javascript: void(0);"><i
+                                                                class="bi bi-folder2 me-1 text-warning align-bottom"></i>_fonts.scss</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <a href="javascript: void(0);"><i
+                                                        class="bi bi-folder2 me-1 text-warning align-bottom"></i>pages</a>
+                                                <ul class="second-list list-unstyled">
+                                                    <li>
+                                                        <a href="javascript: void(0);"><i
+                                                                class="bi bi-folder2 me-1 text-warning align-bottom"></i>All pages related files are here.</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <a href="javascript: void(0);"><i
+                                                        class="bi bi-folder2 me-1 text-warning align-bottom"></i>plugins</a>
+                                                <ul class="second-list list-unstyled">
+                                                    <li>
+                                                        <a href="javascript: void(0);"><i
+                                                                class="bi bi-folder2 me-1 text-warning align-bottom"></i>All the added plugins related files are here. </a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <a href="javascript: void(0);"><i
+                                                        class="bi bi-folder2 me-1 text-warning align-bottom"></i>structure</a>
+                                                <ul class="second-list list-unstyled">
+                                                    <li>
+                                                        <a href="javascript: void(0);"><i
+                                                                class="bi bi-folder2 me-1 text-warning align-bottom"></i>All layout scss files are here.</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="first-list">
+                                    <div class="list-wrap">
+                                        <a href="javascript: void(0);" class="fw-medium text-primary"><i
+                                                class="bi bi-folder2 me-1 text-warning align-bottom"></i>rtl</a>
+                                        <ul class="second-list list-unstyled">
+                                            <li>
+                                                <a href="javascript: void(0);"><i
+                                                        class="bi bi-folder2 me-1 text-warning align-bottom"></i>All the
+                                                    rtl scss files are here.</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            
+                                <div class="first-list">
+                                    <div class="list-wrap">
+                                        <a href="javascript: void(0);" class="fw-medium text-primary"><i
+                                                class="bi bi-file-earmark-text me-1 text-info align-bottom"></i>_coming-soon.scss</a>
+                                    </div>
+                                </div>
+                                <div class="first-list">
+                                    <div class="list-wrap">
+                                        <a href="javascript: void(0);" class="fw-medium text-primary"><i
+                                                class="bi bi-file-earmark-text me-1 text-info align-bottom"></i>
+                                                _crypto.scss</a>
+                                    </div>
+                                </div>
+                                <div class="first-list">
+                                    <div class="list-wrap">
+                                        <a href="javascript: void(0);" class="fw-medium text-primary"><i
+                                                class="bi bi-file-earmark-text me-1 text-info align-bottom"></i>_variables.scss</a>
+                                    </div>
+                                </div>
+                                <div class="first-list">
+                                    <div class="list-wrap">
+                                        <a href="javascript: void(0);" class="fw-medium text-primary"><i
+                                                class="bi bi-file-earmark-text me-1 text-info align-bottom"></i>_theme-dark.scss
+                                            <span class="text-muted">// includes all dark mode's variables</span></a>
+                                    </div>
+                                </div>
+                                <div class="first-list">
+                                    <div class="list-wrap">
+                                        <a href="javascript: void(0);" class="fw-medium text-primary"><i
+                                                class="bi bi-file-earmark-text me-1 text-info align-bottom"></i>_theme-light.scss
+                                            <span class="text-muted">// You can create your custom variables in this
+                                                file so update wont conflicts.</span></a>
+                                    </div>
+                                </div>
+                                <div class="first-list">
+                                    <div class="list-wrap">
+                                        <a href="javascript: void(0);" class="fw-medium text-primary"><i
+                                                class="bi bi-file-earmark-text me-1 text-info align-bottom"></i>app.scss
+                                            <span class="text-muted">// it has imported all other scss files and create
+                                                app.min.css file.</span></a>
+                                    </div>
+                                </div>
+                                <div class="first-list">
+                                    <div class="list-wrap">
+                                        <a href="javascript: void(0);" class="fw-medium text-primary"><i
+                                                class="bi bi-file-earmark-text me-1 text-info align-bottom"></i>bootstrap.scss
+                                            <span class="text-muted">// it has imported all the bootstrap's scss
+                                                files.</span></a>
+                                    </div>
+                                </div>
+                                <div class="first-list">
+                                    <div class="list-wrap">
+                                        <a href="javascript: void(0);" class="fw-medium text-primary"><i
+                                                class="bi bi-file-earmark-text me-1 text-info align-bottom"></i>chartlist.scss</a>
+                                    </div>
+                                </div>
+                                <div class="first-list">
+                                    <div class="list-wrap">
+                                        <a href="javascript: void(0);" class="fw-medium text-primary"><i
+                                                class="bi bi-file-earmark-text me-1 text-info align-bottom"></i>datatables.scss</a>
+                                    </div>
+                                </div>
+                                <div class="first-list">
+                                    <div class="list-wrap">
+                                        <a href="javascript: void(0);" class="fw-medium text-primary"><i
+                                                class="bi bi-file-earmark-text me-1 text-info align-bottom"></i>icons.scss
+                                            <span class="text-muted">// add your icons scss in this file.</span></a>
+                                    </div>
+                                </div>
+                                <div class="first-list">
+                                    <div class="list-wrap">
+                                        <a href="javascript: void(0);" class="fw-medium text-primary"><i
+                                                class="bi bi-file-earmark-text me-1 text-info align-bottom"></i>tasks.scss</a>
+                                    </div>
+                                </div>
+                                <div class="first-list">
+                                    <div class="list-wrap">
+                                        <a href="javascript: void(0);" class="fw-medium text-primary"><i
+                                                class="bi bi-file-earmark-text me-1 text-info align-bottom"></i>theme.scss
+                                            <span class="text-muted">// Here other scss are written.</span></a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="mb-4">
+                        <h5 class="mb-3">Variables Structure</h5>
+                        <p class="text-muted mb-3">We have defined all the variables in the
+                            <code>src/assets/scss/</code> folder.
+                        </p>
+
+                        <dl class="mb-0">
+                            <dt><code>_variables.scss</code></dt>
+                            <dd class="mb-0 fs-sm text-muted">All bootstrap variables are defined in this file.</dd>
+                        </dl>
+                    </div>
+
+                    <div>
+                        <h5 class="mb-3">Layout Structure</h5>
+                        <p class="text-muted mb-3">We have added all layouts files in the
+                            <code>src/assets/scss/custom/structure</code> folder.
+                        </p>
+
+                        <dl class="mb-0">
+                            <dt><code>_footer.scss</code></dt>
+                            <dd class="mb-3 fs-sm text-muted">Footer-related scss define in this file.
+                            </dd>
+                            <dt><code>_general.scss</code></dt>
+                            <dd class="mb-3 fs-sm text-muted">General scss in this file. </dd>
+                            <dt><code>_horizontal-nav.scss</code></dt>
+                            <dd class="mb-3 fs-sm text-muted">Horizonatal Navbar scss in this file. </dd>
+                            <dt><code>_layouts.scss</code></dt>
+                            <dd class="mb-3 fs-sm text-muted">Manage Boxed layout scss in this file. </dd>
+                            <dt><code>_page-head.scss</code></dt>
+                            <dd class="mb-3 fs-sm text-muted">Manage page heading scss in this file. </dd>
+                            <dt><code>right-sidebar.scss</code></dt>
+                            <dd class="mb-3 fs-sm text-muted">Manage Right sidebar scss in this file. </dd>
+                            <dt><code>_topbar.scss</code></dt>
+                            <dd class="mb-3 fs-sm text-muted">Topbar scss in this file.</dd>
+                            <dt><code>_vertical.scss</code></dt>
+                            <dd class="mb-3 fs-sm text-muted">Vertical scss in this file.</dd>
+                        </dl>
+                    </div>
+
+                    <div>
+                        <h5 class="mb-3">Other SCSS file Structure</h5>
+                        <p class="text-muted mb-3">We have created all the scss files in the
+                            <code>src/assets/scss/custom</code> and <code>src/assets/scss</code> folder.
+                        </p>
+
+                        <dl class="mb-0">
+                            <dt>apps</dt>
+                            <dd class="mb-3 fs-13 text-muted">It contains apps related scss files in this file.
+                            </dd>
+                            <dt>components</dt>
+                            <dd class="mb-3 fs-13 text-muted">All components related scss files are created in this
+                                folder.</dd>
+                            <dt>fonts</dt>
+                            <dd class="mb-3 fs-13 text-muted">All fonts are imported in this scss file. </dd>
+                            <dt>pages</dt>
+                            <dd class="mb-3 fs-13 text-muted">All the pages related to scss are written in this folder
+                                and page wise scss created i.e. _authentication.scss, _chat.scss, _dashboard.scss etc
+                            </dd>
+                            <dt>plugins</dt>
+                            <dd class="mb-3 fs-13 text-muted">All the plugins ( Apex chart, ckeditor, full calendar etc
+                                ) are created in the plugins folder.</dd>
+                            <dt>icons.scss</dt>
+                            <dd class="mb-0 fs-13 text-muted">All icons scss are imported in this file.</dd>
+                        </dl>
+                    </div>
+
+                    <div class="mt-4">
+                        <h5 class="mb-3">Quick customization of layout using scss.</h5>
+                        <p class="text-muted mb-3">You can make changes in the <code>src/assets/scss/_*.scss</code>
+                            file.</p>
+
+                        <table class="table table-bordered mb-0">
+                            <thead>
+                                <tr>
+                                    <th>Variables</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <pre class="language-markup mb-0 rounded">$primary:       $purple;
+$secondary:     $blue;
+$success:       $green;
+$info:          $teal;
+$warning:       $yellow;
+$danger:        $red;
+$light:         $gray-200;
+$dark:          $gray-900;</pre>
+                                    </td>
+                                    <td>You can manage those colors to update the color theme.</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <pre class="language-markup mb-0 rounded">--#{$prefix}font-sans-serif:                         "Inter",sans-serif
+--#{$prefix}font-monospace:                          "Inter",sans-serif</pre>
+                                    </td>
+                                    <td>
+                                        You can set the default font in these variables.
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                @@include("partials/footer.html")
+            </div>
+            <!-- End Page-content -->
+
+        </div>
+        <!-- end main content-->
+
+    </div>
+    <!-- END layout-wrapper -->
+
+    @@include("partials/vendor-scripts.html")
+    <!-- App js -->
+    <script src="https://themesbrand.com/docs/app.js"></script>
+</body>
+
+</html>

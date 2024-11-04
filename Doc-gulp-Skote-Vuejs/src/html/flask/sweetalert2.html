@@ -1,0 +1,471 @@
+@@include("partials/main.html")
+
+<head>
+
+    @@include("partials/title-meta.html", {"title": "Sweetalert2"})
+
+    @@include("partials/head-css.html")
+
+</head>
+
+<body>
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+
+        @@include("partials/menu.html")
+        @@include("partials/sidebar.html")
+
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+
+            <div class="page-content">
+                <div class="container">
+                    <h3 class="mb-3">Sweetalert2 <a href="https://sweetalert2.github.io/" target="_blank" class="float-end badge bg-success-subtle link-success fs-6">Official Website <i class="ri-external-link-line"></i></a></h3>
+                    <p class="text-muted mb-4">A beautiful, responsive, customizable, accessible (WAI-ARIA)
+                        replacement for JavaScript's popup boxes.</p>
+
+                    <h5 class="mb-3">CSS</h5>
+                    <pre class="language-markup rounded p-3 mb-4 position-relative"><button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal">Copy</button><code>&lt;!-- Sweet Alert css--&gt;
+&lt;link href=&quot;{{url_for('static' ,filename='libs/sweetalert2/dist/sweetalert2.min.css')}}&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot; /&gt;</code></pre>
+
+                    <h5 class="mb-3">Javascript</h5>
+                    <pre class="language-markup rounded p-3 mb-4 position-relative"><button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal">Copy</button><code>&lt;!-- Sweet Alerts js --&gt;
+&lt;script src=&quot;{{url_for('static' ,filename='libs/sweetalert2/dist/sweetalert2.min.js')}}&quot;&gt;&lt;/script&gt;</code></pre>
+
+                    <h5 class="mb-3">Initjs (Custom js)</h5>
+                    <pre class="language-markup rounded p-3 mb-4 position-relative"><button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal">Copy</button><code>&lt;!-- Sweet alert init js--&gt;
+&lt;script src=&quot;{{url_for('static' ,filename='js/pages/sweetalerts.init.js')}}&quot;&gt;&lt;/script&gt;</code></pre>
+
+
+                    
+                    <h5 class="mb-3">Examples:</h5>
+
+                    <div class="table-responsive">
+                        <table class="table mb-0">
+                            <thead>
+                                <tr>
+                                    <th scope="col" style="width:40%">Title</th>
+                                    <th scope="col">Javascript</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">A Basic Message</th>
+                                    <td>
+                                        <pre class="language-js p-3 rounded"><code>$('#sa-basic').on('click', function () {
+    Swal.fire(
+        {
+            title: 'Any fool can use a computer',
+            confirmButtonColor: '#556ee6',
+        }
+    )
+});</code></pre>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row ">A Title with a Text Under</th>
+                                    <td>
+                                        <pre class="language-js p-3 rounded"><code>$('#sa-title').click(function () {
+    Swal.fire(
+        {
+            title: "The Internet?",
+            text: 'That thing is still around?',
+            icon: 'question',
+            confirmButtonColor: '#556ee6'
+        }
+    )
+});</code></pre>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row ">A Success message!</th>
+                                    <td>
+                                        <pre class="language-js p-3 rounded"><code>$('#sa-success').click(function () {
+    Swal.fire(
+        {
+            title: 'Good job!',
+            text: 'You clicked the button!',
+            icon: 'success',
+            showCancelButton: true,
+            confirmButtonColor: '#556ee6',
+            cancelButtonColor: "#f46a6a"
+        }
+    )
+});</code></pre>
+                                    </td>
+                                </tr>                               
+                                <tr>
+                                    <th scope="row">A Warning message, with a function attached to the
+                                        "Confirm"-button...</th>
+                                    <td>
+                                        <pre class="language-js p-3 rounded"><code>$('#sa-warning').click(function () {
+    Swal.fire({
+        title: "Are you sure?",
+        text: "You won't be able to revert this!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#34c38f",
+        cancelButtonColor: "#f46a6a",
+        confirmButtonText: "Yes, delete it!"
+        }).then(function (result) {
+        if (result.value) {
+            Swal.fire("Deleted!", "Your file has been deleted.", "success");
+        }
+    });
+});</code></pre>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">By passing a parameter, you can execute something else
+                                        for "Cancel".</th>
+                                    <td>
+                                        <pre class="language-js p-3 rounded"><code>$('#sa-params').click(function () {
+    Swal.fire({
+        title: 'Are you sure?',
+        text: "You won't be able to revert this!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Yes, delete it!',
+        cancelButtonText: 'No, cancel!',
+        confirmButtonClass: 'btn btn-success mt-2',
+        cancelButtonClass: 'btn btn-danger ms-2 mt-2',
+        buttonsStyling: false,
+    }).then(function (result) {
+        if (result.value) {
+            Swal.fire({
+                title: 'Deleted!',
+                text: 'Your file has been deleted.',
+                icon: 'success',
+            })
+            } else if (
+            // Read more about handling dismissals
+            result.dismiss === Swal.DismissReason.cancel
+            ) {
+            Swal.fire({
+                title: 'Cancelled',
+                text: 'Your imaginary file is safe :)',
+                icon: 'error',
+            })
+            }
+    });
+});</code></pre>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">A message with custom Image Header.</th>
+                                    <td>
+                                        <pre class="language-js p-3 rounded"><code>$('#sa-image').click(function () {
+    Swal.fire({
+        title: 'Sweet!',
+        text: 'Modal with a custom image.',
+        imageUrl: '/static/images/logo-dark.png',
+        imageHeight: 20,
+        confirmButtonColor: "#556ee6",
+        animation: false
+    })
+});</code></pre>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">A message with auto close timer.</th>
+                                    <td>
+                                        <pre class="language-js p-3 rounded"><code>$('#sa-close').click(function () {
+    var timerInterval;
+    Swal.fire({
+    title: 'Auto close alert!',
+    html: 'I will close in <strong></strong> seconds.',
+    timer: 2000,
+    confirmButtonColor: "#556ee6",
+    onBeforeOpen:function () {
+        Swal.showLoading()
+        timerInterval = setInterval(function() {
+        Swal.getContent().querySelector('strong')
+            .textContent = Swal.getTimerLeft()
+        }, 100)
+    },
+    onClose: function () {
+        clearInterval(timerInterval)
+    }
+    }).then(function (result) {
+    if (
+        // Read more about handling dismissals
+        result.dismiss === Swal.DismissReason.timer
+    ) {
+        console.log('I was closed by the timer')
+    }
+    })
+});</code></pre>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Custom HTML description and buttons.</th>
+                                    <td>
+                                        <pre class="language-js p-3 rounded"><code>$('#custom-html-alert').click(function () {
+    Swal.fire({
+        title: '<i>HTML</i> <u>example</u>',
+        icon: 'info',
+        html: 'You can use <b>bold text</b>, ' +
+        '<a href="//Themesbrand.in/">links</a> ' +
+        'and other HTML tags',
+        showCloseButton: true,
+        showCancelButton: true,
+        confirmButtonClass: 'btn btn-success',
+        cancelButtonClass: 'btn btn-danger ms-1',
+        confirmButtonColor: "#47bd9a",
+        cancelButtonColor: "#f46a6a",
+        confirmButtonText: '<i class="fas fa-thumbs-up me-1"></i> Great!',
+        cancelButtonText: '<i class="fas fa-thumbs-down"></i>'
+    })
+});</code></pre>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">A custom positioned dialog</th>
+                                    <td>
+                                        <pre class="language-js p-3 rounded"><code>$('#sa-position').click(function () {
+    Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        title: 'Your work has been saved',
+        showConfirmButton: false,
+        timer: 1500
+    })
+});</code></pre>
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <th scope="row">A message with custom width, padding and background.
+                                    </th>
+                                    <td>
+                                        <pre class="language-js p-3 rounded"><code>$('#custom-padding-width-alert').click(function () {
+    Swal.fire({
+        title: 'Custom width, padding, background.',
+        width: 600,
+        padding: 100,
+        confirmButtonColor: "#556ee6",
+        background: '#fff url(//subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/geometry.png)'
+    })
+});</code></pre>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Ajax request example.</th>
+                                    <td>
+                                        <pre class="language-js p-3 rounded"><code>$('#ajax-alert').click(function () {
+    Swal.fire({
+        title: 'Submit email to run ajax request',
+        input: 'email',
+        showCancelButton: true,
+        confirmButtonText: 'Submit',
+        showLoaderOnConfirm: true,
+        confirmButtonColor: "#556ee6",
+        cancelButtonColor: "#f46a6a",
+        preConfirm: function (email) {
+            return new Promise(function (resolve, reject) {
+                setTimeout(function () {
+                    if (email === 'taken@example.com') {
+                        reject('This email is already taken.')
+                    } else {
+                        resolve()
+                    }
+                }, 2000)
+            })
+        },
+        allowOutsideClick: false
+    }).then(function (email) {
+        Swal.fire({
+            icon: 'success',
+            title: 'Ajax request finished!',
+            html: 'Submitted email: ' + email,
+            confirmButtonColor: "#556ee6",
+        })
+    })
+});</code></pre>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <!-- end table -->
+                    </div>
+
+                    <h5 class="mt-4 mb-3">Custom Sweetalert Example:</h5>
+
+                    <div class="table-responsive">
+                        <table class="table align-middle mb-0">
+                            <thead>
+                                <tr>
+                                    <th scope="col" style="width:40%">Title</th>
+                                    <th scope="col">Javascript</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Success Message</th>
+                                    <td>
+                                        <pre class="language-js p-3 rounded"><code>document.getElementById("custom-sa-success").addEventListener("click", function() {
+Swal.fire({
+html: '<div class="mt-3">' +
+'<lord-icon src="https://cdn.lordicon.com/lupuorrc.json" trigger="loop" colors="primary:#0ab39c,secondary:#405189" style="width:120px;height:120px"></lord-icon>' +
+'<div class="mt-4 pt-2 fs-15">' +
+'<h4>Well done !</h4>' +
+'<p class="text-muted mx-4 mb-0">Aww yeah, you successfully read this important message.</p>' +
+'</div>' +
+'</div>',
+showCancelButton: true,
+showConfirmButton: false,
+cancelButtonClass: 'btn btn-primary w-xs mb-1',
+cancelButtonText: 'Back',
+buttonsStyling: false,
+showCloseButton: true
+})
+});</code></pre>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <th scope="row">Error Message</th>
+                                    <td>
+                                        <pre class="language-js p-3 rounded"><code>document.getElementById("custom-sa-error").addEventListener("click", function() {
+Swal.fire({
+html: '<div class="mt-3">' +
+'<lord-icon src="https://cdn.lordicon.com/tdrtiskw.json" trigger="loop" colors="primary:#f06548,secondary:#f7b84b" style="width:120px;height:120px"></lord-icon>' +
+'<div class="mt-4 pt-2 fs-15">' +
+'<h4>Oops...! Something went Wrong !</h4>' +
+'<p class="text-muted mx-4 mb-0">Your email Address is invalid</p>' +
+'</div>' +
+'</div>',
+showCancelButton: true,
+showConfirmButton: false,
+cancelButtonClass: 'btn btn-primary w-xs mb-1',
+cancelButtonText: 'Dismiss',
+buttonsStyling: false,
+showCloseButton: true
+})
+});</code></pre>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Warning Message</th>
+                                    <td>
+                                        <pre class="language-js p-3 rounded"><code>document.getElementById("custom-sa-warning").addEventListener("click", function() {
+Swal.fire({
+html: '<div class="mt-3">' +
+'<lord-icon src="https://cdn.lordicon.com/gsqxdxog.json" trigger="loop" colors="primary:#f7b84b,secondary:#f06548" style="width:100px;height:100px"></lord-icon>' +
+'<div class="mt-4 pt-2 fs-15 mx-5">' +
+'<h4>Are you Sure ?</h4>' +
+'<p class="text-muted mx-4 mb-0">Are you Sure You want to Delete this Account ?</p>' +
+'</div>' +
+'</div>',
+showCancelButton: true,
+confirmButtonClass: 'btn btn-primary w-xs me-2 mb-1',
+confirmButtonText: 'Yes, Delete It!',
+cancelButtonClass: 'btn btn-danger w-xs mb-1',
+buttonsStyling: false,
+showCloseButton: true
+})
+});</code></pre>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Join Our Community</th>
+                                    <td>
+                                        <pre class="language-js p-3 rounded"><code>document.getElementById("custom-sa-community").addEventListener("click", function() {
+Swal.fire({
+title: 'Join Our Community',
+html: 'You can use <b>bold text</b>, ' +
+'<a href="//Themesbrand.in/">links</a> ' +
+'and other HTML tags',
+html: '<div class="mt-3 text-start">' +
+'<label for="input-email" class="form-label fs-13">Email</label>' +
+'<input type="email" class="form-control" id="input-email" placeholder="Enter Email Address">' +
+'</div>',
+imageUrl: 'assets/images/logo-sm.png',
+footer: '<p class="fs-13 text-muted mb-0">Already have an account ? <a href="#" class="fw-semibold text-decoration-underline"> Signin </a> </p>',
+imageHeight: 40,
+confirmButtonClass: 'btn btn-primary w-xs mb-2',
+confirmButtonText: 'Register <i class="ri-arrow-right-line ms-1 align-bottom"></i>',
+buttonsStyling: false,
+showCloseButton: true
+})
+});</code></pre>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Email Verification</th>
+                                    <td>
+                                        <pre class="language-js p-3 rounded"><code>document.getElementById("custom-sa-email-verify").addEventListener("click", function() {
+Swal.fire({
+html: '<div class="mt-3">' +
+'<div class="avatar-lg mx-auto">' +
+'<div class="avatar-title bg-light text-success display-5 rounded-circle">' +
+    '<i class="ri-mail-send-fill"></i>' +
+'</div>' +
+'</div>' +
+'<div class="mt-4 pt-2 fs-15">' +
+'<h4 class="fs-20 fw-semibold">Verify Your Email</h4>' +
+'<p class="text-muted mb-0 mt-3 fs-13">We have sent you verification email <span class="fw-medium text-dark">example@abc.com</span>, <br/> Please check it.</p>' +
+'</div>' +
+'</div>',
+showCancelButton: false,
+confirmButtonClass: 'btn btn-primary mb-1',
+confirmButtonText: 'Verify Email',
+buttonsStyling: false,
+footer: '<p class="fs-14 text-muted mb-0">Didn\'t receive an email ? <a href="#" class="fw-semibold text-decoration-underline">Resend</a></p>',
+showCloseButton: true
+})
+});</code></pre>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Notification Message</th>
+                                    <td>
+                                        <pre class="language-js p-3 rounded"><code>document.getElementById("custom-sa-notification").addEventListener("click", function() {
+Swal.fire({
+html: '<div class="mt-3">' +
+'<div class="avatar-lg mx-auto">' +
+'<img src="assets/images/users/avatar-2.jpg" class="rounded-circle img-thumbnail" alt="thumbnail">' +
+'</div>' +
+'<div class="mt-4 pt-2 fs-15">' +
+'<h4 class="fs-18 fw-semibold">Welcome <span class="fw-semibold">Mike Mayer</span></h4>' +
+'<p class="text-muted mb-0 fs-13">You have <span class="fw-semibold text-success">2</span> Notifications</p>' +
+'</div>' +
+'</div>',
+showCancelButton: false,
+confirmButtonClass: 'btn btn-primary mb-1',
+confirmButtonText: 'Show Me <i class="ri-arrow-right-line ms-1 align-bottom"></i>',
+buttonsStyling: false,
+showCloseButton: true
+})
+});</code></pre>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <!-- end table -->
+                    </div>
+                </div>
+                @@include("partials/footer.html")
+            </div>
+            <!-- End Page-content -->
+
+        </div>
+        <!-- end main content-->
+
+    </div>
+    <!-- END layout-wrapper -->
+
+
+    @@include("partials/vendor-scripts.html")
+
+    <!-- prismjs plugin -->
+    <script src="../assets/libs/prismjs/prism.js"></script>
+
+    <!-- App js -->
+    <script src="https://themesbrand.com/docs/app.js"></script>
+</body>
+
+</html>

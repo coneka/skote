@@ -1,0 +1,185 @@
+@@include("partials/main.html")
+
+<head>
+
+    @@include("partials/title-meta.html", {"title": "Api Integration"})
+
+    @@include("partials/head-css.html")
+
+</head>
+
+<body>
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+
+        @@include("partials/menu.html")
+        @@include("partials/sidebar.html")
+
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+
+            <div class="page-content">
+                <div class="container">
+
+                    <h3 class="mb-4">Api Integration</h3>
+                    <ul class="nav nav-tabs mb-3 bg-light" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link fw-bold active" data-bs-toggle="tab" href="#vue1" role="tab">
+                                Vue
+                            </a>
+                        </li>
+                    </ul>
+                    <div>
+                        <p>
+                            In Skote Vue, a fake backend setup is included by default. All the files related to API
+                            integrations can be located within the
+                            <code>src/helpers</code> folder. While we've provided a fake backend for your convenience,
+                            you have the flexibility to remove it and replace it with your custom API by following the
+                            steps outlined in the
+                            <code>src/helpers</code> directory.
+
+                        </p>
+                        <ul>
+                            <li>
+                                <p class="mb-1">
+                                    <code> src/helpers/authservice/user.service.js </code>
+                                    file contains axios setup to call server API(s) including get, put, post, delete,
+                                    etc
+                                    methods & interceptors.
+                                </p>
+                            </li>
+                        </ul>
+                        <div class="alert alert-info">
+                            <strong>Note :</strong> we have added a
+                            <strong>Fake backend setup</strong> just for user interactions, but if you are working with
+                            the real API integration, then there is no need of fake-backend so you can simply delete the
+                            file
+                            <code>src/helpers/fake-backend.js</code>, and remove the code related to Fake-Backend from
+                            <code>main.js</code> file, that's it!
+                        </div>
+                    </div>
+
+                    <div>
+                        <h5 class="fs-lg mb-3 text-decoration-underline">
+                            How to Integrate custom API?
+                        </h5>
+                        <p class="text-muted">Please follow the below steps : </p>
+                        <div>
+                            firsty, add <code>  VUE_APP_URL:YOUR_KEY </code> in your <code>.env</code> file.
+                        </div>
+                        <div>
+                            <p>
+                                As a second step add <code>index.js</code> file in <code>src/helpers</code> folder.
+                            </p>
+                        </div>
+                        <div> In that file put bellowed code. </div>
+                        <div class="pt-3">
+                            <pre class="p-3 rounded mb-4 bg-ligh position-relative language-markup" tabindex="0">
+                                <button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard">Copy</button><code class="language-markup">
+export const apiKey = process.env.VUE_APP_URL // api key from the .env
+
+export function authHeader() {
+    // return authorization header with token from localstorage
+    let user = JSON.parse(localStorage.getItem('user'));
+    if (user && user.token) {
+    return {
+    'Authorization': 'Bearer ' + user.token,
+    headers: { 'Content-Type': 'application/json' },
+    };
+    } else {
+    return {
+    headers: { 'Content-Type': 'application/json' },
+    };
+    }
+}</code></pre>
+                        </div>
+                        <div>
+                            <p>Here, token is from localstorage. You can modify it as per your requirement.</p>
+                        </div>
+                        <div> Next task is to add one service. Let's assume that we have one service for products. So,
+                            create one file named <code>productService.js</code> in <code> /src/helpers/services </code>
+                            folder.</div>
+
+                        <div>
+                            Below is a code for the reference. In this code we have provided one class which is having
+                            one method name getProducts(). It is giving list of the product.
+                        </div>
+
+                        <div class="pt-3">
+                            <pre class="p-3 rounded mb-4 bg-ligh position-relative language-markup" tabindex="0">
+                                <button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard">Copy</button><code class="language-markup">
+import { apiKey, authHeader } from '..'
+export default class ProductService {
+    constructor() {
+    this.baseUrl = apiKey
+    }
+
+    getProducts() {
+    const requestBody = {
+    method: "GET",
+    headers: authHeader()
+    }
+    return fetch(`${this.baseUrl}`, requestBody)
+    .then(response => response.json())
+    .then(data => data)
+    }
+}</code></pre>
+                        </div>
+                        <div>
+                            In <code> src/helpers </code> folder we will have one anothe file called
+                            <code> services.js </code> which is having all of our services. Like belowe,
+
+                            <div class="pt-3">
+                                <pre class="p-3 rounded mb-4 bg-ligh position-relative language-markup" tabindex="0">
+                                <button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard">Copy</button><code class="language-markup">
+import ProductService from './services/productService'
+const productService = new ProductService()
+    
+export {
+productService
+}</code></pre>
+                            </div>
+                        </div>
+
+                        <div> And finally, when we want to use that product service in our code. So follow the process
+                            as per belowe </div>
+
+                        <pre class="p-3 rounded mb-4 bg-ligh position-relative language-markup" tabindex="0">
+<button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard">Copy</button><code class="language-markup">...
+import { productService } from '@/helpers/services.js'
+
+methods: {
+        async getProducts() {
+            const data = await productService.getPosts()
+            console.log('data', data);
+        }
+    }
+</code></pre>
+                        <div> That'it! initialozation of new service is done. Now you can as many as service you want.
+                        </div>
+                        </li>
+
+                    </div>
+                    @@include("partials/footer.html")
+                </div>
+                <!-- End Page-content -->
+
+            </div>
+            <!-- end main content-->
+
+        </div>
+        <!-- END layout-wrapper -->
+
+        @@include("partials/vendor-scripts.html")
+
+        <!-- prismjs plugin -->
+        <script src="../assets/libs/prismjs/prism.js"></script>
+
+        <!-- App js -->
+        <script src="https://themesbrand.com/docs/app.js"></script>
+</body>
+
+</html>

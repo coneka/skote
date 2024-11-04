@@ -1,0 +1,133 @@
+@@include("partials/main.html")
+
+<head>
+
+  @@include("partials/title-meta.html", {"title": "Multi Language"})
+
+  @@include("partials/head-css.html")
+
+</head>
+
+<body>
+
+  <!-- Begin page -->
+  <div id="layout-wrapper">
+
+    @@include("partials/menu.html")
+
+    @@include("partials/sidebar.html")
+
+    <!-- ============================================================== -->
+    <!-- Start right Content here -->
+    <!-- ============================================================== -->
+    <div class="main-content">
+
+      <div class="page-content">
+        <div class="container">
+
+          <h3 class="mb-4">Multi Language Settings</h3>
+
+          <h5 class="mb-4">Let's add the German language.</h5>
+
+          <ol>
+            <li>
+              Create a new file
+              <code>src/locales/gr/translation.json</code>.
+              <pre class="p-3 rounded mb-3 bg-ligh position-relative language-markup" tabindex="0">
+                            <button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard">Copy</button>
+  <code class="language-markup">{
+    "Menu": "Speisekarte",
+    "Orders": "Aufträge",
+    "Customers": "Kunden",
+    "Sellers": "Verkäufer",
+  }; </code></pre>
+            </li>
+            <li class="mt-2">
+              update the below code in the <code>src/i18n.ts</code> file. <br />
+              <pre class="p-3 rounded mb-3 bg-ligh position-relative language-markup" tabindex="0"><button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard">Copy</button><code class="language-markup">
+import i18n from "i18next";
+import translationGr from "./locales/gr/translation.json"; 
+
+const resources : any = {
+    gr: {
+        translation: translationGr
+    }
+}; 
+
+const language = localStorage.getItem("I18N_LANGUAGE");
+if (!language) {
+  localStorage.setItem("I18N_LANGUAGE", "en");  // replace "en" to "gr".
+}
+
+i18n
+  .use(detector)
+  .use(initReactI18next) // passes i18n down to react-i18next
+  .init({
+  resources,
+  lng: localStorage.getItem("I18N_LANGUAGE") || "en",  // replace "en" to "gr" to set the gr language as default.
+  fallbackLng: "en", // use en if detected lng is not available
+
+  keySeparator: false, // we do not use keys in form messages.welcome
+
+  interpolation: {
+    escapeValue: false, // react already safes from xss
+  },
+}); </code></pre>
+
+
+              <p class="mb-3 mt-2">The translationGr JSON originates from the file located at
+                <code>src/locales/gr/translation.json</code>.
+              </p>
+            </li>
+            <li>
+              Now add the new option of German language in the
+              topbar language dropdown menu object
+              <code>src/common/languages.ts</code> in file.
+            </li><br />
+            <li>
+              You must have to write all text like
+              <code>{props.t('Search_keyword')}</code> to
+              make it working with all languages. Also make sure
+              to add new words in all other language files
+              <code>src/locales/language/translation.json</code>.
+            </li>
+
+            <pre class="p-3 rounded mb-3 bg-ligh position-relative language-markup" tabindex="0">
+                            <button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard">Copy</button>
+<code class="language-markup">// i18n
+import { withTranslation } from "react-i18next";
+
+const index = () => {
+  return (
+    &lt;Link
+      to={subItem.link ? subItem.link : "/#"}
+      className="nav-link"&gt;
+      {props.t('Search_keyword')}
+    &lt;/Link&gt;
+)
+}
+
+export default withRouter(withTranslation()(index)); </code></pre>
+          </ol>
+
+        </div>
+        @@include("partials/footer.html")
+      </div>
+      <!-- End Page-content -->
+
+    </div>
+    <!-- end main content-->
+
+  </div>
+  <!-- END layout-wrapper -->
+
+  @@include("partials/vendor-scripts.html")
+
+  <!-- prismjs plugin -->
+  <script src="../assets/libs/prismjs/prism.js"></script>
+
+  <!-- App js -->
+  <script src="https://themesbrand.com/docs/app.js"></script>
+</body>
+
+</html>

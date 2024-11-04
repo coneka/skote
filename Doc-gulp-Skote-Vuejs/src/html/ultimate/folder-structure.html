@@ -1,0 +1,360 @@
+@@include("partials/main.html")
+
+<head>
+
+    @@include("partials/title-meta.html", {"title": "Folder Structure"})
+
+    @@include("partials/head-css.html")
+
+</head>
+
+<body>
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+
+        @@include("partials/menu.html")
+
+        @@include("partials/sidebar.html")
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+
+            <div class="page-content">
+                <div class="container">
+                    <h3 class="mb-4">Folder Structure</h3>
+
+                    <div class="alert alert-danger text-danger">
+                         Presented here is the HTML rendition of the folder arrangement. To facilitate layout management and expedite development through Gulp, we've meticulously designed partials. Incorporating a starter kit that serves as a launchpad for commencing projects from the ground up.
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <p class="text-muted mb-4">
+                            <img src="../../assets/images/logo/co.png" alt="" height="30"></p>
+                            <div class="verti-sitemap">
+                                <ul class="list-unstyled mb-0">
+                                    <li class="p-0 parent-title"><a href="javascript: void(0);" class="fw-medium fs-14">Admin</a>
+                                    </li>
+                                    <li>
+                                        <div class="first-list">
+                                            <div class="list-wrap">
+                                                <a href="javascript: void(0);" class="fw-medium text-primary"><i class=" bi bi-folder2 me-1 align-bottom text-warning"></i>app</a>
+                                                    <ul class="second-list list-unstyled">
+                                                        <li>
+                                                            <a href="javascript: void(0);"><i class=" bi bi-folder2 me-1 align-bottom text-warning"></i>Config </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="javascript: void(0);"><i class=" bi bi-folder2 me-1 align-bottom text-warning"></i>Controller</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="javascript: void(0);"><i class=" bi bi-folder2 me-1 align-bottom text-warning"></i>Database</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="javascript: void(0);"><i class=" bi bi-folder2 me-1 align-bottom text-warning"></i>Filters</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="javascript: void(0);"><i class=" bi bi-folder2 me-1 align-bottom text-warning"></i>Helpers </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="javascript: void(0);"><i class=" bi bi-folder2 me-1 align-bottom text-warning"></i>Language</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="javascript: void(0);"><i class=" bi bi-folder2 me-1 align-bottom text-warning"></i>Libraries</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="javascript: void(0);"><i class=" bi bi-folder2 me-1 align-bottom text-warning"></i>Models</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="javascript: void(0);"><i class=" bi bi-folder2 me-1 align-bottom text-warning"></i>ThirdParty </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="javascript: void(0);"><i class=" bi bi-folder2 me-1 align-bottom text-warning"></i>Validation</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="javascript: void(0);"><i class=" bi bi-folder2 me-1 align-bottom text-warning"></i>Views</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="javascript: void(0);"><i class=" bi bi-file-earmark-text me-1 text-info align-bottom"></i>.htaccess</a>
+                                                        </li> 
+                                                        <li>
+                                                            <a href="javascript: void(0);"><i class=" bi bi-file-earmark-text me-1 text-info align-bottom"></i>Common.php</a>
+                                                        </li>       
+                                                        <li>
+                                                            <a href="javascript: void(0);"><i class=" bi bi-file-earmark-text me-1 text-info align-bottom"></i>index.html</a>
+                                                        </li> 
+                                                    </ul>    
+                                            </div>
+                                            <div class="list-wrap">
+                                                <a href="javascript: void(0);" class="fw-medium text-primary"><i class=" bi bi-folder2 me-1 align-bottom text-warning"></i>public</a>
+                                                <ul class="second-list list-unstyled">
+                                                    <li>
+                                                        <a href="javascript: void(0);"><i class=" bi bi-folder2 me-1 align-bottom text-warning"></i>assets </a>
+                                                        <ul class="second-list list-unstyled">
+                                                            <li>
+                                                                <a href="javascript: void(0);"><i class=" bi bi-folder2 me-1 align-bottom text-warning"></i>css </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="javascript: void(0);"><i class=" bi bi-folder2 me-1 align-bottom text-warning"></i>fonts</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="javascript: void(0);"><i class=" bi bi-folder2 me-1 align-bottom text-warning"></i>images</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="javascript: void(0);"><i class=" bi bi-folder2 me-1 align-bottom text-warning"></i>js</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="javascript: void(0);"><i class=" bi bi-folder2 me-1 align-bottom text-warning"></i>json </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="javascript: void(0);"><i class=" bi bi-folder2 me-1 align-bottom text-warning"></i>lang</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="javascript: void(0);"><i class=" bi bi-folder2 me-1 align-bottom text-warning"></i>libs</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="javascript: void(0);"><i class=" bi bi-folder2 me-1 align-bottom text-warning"></i>scss</a>
+                                                            </li>
+                                                        </ul>    
+                                                    </li>
+                                                </ul> 
+                                            </div>
+                                            <div class="list-wrap">
+                                                <a href="javascript: void(0);" class="fw-medium text-primary"><i class=" bi bi-folder2 me-1 align-bottom text-warning"></i>system</a>
+                                            </div>
+                                            <div class="list-wrap">
+                                                <a href="javascript: void(0);" class="fw-medium text-primary"><i class=" bi bi-folder2 me-1 align-bottom text-warning"></i>tests</a>
+                                            </div>
+                                            <div class="list-wrap">
+                                                <a href="javascript: void(0);" class="fw-medium text-primary"><i class=" bi bi-folder2 me-1 align-bottom text-warning"></i>writable</a>
+                                            </div>
+                                            <div class="list-wrap">
+                                                <a href="javascript: void(0);" class="fw-medium text-primary"><i class=" bi bi-file-earmark-text me-1 text-info align-bottom"></i>.env</a>
+                                            </div>
+                                            <div class="list-wrap">
+                                                <a href="javascript: void(0);" class="fw-medium text-primary"><i class=" bi bi-file-earmark-text me-1 text-info align-bottom"></i>composer.json</a>
+                                            </div>
+                                            <div class="list-wrap">
+                                                <a href="javascript: void(0);" class="fw-medium text-primary"><i class=" bi bi-file-earmark-text me-1 text-info align-bottom"></i>composer.lock</a>
+                                            </div>
+                                            <div class="list-wrap">
+                                                <a href="javascript: void(0);" class="fw-medium text-primary"><i class=" bi bi-file-earmark-text me-1 text-info align-bottom"></i>phpunit.xml.dist</a>
+                                            </div>
+                                            <div class="list-wrap">
+                                                <a href="javascript: void(0);" class="fw-medium text-primary"><i class=" bi bi-file-earmark-text me-1 text-info align-bottom"></i>preload.php</a>
+                                            </div>
+                                            
+                                            
+                                        </div>
+                                        
+                                        <div class="first-list">
+                                            <div class="list-wrap">
+                                                <a href="javascript: void(0);" class="fw-medium text-primary"><i class=" bi bi-file-earmark-text me-1 text-info align-bottom"></i>spart</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <p class="text-muted mb-4">
+                                <img src="../../assets/images/logo/php.png" alt="" height="30"></p>
+                            <div class="verti-sitemap">
+                                <ul class="list-unstyled mb-0">
+                                    <li class="p-0 parent-title"><a href="javascript: void(0);" class="fw-medium fs-14">Admin</a>
+                                    </li>
+                                    <li>
+                                        <div class="first-list">
+                                            <div class="list-wrap">
+                                                <a href="javascript: void(0);" class="fw-medium text-primary"><i class=" bi bi-folder2 me-1 align-bottom text-warning"></i>assets</a>
+                                                    <ul class="second-list list-unstyled">
+                                                        <li>
+                                                            <a href="javascript: void(0);"><i class=" bi bi-folder2 me-1 align-bottom text-warning"></i>css </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="javascript: void(0);"><i class=" bi bi-folder2 me-1 align-bottom text-warning"></i>fonts</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="javascript: void(0);"><i class=" bi bi-folder2 me-1 align-bottom text-warning"></i>images</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="javascript: void(0);"><i class=" bi bi-folder2 me-1 align-bottom text-warning"></i>js</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="javascript: void(0);"><i class=" bi bi-folder2 me-1 align-bottom text-warning"></i>json </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="javascript: void(0);"><i class=" bi bi-folder2 me-1 align-bottom text-warning"></i>lang-php</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="javascript: void(0);"><i class=" bi bi-folder2 me-1 align-bottom text-warning"></i>libs</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="javascript: void(0);"><i class=" bi bi-folder2 me-1 align-bottom text-warning"></i>scss</a>
+                                                            <ul class="second-list list-unstyled">
+                                                                <li>
+                                                                    <a href="javascript: void(0);"><i class=" bi bi-file-earmark-text me-1 text-info align-bottom"></i>custom </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="javascript: void(0);"><i class=" bi bi-file-earmark-text me-1 text-info align-bottom"></i>_variables.scss</a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="javascript: void(0);"><i class=" bi bi-file-earmark-text me-1 text-info align-bottom"></i>_variables-dark.scss</a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="javascript: void(0);"><i class=" bi bi-file-earmark-text me-1 text-info align-bottom"></i>app.scss</a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="javascript: void(0);"><i class=" bi bi-file-earmark-text me-1 text-info align-bottom"></i>bootstrap.scss </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="javascript: void(0);"><i class=" bi bi-file-earmark-text me-1 text-info align-bottom"></i>icons.scss</a>
+                                                                </li>
+                                                            </ul>  
+                                                        </li>
+                                                    </ul>    
+                                            </div>
+                                            <div class="list-wrap">
+                                                <a href="javascript: void(0);" class="fw-medium text-primary"><i class=" bi bi-folder2 me-1 align-bottom text-warning"></i>partials</a>
+                                                <ul class="second-list list-unstyled">
+                                                    
+                                                        <ul class="second-list list-unstyled">
+                                                            <li>
+                                                                <a href="javascript: void(0);"><i class=" bi bi-file-earmark-text me-1 text-info align-bottom"></i>body.php </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="javascript: void(0);"><i class=" bi bi-file-earmark-text me-1 text-info align-bottom"></i>config.php </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="javascript: void(0);"><i class=" bi bi-file-earmark-text me-1 text-info align-bottom"></i>footer.php</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="javascript: void(0);"><i class=" bi bi-file-earmark-text me-1 text-info align-bottom"></i>head-css.php</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="javascript: void(0);"><i class=" bi bi-file-earmark-text me-1 text-info align-bottom"></i>horizontal.php</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="javascript: void(0);"><i class=" bi bi-file-earmark-text me-1 text-info align-bottom"></i>lang.php </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="javascript: void(0);"><i class=" bi bi-file-earmark-text me-1 text-info align-bottom"></i>main.php</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="javascript: void(0);"><i class=" bi bi-file-earmark-text me-1 text-info align-bottom"></i>menu.php</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="javascript: void(0);"><i class=" bi bi-file-earmark-text me-1 text-info align-bottom"></i>page-title.php</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="javascript: void(0);"><i class=" bi bi-file-earmark-text me-1 text-info align-bottom"></i>right-sidebar.php </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="javascript: void(0);"><i class=" bi bi-file-earmark-text me-1 text-info align-bottom"></i>session.php</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="javascript: void(0);"><i class=" bi bi-file-earmark-text me-1 text-info align-bottom"></i>sidebar.php</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="javascript: void(0);"><i class=" bi bi-file-earmark-text me-1 text-info align-bottom"></i>title-meta.php </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="javascript: void(0);"><i class=" bi bi-file-earmark-text me-1 text-info align-bottom"></i>topbar.php</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="javascript: void(0);"><i class=" bi bi-file-earmark-text me-1 text-info align-bottom"></i>vendor-scripts.php</a>
+                                                            </li>
+                                                        </ul>    
+                                                </ul> 
+                                            </div>
+                                            
+                                            
+                                        </div>
+                                        
+                                        <div class="first-list">
+                                            <div class="list-wrap">
+                                                <a href="javascript: void(0);" class="fw-medium text-primary"><i class=" bi bi-file-earmark-text me-1 text-info align-bottom"></i>All php pages</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <p class="text-muted mb-4">
+                                <img src="../../assets/images/logo/ajax.png" alt="" height="30"></p>
+                            <div class="verti-sitemap">
+                                <ul class="list-unstyled mb-0">
+                                    <li class="p-0 parent-title"><a href="javascript: void(0);" class="fw-medium fs-14">Admin</a>
+                                    </li>
+                                    <li>
+                                        <div class="first-list">
+                                            <div class="list-wrap">
+                                                <a href="javascript: void(0);" class="fw-medium text-primary"><i class=" bi bi-folder2 me-1 align-bottom text-warning"></i>Admin</a>
+                                                <ul class="second-list list-unstyled">
+                                                    <li>
+                                                        <a href="javascript: void(0);"><i class=" bi bi-folder2 me-1 align-bottom text-warning"></i>assets </a>
+                                                        <ul class="second-list list-unstyled">
+                                                            <li>
+                                                                <a href="javascript: void(0);"><i class=" bi bi-folder2 me-1 align-bottom text-warning"></i>css </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="javascript: void(0);"><i class=" bi bi-folder2 me-1 align-bottom text-warning"></i>fonts</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="javascript: void(0);"><i class=" bi bi-folder2 me-1 align-bottom text-warning"></i>images</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="javascript: void(0);"><i class=" bi bi-folder2 me-1 align-bottom text-warning"></i>js</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="javascript: void(0);"><i class=" bi bi-folder2 me-1 align-bottom text-warning"></i>json </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="javascript: void(0);"><i class=" bi bi-folder2 me-1 align-bottom text-warning"></i>lang</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="javascript: void(0);"><i class=" bi bi-folder2 me-1 align-bottom text-warning"></i>libs</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="javascript: void(0);"><i class=" bi bi-folder2 me-1 align-bottom text-warning"></i>scss</a>
+                                                            </li>
+                                                        </ul>    
+                                                    </li>
+                                                </ul> 
+                                            </div>
+                                            
+                                            
+                                            
+                                        </div>
+                                        
+                                        <div class="first-list">
+                                            <div class="list-wrap">
+                                                <a href="javascript: void(0);" class="fw-medium text-primary"><i class=" bi bi-file-earmark-text me-1 text-info align-bottom"></i>All HTML files</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                @@include("partials/footer.html")
+            </div>
+            <!-- End Page-content -->
+
+        </div>
+        <!-- end main content-->
+
+    </div>
+    <!-- END layout-wrapper -->
+
+    @@include("partials/vendor-scripts.html")
+
+    <!-- App js -->
+    <script src="https://themesbrand.com/docs/app.js"></script>
+</body>
+
+</html>

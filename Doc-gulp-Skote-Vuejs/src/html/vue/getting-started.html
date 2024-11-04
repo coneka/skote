@@ -1,0 +1,373 @@
+@@include("partials/main.html")
+
+<head>
+
+    @@include("partials/title-meta.html", {"title": "Getting Started"})
+
+    @@include("partials/head-css.html")
+
+</head>
+
+<body>
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+
+        @@include("partials/menu.html")
+
+        @@include("partials/sidebar.html")
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+
+            <div class="page-content">
+                <div class="container">
+                    <h3 class="mb-4">Getting Started</h3>
+
+                    <h5 class="mb-3">Setup Skote</h5>
+
+                    <ul class="nav nav-tabs mb-3 bg-light" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link fw-bold active" data-bs-toggle="tab" href="#vue1" role="tab">
+                                Vue
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fw-bold" data-bs-toggle="tab" href="#laravel1" role="tab">
+                                Vue + Laravel
+                            </a>
+                        </li>
+                    </ul>
+
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="vue1" role="tabpanel">
+                            <h5 class="text-decoration-underline mt-4 mb-3">Prerequisites:</h5>
+                            <div class="alert alert-info text-info">
+                                <i class=" bi bi-exclamation-circle-fill fs-3 align-middle me-2"></i> Suggestion: Yarn
+                                is
+                                recommended over npm.
+                            </div>
+                            <p class="text-muted">Please follow the below steps to install and setup all prerequisites:
+                            </p>
+
+                            <ul>
+                                <li>
+                                    <strong>Nodejs</strong>
+                                    <p class="mt-1">Make sure to have <a class="text-danger" href="https://nodejs.org/"
+                                            target="_blank">Node.js</a> installed &amp; running on your computer. If you
+                                        already
+                                        have installed Node on your computer, you can skip this step if your existing
+                                        node
+                                        version is greater than 18. We suggest you to use LTS version of Node.js. </p>
+                                </li>
+                                <li>
+                                    <strong>Yarn</strong>
+                                    <p class="mt-1">
+                                        Make sure to have the <a class="text-danger"
+                                            href="https://classic.yarnpkg.com/en/" target="_blank">Yarn</a> installed
+                                        &amp; running on your computer. If you
+                                        already
+                                        have installed Yarn on your computer, you can skip this step. We suggest you use
+                                        Yarn
+                                        instead of NPM.</p>
+
+                                    <pre
+                                        class="language-markup p-3 rounded mb-4 bg-ligh position-relative"><button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard" title="Copy to clipboard">Copy</button> <code>npm install --global yarn </code> </pre>
+
+                                </li>
+                                <li>
+                                    <strong>Git</strong>
+
+                                    <p class="mt-1">Make sure to have <a class="text-danger" href="https://git-scm.com/"
+                                            target="_blank">Git</a> installed globally &amp; running on your computer.
+                                        If
+                                        you
+                                        already have installed git on your computer, you can skip this step. <br /> To
+                                        install
+                                        in Linux OS please run the below commands.</p>
+
+                                    <pre class="language-markup p-3 rounded mb-4 bg-ligh position-relative"><button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard" title="Copy to clipboard">Copy</button><code>sudo apt-get update
+sudo apt-get install git </code> </pre>
+                                </li>
+                            </ul>
+
+                            <p class="text-muted mt-4">Once you've completed the preceding steps, you can execute the
+                                following
+                                commands in the terminal or command prompt from the root directory of Skote. This will
+                                either
+                                run the project locally or build it for production use:</p>
+
+
+
+
+
+                            <p>This would install all the required dependencies in the <code>node_modules</code> folder.
+                            </p>
+
+                            <pre
+                                class="language-markup p-3 rounded mb-4 bg-ligh position-relative"><button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard" title="Copy to clipboard">Copy</button><code>yarn install  or  yarn </code> </pre>
+
+                            <p>Runs the project locally, starts the development server and watches for any changes in
+                                your code.
+                                The development server is accessible at <a class="text-danger"
+                                    href="http://localhost:8080.">http://localhost:8080.</a></p>
+
+                            <pre
+                                class="language-markup p-3 rounded mb-4 bg-ligh position-relative"><button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard" title="Copy to clipboard">Copy</button><code>yarn serve </code> </pre>
+
+                            <p>Generates a <code>/build</code> directory with all the production files.</p>
+
+                            <pre
+                                class="language-markup p-3 rounded mb-4 bg-ligh position-relative"><button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard" title="Copy to clipboard">Copy</button><code>yarn build </code> </pre>
+                        </div>
+                        <div class="tab-pane" id="laravel1" role="tabpanel">
+                            <div>
+                                <div class="alert alert-warning pb-0">
+                                    <p> <strong>Note :- </strong>Make sure that you have installed <a class="alert-link"
+                                            href="https://www.apachefriends.org/"><u> Xampp,</u> </a><a
+                                            class="alert-link" href="#"><u> Composer,</u> </a> <a class="alert-link"
+                                            href="https://nodejs.org/"><u> Node</u> </a> and <a class="alert-link"
+                                            href="https://yarnpkg.com/"><u> Yarn</u> </a>/ <a class="alert-link"
+                                            href="https://www.npmjs.com/"><u> npm</u></a> already.</p>
+                                </div>
+                            </div>
+                            <div id="prerequisites" class="mb-5">
+                                <h5 class="text-decoration-underline mt-4 mb-3">Prerequisites</h5>
+
+                                <p>
+                                    For installation and setup all prerequisites, please follow the below steps:
+                                </p>
+
+
+                                <table class="table table-bordered">
+                                    <tbody>
+                                        <tr>
+                                            <th>
+                                                Xampp
+                                            </th>
+                                            <td>
+                                                Make sure to have <code>Xampp</code> installed & running on your
+                                                computer. PHP Version 8.1 or Higher must be required for Laravel 10.
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>
+                                                Composer
+                                            </th>
+                                            <td>
+                                                Make sure to have <code>Composer</code> installed & running on your
+                                                computer. make sure the composer version must be 2.2.0 or Higher.
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>
+                                                Nodejs
+                                            </th>
+                                            <td>
+                                                Make sure to have <code>Node.js</code> installed & running on your
+                                                computer. If you
+                                                already have installed Node on your computer, you can skip this step if
+                                                your existing node version is greater than 18. We suggest you to use LTS
+                                                version of Node.js.
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>
+                                                Yarn
+                                            </th>
+                                            <td>
+                                                Make sure to have the <code>Yarn</code> installed & running on your
+                                                computer. If you
+                                                already have installed Yarn on your computer, you can skip this step. We
+                                                suggest you use Yarn instead of NPM.
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>
+                                                Git
+                                            </th>
+                                            <td>
+                                                Make sure to have <code>Git</code> installed globally & running on your
+                                                computer. If
+                                                you already have installed git on your computer, you can skip this step.
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <p class="text-muted">
+                                After you finished with the above steps, you can run the following commands into the
+                                terminal/command prompt from the root directory <span class="fw-semibold">(
+                                    Skote )</span> of the
+                                project to
+                                run the project locally or build for production use:
+                            </p>
+
+                            <table class="table table-bordered m-0">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 20%;">
+                                            <i class="ti-file"></i> Command
+                                        </th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <code>yarn</code>
+                                        </td>
+                                        <td>
+                                            This would install all the required dependencies in the
+                                            <code>node_modules</code> folder.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <code>composer install</code>
+                                        </td>
+                                        <td>
+                                            command to install all of the framework's dependencies.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <h6 class="pt-2">
+                                                Please run the below command to generate the new key.
+                                            </h6>
+                                            <pre class=" language-markup my-3"
+                                                tabindex="0"><code class=" language-markup">php artisan key:generate</code></pre>
+                                            <h6 class="mb-3">
+                                                Please fill your DB credentials in the .env file.
+                                            </h6>
+                                            <div class="p-3 bg-light text-muted">
+                                                DB_CONNECTION=mysql<br> DB_HOST=127.0.0.1
+                                                <br> DB_PORT=3306
+                                                <br> DB_DATABASE=steex_laravel
+                                                <br> DB_USERNAME=root
+                                                <br> DB_PASSWORD=
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <h6 class="mb-3">
+                                                Please fill your Email credentials in the .env file.
+                                            </h6>
+                                            <div class="p-3 bg-light text-muted">
+                                                MAIL_MAILER=<br>MAIL_HOST=
+                                                <br> MAIL_PORT=
+                                                <br> MAIL_USERNAME=
+                                                <br> MAIL_PASSWORD=
+                                                <br>MAIL_ENCRYPTION=
+                                                <br>MAIL_FROM_ADDRESS=
+                                                <br>MAIL_FROM_NAME="${APP_NAME}"
+                                            </div>
+                                            <p>
+                                                If you don't have an credentials for email you can create it from Google
+                                                Developer or you can use Mailtrap or any other, it's mandatory for
+                                                forget
+                                                password or other mail functionality.
+                                            </p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <h6>By yarn :</h6>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <code>yarn run build</code>
+                                        </td>
+                                        <td>
+                                            To compile all scss to css and copy all files from resource to public
+                                            directory.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <code>yarn run build-rtl</code>
+                                        </td>
+                                        <td>
+                                            to generate RTL css from css.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <h6>By npm :</h6>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <code>npm run build</code>
+                                        </td>
+                                        <td>
+                                            To compile all scss to css and copy all files from resource to public
+                                            directory.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <code>npm run build-rtl</code>
+                                        </td>
+                                        <td>
+                                            to generate RTL css from css.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <h6 class="p-2">
+                                                Please run the following commands to clear all cache from the
+                                                project.
+                                            </h6>
+                                            <pre
+                                                tabindex="0"><code class=" language-markup">php artisan optimize:clear</code></pre>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <code>php artisan migrate</code>
+                                        </td>
+                                        <td>
+                                            This will migrate the database tables. For more details visit <a
+                                                href="https://laravel.com/docs/8.x/migrations"
+                                                target="_blank">https://laravel.com/docs/10.x/migrations </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <code>php artisan serve</code>
+                                        </td>
+                                        <td>
+                                            The development server is accessible at <a
+                                                href="http://localhost:8000">http://localhost:8000</a>.
+                                            <br> To run on other port just run command : php artisan serve
+                                            --port=8001
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                @@include("partials/footer.html")
+            </div>
+            <!-- End Page-content -->
+
+        </div>
+        <!-- end main content-->
+
+    </div>
+    <!-- END layout-wrapper -->
+
+    @@include("partials/vendor-scripts.html")
+    <script src="../assets/libs/prismjs/prism.js"></script>
+
+    <!-- App js -->
+    <script src="https://themesbrand.com/docs/app.js"></script>
+</body>
+
+</html>

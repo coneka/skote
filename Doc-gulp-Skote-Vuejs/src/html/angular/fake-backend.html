@@ -1,0 +1,62 @@
+@@include("partials/main.html")
+
+<head>
+
+    @@include("partials/title-meta.html", {"title": "FakeBackend Setup"})
+
+    @@include("partials/head-css.html")
+
+</head>
+
+<!-- Begin page -->
+<div id="layout-wrapper">
+
+    @@include("partials/menu.html")
+
+    @@include("partials/sidebar.html")
+    <!-- ============================================================== -->
+    <!-- Start right Content here -->
+    <!-- ============================================================== -->
+    <div class="main-content">
+
+        <div class="page-content">
+            <div class="container-fluid">
+
+                <div class="w-100">
+                    <div id="fake-backend" class="mb-5">
+                        <h5 class="mt-4">Fake-Backend</h5>
+                        <p>Set <code> defaultauth=fackbackend </code> in the <code>environment.ts</code> file. <br> Also fill all the firebase credentials in the <code>environment.ts</code>file. <br>
+                            Now just uncomment the below fack-backend setup code in the <code>app.module.ts</code> file. <br>
+                        </p>
+                        <pre class="language-markup p-3 rounded mb-4 bg-ligh position-relative"><button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard" title="Copy to clipboard">Copy</button><code>import { FakeBackendInterceptor } from './core/helpers/fake-backend';
+
+if (environment.defaultauth === 'firebase') {
+    initFirebaseBackend(environment.firebaseConfig);
+} else {
+    FakeBackendInterceptor;
+}
+</code></pre>
+                    </div>
+                </div>
+
+            </div> <!-- container-fluid -->
+            @@include("partials/footer.html")
+        </div>
+        <!-- End Page-content -->
+    </div>
+    <!-- end main content-->
+
+</div>
+<!-- END layout-wrapper -->
+
+
+@@include("partials/vendor-scripts.html")
+
+<!-- prismjs plugin -->
+<script src="../assets/libs/prismjs/prism.js"></script>
+
+<!-- App js -->
+<script src="https://themesbrand.com/docs/app.js"></script>
+</body>
+
+</html>

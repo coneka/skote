@@ -1,0 +1,181 @@
+@@include("partials/main.html")
+
+<head>
+
+    @@include("partials/title-meta.html", {"title": "Customization Javascript"})
+
+    @@include("partials/head-css.html")
+
+</head>
+
+<body>
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+
+        @@include("partials/menu.html")
+
+        @@include("partials/sidebar.html")
+
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+
+            <div class="page-content">
+                <div class="container">
+
+                    <h3 class="mb-4">Customization Javascript</h3>
+
+                    <h5 class="mb-4">Structure</h5>
+
+                    <div class="verti-sitemap">
+                        <ul class="list-unstyled mb-0">
+                            <li class="p-0 parent-title"><a href="javascript: void(0);" class="fw-medium">
+                                    <i class="bi bi-folder2 me-1 text-warning align-bottom"></i>js</a>
+                            </li>
+                            <li>
+                                <div class="first-list">
+                                    <div class="list-wrap">
+                                        <a href="javascript: void(0);" class="fw-medium text-primary"><i class="bi bi-folder2 me-1 text-warning align-bottom"></i>pages</a>
+                                    </div>
+                                    <ul class="second-list list-unstyled">
+                                        <li>
+                                            <a href="javascript: void(0);"><i class="bi bi-folder2 me-1 text-warning align-bottom"></i>plugins</a>
+                                            <ul class="second-list list-unstyled">
+                                                <li>
+                                                    <a href="javascript: void(0);"><i class="bi bi-folder2 me-1 text-warning align-bottom"></i>All the plugins json/js files are here.</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="javascript: void(0);"><i class=" bi bi-folder2 me-1 text-warning align-bottom"></i>All the pages init js files are here.</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="first-list">
+                                    <div class="list-wrap">
+                                        <a href="javascript: void(0);" class="fw-medium text-primary"><i class="bi bi-file-earmark-text me-1 text-info align-bottom"></i>app.js</a>
+                                        <ul class="second-list list-unstyled">
+                                            <li>
+                                                <a href="javascript: void(0);"><i class="bi bi-folder2 me-1 text-warning align-bottom"></i>Common Js for menu, layouts, multi language, Toastify, Choices, flatpickr, Tooltip, Loader etc.</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="first-list">
+                                    <div class="list-wrap">
+                                        <a href="javascript: void(0);" class="fw-medium text-primary"><i class="bi bi-file-earmark-text me-1 text-info align-bottom"></i>plugins.js</a>
+                                        <ul class="second-list list-unstyled">
+                                            <li>
+                                                <a href="javascript: void(0);"><i class="bi bi-folder2 me-1 text-warning align-bottom"></i>Adding Toastify, Choices and flatpickr plugins js file if any elements found.</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h5 class="mb-3 mt-4">Js file structure</h5>
+                        <p class="text-muted mb-4">We have added all layouts files in the html <code>/assets/js</code> folder and in the laravel <code>/resources   /js</code> folder.</p>
+                        
+                        <dl class="mb-0">
+                            <dt><code>app.js</code></dt>
+                            <dd class="mb-3 text-muted">To set active menu, and layout settings and basic setup of the theme.</dd>
+                            
+                            <dt><code>plugins.js</code></dt>
+                            <dd class="mb-3 text-muted">To setup all toast-list, data-choices and data-provider add the script based on it.</dd>
+                            <dt><code>pages</code></dt>
+                            <dd class="mb-0 text-muted">All the pages init js files are added in the pages folder. We have named the js files based on the plugins and package so it will be easy to identify the init js file.</dd>
+                        </dl>
+                    </div>
+
+                    <h5 class="mb-3 mt-4">app.js Methods</h5>
+                    <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th scope="col" style="width:40%">Method</th>
+                                    <th scope="col">Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row"><code>initMetisMenu();</code></th>
+                                    <td>
+                                        Enable sidebar menu.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><code>initLeftMenuCollapse();</code></th>
+                                    <td>Manage the sidebar menu collapse.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><code>initActiveMenu();</code></th>
+                                    <td>Manage the activation of sidebar menu.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><code>initMenuItemScroll();</code></th>
+                                    <td>Manage the Sidebar scrolling.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><code>initHoriMenuActive();</code></th>
+                                    <td>Manage the activation of Horizontal menu.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><code>initFullScreen();</code></th>
+                                    <td>Manage the full screen JS. </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><code>initRightSidebar();</code></th>
+                                    <td>Manage the right sidebar related JS.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><code>initDropdownMenu();</code></th>
+                                    <td>Manage Horizontal menu related dropdown.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><code>initComponents();</code></th>
+                                    <td>Manage component related JS.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><code>initSettings();</code></th>
+                                    <td>Manage light &amp; dark mode.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><code>initLanguage();</code></th>
+                                    <td>Set selected language with Ajax call.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><code>initPreloader();</code></th>
+                                    <td>Manage loader related code.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><code>initCheckAll();</code></th>
+                                    <td>Manage Table multiple select data.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                   
+                </div>
+                @@include("partials/footer.html")
+            </div>
+            <!-- End Page-content -->
+
+        </div>
+        <!-- end main content-->
+
+    </div>
+    <!-- END layout-wrapper -->
+
+    @@include("partials/vendor-scripts.html")
+
+    <!-- App js -->
+    <script src="https://themesbrand.com/docs/app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,76 @@
+@@include("partials/main.html")
+
+<head>
+
+    @@include("partials/title-meta.html", {"title": "Dark Mode"})
+
+    @@include("partials/head-css.html")
+
+</head>
+
+<body>
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+
+        @@include("partials/menu.html")
+
+        @@include("partials/sidebar.html")
+
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+
+            <div class="page-content">
+                <div class="container">
+
+                    <div class="mb-5">
+                        <h3 class="mb-4"><i class="bi bi-moon-stars me-2"></i> Dark Mode Setting</h3>
+                        <p class="mb-3">
+                            To have Dark mode enabled, replace the reference of <code>bootstrap.min.css</code> stylesheet file to <code>bootstrap-dark.min.css</code> and <code>app.min.css</code> to <code>app-dark.min.css</code>
+                            <br> in the <code> templates/element/head-css.php </code> and make sure to update the <code>webroot/js/app.js </code> has initSettings() function which you need to comment out. Because it will set to default the light version.
+                        </p>
+                    </div>
+
+                    <div class="mb-5">
+                        <h3 class="mb-4"><i class="bi bi-brightness-high me-2"></i> Light Mode Setting</h3>
+                        <p class="mb-3">
+                            To have Light mode enabled,
+                            replace the reference of <code>bootstrap-dark.min.css</code>
+                            stylesheet file to <code>bootstrap.min.css</code>
+                            and <code>app-dark.min.css</code>
+                            to <code>app.min.css</code>
+                            <br> in the <code>
+                                templates/element/head-css.php
+                            </code> and make sure to update
+                            the <code>webroot/js/app.js
+                            </code> has initSettings()
+                            function which you need to
+                            comment out. Because it will set
+                            to default the light version.
+                        </p>
+                    </div>
+
+                    
+
+                </div>
+                @@include("partials/footer.html")
+            </div>
+            <!-- End Page-content -->
+
+        </div>
+        <!-- end main content-->
+
+    </div>
+    <!-- END layout-wrapper -->
+
+
+
+    @@include("partials/vendor-scripts.html")
+    <script src="../assets/libs/prismjs/prism.js"></script>
+    <!-- App js -->
+    <script src="https://themesbrand.com/docs/app.js"></script>
+</body>
+
+</html>

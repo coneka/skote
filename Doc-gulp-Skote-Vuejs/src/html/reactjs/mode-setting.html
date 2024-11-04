@@ -1,0 +1,175 @@
+@@include("partials/main.html")
+
+<head>
+
+    @@include("partials/title-meta.html", {"title": "Dark Mode"})
+
+    @@include("partials/head-css.html")
+
+</head>
+
+<body>
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+
+        @@include("partials/menu.html")
+
+        @@include("partials/sidebar.html")
+
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+
+            <div class="page-content">
+                <div class="container">
+
+                    <div class="mb-5">
+                        <h3 class="mb-4"><i class="bi bi-moon-stars me-2"></i> Dark Mode Setting</h3>
+                        <p class="text-muted">
+                            To switch the layout mode to Dark, you can easily make the following adjustments within the
+                            <code>src/store/layout/reducer.js</code> file.
+                        </p>
+                        <p class="text-muted">
+                            You can enable Dark Mode by setting the attribute <b>layoutModeType</b> to 
+                            <code>layoutModeType: layoutModeTypes.DARK</code> within the 
+                            <code>src/store/layout/reducer.js</code> file. There were
+                            no need to make changes in style or other files.
+                        </p>
+
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Attribute</th>
+                                    <th scope="col">Value</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>layoutModeType</code></td>
+                                    <td>
+                                        <pre class="language-markup rounded"><code>layoutModeType: layoutModeTypes.DARK,</code></pre>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div> 
+
+                    <div class="mb-5">
+                        <h3 class="mb-4"><i class="bi bi-brightness-high me-2"></i> Light Mode Setting</h3>
+                        <p class="text-muted">
+                            To switch the layout mode to Light, you can easily make the following adjustments within the
+                            <code>src/store/layout/reducer.js</code> file.
+                        </p>
+                        <p class="text-muted">
+                            You can enable Light Mode by setting the attribute <b>layoutModeType</b> to 
+                            <code>layoutModeType: layoutModeTypes.LIGHT</code> within the 
+                            <code>src/store/layout/reducer.js</code> file. There were
+                            no need to make changes in style or other files.
+                        </p>
+
+
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Attribute</th>
+                                    <th scope="col">Value</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>layoutModeType</code></td>
+                                    <td>
+                                        <pre class="language-markup rounded"><code>layoutModeType: layoutModeTypes.LIGHT,
+</code></pre>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="mb-5">
+                        <h3 class="mb-4"><i class="bi bi-layout-sidebar"></i> Verticle Mode Setting</h3>
+                        <p class="text-muted">
+                            To switch the layout type to Verticle, you can easily make the following adjustments within the
+                            <code>src/store/layout/reducer.js</code> file.
+                        </p>
+                        <p class="text-muted">
+                            You can enable Verticle type by setting the attribute <b>layoutType</b> to 
+                            <code>layoutType: layoutTypes.VERTICAL</code> within the 
+                            <code>src/store/layout/reducer.js</code> file. There were
+                            no need to make changes in style or other files.
+                        </p>
+
+
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Attribute</th>
+                                    <th scope="col">Value</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>layoutType</code></td>
+                                    <td>
+                                        <pre class="language-markup rounded"><code>layoutType: layoutTypes.VERTICAL,</code></pre>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div>
+                        <h3 class="mb-4"><i class="bi bi-window"></i> Horizontal Mode Setting</h3>
+                        <p class="text-muted">
+                            To switch the layout type to Horizontal, you can easily make the following adjustments within the
+                            <code>src/store/layout/reducer.js</code> file.
+                        </p>
+                        <p class="text-muted">
+                            You can enable Horizontal type by setting the attribute <b>layoutType</b> to 
+                            <code>layoutType: layoutTypes.HORIZONTAL</code> within the 
+                            <code>src/store/layout/reducer.js</code> file. There were
+                            no need to make changes in style or other files.
+                        </p>
+
+
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Attribute</th>
+                                    <th scope="col">Value</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>layoutType</code></td>
+                                    <td>
+                                        <pre class="language-markup rounded"><code>layoutType: layoutTypes.HORIZONTAL,</code></pre>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+                @@include("partials/footer.html")
+            </div>
+            <!-- End Page-content -->
+
+        </div>
+        <!-- end main content-->
+
+    </div>
+    <!-- END layout-wrapper -->
+
+
+
+    @@include("partials/vendor-scripts.html")
+    <script src="../assets/libs/prismjs/prism.js"></script>
+    <!-- App js -->
+    <script src="https://themesbrand.com/docs/app.js"></script>
+</body>
+
+</html>

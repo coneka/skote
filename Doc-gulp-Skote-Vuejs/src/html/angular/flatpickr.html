@@ -1,0 +1,149 @@
+@@include("partials/main.html")
+
+<head>
+
+    @@include("partials/title-meta.html", {"title": "Flatpickr"})
+
+    @@include("partials/head-css.html")
+
+</head>
+
+<!-- Begin page -->
+<div id="layout-wrapper">
+
+    @@include("partials/menu.html")
+
+    @@include("partials/sidebar.html")
+    <!-- ============================================================== -->
+    <!-- Start right Content here -->
+    <!-- ============================================================== -->
+    <div class="main-content">
+
+        <div class="page-content">
+            <div class="container">
+                <h3 class="mb-3">Overview<a href="https://www.npmjs.com/package/angularx-flatpickr" target="_blank" class="float-end badge bg-success-subtle link-success fs-6">Official Website <i class="ri-external-link-line"></i></a> </h3>
+
+                <p class="text-muted mb-4">flatpickr is a lightweight and powerful datetime picker.</p>
+
+                <div>
+                    <h5 class="mb-3">Add Package</h5>
+                    <div class="alert bg-light border-start border-3 rounded-start-0 border-primary-subtle border-0 mb-4">npm install flatpickr angularx-flatpickr --save</div>
+
+                    <h5 class="mb-3">Remove Package</h5>
+                    <div class="alert bg-light border-start border-3 rounded-start-0 border-primary-subtle border-0 mb-4">npm uninstall flatpickr angularx-flatpickr or you can remove package by removing specific package from package.json</div>
+                </div>
+
+                <h5 class="mb-3">Flatpickr Examples</h5>
+
+                <div class="table-responsive">
+                    <table class="table mb-0">
+                        <thead>
+                            <tr>
+                                <th scope="col" style="width:40%">Title</th>
+                                <th scope="col">Template</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">Basic</th>
+                                <td><pre class="language-markup p-3 rounded"><code>&lt;input type=&quot;text&quot; class=&quot;form-control&quot; mwlFlatpickr [altInput]=&quot;true&quot; [convertModelValue]=&quot;true&quot;&gt;</code></pre>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <th scope="row">DateTime</th>
+                                <td><pre class="language-markup p-3 rounded"><code>&lt;input type=&quot;text&quot; class=&quot;form-control&quot; mwlFlatpickr [altInput]=&quot;true&quot; [enableTime]=&quot;true&quot; [convertModelValue]=&quot;true&quot; altFormat=&quot;d.m.y H:i&quot; [dateFormat]=&quot;'d.m.y H:i'&quot;&gt;;</code></pre>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Human-Friendly Dates</th>
+                                <td><pre class="language-markup p-3 rounded"><code> &lt;input type=&quot;text&quot; class=&quot;form-control flatpickr-input&quot; mwlFlatpickr [altInput]=&quot;true&quot; [convertModelValue]=&quot;true&quot; altFormat=&quot;F j, Y&quot; dateFormat=&quot;Y-m-d&quot;&gt;</code></pre>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">MinDate and MaxDate</th>
+                                <td><pre class="language-markup p-3 rounded"><code>&lt;input type=&quot;text&quot; class=&quot;form-control&quot; mwlFlatpickr [altInput]=&quot;true&quot; minDate=&quot;25-01-2023&quot; maxDate=&quot;29-01-2023&quot; [convertModelValue]=&quot;true&quot; altFormat=&quot;d M, Y&quot; dateFormat=&quot;d M, Y&quot;&gt;</code></pre>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Range</th>
+                                <td><pre class="language-markup p-3 rounded"><code> &lt;input type=&quot;text&quot; class=&quot;form-control&quot; mwlFlatpickr [altInput]=&quot;true&quot; [convertModelValue]=&quot;true&quot; mode=&quot;range&quot; altFormat=&quot;d M, Y&quot; dateFormat=&quot;d M, Y&quot;&gt;</code></pre>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Selecting Multiple Dates</th>
+                                <td><pre class="language-markup p-3 rounded"><code>&lt;input type=&quot;text&quot; class=&quot;form-control&quot; mwlFlatpickr [altInput]=&quot;true&quot; [convertModelValue]=&quot;true&quot; mode=&quot;multiple&quot; altFormat=&quot;d M, Y&quot; dateFormat=&quot;d M, Y&quot;&gt;</code></pre>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Inline Date Picker Demo</th>
+                                <td><pre class="language-markup p-3 rounded"><code>&lt;input class=&quot;form-control flatpickr-input&quot; type=&quot;text&quot; mwlFlatpickr [altInput]=&quot;true&quot; [convertModelValue]=&quot;true&quot; [inline]=&quot;true&quot;&gt;</code></pre>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                    <!-- end table -->
+                </div>
+
+                <h5 class="mb-3 mt-4">Timepickr Examples:</h5>
+
+                <div class="table-responsive">
+                    <table class="table align-middle mb-0">
+                        <thead>
+                            <tr>
+                                <th scope="col">Title</th>
+                                <th scope="col">HTML</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">Basic Timepicker</th>
+                                <td>
+                                    <pre class="language-markup p-3 rounded"><code> &lt;timepicker class=&quot;timepicker&quot;&gt;&lt;/timepicker&gt;</code></pre>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <th scope="row">24-hour Time Picker</th>
+                                <td>
+                                    <pre class="language-markup p-3 rounded"><code>&lt;timepicker class=&quot;timepicker&quot; [showMeridian]=&quot;false&quot;&gt;&lt;/timepicker&gt;</code></pre>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Time Picker w/ Limits</th>
+                                <td>
+                                    <pre class="language-markup p-3 rounded"><code> &lt;timepicker class=&quot;timepicker&quot; [min]=&quot;minTime&quot; [max]=&quot;maxTime&quot;&gt;&lt;/timepicker&gt;</code></pre>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Preloading Time</th>
+                                <td>
+                                    <pre class="language-markup p-3 rounded"><code> &lt;timepicker class=&quot;timepicker&quot; [(ngModel)]=&quot;myTime&quot; [min]=&quot;minTime&quot; [max]=&quot;maxTime&quot;&gt;&lt;/timepicker&gt;</code></pre>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!-- end table -->
+                </div>
+            </div>
+            @@include("partials/footer.html")
+        </div>
+        <!-- End Page-content -->
+
+    </div>
+    <!-- end main content-->
+
+</div>
+<!-- END layout-wrapper -->
+
+@@include("partials/vendor-scripts.html")
+
+<!-- prismjs plugin -->
+<script src="../assets/libs/prismjs/prism.js"></script>
+
+<!-- App js -->
+<script src="https://themesbrand.com/docs/app.js"></script>
+</body>
+
+</html>

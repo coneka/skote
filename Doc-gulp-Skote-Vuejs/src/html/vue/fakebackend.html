@@ -1,0 +1,219 @@
+@@include("partials/main.html")
+
+<head>
+
+    @@include("partials/title-meta.html", {"title": "Fakebackend Setup"})
+
+    @@include("partials/head-css.html")
+
+</head>
+
+<body>
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+
+        @@include("partials/menu.html")
+        @@include("partials/sidebar.html")
+
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+
+            <div class="page-content">
+                <div class="container">
+
+                    <h3 class="mb-4">Fakebackend Setup</h3>
+                    <ul class="nav nav-tabs mb-3 bg-light" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link fw-bold active" data-bs-toggle="tab" href="#vue1" role="tab">
+                                Vue
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="d-xl-flex">
+
+                        <div class="w-100">
+                            <div id="fake-backend">
+                                <div>
+                                    <p class="mb-1">
+                                        Set <code> VUE_APP_DEFAULT_AUTH=fakebackend </code> in the
+                                        <code>.env</code>
+                                        file. <br>
+                                        Remove the firebase
+                                        setup code from the
+                                        <code>main.js</code>
+                                        file. <br>
+                                        Now put
+                                        the below
+                                        fake-backend setup
+                                        code in the
+                                        <code>main.js</code>
+                                        file. <br>
+                                    </p>
+                                    <pre class="p-3 rounded mb-4 bg-ligh position-relative language-markup"
+                                        tabindex="0">
+<button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard">Copy</button><code>import fakeBackend from "./helpers/fake-backend";
+                
+// Activating fake backend
+
+fakeBackend();</code></pre>
+                                    <p class="mb-0">It is often used for development and testing
+                                        purposes, as it
+                                        allows developers to test their code without having to worry
+                                        about the
+                                        availability of a real backend.</p>
+
+                                </div>
+                                <h5 class="fs-lg pt-2">
+                                    How to Integrate custom FakeBackend?
+                                </h5>
+                                <p>Please follow the below steps:</p>
+                                <div>
+                                    <p class="mb-1">-> First you needs to create json data,
+                                        which you can put in
+                                        the same file or in one individual file. In that json data we have code as
+                                        per below.
+                                    </p>
+
+                                    <pre class="p-3 rounded mb-4 bg-ligh position-relative language-markup"
+                                        tabindex="0">
+<button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard">Copy</button>
+<code>let users = JSON.parse(localStorage.getItem('users'))
+    || [{ username: "admin", email: "admin@themesbrand.com", password: "123456" }];
+</code></pre>
+                                </div>
+
+                                <p>
+                                    -> For api call follow belowed code.
+
+                                </p>
+
+                                <pre class="p-3 rounded mb-4 bg-ligh position-relative language-markup" tabindex="0">
+<button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard">Copy</button><code class="language-markup">export function configureFakeBackend() {
+let realFetch = window.fetch;
+window.fetch = function (url, opts) {
+            
+    return new Promise((resolve, reject) => {
+    // wrap in timeout to simulate server api call
+    setTimeout(() => {
+
+    // authenticate
+    if (url.endsWith('/users/authenticate') && opts.method === 'POST') {
+    // get parameters from post request
+    let params = JSON.parse(opts.body);
+
+    // find if any user matches login credentials
+    let filteredUsers = users.filter(user => {
+    return user.email === params.email && user.password === params.password;
+    });
+
+    if (filteredUsers.length) {
+    // if login details are valid return user details and fake jwt token
+    let user = filteredUsers[0];
+    let responseJson = {
+    id: user.id,
+    username: user.username,
+    name: user.name,
+    email: user.email,
+    token: 'fake-jwt-token'
+    };
+    resolve({ ok: true, text: () => Promise.resolve(JSON.stringify(responseJson)) });
+    } else {
+    // else return error
+    reject('These credentials do not match our records.');
+    }
+
+    return;
+    }
+
+    // get users
+    if (url.endsWith('/users') && opts.method === 'GET') {
+    // check for fake auth token in header and return users if valid, this security is
+    implemented server side in a real application
+    if (opts.headers && opts.headers.Authorization === 'Bearer fake-jwt-token') {
+    resolve({ ok: true, text: () => Promise.resolve(JSON.stringify(users)) });
+    } else {
+    // return 401 not authorised if token is null or invalid
+    reject('Unauthorised');
+    }
+
+    return;
+    }
+
+    // get user by id
+    if (url.match(/\/users\/\d+$/) && opts.method === 'GET') {
+    // check for fake auth token in header and return user if valid, this security is
+    implemented server side in a real application
+    if (opts.headers && opts.headers.Authorization === 'Bearer fake-jwt-token') {
+    // find user by id in users array
+    let urlParts = url.split('/');
+    let id = parseInt(urlParts[urlParts.length - 1]);
+    let matchedUsers = users.filter(user => { return user.id === id; });
+    let user = matchedUsers.length ? matchedUsers[0] : null;
+
+    // respond 200 OK with user
+    resolve({ ok: true, text: () => JSON.stringify(user) });
+    } else {
+    // return 401 not authorised if token is null or invalid
+    reject('Unauthorised');
+    }
+
+    return;
+    }
+
+    // register user
+    if (url.endsWith('/users/register') && opts.method === 'POST') {
+    // get new user object from post body
+    let newUser = JSON.parse(opts.body);
+    // validation
+    let duplicateUser = users.filter(user => { return user.username === newUser.username;
+    }).length;
+    if (duplicateUser) {
+    reject("Username '" + newUser.username + "' is already taken");
+    return;
+    }
+
+    // save new user
+    newUser.id = users.length ? Math.max(...users.map(user => user.id)) + 1 : 1;
+    users.push(newUser);
+    localStorage.setItem('users', JSON.stringify(users));
+
+    // respond 200 OK
+    resolve({ ok: true, text: () => Promise.resolve() });
+
+    return;
+    }
+
+    // pass through any requests not handled above
+    realFetch(url, opts).then(response => resolve(response));
+
+    }, 500);
+    });
+    }
+}</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @@include("partials/footer.html")
+            </div>
+            <!-- End Page-content -->
+
+        </div>
+        <!-- end main content-->
+
+    </div>
+    <!-- END layout-wrapper -->
+
+    @@include("partials/vendor-scripts.html")
+
+    <!-- prismjs plugin -->
+    <script src="../assets/libs/prismjs/prism.js"></script>
+
+    <!-- App js -->
+    <script src="https://themesbrand.com/docs/app.js"></script>
+</body>
+
+</html>

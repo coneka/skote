@@ -1,0 +1,144 @@
+@@include("partials/main.html")
+
+<head>
+
+    @@include("partials/title-meta.html", {"title": "Flatpickr"})
+
+    @@include("partials/head-css.html")
+
+</head>
+
+<body>
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+
+        @@include("partials/menu.html")
+        @@include("partials/sidebar.html")
+
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+ 
+            <div class="page-content">
+                <div class="container">
+                    <h3 class="mb-3">Overview<a href="https://flatpickr.js.org/examples/" target="_blank"
+                            class="float-end badge bg-success-subtle link-success fs-6">Official Website <i
+                                class="ri-external-link-line"></i></a> </h3>
+                    <p class="text-muted mb-4">Flatpickr is a robust and lightweight datetime picker solution.</p>
+
+                    <h5 class="mb-3 mt-4">Timepickr Examples:</h5>
+                    <div>
+                        <h5 class="mb-3">Add Package</h5>
+                        <div
+                            class="alert bg-light border-start border-3 rounded-start-0 border-primary-subtle border-0 mb-4">
+                            yarn add react-flatpickr </div>
+
+                        <h5 class="mb-3">Import Package</h5>
+                        <div
+                            class="alert bg-light border-start border-3 rounded-start-0 border-primary-subtle border-0 mb-4">
+                            import Flatpickr from "react-flatpickr";</div>
+
+                        <h5 class="mb-3">Remove Package</h5>
+                        <div
+                            class="alert bg-light border-start border-3 rounded-start-0 border-primary-subtle border-0 mb-4">
+                            yarn remove react-flatpickr ( or you can remove package by removing specific package from
+                            package.json )</div>
+                    </div>
+
+                    <div class="table-responsive">
+                        <table class="table align-middle mb-0">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Title</th>
+                                    <th scope="col">React</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Basic Timepicker</th>
+                                    <td>
+                                        <pre class="p-3 rounded language-markup"><code class="language-markup">&lt;Flatpickr 
+className=&quot;form-control&quot;
+placeholder=&quot;Select time&quot;
+options={{
+enableTime: true,
+noCalendar: true,
+dateFormat: &quot;H:i&quot;,
+}}
+/&gt;</code></pre>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <th scope="row">24-hour Time Picker</th>
+                                    <td>
+                                        <pre class="p-3 rounded language-markup"><code class="language-markup">&lt;Flatpickr className=&quot;form-control&quot;
+options={{
+enableTime: true,
+noCalendar: true,
+dateFormat: &quot;H:i&quot;,
+time_24hr: true
+}}
+/&gt;</code></pre>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Time Picker w/ Limits</th>
+                                    <td>
+                                        <pre class="p-3 rounded language-markup"><code class="language-markup">&lt;Flatpickr
+className=&quot;form-control&quot;
+options={{
+enableTime: true,
+noCalendar: true,
+dateFormat: &quot;H:i&quot;,
+minTime: &quot;16:00&quot;,
+maxTime: &quot;22:30&quot;,
+}}
+/&gt;</code></pre>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Inline</th>
+                                    <td>
+                                        <pre class="p-3 rounded language-markup"><code class="language-markup">&lt;Flatpickr
+className=&quot;form-control&quot;
+options={{
+enableTime: true,
+noCalendar: true,
+inline: true,
+}}
+/&gt;</code></pre>
+                                    </td>
+                                </tr>
+
+
+                            </tbody>
+                        </table>
+                        <!-- end table -->
+                    </div>
+
+                </div>
+                @@include("partials/footer.html")
+            </div>
+            <!-- End Page-content -->
+
+        </div>
+        <!-- end main content-->
+
+    </div>
+    <!-- END layout-wrapper -->
+
+
+
+    @@include("partials/vendor-scripts.html")
+
+    <!-- prismjs plugin -->
+    <script src="../assets/libs/prismjs/prism.js"></script>
+
+    <!-- App js -->
+    <script src="https://themesbrand.com/docs/app.js"></script>
+</body>
+
+</html>

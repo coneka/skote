@@ -1,0 +1,24 @@
+{
+    "run": "all",
+    "demos": [
+        "html",
+        "nodejs",
+        "laravel",
+        "django",
+        "nodejs",
+        "flask",
+        "ultimate",
+        "symfony",
+        "cakephp",
+        "codeigniter",
+        "php",
+        "ajax",
+        "react",
+        "angular",
+        "vue",
+        "mvc",
+        "core",
+        "reactjs",
+        "react-ts"
+    ]
+}

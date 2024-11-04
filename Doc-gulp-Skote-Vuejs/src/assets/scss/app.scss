@@ -1,0 +1,29 @@
+/*
+Template Name: Judia - Admin & Dashboard Template
+Author: Themesbrand
+Version: 1.0.0
+Website: https://themesbrand.com/
+Contact: support@themesbrand.com
+File: Main Css File
+*/
+
+//Core files
+@import "./node_modules/bootstrap/scss/functions";
+@import "./node_modules/bootstrap/scss/variables";
+@import "variables";
+@import "variables-dark";
+@import "./node_modules/bootstrap/scss/mixins";
+@import "./node_modules/bootstrap/scss/bootstrap";
+
+// Structure
+@import "structure/topbar";
+@import "structure/sidebar";
+
+// Components
+@import "components/avatar";
+@import "components/helper";
+@import "components/timeline";
+
+
+@import "plugins/custom-scrollbar";
+@import "plugins/prismjs";

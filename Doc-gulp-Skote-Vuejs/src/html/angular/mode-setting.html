@@ -1,0 +1,104 @@
+@@include("partials/main.html")
+
+<head>
+
+    @@include("partials/title-meta.html", {"title": "Dark Mode"})
+
+    @@include("partials/head-css.html")
+
+</head>
+
+<body>
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+
+        @@include("partials/menu.html")
+
+        @@include("partials/sidebar.html")
+
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+
+            <div class="page-content">
+                <div class="container">
+
+                    <div class="mb-5">
+                        <h3 class="mb-4"><i class="bi bi-moon-stars me-2"></i> Dark Mode Setting</h3>
+                        <p class="text-muted">You can simply change layout mode to Dark by doing the
+                            below changes in the
+                            file <code>src/app/layout/layout-models.ts</code>.</p>
+                        <p class="text-muted mb-4">update the object parameter
+                            <code>LAYOUT_MODE: dark</code>. It will update the layout mode to Dark mode. No need to change any css or js files.
+                        </p>
+
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Attribute</th>
+                                    <th scope="col">Value</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>data-bs-theme</code></td>
+                                    <td>
+                                        <pre class="language-markup rounded"><code>&lt;!doctype html&gt;
+&lt;html lang="en" data-bs-theme="dark"&gt;</code></pre>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="mb-5">
+                        <h3 class="mb-4"><i class="bi bi-brightness-high me-2"></i> Light Mode Setting</h3>
+                        <p class="text-muted">You can simply change layout mode to Light by doing the
+                            below changes in the
+                            file <code>src/app/layout/layout-model.ts</code>.</p>
+                        <p class="text-muted mb-4">update the object parameter
+                            <code>LAYOUT_MODE: light</code> It will update the layout mode to Light mode. No need to change
+                            any css or js files.
+                        </p>
+
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Attribute</th>
+                                    <th scope="col">Value</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>data-bs-theme</code></td>
+                                    <td>
+                                        <pre class="language-markup rounded"><code>&lt;!doctype html&gt;
+&lt;html lang="en" data-bs-theme="light"&gt;</code></pre>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+                @@include("partials/footer.html")
+            </div>
+            <!-- End Page-content -->
+
+        </div>
+        <!-- end main content-->
+
+    </div>
+    <!-- END layout-wrapper -->
+
+
+
+    @@include("partials/vendor-scripts.html")
+    <script src="../assets/libs/prismjs/prism.js"></script>
+    <!-- App js -->
+    <script src="https://themesbrand.com/docs/app.js"></script>
+</body>
+
+</html>

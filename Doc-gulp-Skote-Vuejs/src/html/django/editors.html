@@ -1,0 +1,107 @@
+@@include("partials/main.html")
+
+<head>
+
+    @@include("partials/title-meta.html", {"title": "Editors"})
+
+    @@include("partials/head-css.html")
+
+</head>
+
+<body>
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+
+        @@include("partials/menu.html")
+        @@include("partials/sidebar.html")
+
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+
+            <div class="page-content">
+                <div class="container">
+                    <h3 class="mb-3">Editors<a href="https://github.com/tinymce/tinymce" target="_blank" class="float-end badge bg-success-subtle link-success fs-6">Official Website <i class="ri-external-link-line"></i></a> </h3>
+                    <p class="text-muted mb-4">TinyMCE is the most advanced WYSIWYG HTML editor designed to simplify website content creation.</p>
+
+                    <div>
+                        <h5 class="mb-3">Javascript</h5>
+                        <pre class="language-markup p-3 rounded mb-3"><code>&lt;!-- Tinymce wysihtml5 js --&gt;
+&lt;script src=&quot;{% static 'libs/tinymce/tinymce.min.js' %}&quot;&gt;&lt;/script&gt;</code></pre>
+
+                        <h5 class="mb-3">Initjs (Custom js)</h5>
+                        <pre class="language-markup p-3 rounded mb-3"><code>&lt;!-- File upload js --&gt;
+&lt;script src=&quot;{% static 'js/pages/form-editor.init.js' %}&quot;&gt;&lt;/script&gt;</code></pre>
+
+                        <h5 class="mb-3">Add Package</h5>
+                        <div class="alert bg-light border-start border-3 rounded-start-0 border-primary-subtle border-0 mb-4">yarn add tinymce --save</div>
+
+                        <h5 class="mb-3">Remove Package</h5>
+                        <div class="alert bg-light border-start border-3 rounded-start-0 border-primary-subtle border-0 mb-4">yarn remove tinymce or you can remove package by removing specific package from package.json</div>
+                    </div>
+
+                    <h5 class="mb-3 mt-4">Examples:</h5>
+
+                    <div class="table-responsive">
+                        <table class="table mb-0">
+                            <thead>
+                                <tr>
+                                    <th scope="col" style="width:40%">Title</th>
+                                    <th scope="col">Javascript</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Tinymce</th>
+                                    <td>
+                                        <pre class="language-js p-3 rounded"><code>if(document.getElementById("elm1")){
+                                            tinymce.init({
+                                                selector: 'textarea#elm1',
+                                                height: 350,
+                                                plugins: [
+                                                    'advlist', 'autolink', 'lists', 'link', 'image', 'charmap', 'preview',
+                                                    'anchor', 'searchreplace', 'visualblocks', 'code', 'fullscreen',
+                                                    'insertdatetime', 'media', 'table', 'help', 'wordcount'
+                                                ],
+                                                toolbar: 'undo redo | blocks | ' +
+                                                    'bold italic backcolor | alignleft aligncenter ' +
+                                                    'alignright alignjustify | bullist numlist outdent indent | ' +
+                                                    'removeformat | help',
+                                                content_style: 'body { font-family:"Poppins",sans-serif; font-size:16px }'
+                                            });
+                                            }
+</code></pre>
+                                    </td>
+                                </tr>
+
+
+                            </tbody>
+                        </table>
+                        <!-- end table -->
+                    </div>
+
+                </div>
+                @@include("partials/footer.html")
+            </div>
+            <!-- End Page-content -->
+
+        </div>
+        <!-- end main content-->
+
+    </div>
+    <!-- END layout-wrapper -->
+
+
+
+    @@include("partials/vendor-scripts.html")
+
+    <!-- prismjs plugin -->
+    <script src="../assets/libs/prismjs/prism.js"></script>
+
+    <!-- App js -->
+    <script src="https://themesbrand.com/docs/app.js"></script>
+</body>
+
+</html>

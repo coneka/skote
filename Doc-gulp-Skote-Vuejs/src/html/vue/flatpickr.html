@@ -1,0 +1,123 @@
+@@include("partials/main.html")
+
+<head>
+
+    @@include("partials/title-meta.html", {"title": "Flatpickr"})
+
+    @@include("partials/head-css.html")
+
+</head>
+
+<body>
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+
+        @@include("partials/menu.html")
+        @@include("partials/sidebar.html")
+
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+ 
+            <div class="page-content">
+                <div class="container">
+                    <h3 class="mb-3">Overview<a href="https://flatpickr.js.org/examples/" target="_blank"
+                            class="float-end badge bg-success-subtle link-success fs-6">Official Website <i
+                                class="ri-external-link-line"></i></a> </h3>
+                    <p class="text-muted mb-4">Flatpickr is a robust and lightweight datetime picker solution.</p>
+
+                    <h5 class="mb-3 mt-4">Timepickr Examples:</h5>
+                    <div>
+                        <h5 class="mb-3">Add Package</h5>
+                        <div
+                            class="alert bg-light border-start border-3 rounded-start-0 border-primary-subtle border-0 mb-4">
+                            yarn add vue-flatpickr-component </div>
+
+                        <h5 class="mb-3">Import Package</h5>
+                        <div
+                            class="alert bg-light border-start border-3 rounded-start-0 border-primary-subtle border-0 mb-4">
+                            import flatPickr from "vue-flatpickr-component";</div>
+
+                        <h5 class="mb-3">Remove Package</h5>
+                        <div
+                            class="alert bg-light border-start border-3 rounded-start-0 border-primary-subtle border-0 mb-4">
+                            yarn remove vue-flatpickr-component ( or you can remove package by removing specific package from
+                            package.json )</div>
+                    </div>
+
+                    <div class="table-responsive">
+                        <table class="table align-middle mb-0">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Title</th>
+                                    <th scope="col">Vue</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Default Date Picker</th>
+                                    <td>
+                                        <pre class="p-3 rounded language-markup"><code class="language-markup">&lt;flat-pickr v-model="picked" :first-day-of-week="1" lang="en" confirm class="form-control">&lt;/flat-pickr></code></pre>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <th scope="row">Auto close</th>
+                                    <td>
+                                        <pre class="p-3 rounded language-markup"><code class="language-markup">&lt;flat-pickr v-model="autoClose" :first-day-of-week="1" lang="en" class="form-control">&lt;/flat-pickr></code></pre>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Date Range</th>
+                                    <td>
+                                        <pre class="p-3 rounded language-markup"><code class="language-markup">&lt;flat-pickr class="form-control" v-model="daterange" range append-to-body lang="en" confirm>&lt;/flat-pickr></code></pre>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Month View</th>
+                                    <td>
+                                        <pre class="p-3 rounded language-markup"><code class="language-markup">&lt;flat-pickr class="form-control" v-model="demoMonth" :startingView="'month'" lang="en" confirm placeholder="Select Month">&lt;/flat-pickr></code></pre>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Year View</th>
+                                    <td>
+                                        <pre class="p-3 rounded language-markup"><code class="language-markup">&lt;flat-pickr class="form-control" v-model="demoYear" :startingView="'year'" lang="en" confirm placeholder="Select Year">&lt;/flat-pickr></code></pre>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Time View</th>
+                                    <td>
+                                        <pre class="p-3 rounded language-markup"><code class="language-markup">&lt;flat-pickr class="form-control" v-model="time" :minimumView="'time'" placeholder="hh:mm:ss a">&lt;/flat-pickr></code></pre>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <!-- end table -->
+                    </div>
+
+                </div>
+                @@include("partials/footer.html")
+            </div>
+            <!-- End Page-content -->
+
+        </div>
+        <!-- end main content-->
+
+    </div>
+    <!-- END layout-wrapper -->
+
+
+
+    @@include("partials/vendor-scripts.html")
+
+    <!-- prismjs plugin -->
+    <script src="../assets/libs/prismjs/prism.js"></script>
+
+    <!-- App js -->
+    <script src="https://themesbrand.com/docs/app.js"></script>
+</body>
+
+</html>

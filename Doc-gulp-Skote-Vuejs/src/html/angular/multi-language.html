@@ -1,0 +1,108 @@
+@@include("partials/main.html")
+
+<head>
+
+  @@include("partials/title-meta.html", {"title": "Multi Language"})
+
+  @@include("partials/head-css.html")
+
+</head>
+
+<body>
+
+  <!-- Begin page -->
+  <div id="layout-wrapper">
+
+    @@include("partials/menu.html")
+
+    @@include("partials/sidebar.html")
+    <!-- ============================================================== -->
+    <!-- Start right Content here -->
+    <!-- ============================================================== -->
+    <div class="main-content">
+
+      <div class="page-content">
+        <div class="container">
+
+          <h3 class="mb-4">Multi Language Settings</h3>
+
+          <div id="i18n" class="mb-1">
+            <h5 class="mb-3">
+              i18n Language translation settings
+            </h5>
+            <p></p>
+            <h6>How to add new language?</h6>
+            <p>
+              Let's add German language in the existing language.
+            </p>
+            <ol>
+              <li>
+                Create a new file
+                <code>src/i18n/de.json</code>
+              </li>
+              <li>
+                update the below code in the
+                <code>src/i18n.js</code> file <br />
+                <br />
+                <pre class="language-markup p-3 rounded mb-4 bg-ligh position-relative mt-3"><button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard" title="Copy to clipboard">Copy</button><code>{ text: 'Deutsche', flag: 'assets/images/flags/germany.svg', lang: 'de' }, </code></pre>
+                <p class="mb-3 mt-3">The translationGr JSON file,</p>
+                <pre class="language-markup p-3 rounded mb-4 bg-ligh position-relative mt-3"><button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard" title="Copy to clipboard">Copy</button><code>{
+    "Mega Menu": "Mega-Menu",
+}</code></pre>
+              </li>
+              <li class="mt-3">
+                Now add the new option of German language in the
+                topbar language dropdown menu
+                <code>src/app/layouts/topbar/topbar.component.ts</code>
+              </li>
+              <li>
+                install <code>ngx-translate</code> and <code>ngx-cookie-service</code> packages
+              </li>
+              <li>
+                <code>ngx-translate</code> import in <b>app.module.ts</b> file
+                <pre class="language-markup p-3 rounded mb-4 bg-ligh position-relative mt-3"><button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard" title="Copy to clipboard">Copy</button><code>
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+
+export function createTranslateLoader(http: HttpClient): any {
+  return new TranslateHttpLoader(http, 'assets/i18n/', '.json');
+}
+
+@NgModule({
+  imports: [
+    TranslateModule.forRoot({
+      defaultLanguage: 'en',
+      loader: {
+        provide: TranslateLoader,
+        useFactory: (createTranslateLoader),
+        deps: [HttpClient]
+      }
+    }),
+  ]
+});
+</code></pre>
+              </li>
+
+            </ol>
+          </div>
+
+          @@include("partials/footer.html")
+        </div>
+        <!-- End Page-content -->
+
+      </div>
+      <!-- end main content-->
+
+    </div>
+    <!-- END layout-wrapper -->
+
+    @@include("partials/vendor-scripts.html")
+
+    <!-- prismjs plugin -->
+    <script src="../assets/libs/prismjs/prism.js"></script>
+
+    <!-- App js -->
+    <script src="https://themesbrand.com/docs/app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,121 @@
+@@include("partials/main.html")
+
+<head>
+
+    @@include("partials/title-meta.html", {"title": "Icons"})
+
+    @@include("partials/head-css.html")
+
+</head>
+
+<body>
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+
+        @@include("partials/menu.html")
+        @@include("partials/sidebar.html")
+
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+
+            <div class="page-content">
+                <div class="container">
+
+                    <h3 class="mb-4">Icon SCSS</h3>
+                    <p class="text-muted mb-3"><b>icons.scss</b> is source file for the all custom icon
+                        plugins.</p>
+
+                    <pre class="language-markup p-3 rounded mb-4 position-relative"><button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal">Copy</button><code>&lt;!-- icons CSS --&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;assets/css/icons.min.css&quot;&gt;
+</code></pre>
+
+                    <div class="mb-4">
+                        <h5 class="fw-semibold mb-3">Remix icons<a href="https://remixicon.com/" target="_blank" class="float-end badge bg-success-subtle link-success">Official Website <i class="ri-external-link-line"></i></a> </h5>
+                        <p class="text-muted mb-4">Remix Icon is a set of open-source neutral-style system symbols elaborately crafted for designers and developers. of the icons are free for both personal and commercial use.</p>
+                        <h6 class="mt-3">SCSS File:</h6>
+                        <p class="text-muted mb-3">Remix icons are scss based here.where remix icon code is
+                            written in <code>_remixicon.scss</code> </p>
+                        <pre class="language-js p-3 rounded mb-4 position-relative"><button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal">Copy</button><code>&lt;!-- remix icon scss --&gt;
+@import &quot;custom/plugins/icons/remixicon&quot;;
+</code></pre>
+
+                        <h6 class="mt-3">Example:</h6>
+                        <pre class="language-markup p-3 rounded position-relative"><button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal">Copy</button><code>&lt;i class=&quot;ri-home-line&quot;&gt;&lt;/i&gt; or &lt;i class=&quot;ri-home-fill&quot;&gt;&lt;/i&gt;</code></pre>
+                    </div>
+
+                    <div class="mb-4">
+                        <h5 class="fw-semibold mb-3">Box icons<a href="https://boxicons.com/" target="_blank" class="float-end badge bg-success-subtle link-success">Official Website <i class="ri-external-link-line"></i></a> </h5>
+                        <p class="text-muted mb-4">Boxicons is a free collection of carefully crafted open source icons.Each icon is designed on a 24px grid with the material guidelines.</p>
+
+                        <h6 class="mt-3">SCSS File:</h6>
+                        <p class="text-muted mb-3">Remix icons are scss based here.where remix icon code is
+                            written in <span>_boxicon.scss</span> </p>
+                        <pre class="language-js p-3 rounded mb-4 position-relative"><button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal">Copy</button><code>&lt;!-- box icon scss --&gt;
+@import &quot;custom/plugins/icons/boxicons&quot;; 
+</code></pre>
+
+                        <h6 class="mt-3">Example:</h6>
+                        <pre class="language-markup p-3 rounded position-relative"><button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal">Copy</button><code>&lt;i class=&quot;bx bx-**&quot;&gt;&lt;/i&gt;</code></pre>
+                    </div>
+
+                    <div class="mb-4">
+                        <h5 class="mb-4">Bootstrap Icons<a href="https://icons.getbootstrap.com/" target="_blank" class="float-end badge bg-success-subtle link-success">Official Website <i class="ri-external-link-line"></i></a> </h5>
+                        <p class="text-muted mb-3">Free, high quality, open source icon library with over 1,800 icons. Include them anyway you like—SVGs, SVG sprite, or web fonts. Use them with or without Bootstrap in any project.</p>
+
+                        <h6 class="mt-3">SCSS File:</h6>
+                        <p class="text-muted mb-3">Bootstrap Icons are scss based here. Where Bootstrap icon
+                            code is written in <span>_bootstrap-icons.scss</span> </p>
+                        <pre class="language-js p-3 rounded mb-4 position-relative"><button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal">Copy</button><code>&lt;!-- Bootstrap icons scss --&gt;
+@import &quot;custom/plugins/icons/bootstrap-icons&quot;; 
+</code></pre>
+
+                        <h6 class="mt-3">Example:</h6>
+                        <pre class="language-markup p-3 rounded position-relative"><button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal">Copy</button><code>&lt;i class=&quot;bi bi-*-*&quot;&gt;&lt;/i&gt;</code></pre>
+
+                    </div>
+
+                    <div>
+                        <h5 class="mb-4">Phosphor Icons<a href="https://phosphoricons.com/" target="_blank" class="float-end badge bg-success-subtle link-success">Official Website <i class="ri-external-link-line"></i></a> </h5>
+                        <p class="text-muted mb-3">Phosphor is a flexible icon family for interfaces, diagrams, presentations — whatever, really.</p>
+
+                        <h6 class="mt-3">SCSS File:</h6>
+                        <p class="text-muted mb-3">Phosphor Icons are scss based here. Where Phosphor icon
+                            code is written in <span>_phosphor.scss</span> </p>
+                        <pre class="language-js p-3 rounded mb-4 position-relative"><button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal">Copy</button><code>&lt;!-- Phosphor icons scss --&gt;
+    @import &quot;custom/plugins/icons/phosphor&quot;; 
+    </code></pre>
+
+                        <h6 class="mt-3">Example:</h6>
+                        <pre class="language-markup p-3 rounded position-relative"><button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal">Copy</button><code>&lt;i class=&quot;ph-*-*&quot;&gt;&lt;/i&gt;</code></pre>
+                    </div>
+
+                </div>
+                <footer class="footer mt-4 text-center position-absolute end-0 bottom-0 start-0">
+                    <div class="container border-top py-3">
+                        <script>document.write(new Date().getFullYear())</script> © Skote.
+                    </div>
+                </footer>
+
+            </div>
+            <!-- End Page-content -->
+
+        </div>
+        <!-- end main content-->
+    </div>
+    <!-- END layout-wrapper -->
+
+
+
+    @@include("partials/vendor-scripts.html")
+
+    <!-- prismjs plugin -->
+    <script src="../assets/libs/prismjs/prism.js"></script>
+
+    <!-- App js -->
+    <script src="https://themesbrand.com/docs/app.js"></script>
+</body>
+
+</html>

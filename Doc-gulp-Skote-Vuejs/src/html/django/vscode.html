@@ -1,0 +1,126 @@
+@@include("partials/main.html")
+
+<head>
+
+    @@include("partials/title-meta.html", {"title": "Visual Studio Configuration"})
+
+    @@include("partials/head-css.html")
+
+</head>
+
+<body>
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+
+        @@include("partials/menu.html")
+
+        @@include("partials/sidebar.html")
+
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+
+            <div class="page-content">
+                <div class="container">
+
+                    <h3 class="mb-4">Visual Studio Code on Windows</h3>
+
+                    <div class="mb-4">
+                        <h5>Installation:</h5>
+                        <ol>
+                            <li>Download the <a href="https://go.microsoft.com/fwlink/?LinkID=534107" target="_blank">Visual Studio Code installer</a> for Windows.</li>
+                            <li>Once it is downloaded, run the installer (VSCodeUserSetup-{version}.exe). This will only take a minute.</li>
+                            <li>By default, VS Code is installed under <code>C:\Users\{Username}\AppData\Local\Programs\Microsoft VS Code</code>.</li>
+                        </ol>
+
+                        <p>Alternatively, you can also download a <a href="https://code.visualstudio.com/docs/?dv=winzip" target="_blank">Zip archive</a>, extract it and run Code from there.</p>
+
+                        <p class="alert alert-success text-success"><strong>Tip:</strong> Setup will add Visual Studio Code to your <code>%PATH%</code>, so from the console you can type <code>code .</code> to open VS Code on that folder. You will need to restart your console after the installation for the change to the <code>%PATH%</code> environmental variable to take effect.</p>
+                    </div>
+
+                    <div class="mb-4">
+                        <h5>User setup versus system setup:</h5>
+                        <p>VS Code provides both Windows <strong>user</strong> and <strong>system</strong> level setups.</p>
+                        <p>The <a href="https://go.microsoft.com/fwlink/?LinkID=534107" target="_blank">user setup</a> does not require Administrator privileges to run as the location will be under your user Local AppData ( <code>LOCALAPPDATA</code> ) folder. Since it requires no elevation, the user setup is able to provide a smoother background update experience. This is the preferred way to install VS Code on Windows.</p>
+
+                        <p class="alert-danger alert text-danger">
+                            <strong>Note:</strong> When running VS Code as Administrator in a user setup installation, updates will be disabled.
+                        </p>
+
+                        <p>The <a href="https://go.microsoft.com/fwlink/?linkid=852157" target="_blank">system setup</a> requires elevation to Administrator privileges to run and will place the installation under the system's Program Files. The in-product update flow will also require elevation, making it less streamlined than the user setup. On the other hand, installing VS Code using the system setup means that it will be available to all users in the system.</p>
+
+                        <p>See the <a href="https://code.visualstudio.com/download" target="_blank">Download Visual Studio Code</a> page for a complete list of available installation options.</p>
+                    </div>
+
+                    <div class="mb-4">
+                        <h5>Updates:</h5>
+
+                        <p>VS Code ships monthly <a href="https://code.visualstudio.com/updates" target="_blank">releases</a> and supports auto-update when a new release is available. If you're prompted by VS Code, accept the newest update and it will be installed (you won't need to do anything else to get the latest bits).</p>
+
+                        <p class="alert-danger alert text-danger">
+                            <strong>Note:</strong> You can <a href="https://code.visualstudio.com/docs/supporting/faq.md#how-do-i-opt-out-of-vs-code-autoupdates" class="text-danger fw-semibold text-decoration-underline">disable auto-update</a> if you prefer to update VS Code on your own schedule.
+                        </p>
+                    </div>
+
+                    <div class="mb-4">
+                        <h5>Common questions:</h5>
+
+                        <p class="fw-semibold">1.What command-line arguments are supported by the Windows Setup?</p>
+                        <p class="mb-1">VS Code uses <a href="https://www.jrsoftware.org/isinfo.php" target="_blank">Inno Setup</a> to create its setup package
+                            for Windows. Thus, all the <a href="https://www.jrsoftware.org/ishelp/index.php?topic=setupcmdline" target="_blank">Inno Setup command-line switches</a> are available for use.</p>
+                        <p class="mb-5">Additionally, you can prevent the Setup from launching VS Code after completion with <code>/mergetasks=!runcode</code>.</p>
+
+                        <p class="fw-semibold">2.I'm having trouble with the installer</p>
+                        <p>Try using the <a href="https://code.visualstudio.com/docs/?dv=winzip" target="_blank">zip file</a> instead of the installer. To use this, unzip VS Code in your <code>AppData\Local\Programs</code> folder.</p>
+
+                        <p class="alert-danger alert text-danger mb-5">
+                            <strong>Note:</strong> When VS Code is installed via a Zip file, you will need to manually update it for each <a href="https://code.visualstudio.com/updates" target="_blank" class="text-danger fw-semibold text-decoration-underline">releases</a>.
+                        </p>
+
+                        <p class="fw-semibold">3.Icons are missing</p>
+                        <p class="mb-1">I installed Visual Studio Code on my Windows 8 machine. Why are some icons not appearing in the workbench and editor?</p>
+                        <p>VS Code uses <a href="https://en.wikipedia.org/wiki/Scalable_Vector_Graphics" target="_blank">SVG</a> icons and we have found instances where the .SVG file extension is associated with something other than <code>image/svg+xml</code>. We're considering options to fix it, but for now here's a workaround:</p>
+
+                        <p>Using the Command Prompt:</p>
+                        <ol>
+                            <li>Open an Administrator Command Prompt.</li>
+                            <li>Type <code>REG ADD HKCR\.svg /f /v "Content Type" /t REG_SZ /d image/svg+xml</code>.</li>
+                        </ol>
+
+                        <p>Using the Registry Editor (regedit):</p>
+                        <ol>
+                            <li>Start <code>regedit</code>.</li>
+                            <li>Open the <code>HKEY_CLASSES_ROOT</code> key.</li>
+                            <li>Find the <code>.svg</code> key.</li>
+                            <li>Set its <code>Content Type</code> Data value to <code>image/svg+xml</code>.</li>
+                            <li>Exit <code>regedit</code>.</li>
+                        </ol>
+                    </div>
+
+                    <p>For more information visit <a href="https://code.visualstudio.com/docs" target="_blank">Visual Studio</a>.</p>
+                    
+
+                </div>
+                @@include("partials/footer.html")
+            </div>
+            <!-- End Page-content -->
+
+        </div>
+        <!-- end main content-->
+
+    </div>
+    <!-- END layout-wrapper -->
+
+
+
+    @@include("partials/vendor-scripts.html")
+    <!-- prismjs plugin -->
+    <script src="../assets/libs/prismjs/prism.js"></script>
+
+    <!-- App js -->
+    <script src="https://themesbrand.com/docs/app.js"></script>
+</body>
+
+</html>

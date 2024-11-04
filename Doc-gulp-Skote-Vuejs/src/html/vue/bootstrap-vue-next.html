@@ -1,0 +1,78 @@
+@@include("partials/main.html")
+
+<head>
+
+    @@include("partials/title-meta.html", {"title": "Bootstrap-vue-next"})
+
+    @@include("partials/head-css.html")
+
+</head>
+
+<body>
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+
+        @@include("partials/menu.html")
+        @@include("partials/sidebar.html")
+
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+
+            <div class="page-content">
+                <div class="container">
+
+                    <h3 class="mb-4">Overview <a href="https://bootstrap-vue-next.github.io/bootstrap-vue-next/" target="_blank"
+                            class="float-end badge bg-success-subtle fs-6 text-success">Official Website <i
+                                class="ri-external-link-line"></i></a></h3>
+                    <p class="text-muted mb-4">bootstrap-vue-next is a popular open-source library that provides a set of
+                        Bootstrap components implemented as pure Vue components. It allows you to easily integrate
+                        Bootstrap's styling and UI components into your Vue applications without the need for jQuery
+                        or additional JavaScript dependencies.</p>
+
+                    <div
+                        class="alert bg-light border-start border-3 rounded-start-0 border-danger-subtle border-0 mb-4 fw-bold">
+                        It is a required plugin. We suggest that do not remove this.
+                    </div>
+
+                    <h5 class="mb-3">Usage</h5>
+                    <pre class="language-markup p-3 rounded"><code>We've used Bootstrap-vue-next.</code></pre>
+
+                    <h5 class="mt-3">Add Package</h5>
+                    <div
+                        class="alert bg-light border-start border-3 rounded-start-0 border-primary-subtle border-0 mb-4">
+                        yarn add bootstrap-vue-next
+                    </div>
+
+                    <h5 class="mt-3">Remove Package</h5>
+                    <div
+                        class="alert bg-light border-start border-3 rounded-start-0 border-primary-subtle border-0 mb-4">
+                        yarn remove bootstrap-vue-next ( you can remove package by removing specific package from
+                        package.json )
+                    </div>
+
+                </div>
+                @@include("partials/footer.html")
+            </div>
+            <!-- End Page-content -->
+
+        </div>
+        <!-- end main content-->
+
+    </div>
+    <!-- END layout-wrapper -->
+
+
+
+    @@include("partials/vendor-scripts.html")
+
+    <!-- prismjs plugin -->
+    <script src="../assets/libs/prismjs/prism.js"></script>
+
+    <!-- App js -->
+    <script src="https://themesbrand.com/docs/app.js"></script>
+</body>
+
+</html>

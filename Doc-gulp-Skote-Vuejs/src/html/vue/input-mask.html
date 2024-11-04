@@ -1,0 +1,134 @@
+@@include("partials/main.html")
+
+<head>
+
+    @@include("partials/title-meta.html", {"title": "Input Mask"})
+
+    @@include("partials/head-css.html")
+
+</head>
+
+<body>
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+
+        @@include("partials/menu.html")
+        @@include("partials/sidebar.html")
+
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+
+            <div class="page-content">
+                <div class="container">
+                    <h3 class="mb-3">Overview<a href="https://beholdr.github.io/maska/#/?id=dynamic-masks"
+                            target="_blank" class="float-end badge bg-success-subtle link-success fs-6">Official Website
+                            <i class="ri-external-link-line"></i></a> </h3>
+                    <p class="text-muted mb-4">Input Mask is a javaScript library for formatting input text
+                        content when you are typing.</p>
+
+                    <div>
+                        <h5 class="mb-3">Add Package</h5>
+                        <div
+                            class="alert bg-light border-start border-3 rounded-start-0 border-primary-subtle border-0 mb-4">
+                            yarn add maska </div>
+
+                        <h5 class="mb-3">Import Package</h5>
+                        <div
+                            class="alert bg-light border-start border-3 rounded-start-0 border-primary-subtle border-0 mb-4">
+                            import { vMaska } from "maska" <br>
+
+                            
+                            createApp(App)<br>
+                            ... <br>
+                            .directive("maska", vMaska)
+                        </div>
+
+                        <h5 class="mb-3">Remove Package</h5>
+                        <div
+                            class="alert bg-light border-start border-3 rounded-start-0 border-primary-subtle border-0 mb-4">
+                            yarn remove maska ( or you can remove package by removing specific package from
+                            package.json )</div>
+                    </div>
+                    <h5 class="mb-3 mt-4">Date Formatting:</h5>
+
+                    <div class="table-responsive">
+                        <table class="table mb-0">
+                            <thead>
+                                <tr>
+                                    <th scope="col" style="width:40%">Title</th>
+                                    <th scope="col">Vue</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Dynamic mask</th>
+                                    <td>
+                                        <pre
+                                            class="language-js p-3 rounded"><code>&lt;BFormInput type="text" v-maska :data-maska="['#.## cm']" class="form-control" id="regexp-mask" /></code></pre>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Phone with code</th>
+                                    <td>
+                                        <pre
+                                            class="language-js p-3 rounded"><code>&lt;BFormInput type="text" v-maska :data-maska="['+1 (###) ##-##-##']" class="form-control" id="phone-mask" /></code></pre>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Credit card</th>
+                                    <td>
+                                        <pre
+                                            class="language-js p-3 rounded"><code>&lt;BFormInput type="text" v-maska :data-maska="'#### #### #### ####'" class="form-control" id="number-mask" /></code></pre>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Date</th>
+                                    <td>
+                                        <pre
+                                            class="language-js p-3 rounded"><code>&lt;BFormInput type="text" v-maska :data-maska="'##/##/####'" class="form-control" id="date-mask" /></code></pre>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">IP Address</th>
+                                    <td>
+                                        <pre
+                                            class="language-js p-3 rounded"><code>&lt;BFormInput type="text" v-maska :data-maska="'###.###.###.###'" class="form-control" /></code></pre>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">CPF/CNPJ</th>
+                                    <td>
+                                        <pre
+                                            class="language-js p-3 rounded"><code>&lt;BFormInput type="text" v-maska :data-maska="['###.###.###-##', '##.###.###/####-##']" class="form-control" id="currency-mask" /></code></pre>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <!-- end table -->
+                    </div>
+                </div>
+                @@include("partials/footer.html")
+            </div>
+            <!-- End Page-content -->
+
+        </div>
+        <!-- end main content-->
+
+    </div>
+    <!-- END layout-wrapper -->
+
+
+
+    @@include("partials/vendor-scripts.html")
+
+    <!-- prismjs plugin -->
+    <script src="../assets/libs/prismjs/prism.js"></script>
+
+    <!-- App js -->
+    <script src="https://themesbrand.com/docs/app.js"></script>
+</body>
+
+</html>

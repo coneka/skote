@@ -1,0 +1,159 @@
+@@include("partials/main.html")
+
+<head>
+
+    @@include("partials/title-meta.html", {"title": "Choices"})
+
+    @@include("partials/head-css.html")
+
+</head>
+
+<body>
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+
+        @@include("partials/menu.html")
+        @@include("partials/sidebar.html")
+
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+
+            <div class="page-content">
+                <div class="container">
+                    <h3 class="mb-3">Overview<a href="https://react-select.com/home" target="_blank"
+                            class="float-end badge bg-success-subtle link-success fs-6">Official Website <i
+                                class="ri-external-link-line"></i></a> </h3>
+                    <p class="text-muted mb-4">The "react-select" package is a popular open-source library for building
+                        flexible and customizable
+                        select input components in React applications. It provides a wide range of features and options
+                        to
+                        create dropdown menus, autocompletes, and other select-like UI elements with ease.</p>
+
+
+                    <div>
+                        <h5 class="mb-3">Add Package</h5>
+                        <div
+                            class="alert bg-light border-start border-3 rounded-start-0 border-primary-subtle border-0 mb-4">
+                            yarn add react-select</div>
+
+                        <h5 class="mb-3">Import Package</h5>
+                        <div
+                            class="alert bg-light border-start border-3 rounded-start-0 border-primary-subtle border-0 mb-4">
+                            import Select from "react-select";</div>
+
+                        <h5 class="mb-3">Remove Package</h5>
+                        <div
+                            class="alert bg-light border-start border-3 rounded-start-0 border-primary-subtle border-0 mb-4">
+                            yarn remove react-select ( or you can remove package by removing specific package from
+                            package.json )</div>
+                    </div>
+
+                    <h5 class="mb-3">Examples:</h5>
+
+                    <div class="table-responsive">
+                        <table class="table mb-0">
+                            <thead>
+                                <tr>
+                                    <th scope="col" style="width:40%">Title</th>
+                                    <th scope="col">React</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Single Select</th>
+                                    <td>
+                                        <pre class="language-markup p-3 rounded"><code>const options = [
+    { value: "Choice 1", label: "Choice 1" },
+    { value: "Choice 2", label: "Choice 2" },
+    { value: "Choice 3", label: "Choice 3" },
+    { value: "Choice 4", label: "Choice 4" },
+]
+
+const [selectedGroup, setselectedGroup] = useState(null);
+
+function handleSelectGroup(selectedGroup) {
+    setselectedGroup(selectedGroup);
+}
+  
+&lt;Select
+    value={selectedGroup}
+    options={options}
+    onChange={() => {
+        handleSelectGroup();
+    }}
+/></code></pre>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Default Multiple Select</th>
+                                    <td>
+                                        <pre class="language-markup p-3 rounded"><code>const options = [
+    { value: "Choice 1", label: "Choice 1" },
+    { value: "Choice 2", label: "Choice 2" },
+    { value: "Choice 3", label: "Choice 3" },
+    { value: "Choice 4", label: "Choice 4" },
+]
+
+const [selectedMulti, setselectedMulti] = useState(null);
+
+function handleMulti(selectedMulti) {
+    setselectedMulti(selectedMulti);
+}
+
+&lt;Select
+    value={selectedMulti}
+    isMulti={true}
+    onChange={() => {
+      handleMulti();
+    }}
+    options={options}
+/></code></pre>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Ajax (remote data)</th>
+                                    <td>
+                                        <pre class="language-markup p-3 rounded"><code> &lt;Select
+    value={selectedMulti2}
+    onChange={() => {
+        handleMulti2();
+    }}
+    options={options}
+    className="select2-selection"
+    isLoading={true}
+/></code></pre>
+                                    </td>
+                                </tr>
+
+
+                            </tbody>
+                        </table>
+                        <!-- end table -->
+                    </div>
+
+                </div>
+                @@include("partials/footer.html")
+            </div>
+            <!-- End Page-content -->
+
+        </div>
+        <!-- end main content-->
+
+    </div>
+    <!-- END layout-wrapper -->
+
+
+
+    @@include("partials/vendor-scripts.html")
+
+    <!-- prismjs plugin -->
+    <script src="../assets/libs/prismjs/prism.js"></script>
+
+    <!-- App js -->
+    <script src="https://themesbrand.com/docs/app.js"></script>
+</body>
+
+</html>

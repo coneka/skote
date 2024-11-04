@@ -1,0 +1,101 @@
+@@include("partials/main.html")
+
+<head>
+
+    @@include("partials/title-meta.html", {"title": "Customization CSS"})
+
+    @@include("partials/head-css.html")
+
+</head>
+
+<body>
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+
+        @@include("partials/menu.html")
+
+        @@include("partials/sidebar.html")
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+
+            <div class="page-content">
+                <div class="container">
+                    <h3 class="mb-4">Customization CSS</h3>
+
+                    <h5 class="mb-3">Structure</h5>
+                    <p class="text-muted mb-4">If you do not want to use SASS then you can use <code>( Skote_v*/assets )</code> folder. We suggest you not make any changes in the app, bootstrap or other CSS files. </p>
+
+                    <div class="verti-sitemap">
+                        <ul class="list-unstyled mb-0">
+                            <li class="p-0 parent-title"><a href="javascript: void(0);" class="fw-medium fs-14"><i class=" bi bi-folder2 me-1 text-warning align-bottom"></i>css</a></li>
+                            <li>
+                                <div class="first-list">
+                                    <div class="list-wrap">
+                                        <a href="javascript: void(0);" class="fw-medium text-primary"><i class="bi bi-file-earmark-text me-1 text-info align-bottom"></i>app.css <span class="text-muted">/ all the theme's related css are define in this file.</span></a>
+                                    </div>
+                                </div>
+                                <div class="first-list">
+                                    <div class="list-wrap">
+                                        <a href="javascript: void(0);" class="fw-medium text-primary"><i class="bi bi-file-earmark-text me-1 text-info align-bottom"></i>app.min.css </a>
+                                    </div>
+                                </div>
+                                <div class="first-list">
+                                    <div class="list-wrap">
+                                        <a href="javascript: void(0);" class="fw-medium text-primary"><i class="bi bi-file-earmark-text me-1 text-info align-bottom"></i>app-rtl.min.css <span class="text-muted">/ RTL related css are define in this file.</span></a>
+                                    </div>
+                                </div>
+                                <div class="first-list">
+                                    <div class="list-wrap">
+                                        <a href="javascript: void(0);" class="fw-medium text-primary"><i class="bi bi-file-earmark-text me-1 text-info align-bottom"></i>bootstrap.css</a>
+                                    </div>
+                                </div>
+                                <div class="first-list">
+                                    <div class="list-wrap">
+                                        <a href="javascript: void(0);" class="fw-medium text-primary"><i class="bi bi-file-earmark-text me-1 text-info align-bottom"></i>bootstrap.min.css</a>
+                                    </div>
+                                </div>
+                                <div class="first-list">
+                                    <div class="list-wrap">
+                                        <a href="javascript: void(0);" class="fw-medium text-primary"><i class="bi bi-file-earmark-text me-1 text-info align-bottom"></i>bootstrap-rtl.min.css <span class="text-muted">/ bootstrap-related rtl css define in this file.</span></a>
+                                    </div>
+                                </div>
+                                <div class="first-list">
+                                    <div class="list-wrap">
+                                        <a href="javascript: void(0);" class="fw-medium text-primary"><i class="bi bi-file-earmark-text me-1 text-info align-bottom"></i>icons.css <span class="text-muted">/ Icon related css are define in this file.</span></a>
+                                    </div>
+                                </div>
+                                <div class="first-list">
+                                    <div class="list-wrap">
+                                        <a href="javascript: void(0);" class="fw-medium text-primary"><i class="bi bi-file-earmark-text me-1 text-info align-bottom"></i>icons.min.css </a>
+                                    </div>
+                                </div>
+                                <div class="first-list">
+                                    <div class="list-wrap">
+                                        <a href="javascript: void(0);" class="fw-medium text-primary"><i class="bi bi-file-earmark-text me-1 text-info align-bottom"></i>icons-rtl.min.css </a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+                @@include("partials/footer.html")
+            </div>
+            <!-- End Page-content -->
+
+        </div>
+        <!-- end main content-->
+
+    </div>
+    <!-- END layout-wrapper -->
+
+    @@include("partials/vendor-scripts.html")
+
+    <!-- App js -->
+    <script src="https://themesbrand.com/docs/app.js"></script>
+</body>
+
+</html>

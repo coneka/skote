@@ -1,0 +1,168 @@
+@@include("partials/main.html")
+
+<head>
+
+    @@include("partials/title-meta.html", {"title": "Editable"})
+
+    @@include("partials/head-css.html")
+
+</head>
+
+<body>
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+
+        @@include("partials/menu.html")
+        @@include("partials/sidebar.html")
+
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+
+            <div class="page-content">
+                <div class="container">
+                    <h3 class="mb-3">Editable<a href="https://vitalets.github.io/bootstrap-editable/" target="_blank" class="float-end badge bg-success-subtle link-success fs-6">Official Website <i class="ri-external-link-line"></i></a> </h3>
+                    <p class="text-muted mb-4">Editable for Bootstrap In-place editing with Bootstrap Form and Popover. About. Invokes in-place editing feature to any element of your page.</p>
+
+                    <div>
+                        <h5 class="mb-3">CSS</h5>
+                        <pre class="language-markup p-3 rounded mb-3"><code>&lt;!-- Editable css --&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;{{url_for('static' ,filename='libs/bootstrap-editable/css/bootstrap-editable.css')}}&quot; type=&quot;text/css&quot; /&gt;
+</code></pre>
+
+                        <h5 class="mb-3">Javascript</h5>
+                        <pre class="language-markup p-3 rounded mb-3"><code>&lt;!-- Editable js --&gt;
+&lt;script src=&quot;{{url_for('static' ,filename='libs/bootstrap-editable/js/index.js')}}&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;{{url_for('static' ,filename='libs/moment/min/moment.min.js')}}&quot;&gt;&lt;/script&gt;</code></pre>
+
+                        <h5 class="mb-3">Initjs (Custom js)</h5>
+                        <pre class="language-markup p-3 rounded mb-3"><code>&lt;!-- File upload js --&gt;
+&lt;script src=&quot;{{url_for('static' ,filename='js/pages/form-xeditable.init.js')}}&quot;&gt;&lt;/script&gt;</code></pre>
+
+                        <h5 class="mb-3">Add Package</h5>
+                        <div class="alert bg-light border-start border-3 rounded-start-0 border-primary-subtle border-0 mb-4">yarn add bootstrap-editable --save</div>
+
+                        <h5 class="mb-3">Remove Package</h5>
+                        <div class="alert bg-light border-start border-3 rounded-start-0 border-primary-subtle border-0 mb-4">yarn remove bootstrap-editable or you can remove package by removing specific package from package.json</div>
+                    </div>
+
+                    <h5 class="mb-3 mt-4">Examples:</h5>
+
+                    <div class="table-responsive">
+                        <table class="table mb-0">
+                            <thead>
+                                <tr>
+                                    <th scope="col" style="width:40%">Title</th>
+                                    <th scope="col">Javascript</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Simple Text Field</th>
+                                    <td>
+                                        <pre class="language-js p-3 rounded"><code>$('#inline-username').editable({
+        type: 'text',
+        pk: 1,
+        name: 'username',
+        title: 'Enter username',
+        mode: 'inline',
+        inputclass: 'form-control-sm'
+    });
+</code></pre>
+                                    </td>
+                                </tr>
+                                
+                                
+                                <tr>
+                                    <th scope="row">Empty text field, required</th>
+                                    <td>
+                                        <pre class="language-js p-3 rounded"><code>$('#inline-firstname').editable({
+        validate: function (value) {
+            if ($.trim(value) == '') return 'This field is required';
+        },
+        mode: 'inline',
+        inputclass: 'form-control-sm'
+    });
+</code></pre>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Select, local array, custom display</th>
+                                    <td>
+                                        <pre class="language-js p-3 rounded"><code>$('#inline-sex').editable({
+        prepend: "not selected",
+        mode: 'inline',
+        inputclass: 'form-select form-select-sm',
+        source: [
+            {value: 1, text: 'Male'},
+            {value: 2, text: 'Female'}
+        ],
+        display: function (value, sourceData) {
+            var colors = {"": "#98a6ad", 1: "#5fbeaa", 2: "#5d9cec"},
+                elem = $.grep(sourceData, function (o) {
+                    return o.value == value;
+                });
+
+            if (elem.length) {
+                $(this).text(elem[0].text).css("color", colors[value]);
+            } else {
+                $(this).empty();
+            }
+        }
+    });
+</code></pre>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Combodate</th>
+                                    <td>
+                                        <pre class="language-js p-3 rounded"><code>$('#inline-dob').editable({
+    mode: 'inline',
+    inputclass: 'form-select form-select-sm'
+});
+</code></pre>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Textarea, buttons below. Submit by ctrl+enter</th>
+                                    <td>
+                                        <pre class="language-js p-3 rounded"><code>$('#inline-comments').editable({
+    showbuttons: 'bottom',
+    mode: 'inline',
+    inputclass: 'form-control-sm'
+});
+</code></pre>
+                                    </td>
+                                </tr>
+                                
+
+                            </tbody>
+                        </table>
+                        <!-- end table -->
+                    </div>
+
+                </div>
+                @@include("partials/footer.html")
+            </div>
+            <!-- End Page-content -->
+
+        </div>
+        <!-- end main content-->
+
+    </div>
+    <!-- END layout-wrapper -->
+
+
+
+    @@include("partials/vendor-scripts.html")
+
+    <!-- prismjs plugin -->
+    <script src="../assets/libs/prismjs/prism.js"></script>
+
+    <!-- App js -->
+    <script src="https://themesbrand.com/docs/app.js"></script>
+</body>
+
+</html>

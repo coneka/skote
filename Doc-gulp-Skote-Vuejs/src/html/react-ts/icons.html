@@ -1,0 +1,133 @@
+@@include("partials/main.html")
+
+<head>
+
+    @@include("partials/title-meta.html", {"title": "Icons"})
+
+    @@include("partials/head-css.html")
+
+</head>
+
+<body>
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+
+        @@include("partials/menu.html")
+        @@include("partials/sidebar.html")
+
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+
+            <div class="page-content">
+                <div class="container">
+
+                    <h3 class="mb-4">Icon SCSS</h3>
+                    <p class="text-muted mb-3"><b>icons.scss</b> is source file for the all custom icon
+                        plugins.</p>
+
+                    <pre class="language-markup p-3 rounded mb-4 position-relative"><button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal">Copy</button><code>// Plugins
+@import "custom/plugins/icons";
+</code></pre>
+
+                    <div class="mb-4">
+                        <h5 class="fw-semibold mb-3">Material Design Icons<a href="https://pictogrammers.com/library/mdi/" target="_blank"
+                                class="float-end badge bg-success-subtle link-success">Official Website <i
+                                    class="ri-external-link-line"></i></a> </h5>
+                        <p class="text-muted mb-4">Material Design Icon is growing icon collection allows designers and developers targeting various platforms to download icons in the format, color and size they need for any project.
+                        </p>
+                        <h6 class="mt-3">SCSS File:</h6>
+                        <p class="text-muted mb-3">Material Design Icons are scss based here.where remix icon code is written in _materialdesignicons.scss
+                            <code>_materialdesignicons.scss</code> </p>
+                        <pre class="language-js p-3 rounded mb-4 position-relative"><button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal">Copy</button><code>&lt;!-- remix icon scss --&gt;
+@import &quot;icons/materialdesignicons&quot;;
+</code></pre>
+
+                        <h6 class="mt-3">Example:</h6>
+                        <pre
+                            class="language-markup p-3 rounded position-relative"><button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal">Copy</button><code>&lt;i className="mdi mdi-*-*"></i>                            </code></pre>
+                    </div>
+
+                    <div class="mb-4">
+                        <h5 class="fw-semibold mb-3">Box icons<a href="https://boxicons.com/" target="_blank"
+                                class="float-end badge bg-success-subtle link-success">Official Website <i
+                                    class="ri-external-link-line"></i></a> </h5>
+                        <p class="text-muted mb-4">Boxicons is a free collection of carefully crafted open source
+                            icons.Each icon is designed on a 24px grid with the material guidelines.</p>
+
+                        <h6 class="mt-3">SCSS File:</h6>
+                        <p class="text-muted mb-3">Remix icons are scss based here.where remix icon code is
+                            written in <span> <code>_boxicon.scss</code></span> </p>
+                        <pre class="language-js p-3 rounded mb-4 position-relative"><button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal">Copy</button><code>&lt;!-- box icon scss --&gt;
+@import &quot;icons/boxicons&quot;; 
+</code></pre>
+
+                        <h6 class="mt-3">Example:</h6>
+                        <pre
+                            class="language-markup p-3 rounded position-relative"><button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal">Copy</button><code>&lt;i className=&quot;bx bx-**&quot;&gt;&lt;/i&gt;</code></pre>
+                    </div>
+
+                    <div class="mb-4">
+                        <h5 class="mb-4">Font Awesome Icons<a href="https://fontawesome.com/icons/" target="_blank"
+                                class="float-end badge bg-success-subtle link-success">Official Website <i
+                                    class="ri-external-link-line"></i></a> </h5>
+                        <p class="text-muted mb-3">Free, high quality, open source icon library with over 1,800 icons.
+                            Include them anyway you like—SVGs, SVG sprite, or web fonts. Use them with or without
+                            Bootstrap in any project.</p>
+
+                        <h6 class="mt-3">SCSS File:</h6>
+                        <p class="text-muted mb-3">Font Awesome Icons are scss based here. Where Font Awesome icon
+                            code is written in <span><code>_fontawesome-all.scss</code></span> </p>
+                        <pre class="language-js p-3 rounded mb-4 position-relative"><button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal">Copy</button><code>&lt;!-- Bootstrap icons scss --&gt;
+@import &quot;icons/fontawesome-all&quot;; 
+</code></pre>
+
+                        <h6 class="mt-3">Example:</h6>
+                        <pre
+                            class="language-markup p-3 rounded position-relative"><button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal">Copy</button><code>&lt;i className=&quot;fas fa-ad&quot;&gt;&lt;/i&gt;</code></pre>
+
+                    </div>
+
+                    <div>
+                        <h5 class="mb-4">Dripicons Icons<a href="http://demo.amitjakhu.com/dripicons/" target="_blank"
+                                class="float-end badge bg-success-subtle link-success">Official Website <i
+                                    class="ri-external-link-line"></i></a> </h5>
+                        <p class="text-muted mb-3">Dripicons is a flexible icon family for interfaces, diagrams,
+                            presentations — whatever, really.</p>
+
+                        <h6 class="mt-3">SCSS File:</h6>
+                        <p class="text-muted mb-3">Dripicons Icons are scss based here. Where Dripicons icon
+                            code is written in <span><code>_dripicons.scss</code></span> </p>
+                        <pre class="language-js p-3 rounded mb-4 position-relative"><button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal">Copy</button><code>&lt;!-- Phosphor icons scss --&gt;
+@import &quot;icons/dripicons&quot;;</code></pre>
+
+                        <h6 class="mt-3">Example:</h6>
+                        <pre
+                            class="language-markup p-3 rounded position-relative"><button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal">Copy</button><code>&lt;i className=&quot;dripicons-alarm&quot;&gt;&lt;/i&gt;</code></pre>
+                    </div>
+
+                </div>
+                @@include("partials/footer.html")
+            </div>
+            <!-- End Page-content -->
+
+        </div>
+        <!-- end main content-->
+
+    </div>
+    <!-- END layout-wrapper -->
+
+
+
+    @@include("partials/vendor-scripts.html")
+
+    <!-- prismjs plugin -->
+    <script src="../assets/libs/prismjs/prism.js"></script>
+
+    <!-- App js -->
+    <script src="https://themesbrand.com/docs/app.js"></script>
+</body>
+
+</html>

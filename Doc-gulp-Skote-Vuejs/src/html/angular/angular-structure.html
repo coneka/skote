@@ -1,0 +1,283 @@
+@@include("partials/main.html")
+
+<head>
+
+    @@include("partials/title-meta.html", {"title": "Angular Structure"})
+
+    @@include("partials/head-css.html")
+
+</head>
+
+<body>
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+
+        @@include("partials/menu.html")
+
+        @@include("partials/sidebar.html")
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+
+            <div class="page-content">
+                <div class="container">
+
+                    <h3 class="mb-4">Angular Folder Structure</h3>
+
+                    <div class="verti-sitemap mb-4">
+                        <ul class="list-unstyled mb-0">
+                            <li class="p-0 parent-title"><a href="javascript: void(0);" class="fw-medium fs-14"><i class="bi bi-folder2 me-1 text-warning align-bottom"></i>src</a>
+                            </li>
+                            <li>
+                                <div class="first-list">
+                                    <div class="list-wrap">
+                                        <a href="javascript: void(0);" class="fw-medium text-primary"><i class="bi bi-folder2 me-1 text-warning align-bottom"></i>app</a>
+                                    </div>
+                                </div>
+                                <div class="first-list">
+                                    <div class="list-wrap">
+                                        <a href="javascript: void(0);" class="fw-medium text-primary"><i class="bi bi-folder2 me-1 text-warning align-bottom"></i>assets</a>
+                                    </div>
+                                </div>
+                                <div class="first-list">
+                                    <div class="list-wrap">
+                                        <a href="javascript: void(0);" class="fw-medium text-primary"><i class="bi bi-folder2 me-1 text-warning align-bottom"></i>environments</a>
+                                    </div>
+                                </div>
+                                <div class="first-list">
+                                    <div class="list-wrap">
+                                        <a href="javascript: void(0);"><i class="bi bi-file-earmark-text text-info me-1 align-bottom"></i>favicon.ico</a>
+                                    </div>
+                                </div>
+                                <div class="first-list">
+                                    <div class="list-wrap">
+                                        <a href="javascript: void(0);"><i class="bi bi-file-earmark-text text-info me-1 align-bottom"></i>index.html <span class="text-muted">/ defining its structure and loading the app's components and scripts.</span></a>
+                                    </div>
+                                </div>
+                                <div class="first-list">
+                                    <div class="list-wrap">
+                                        <a href="javascript: void(0);"><i class="bi bi-file-earmark-text text-info me-1 align-bottom"></i>main.ts <span class="text-muted">/ initialized and the root module is bootstrapped.</span></a>
+                                    </div>
+                                </div>
+                                <div class="first-list">
+                                    <div class="list-wrap">
+                                        <a href="javascript: void(0);"><i class="bi bi-file-earmark-text text-info me-1 align-bottom"></i>polyfills.ts <span class="text-muted">/ modern JavaScript features and APIs in the application.</span></a>
+                                    </div>
+                                </div>
+                                <div class="first-list">
+                                    <div class="list-wrap">
+                                        <a href="javascript: void(0);"><i class="bi bi-file-earmark-text text-info me-1 align-bottom"></i>styles.scss <span class="text-muted">/ global stylesheet used to define common styling</span></a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="mb-3">Overview</h3>
+                        <p class="text-muted mb-4">Index.html file Structure.</p>
+
+                        <pre class="language-markup p-3 rounded mb-4 bg-ligh position-relative"><button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard" title="Copy to clipboard">Copy</button><code>&lt;!doctype html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+
+&lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;title&gt; Skote - Angular 16 Admin &amp; Dashboard Template&lt;/title&gt;
+
+    &lt;base href=&quot;/&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+    &lt;link rel=&quot;icon&quot; type=&quot;image/x-icon&quot; href=&quot;favicon.ico&quot;&gt;
+    &lt;script src=&quot;https://maps.googleapis.com/maps/api/js?key=AIzaSyAbvyBxmMbFhrzP9Z8moyYr6dCr-pzjhBE&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;app-root&gt;&lt;/app-root&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+
+
+&lt;!-- app.component.html file Structure. --&gt;
+&lt;router-outlet&gt;&lt;/router-outlet&gt;                                                                         
+</code></pre>
+
+                        <p class="text-muted mb-4">app-routing.module.ts file Structure</p>
+                        <pre class="language-markup p-3 rounded mb-4 bg-ligh position-relative"><button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard" title="Copy to clipboard">Copy</button><code>import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+
+//component
+import { LayoutComponent } from './layouts/layout.component';
+
+// Auth
+import { AuthGuard } from './core/guards/auth.guard';
+
+const routes: Routes = [
+{ path: 'account', loadChildren: () => import('./account/account.module').then(m => m.AccountModule) },
+{ path: '', component: LayoutComponent, loadChildren: () => import('./pages/pages.module').then(m => m.PagesModule), canActivate: [AuthGuard] },
+{ path: 'pages', loadChildren: () => import('./extrapages/extrapages.module').then(m => m.ExtrapagesModule), canActivate: [AuthGuard] },
+{ path: 'crypto-ico-landing', component: CyptolandingComponent },
+{ path: '**', component: Page404Component },
+];
+
+@NgModule({
+    imports: [RouterModule.forRoot(routes)],
+    exports: [RouterModule]
+})
+export class AppRoutingModule { }                                                                       
+</code></pre>
+
+                        <p class="text-muted mb-4">app.module.ts file Structure</p>
+                        <pre class="language-markup p-3 rounded mb-4 bg-ligh position-relative"><button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard" title="Copy to clipboard">Copy</button><code>import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { environment } from '../environments/environment';
+
+// bootstrap component
+import { TabsModule } from 'ngx-bootstrap/tabs';
+import { TooltipModule } from 'ngx-bootstrap/tooltip';
+import { AccordionModule } from 'ngx-bootstrap/accordion';
+import { ToastrModule } from 'ngx-toastr';
+import { CarouselModule } from 'ngx-owl-carousel-o';
+import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
+import { SharedModule } from './cyptolanding/shared/shared.module';
+
+// Page Route
+import { ExtrapagesModule } from './extrapages/extrapages.module';
+import { LayoutsModule } from './layouts/layouts.module';
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { initFirebaseBackend } from './authUtils';
+import { CyptolandingComponent } from './cyptolanding/cyptolanding.component';
+
+// Language
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+
+// Auth
+import { HttpClientModule, HTTP_INTERCEPTORS, HttpClient } from '@angular/common/http';
+import { ErrorInterceptor } from './core/helpers/error.interceptor';
+import { JwtInterceptor } from './core/helpers/jwt.interceptor';
+import { FakeBackendInterceptor } from './core/helpers/fake-backend';
+
+if (environment.defaultauth === 'firebase') {
+  initFirebaseBackend(environment.firebaseConfig);
+} else {
+  // tslint:disable-next-line: no-unused-expression
+  FakeBackendInterceptor;
+}
+
+export function createTranslateLoader(http: HttpClient): any {
+  return new TranslateHttpLoader(http, 'assets/i18n/', '.json');
+}
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    CyptolandingComponent,
+  ],
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    HttpClientModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: createTranslateLoader,
+        deps: [HttpClient]
+      }
+    }),
+    LayoutsModule,
+    AppRoutingModule,
+    ExtrapagesModule,
+    CarouselModule,
+    AccordionModule.forRoot(),
+    TabsModule.forRoot(),
+    TooltipModule.forRoot(),
+    SharedModule,
+    ScrollToModule.forRoot(),
+    ToastrModule.forRoot(),
+  ],
+  bootstrap: [AppComponent],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: FakeBackendInterceptor, multi: true },
+    // LoaderService,
+    // { provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptorService, multi: true },
+  ],
+})
+export class AppModule { }
+
+                                                                                                        
+</code></pre>
+                    </div>
+
+                    <div>
+                        <h4 class="card-title mb-0">Layout setup</h4>
+                        <p class="text-muted mb-4">You can set the default layout in the
+                            <code>src/app/layouts/layout-model.ts</code> file.
+                        </p>
+                        <pre class="bg-dark text-white p-3"> // export layout related constants
+
+export const LAYOUT_VERTICAL = 'vertical';
+export const LAYOUT_HORIZONTAL = 'horizontal';
+export const LAYOUT_WIDTH = 'boxed';
+export const SIDEBAR_TYPE = 'dark';
+export const TOPBAR = 'light';
+export const LAYOUT_MODE = 'light';
+</pre>
+
+                        <table class="table table-bordered mb-0 mt-3">
+                            <tbody>
+                                <tr>
+                                    <th>Layouts</th>
+                                    <td>Types</td>
+                                </tr>
+                                <tr>
+                                    <th>LAYOUT_VERTICAL </th>
+                                    <td>vertical</td>
+                                </tr>
+                                <tr>
+                                    <th>LAYOUT_HORIZONTAL</th>
+                                    <td>horizontal</td>
+                                </tr>
+                                <tr>
+                                    <th>LAYOUT_WIDTH</th>
+                                    <td>Fixed , boxed, Scrollable</td>
+                                </tr>
+                                <tr>
+                                    <th>SIDEBAR_TYPE</th>
+                                    <td>Light , Dark ,compact,icon,colored</td>
+                                </tr>
+                                <tr>
+                                    <th>TOPBAR</th>
+                                    <td>Light , Dark</td>
+                                </tr>
+                                <tr>
+                                    <th>LAYOUT_MODE</th>
+                                    <td>Light , Dark</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    @@include("partials/footer.html")
+                </div>
+                <!-- End Page-content -->
+            </div>
+            <!-- end main content-->
+
+        </div>
+        <!-- END layout-wrapper -->
+
+
+        @@include("partials/vendor-scripts.html")
+
+        <script src="../assets/libs/prismjs/prism.js"></script>
+        <!-- App js -->
+        <script src="https://themesbrand.com/docs/app.js"></script>
+</body>
+
+</html>

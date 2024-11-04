@@ -1,0 +1,171 @@
+@@include("partials/main.html")
+
+<head>
+
+  @@include("partials/title-meta.html", {"title": "Autocomplete"})
+
+  @@include("partials/head-css.html")
+
+</head>
+
+<body>
+
+  <!-- Begin page -->
+  <div id="layout-wrapper">
+
+    @@include("partials/menu.html")
+    @@include("partials/sidebar.html")
+
+    <!-- ============================================================== -->
+    <!-- Start right Content here -->
+    <!-- ============================================================== -->
+    <div class="main-content">
+
+      <div class="page-content">
+        <div class="container-fluid">
+          <h3 class="mb-3">Overview<a href="https://tarekraafat.github.io/autoComplete.js/" target="_blank" class="float-end badge bg-success-subtle link-success fs-6">Official Website <i class="ri-external-link-line"></i></a> </h3>
+          <p class="text-muted mb-4">The Autocomplete widgets provides suggestions while you type into the
+            field.The datasource is a simple JavaScript array, provided to the widget using the source-option.</p>
+
+          <h5 class="mb-3">CSS</h5>
+          <pre class="language-markup p-3 rounded"><code>&lt;!-- autocomplete css --&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;assets/libs/@tarekraafat/autocomplete.js/css/autoComplete.css&quot;&gt;
+</code></pre>
+
+          <h5 class="mb-3">Javascript</h5>
+          <pre class="language-markup p-3 rounded"><code>&lt;!-- autocomplete js --&gt;
+&lt;script src=&quot;assets/libs/@tarekraafat/autocomplete.js/autoComplete.min.js&quot;&gt;&lt;/script&gt;</code></pre>
+
+          <h5 class="mb-3">Initjs (Custom js)</h5>
+          <pre class="language-markup p-3 rounded"><code>&lt;!-- init js --&gt;
+&lt;script src=&quot;assets/js/pages/form-advanced.init.js&quot;&gt;&lt;/script&gt;</code></pre>
+
+          <h5 class="mb-3">Add Package</h5>
+          <div class="alert bg-light border-start border-3 rounded-start-0 border-primary-subtle border-0 mb-4">yarn add @tarekraafat/autocomplete.js --save</div>
+
+          <h5 class="mb-3">Remove Package</h5>
+          <div class="alert bg-light border-start border-3 rounded-start-0 border-primary-subtle border-0 mb-4">yarn remove @tarekraafat/autocomplete.js or you can remove package by removing specific package from package.json</div>
+          <h5 class="mb-3 mt-4">Examples:</h5>
+
+          <div class="table-responsive">
+            <table class="table mb-0">
+              <thead>
+                <tr>
+                  <th scope="col" style="width:40%">Title</th>
+                  <th scope="col">Javascript</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Search Result of Fruit Names</th>
+                  <td>
+                    <pre class="language-js rounded p-3"><code>var autoCompleteFruit = new autoComplete({
+selector: "#autoCompleteFruit",
+placeHolder: "Search for Fruits...",
+data: {
+src: ["Apple", "Banana", "Blueberry", "Cherry", "Coconut", "Kiwi", "Lemon", "Lime", "Mango", "Orange"],
+cache: true
+},
+resultsList: {
+element: function element(list, data) {
+if (!data.results.length) {
+// Create "No Results" message element
+var message = document.createElement("div");
+// Add class to the created element
+message.setAttribute("class", "no_result");
+// Add message text content
+message.innerHTML = "<span>Found No Results for \"" + data.query + "\"</span>";
+// Append message element to the results list
+list.prepend(message);
+}
+},
+noResults: true
+},
+resultItem: {
+highlight: true
+},
+events: {
+input: {
+selection: function selection(event) {
+var selection = event.detail.selection.value;
+autoCompleteFruit.input.value = selection;
+}
+}
+}
+});
+</code></pre>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">Search Result of Car Names</th>
+                  <td>
+                    <pre class="language-js rounded p-3"><code>var autoCompleteCars = new autoComplete({
+selector: "#autoCompleteCars",
+placeHolder: "Search for Cars...",
+data: {
+src: ["Chevrolet", "Fiat", "Ford", "Honda", "Hyundai", 
+"Hyundai", "Kia", "Mahindra", "Maruti", "Mitsubishi","MG",
+"Nissan", "Renault","Skoda", "Tata", "Toyato", "Volkswagen"],
+cache: true
+},
+resultsList: {
+element: function element(list, data) {
+  if (!data.results.length) {
+    // Create "No Results" message element
+    var message = document.createElement("div");
+    // Add class to the created element
+    message.setAttribute("class", "no_result");
+    // Add message text content
+    message.innerHTML = "<span>Found No Results for \"" + data.query + "\"</span>";
+    // Append message element to the results list
+    list.prepend(message);
+  }
+},
+noResults: true
+},
+resultItem: {
+highlight: true
+},
+events: {
+input: {
+  selection: function selection(event) {
+    var selection = event.detail.selection.value;
+    autoCompleteCars.input.value = selection;
+  }
+}
+}
+});
+</code></pre>
+                  </td>
+                </tr>
+
+
+
+              </tbody>
+            </table>
+            <!-- end table -->
+          </div>
+
+        </div>
+        @@include("partials/footer.html")
+      </div>
+      <!-- End Page-content -->
+
+    </div>
+    <!-- end main content-->
+
+  </div>
+  <!-- END layout-wrapper -->
+
+
+
+  @@include("partials/vendor-scripts.html")
+
+  <!-- prismjs plugin -->
+  <script src="../assets/libs/prismjs/prism.js"></script>
+
+  <!-- App js -->
+  <script src="https://themesbrand.com/docs/app.js"></script>
+</body>
+
+</html>

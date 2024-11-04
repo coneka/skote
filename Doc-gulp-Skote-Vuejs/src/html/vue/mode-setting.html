@@ -1,0 +1,331 @@
+@@include("partials/main.html")
+
+<head>
+
+    @@include("partials/title-meta.html", {"title": "Dark Mode"})
+
+    @@include("partials/head-css.html")
+
+</head>
+
+<body>
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+
+        @@include("partials/menu.html")
+
+        @@include("partials/sidebar.html")
+
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+
+            <div class="page-content">
+                <div class="container">
+
+                    <ul class="nav nav-tabs mb-3 bg-light" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link fw-bold active" data-bs-toggle="tab" href="#vue1" role="tab">
+                                Vue
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fw-bold" data-bs-toggle="tab" href="#laravel1" role="tab">
+                                Vue + Laravel
+                            </a>
+                        </li>
+                    </ul>
+
+                    <div class="tab-content text-muted">
+                        <div class="tab-pane active" id="vue1" role="tabpanel">
+                            <div class="mb-5">
+                                <h3 class="mb-4"><i class="bi bi-moon-stars me-2"></i> Dark Mode Setting</h3>
+                                <p class="text-muted">
+                                    To switch the layout mode to Dark, you can easily make the following adjustments
+                                    within the
+                                    <code>src/state/pinia/layout.js</code> file.
+                                </p>
+                                <p class="text-muted">
+                                    You can enable Dark Mode by setting the attribute <b>mode</b> to
+                                    <code>mode: "dark"</code> within the
+                                    <code>src/state/pinia/layout.js</code> file. There were
+                                    no need to make changes in style or other files.
+                                </p>
+
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Attribute</th>
+                                            <th scope="col">Value</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><code>mode</code></td>
+                                            <td>
+                                                <pre class="language-markup rounded"><code>mode: "dark",</code></pre>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="mb-5">
+                                <h3 class="mb-4"><i class="bi bi-brightness-high me-2"></i> Light Mode Setting</h3>
+                                <p class="text-muted">
+                                    To switch the layout mode to Light, you can easily make the following adjustments
+                                    within the
+                                    <code>src/state/pinia/layout.js</code> file.
+                                </p>
+                                <p class="text-muted">
+                                    You can enable Light Mode by setting the attribute <b>mode</b> to
+                                    <code>mode: "light"</code> within the
+                                    <code>src/state/pinia/layout.js</code> file. There were
+                                    no need to make changes in style or other files.
+                                </p>
+
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Attribute</th>
+                                            <th scope="col">Value</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><code>mode</code></td>
+                                            <td>
+                                                <pre class="language-markup rounded"><code>mode: "light",</code></pre>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="mb-5">
+                                <h3 class="mb-4"><i class="bi bi-layout-sidebar"></i> Verticle Mode Setting</h3>
+                                <p class="text-muted">
+                                    To switch the layout type to Verticle, you can easily make the following adjustments
+                                    within the
+                                    <code>src/state/pinia/layout.js</code> file.
+                                </p>
+                                <p class="text-muted">
+                                    You can enable Verticle type by setting the attribute <b>layoutType</b> to
+                                    <code>layoutType: "vertical"</code> within the
+                                    <code>src/state/pinia/layout.js</code> file. There were
+                                    no need to make changes in style or other files.
+                                </p>
+
+
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Attribute</th>
+                                            <th scope="col">Value</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><code>layoutType</code></td>
+                                            <td>
+                                                <pre
+                                                    class="language-markup rounded"><code>layoutType: "vertical",</code></pre>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div>
+                                <h3 class="mb-4"><i class="bi bi-window"></i> Horizontal Mode Setting</h3>
+                                <p class="text-muted">
+                                    To switch the layout type to Horizontal, you can easily make the following
+                                    adjustments within the
+                                    <code>src/state/pinia/layout.js</code> file.
+                                </p>
+                                <p class="text-muted">
+                                    You can enable Horizontal type by setting the attribute <b>layoutType</b> to
+                                    <code>layoutType: "horizontal"</code> within the
+                                    <code>src/state/pinia/layout.js</code> file. There were
+                                    no need to make changes in style or other files.
+                                </p>
+
+
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Attribute</th>
+                                            <th scope="col">Value</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><code>layoutType</code></td>
+                                            <td>
+                                                <pre
+                                                    class="language-markup rounded"><code>layoutType: "horizontal",</code></pre>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="tab-pane" id="laravel1" role="tabpanel">
+                            <div class="mb-5">
+                                <h3 class="mb-4"><i class="bi bi-moon-stars me-2"></i> Dark Mode Setting</h3>
+                                <p class="text-muted">
+                                    To switch the layout mode to Dark, you can easily make the following adjustments
+                                    within the
+                                    <code>/js/mixins/layouts.mixin.js</code> file.
+                                </p>
+                                <p class="text-muted">
+                                    You can enable Dark Mode by setting the attribute <b>mode</b> to
+                                    <code>mode: "dark" </code> within the
+                                    <code>/js/mixins/layouts.mixin.js</code> file. There were
+                                    no need to make changes in style or other files.
+                                </p>
+
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Attribute</th>
+                                            <th scope="col">Value</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><code>mode</code></td>
+                                            <td>
+                                                <pre class="language-markup rounded"><code>mode: "dark",</code></pre>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="mb-5">
+                                <h3 class="mb-4"><i class="bi bi-brightness-high me-2"></i> Light Mode Setting</h3>
+                                <p class="text-muted">
+                                    To switch the layout mode to Light, you can easily make the following adjustments
+                                    within the
+                                    <code>/js/mixins/layouts.mixin.js</code> file.
+                                </p>
+                                <p class="text-muted">
+                                    You can enable Light Mode by setting the attribute <b>mode</b> to
+                                    <code>mode: "light"</code> within the
+                                    <code>/js/mixins/layouts.mixin.js</code> file. There were
+                                    no need to make changes in style or other files.
+                                </p>
+
+
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Attribute</th>
+                                            <th scope="col">Value</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><code>mode</code></td>
+                                            <td>
+                                                <pre class="language-markup rounded"><code>mode: "light",</code></pre>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="mb-5">
+                                <h3 class="mb-4"><i class="bi bi-layout-sidebar"></i> Verticle Mode Setting</h3>
+                                <p class="text-muted">
+                                    To switch the layout type to Verticle, you can easily make the following adjustments
+                                    within the
+                                    <code>/js/mixins/layouts.mixin.js</code> file.
+                                </p>
+                                <p class="text-muted">
+                                    You can enable Verticle type by setting the attribute <b>type</b> to
+                                    <code>type: "vertical"</code> within the
+                                    <code>/js/mixins/layouts.mixin.js</code> file. There were
+                                    no need to make changes in style or other files.
+                                </p>
+
+
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Attribute</th>
+                                            <th scope="col">Value</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><code>type</code></td>
+                                            <td>
+                                                <pre
+                                                    class="language-markup rounded"><code>type: "vertical",</code></pre>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div>
+                                <h3 class="mb-4"><i class="bi bi-window"></i> Horizontal Mode Setting</h3>
+                                <p class="text-muted">
+                                    To switch the layout type to Horizontal, you can easily make the following
+                                    adjustments within the
+                                    <code>/js/mixins/layouts.mixin.js</code> file.
+                                </p>
+                                <p class="text-muted">
+                                    You can enable Horizontal type by setting the attribute <b>type</b> to
+                                    <code>type: "horizontal"</code> within the
+                                    <code>/js/mixins/layouts.mixin.js</code> file. There were
+                                    no need to make changes in style or other files.
+                                </p>
+
+
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Attribute</th>
+                                            <th scope="col">Value</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><code>type</code></td>
+                                            <td>
+                                                <pre
+                                                    class="language-markup rounded"><code>type: "horizontal",</code></pre>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                @@include("partials/footer.html")
+            </div>
+            <!-- End Page-content -->
+
+        </div>
+        <!-- end main content-->
+
+    </div>
+    <!-- END layout-wrapper -->
+
+
+
+    @@include("partials/vendor-scripts.html")
+    <script src="../assets/libs/prismjs/prism.js"></script>
+    <!-- App js -->
+    <script src="https://themesbrand.com/docs/app.js"></script>
+</body>
+
+</html>

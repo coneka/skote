@@ -1,0 +1,161 @@
+@@include("partials/main.html")
+
+<head>
+
+    @@include("partials/title-meta.html", {"title": "Cleave.js-Input Mask"})
+
+    @@include("partials/head-css.html")
+
+</head>
+
+<!-- Begin page -->
+<div id="layout-wrapper">
+
+    @@include("partials/menu.html")
+
+    @@include("partials/sidebar.html")
+    <!-- ============================================================== -->
+    <!-- Start right Content here -->
+    <!-- ============================================================== -->
+    <div class="main-content">
+
+        <div class="page-content">
+            <div class="container">
+                <h3 class="mb-3">Overview<a href="https://www.npmjs.com/package/ngx-mask" target="_blank" class="float-end badge bg-success-subtle link-success fs-6">Official Website <i class="ri-external-link-line"></i></a> </h3>
+                <p class="text-muted mb-4">Cleave.js javaScript library for formatting input text content when you are typing.</p>
+
+                <div>
+                    <h6 class="mt-3">Add Package</h6>
+                    <div class="alert bg-light border-start border-3 rounded-start-0 border-primary-subtle border-0 mb-4">npm install ngx-mask --save</div>
+
+                    <h6 class="mt-3">Remove Package</h6>
+                    <div class="alert bg-light border-start border-3 rounded-start-0 border-primary-subtle border-0 mb-4">npm uninstall ngx-mask or you can remove package by removing specific package from package.json</div>
+                </div>
+                <h5 class="mb-3 mt-4">Date Formatting:</h5>
+
+                <div class="table-responsive">
+                    <table class="table mb-0">
+                        <thead>
+                            <tr>
+                                <th scope="col" style="width:40%">Title</th>
+                                <th scope="col">Template</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">Date</th>
+                                <td>
+                                    <pre class="language-js p-3 rounded"><code>&lt;input type=&quot;text&quot; class=&quot;form-control&quot; mask=&quot;00/00/0000&quot; placeholder=&quot;DD-MM-YYYY&quot; id=&quot;cleave-date&quot;&gt;</code></pre>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Date Formatting</th>
+                                <td>
+                                    <pre class="language-js p-3 rounded"><code>&lt;input type=&quot;text&quot; class=&quot;form-control&quot; mask=&quot;00/00&quot; placeholder=&quot;MM/YY&quot; id=&quot;cleave-date-format&quot;&gt;</code></pre>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                    <!-- end table -->
+                </div>
+                <h5 class="mb-3 mt-4">Time Formatting:</h5>
+                <div class="table-responsive">
+                    <table class="table mb-0">
+                        <thead>
+                            <tr>
+                                <th scope="col" style="width:40%">Title</th>
+                                <th scope="col">Template</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">Time</th>
+                                <td>
+                                    <pre class="language-js p-3 rounded"><code>&lt;input type=&quot;text&quot; class=&quot;form-control&quot; mask=&quot;00:00:00&quot; placeholder=&quot;hh:mm:ss&quot; id=&quot;cleave-time&quot;&gt;</code></pre>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Time Formatting</th>
+                                <td>
+                                    <pre class="language-js p-3 rounded"><code>&lt;input type=&quot;text&quot; class=&quot;form-control&quot; mask=&quot;00:00&quot; placeholder=&quot;hh:mm&quot; id=&quot;cleave-time-format&quot;&gt;</code></pre>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                    <!-- end table -->
+                </div>
+                <!-- end table responsive -->
+                <h5 class="mb-3 mt-4">Custom Option:</h5>
+                <div class="table-responsive">
+                    <table class="table mb-0">
+                        <thead>
+                            <tr>
+                                <th scope="col" style="width:40%">Title</th>
+                                <th scope="col">Template</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">Credit Card</th>
+                                <td>
+                                    <pre class="language-js p-3 rounded"><code>&lt;input type=&quot;text&quot; class=&quot;form-control&quot; id=&quot;cleave-ccard&quot; mask=&quot;0000 0000 0000 0000&quot; placeholder=&quot;xxxx xxxx xxxx xxxx&quot;&gt;</code></pre>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Delimiter</th>
+                                <td>
+                                    <pre class="language-js p-3 rounded"><code>&lt;input type=&quot;text&quot; class=&quot;form-control&quot; id=&quot;cleave-delimiter&quot; mask=&quot;AAA&middot;AAAA&middot;AAA&quot; [specialCharacters]=&quot;[ '[' ,']' , '&middot;' ]&quot; placeholder=&quot;xxx&middot;xxx&middot;xxx&quot;&gt;</code></pre>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Delimiters</th>
+                                <td>
+                                    <pre class="language-js p-3 rounded"><code>&lt;input type=&quot;text&quot; class=&quot;form-control&quot; id=&quot;cleave-delimiters&quot; mask=&quot;AAA.AAA.AAA-AA&quot; placeholder=&quot;xxx.xxx.xxx-xx&quot;&gt;</code></pre>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Prefix</th>
+                                <td>
+                                    <pre class="language-js p-3 rounded"><code>&lt;input type=&quot;text&quot; class=&quot;form-control&quot; value=&quot;PREFIX-&quot; mask=&quot;AAAA-AAAA-AAAA-AAAA&quot; id=&quot;cleave-prefix&quot;&gt;</code></pre>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Phone</th>
+                                <td>
+                                    <pre class="language-js p-3 rounded"><code>&lt;input type=&quot;text&quot; class=&quot;form-control&quot; id=&quot;cleave-phone&quot; mask=&quot;(000)000-0000&quot; placeholder=&quot;(xxx)xxx-xxxx&quot;&gt;</code></pre>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Numeral Formatting</th>
+                                <td>
+                                    <pre class="language-js p-3 rounded"><code>&lt;input type=&quot;number&quot; class=&quot;form-control&quot; placeholder=&quot;Enter numeral&quot; id=&quot;cleave-numeral&quot;&gt;</code></pre>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                    <!-- end table -->
+                </div>
+            </div>
+            @@include("partials/footer.html")
+        </div>
+        <!-- End Page-content -->
+
+    </div>
+    <!-- end main content-->
+
+</div>
+<!-- END layout-wrapper -->
+
+
+@@include("partials/vendor-scripts.html")
+<!-- prismjs plugin -->
+<script src="../assets/libs/prismjs/prism.js"></script>
+
+<!-- App js -->
+<script src="https://themesbrand.com/docs/app.js"></script>
+</body>
+
+</html>

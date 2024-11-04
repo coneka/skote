@@ -1,0 +1,157 @@
+@@include("partials/main.html")
+
+<head>
+
+    @@include("partials/title-meta.html", {"title": "Vertical Layout"})
+
+    @@include("partials/head-css.html")
+
+</head>
+
+<body>
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+
+        @@include("partials/menu.html")
+
+        @@include("partials/sidebar.html")
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+
+            <div class="page-content">
+                <div class="container">
+                    <h3 class="mb-4">Vertical Layout</h3>
+
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="d-xl-flex">
+
+                                        <div class="w-100">
+                                            <h4 class="mt-0 mb-4">Vertical menu configuration</h4>
+                                            <div>
+                                                <div class="p-lg-1">
+                                                    <div id="desc">
+                                                        <div class="row mb-2">
+                                                            <div class="col">
+                                                                
+
+                                                                    
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    
+                                                    <div id="pre-built-layouts">
+                                                        <div class="row"> 
+                                                            <h5 class="mt-0 mb-2 font-size-18"><i class="mdi mdi-star text-warning"></i> How to use pre-built
+                                                                layouts?</h5>
+                                                            <p>
+                                                                Each of the layout options is provided below with steps you would need to perform in file <code>templates/element/body.php</code> in body tag.
+                                                            </p>
+
+                                                            <div class="col-lg-4 col-md-6">
+                                                                <div class="border p-3 text-center mb-3">
+                                                                    <img src="../assets/images/demo/vertical-1.png" alt="image" class="img-fluid shadow">
+                                                                    <h5 class="font-size-16 mt-3">Light Sidebar &amp; Topbar Dark</h5>
+                                                                    <code>data-sidebar="dark"</code> <br> <code>data-topbar="light"</code>
+                                                                </div>
+                                                            </div> <!-- end col -->
+
+                                                            <div class="col-lg-4 col-md-6">
+                                                                <div class="border p-3 text-center mb-3">
+                                                                    <img src="../assets/images/demo/vertical-2.png" alt="image" class="img-fluid shadow">
+                                                                    <h5 class="font-size-16 mt-3">Compact Sidebar</h5>
+                                                                    <code>data-sidebar="dark" data-sidebar-size="small"</code> 
+                                                                </div>
+                                                            </div> <!-- end col -->
+
+                                                            <div class="col-lg-4 col-md-6">
+                                                                <div class="border p-3 text-center mb-3">
+                                                                    <img src="../assets/images/demo/vertical-3.png" alt="image" class="img-fluid shadow">
+                                                                    <h5 class="font-size-16 mt-3">Icon Sidebar</h5>
+                                                                    <code>data-sidebar="dark" data-keep-enlarged="true" </code> <br>
+                                                                    <code>class="vertical-collpsed"</code>
+                                                                </div>
+                                                            </div> <!-- end col -->
+
+                                                            <div class="col-lg-4 col-md-6">
+                                                                <div class="border p-3 text-center mb-3">
+                                                                    <img src="../assets/images/demo/vertical-4.png" alt="image" class="img-fluid shadow">
+                                                                    <h5 class="font-size-16 mt-3">Boxed Layout</h5>
+                                                                    <code>data-sidebar="dark" data-keep-enlarged="true"</code> <br> <code>class="vertical-collpsed"</code> <br> <code>data-layout-size="boxed"</code>
+                                                                </div>
+                                                            </div> <!-- end col -->
+
+                                                            <div class="col-lg-4 col-md-6">
+                                                                <div class="border p-3 text-center">
+                                                                    <img src="../assets/images/demo/vertical-5.png" alt="image" class="img-fluid shadow">
+                                                                    <h5 class="font-size-16 mt-3">Colored Sidebar</h5>
+                                                                    <code>data-sidebar="colored"</code>
+                                                                </div>
+                                                            </div> <!-- end col --> 
+                                                            
+                                                            <div class="col-lg-4 col-md-6">
+                                                                <div class="border p-3 text-center mb-3">
+                                                                    <img src="../assets/images/demo/vertical-4.png" alt="image" class="img-fluid shadow">
+                                                                    <h5 class="font-size-16 mt-3">Scrollable layout</h5>
+                                                                    <code>data-sidebar="dark" data-layout-scrollable="true"</code>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-lg-4 col-md-6">
+                                                                <div class="border p-3 text-center">
+                                                                    <img src="../assets/images/demo/vertical-6.png" alt="image" class="img-fluid shadow">
+                                                                    <h5 class="font-size-16 mt-3">Preloader</h5> 
+                                                                    <code>data-sidebar="light"</code> <br>  
+                                                                    Add below code after body tag. <br>
+                                                                    <code>&lt;div id="preloader"&gt;
+                                                                        &lt;div id="status"&gt;
+                                                                            &lt;div class="spinner-chase"&gt;
+                                                                                &lt;div class="chase-dot"&gt;&lt;/div&gt;
+                                                                                &lt;div class="chase-dot"&gt;&lt;/div&gt;
+                                                                                &lt;div class="chase-dot"&gt;&lt;/div&gt;
+                                                                                &lt;div class="chase-dot"&gt;&lt;/div&gt;
+                                                                                &lt;div class="chase-dot"&gt;&lt;/div&gt;
+                                                                                &lt;div class="chase-dot"&gt;&lt;/div&gt;
+                                                                            &lt;/div&gt;
+                                                                        &lt;/div&gt;
+                                                                    &lt;/div&gt;</code>
+                                                                </div>
+                                                            </div> <!-- end col -->
+
+                                                        </div>
+                                                        <!-- end row -->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                @@include("partials/footer.html")
+            </div>
+            <!-- End Page-content -->
+
+        </div>
+        <!-- end main content-->
+
+    </div>
+    <!-- END layout-wrapper -->
+
+    @@include("partials/vendor-scripts.html")
+
+    <!-- App js -->
+    <script src="https://themesbrand.com/docs/app.js"></script>
+</body>
+
+</html>

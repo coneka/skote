@@ -1,0 +1,71 @@
+@@include("partials/main.html")
+
+<head>
+
+    @@include("partials/title-meta.html", {"title": "RTL Version"})
+
+    @@include("partials/head-css.html")
+
+</head>
+
+<body>
+
+<!-- Begin page -->
+<div id="layout-wrapper">
+
+    @@include("partials/menu.html")
+
+    @@include("partials/sidebar.html")
+
+    <!-- ============================================================== -->
+    <!-- Start right Content here -->
+    <!-- ============================================================== -->
+    <div class="main-content">
+
+        <div class="page-content">
+            <div class="container">
+
+                <h3 class="mb-4">RTL Mode</h3>
+
+                <div class="mb-4">
+                    <h5 class="mb-3">RTL Setup </h5>
+                    
+                    <p class="text-muted">To make the default RTL version just follow the below
+                        steps.</p>
+                    <p class="text-muted">Update the below css file links in the
+                        <code>templates/layouts/_head-css.html.twig</code> file. <br />
+                        <pre class="language-markup p-3 rounded mb-4 bg-ligh position-relative"><button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard" title="Copy to clipboard">Copy</button><code>&lt;link href="assets/css/bootstrap-rtl.min.css" rel="stylesheet" type="text/css"&gt;
+&lt;link href="assets/css/app-rtl.min.css" rel="stylesheet" type="text/css"&gt;</code> </pre>
+                    </p>
+                    <p class="text-muted mb-0">and add the below attribute in the
+                        <code>templates/layouts/_main.html.twig</code> file to
+                        <code>html tag</code>.<br />
+                        <code>dir="rtl"</code> so you final html tag will be
+                        <code> &lt;html dir="rtl"&gt;</code>
+                    </p>
+                </div>
+
+                
+
+            </div>
+            @@include("partials/footer.html")
+        </div>
+        <!-- End Page-content -->
+
+    </div>
+    <!-- end main content-->
+
+</div>
+<!-- END layout-wrapper -->
+
+
+
+@@include("partials/vendor-scripts.html")
+<!-- prismjs plugin -->
+<script src="../assets/libs/prismjs/prism.js"></script>
+
+<!-- App js -->
+<script src="https://themesbrand.com/docs/app.js"></script>
+</body>
+
+</html>

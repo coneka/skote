@@ -1,0 +1,84 @@
+@@include("partials/main.html")
+
+<head>
+
+    @@include("partials/title-meta.html", {"title": "Changelog"})
+
+    @@include("partials/head-css.html")
+
+</head>
+
+<body>
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+
+        @@include("partials/menu.html")
+
+        @@include("partials/sidebar.html")
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+
+            <div class="page-content">
+                <div class="container">
+                    <div class="mt-4 pt-md-2">
+                        <h3 class="mb-4">Changelog</h3>
+                        <div class="card-body">
+                            <div class="p-lg-1">
+                                <div class="d-xl-flex">
+                                    <div class="w-100">
+                                        <div>
+                                            <div id="v-2-0">
+                                                <h4 class="mb-3">
+                                                    <span class="text-primary">v2.0.0</span>
+                                                    <small class="text-muted font-size-14"> - 21 July 2023 </small>
+                                                </h4>
+                                                <ul>
+                                                    <li>Updated Bootstrap version to v5.3.0.</li>
+                                                    <li>Updated Symfony version 6.0 to 6.3.</li>
+                                                    <li>Added Symfony Webpack Encore Support.</li>
+                                                    <li>Added JS functionality in some App pages.</li>
+                                                    <li>Update light &amp; dark mode (Bootstrap support).</li>
+                                                    <li>Fixed minor issues.</li>
+                                                </ul>
+                                            </div>
+                                            <div id="v-1-0">
+                                                <h4 class="mb-3">
+                                                    <span class="text-primary">v1.0.0</span>
+                                                    <small class="text-muted font-size-14"> - 02 March 2022 </small>
+                                                </h4>
+                                                <ul>
+                                                    <li>Initial released</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    
+                                    <!-- End right-side-nav -->
+                                </div>
+                                
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                @@include("partials/footer.html")
+            </div>
+            <!-- End Page-content -->
+            
+        </div>
+        <!-- end main content-->
+
+    </div>
+    <!-- END layout-wrapper -->
+
+    @@include("partials/vendor-scripts.html")
+
+    <!-- App js -->
+    <script src="https://themesbrand.com/docs/app.js"></script>
+</body>
+
+</html>

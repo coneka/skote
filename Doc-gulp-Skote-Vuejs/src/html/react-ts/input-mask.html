@@ -1,0 +1,208 @@
+@@include("partials/main.html")
+
+<head>
+
+    @@include("partials/title-meta.html", {"title": "Input Mask"})
+
+    @@include("partials/head-css.html")
+
+</head>
+
+<body>
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+
+        @@include("partials/menu.html")
+        @@include("partials/sidebar.html")
+
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+
+            <div class="page-content">
+                <div class="container">
+                    <h3 class="mb-3">Overview<a href="https://www.npmjs.com/package/react-input-mask" target="_blank"
+                            class="float-end badge bg-success-subtle link-success fs-6">Official Website <i
+                                class="ri-external-link-line"></i></a> </h3>
+                    <p class="text-muted mb-4">Input Mask is a javaScript library for formatting input text
+                        content when you are typing.</p>
+
+                    <div>
+                        <h5 class="mb-3">Add Package</h5>
+                        <div
+                            class="alert bg-light border-start border-3 rounded-start-0 border-primary-subtle border-0 mb-4">
+                            yarn add react-input-mask </div>
+
+                        <h5 class="mb-3">Import Package</h5>
+                        <div
+                            class="alert bg-light border-start border-3 rounded-start-0 border-primary-subtle border-0 mb-4">
+                            import Cleave from "react-input-mask";</div>
+
+                        <h5 class="mb-3">Remove Package</h5>
+                        <div
+                            class="alert bg-light border-start border-3 rounded-start-0 border-primary-subtle border-0 mb-4">
+                            yarn remove react-input-mask ( or you can remove package by removing specific package from
+                            package.json )</div>
+                    </div>
+                    <h5 class="mb-3 mt-4">Date Formatting:</h5>
+
+                    <div class="table-responsive">
+                        <table class="table mb-0">
+                            <thead>
+                                <tr>
+                                    <th scope="col" style="width:40%">Title</th>
+                                    <th scope="col">Javascript</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Date 1</th>
+                                    <td>
+                                        <pre class="language-js p-3 rounded"><code>const Date1 = (props : any) => (
+&lt;InputMask
+    mask="99/99/9999"
+    value={props.value}
+    className="form-control input-color"
+    onChange={props.onChange}
+>   
+&lt;/InputMask>
+)
+</code></pre>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Date 2</th>
+                                    <td>
+                                        <pre class="language-js p-3 rounded"><code>const Date2 = (props : any) => (
+&lt;InputMask
+    mask="99-99-9999"
+    value={props.value}
+    className="form-control input-color"
+    onChange={props.onChange}
+>   
+&lt;/InputMask>
+)
+</code></pre>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Date 3</th>
+                                    <td>
+                                        <pre class="language-js p-3 rounded"><code>const Date3 = (props : any) => (
+&lt;InputMask
+    mask="9999-99-99 99:99:99"
+    value={props.value}
+    className="form-control input-color"
+    onChange={props.onChange}
+>   
+&lt;/InputMask>
+)
+</code></pre>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Currency</th>
+                                    <td>
+                                        <pre class="language-js p-3 rounded"><code>const Currency = (props : any) => (
+&lt;InputMask
+    mask="$ 999,999,999.00"
+    value={props.value}
+    className="form-control input-color"
+    onChange={props.onChange}
+>   
+&lt;/InputMask>
+)
+</code></pre>
+                                    </td>
+                                </tr>
+
+
+                                <tr>
+                                    <th scope="row">Repeat</th>
+                                    <td>
+                                        <pre class="language-js p-3 rounded"><code>const Repeat = (props : any) => (
+&lt;InputMask
+    mask="9999999999"
+    value={props.value}
+    className="form-control input-color"
+    onChange={props.onChange}
+>   
+&lt;/InputMask>
+)
+</code></pre>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">TAX</th>
+                                    <td>
+                                        <pre class="language-js p-3 rounded"><code>const TAX = (props : any) => (
+&lt;InputMask
+    mask="99-9999999"
+    value={props.value}
+    className="form-control input-color"
+    onChange={props.onChange}
+>   
+&lt;/InputMask>
+)
+</code></pre>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Ip Address</th>
+                                    <td>
+                                        <pre class="language-js p-3 rounded"><code>const IPV4 = (props : any) => (
+&lt;InputMask
+    mask="999.999.999.999"
+    value={props.value}
+    className="form-control input-color"
+    onChange={props.onChange}
+>   
+&lt;/InputMask>
+)
+</code></pre>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Phone</th>
+                                    <td>
+                                        <pre class="language-js p-3 rounded"><code>const Phone = (props : any) => (
+&lt;InputMask
+    mask="(999) 999-9999"
+    value={props.value}
+    className="form-control input-color"
+    onChange={props.onChange}
+>   
+&lt;/InputMask>
+)
+</code></pre>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <!-- end table -->
+                    </div>
+                </div>
+                @@include("partials/footer.html")
+            </div>
+            <!-- End Page-content -->
+
+        </div>
+        <!-- end main content-->
+
+    </div>
+    <!-- END layout-wrapper -->
+
+
+
+    @@include("partials/vendor-scripts.html")
+
+    <!-- prismjs plugin -->
+    <script src="../assets/libs/prismjs/prism.js"></script>
+
+    <!-- App js -->
+    <script src="https://themesbrand.com/docs/app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,320 @@
+@@include("partials/main.html")
+
+<head>
+
+    @@include("partials/title-meta.html", {"title": "Fakebackend Setup"})
+
+    @@include("partials/head-css.html")
+
+</head>
+
+<body>
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+
+        @@include("partials/menu.html")
+        @@include("partials/sidebar.html")
+
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+
+            <div class="page-content">
+                <div class="container">
+
+                    <h3 class="mb-4">Fakebackend Setup</h3>
+
+                    <div class="d-xl-flex">
+
+                        <div class="w-100">
+                            <div id="fake-backend">
+                                <div>
+                                    <p class="mb-1">
+                                        Set <code> REACT_APP_DEFAULTAUTH=fake </code> in the
+                                        <code>.env</code>
+                                        file. <br>
+                                        Remove the firebase
+                                        setup code from the
+                                        <code>App.js</code>
+                                        file. <br>
+                                        Now just uncomment
+                                        the below
+                                        fake-backend setup
+                                        code in the
+                                        <code>App.js</code>
+                                        file. <br>
+                                    </p>
+                                    <pre class="p-3 rounded mb-4 bg-ligh position-relative language-markup"
+                                        tabindex="0">
+<button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard">Copy</button><code>import fakeBackend from "src/helpers/AuthType/fakeBackend.js";
+                
+// Activating fake backend
+
+fakeBackend();</code></pre>
+                                    <p class="mb-0">It is often used for development and testing
+                                        purposes, as it
+                                        allows developers to test their code without having to worry
+                                        about the
+                                        availability of a real backend.</p>
+
+                                </div>
+                                <h5 class="fs-lg">
+                                    How to Integrate custom FakeBackend?
+                                </h5>
+                                <p>Please follow the below steps:</p>
+                                <div>
+                                    <p class="mb-1">-> First you needs to create json data files,
+                                        which you can put in
+                                        the
+                                        folder <code>src/Common/data</code> from where the data/json
+                                        will be called.
+                                    </p>
+                                    <pre class="p-3 rounded mb-4 bg-ligh position-relative language-markup"
+                                        tabindex="0">
+<button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard">Copy</button><code>const data = [
+    {
+        id: "1",
+        orderdate: "22 Feb, 2023",
+        customer: "Deondre Fahey",
+        name: "Ratke Group",
+        paymethod: "COD",
+    },
+    {
+        id: "2",
+        orderdate: "14 Feb, 2023",
+        customer: "Warren Anderson",
+        name: "Zibra Fashion",
+        paymethod: "Mastercard",
+    },
+]
+
+export { data } </code></pre>
+                                </div>
+
+                                <p>
+                                    -> In your React component or container, you dispatch an action
+                                    to request data
+                                    from the fake backend. This action triggers the saga.
+                                    For getting the data you should get data from the saga.js file.
+                                    And we can get
+                                    data in saga as response from fakebackend_helper.js file.
+                                </p>
+                                <div>
+                                    <p>In Saga middleware <code>actionTypes.js</code> file defines the type of actions
+                                        triggered.</p>
+                                    <pre class="p-3 rounded mb-4 bg-ligh position-relative language-markup" tabindex="0">
+<button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard">Copy</button><code>export const GET_DATA = "GET_DATA"</code></pre>
+                                </div>
+        
+                                <div>
+                                    <p>To trigger a saga, you dispatch an action that the saga is listening for. You'd dispatch
+                                        the GET_DATA action to initiate the fetchDataSaga in <code>actions.js</code> file.</p>
+                                    <pre class="p-3 rounded mb-4 bg-ligh position-relative language-markup" tabindex="0">
+<button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard">Copy</button><code>import { GET_DATA } from './actionTypes';
+export const getDatas = () => ({
+    type: GET_DATA,
+})
+</code></pre>
+
+                                <div>
+                                    <p class="mb-1">-> Reducer is also worked as middleware for
+                                        react, which is placed
+                                        at <code>src/store/Data/reducer.js</code> folder.
+                                    </p>
+                                    <pre class="p-3 rounded mb-4 bg-ligh position-relative language-markup"
+                                        tabindex="0">
+<button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard">Copy</button><code>import { GET_DATA_SUCCESS } from "./actionTypes"
+
+const INIT_STATE = {
+    datas: [],
+    data: {},
+    error: {},
+    loading: true
+};
+
+const Demodatafile = (state = INIT_STATE, action) => {
+    switch (action.type) {
+      case GET_DATA:
+        return {
+          ...state,
+          data: action.payload,
+          loading: true
+        };
+    }
+}
+
+export default Demodatafile</code></pre>
+                                </div>
+
+                                <div>
+                                    <p class="mb-1">-> A saga works as a middleware, which is
+                                        placed at
+                                        <code>src/store/Data/saga.js</code> file.
+                                    </p>
+                                    <pre class="p-3 rounded mb-4 bg-ligh position-relative language-markup"
+                                        tabindex="0">
+<button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard">Copy</button><code>import { call, put, takeEvery } from "redux-saga/effects";
+import { GET_DATA } from "./actionTypes"
+import { getDatas } from "./actions"
+import { getDemoData } from "helpers/fakebackend_helper"
+
+function* fetchDatas() {
+    try {
+      const response = yield call(getDemoData);
+      yield put(getDemoData(response));
+    } catch (error) {
+      yield put(getDemoDataFail(error));
+    }
+} </code></pre>
+                                </div>
+
+                                <div>
+                                    <p class="mb-1">
+                                        -> After exporting data from reducer.js file there was a
+                                        main file for whole
+                                        reducers files that combines all the reducers into one.
+                                        <code>src/store/reducer.js</code> here we combines the
+                                        rootReducers for store.
+                                    </p>
+                                    <pre class="p-3 rounded mb-4 bg-ligh position-relative language-markup"
+                                        tabindex="0">
+<button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard">Copy</button><code>import dataReducer from "./Data/reducer"
+const rootReducer = combineReducers ({
+    Data
+})
+export default rootReducer</code></pre>
+
+                                    <p class="mb-1">
+                                        -> Same as above all the saga files are also imported and
+                                        exported in main
+                                        saga file. <code>src/store/sagas.js</code> we use this
+                                        file to get response in
+                                        react component.
+                                    </p>
+                                    <pre class="p-3 rounded mb-4 bg-ligh position-relative language-markup"
+                                        tabindex="0">
+<button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard">Copy</button><code>export { getData } from "./Data/saga"
+export default function* rootSaga() {
+    yield all([
+      //public
+      fork(DataSaga),
+    ]);
+}
+</code></pre>
+                                </div>
+
+                                <div>
+                                    <p class="mb-1">-> A Fakebackend is a server that is used to
+                                        simulate the behavior
+                                        of a real backend.
+                                        <code>src/helpers/fakebackend_helper.js</code> is path for
+                                        fakeBackend file where you have to import
+                                        <code>"./url_helper"</code> and
+                                        <code>"./api_helper"</code> file for exporting the data.
+                                    </p>
+                                    <pre class="p-3 rounded mb-4 bg-ligh position-relative language-markup"
+                                        tabindex="0">
+<button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard">Copy</button><code>import * as url from "./url_helper";
+import { del, get, post, put } from "./api_helper";
+
+export const getDemoData = () => get(url.GET_DATA);</code></pre>
+                                </div>
+
+                                <div>
+                                    <p class="mb-1">-> The url_helper is a helper function that is
+                                        used to generate
+                                        URLs.
+                                        For that we have created file
+                                        <code>src/helpers/url_helper.js</code>. From where
+                                        we can get fake url for functionality.
+                                    </p>
+                                    <pre class="p-3 rounded mb-4 bg-ligh position-relative language-markup"
+                                        tabindex="0">
+ <button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard">Copy</button><code>export const GET_DATA = "/invoice";</code></pre>
+                                </div>
+
+
+                                <div>
+                                    <p class="mb-1">-> FakeBackend through we will getdata from
+                                        <code>Common/data</code>
+                                        and with the help of axios we can pass the data, which is
+                                        placed at
+                                        <code>src/helpers/AuthType/fakeBackend.js</code> file.
+                                    </p>
+                                    <pre class="p-3 rounded mb-4 bg-ligh position-relative language-markup"
+                                        tabindex="0">
+<button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard">Copy</button><code>import MockAdapter from "axios-mock-adapter";                                
+import * as url from "../url_helpers"
+import axios from "axios";
+
+import { data } from "Common/data";
+
+const fakeBackend = () => {
+    mock.onGet(url.GET_DATA).reply(() => {
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                if (data) {
+                    // Passing fake JSON data as response
+                    resolve([200, data]);
+                } else {
+                    reject([400, "Cannot get contact list"]);
+                }
+            });
+        });
+    });
+}
+export default fakeBackend;</code></pre>
+                                </div>
+                                <div>
+                                    <p class="mb-1">-> After following the above steps you can call
+                                        data and use it in
+                                        your components or pages where is needed by the dispatch
+                                        data method and
+                                        managing the
+                                        state.</p>
+
+                                    <pre class="p-3 rounded mb-4 bg-ligh position-relative language-markup"
+                                        tabindex="0">
+<button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard">Copy</button><code>import { getData as onGetData} from "store/saga";  
+const datasTable = createSelector(
+
+    (state : any) => state.Data,
+    (state) => ({
+        dataList: state.dataList,
+    })
+);
+
+const { dataList } = useSelector(datasTable);
+
+useEffect(() => {
+    dispatch(onGetData())
+}, [dispatch]);     </code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+                @@include("partials/footer.html")
+            </div>
+            <!-- End Page-content -->
+
+        </div>
+        <!-- end main content-->
+
+    </div>
+    <!-- END layout-wrapper -->
+
+    @@include("partials/vendor-scripts.html")
+
+    <!-- prismjs plugin -->
+    <script src="../assets/libs/prismjs/prism.js"></script>
+
+    <!-- App js -->
+    <script src="https://themesbrand.com/docs/app.js"></script>
+</body>
+
+</html>

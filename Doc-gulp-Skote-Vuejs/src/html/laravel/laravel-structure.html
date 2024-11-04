@@ -1,0 +1,181 @@
+@@include("partials/main.html")
+
+<head>
+
+    @@include("partials/title-meta.html", {"title": "Laravel Structure"})
+
+    @@include("partials/head-css.html")
+
+</head>
+
+<body>
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+
+        @@include("partials/menu.html")
+
+        @@include("partials/sidebar.html")
+
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+
+            <div class="page-content">
+                <div class="container">
+
+                    <h3 class="mb-4">Laravel Folder Structure</h3>
+
+                    <div class="verti-sitemap mb-4">
+                        <ul class="list-unstyled mb-0">
+                            <li class="p-0 parent-title"><a href="javascript: void(0);" class="fw-medium fs-14"><i class="bi bi-folder2 me-1 text-warning align-bottom"></i>Admin</a>
+                            </li>
+                            <li>
+                                <div class="first-list">
+                                    <div class="list-wrap">
+                                        
+                                        <a href="javascript: void(0);" class="fw-medium text-primary"><i class="bi bi-folder2 me-1 text-warning align-bottom"></i>resources</a>
+                                        <ul class="second-list list-unstyled">
+                                            <li>
+                                                <a href="javascript: void(0);"><i class="bi bi-folder2 me-1 text-warning align-bottom"></i>views <span class="text-muted"></span></a>
+                                                <ul class="second-list list-unstyled">
+                                                    <li>
+                                                        <a href="javascript: void(0);"><i class="bi bi-folder2 me-1 text-warning align-bottom"></i>auth <span class="text-muted"></span></a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="javascript: void(0);"><i class="bi bi-folder2 me-1 text-warning align-bottom"></i>components <span class="text-muted"></span></a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="javascript: void(0);"><i class="bi bi-folder2 me-1 text-warning align-bottom"></i>errors <span class="text-muted"></span></a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="javascript: void(0);"><i class="bi bi-folder2 me-1 text-warning align-bottom"></i>layouts <span class="text-muted"></span></a>
+                                                        <ul class="second-list list-unstyled">
+                                                            <li> 
+                                                                <a href="javascript: void(0);"><i class="bi bi-file-earmark-text text-info me-1 align-bottom"></i>footer.blade.php</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="javascript: void(0);"><i class="bi bi-file-earmark-text text-info me-1 align-bottom"></i>head-css.blade.php <span class="text-muted"></span></a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="javascript: void(0);"><i class="bi bi-file-earmark-text text-info me-1 align-bottom"></i>horizontal.blade.php  <span class="text-muted"></span></a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="javascript: void(0);"><i class="bi bi-file-earmark-text text-info me-1 align-bottom"></i>master.blade.php <span class="text-muted"></span></a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="javascript: void(0);"><i class="bi bi-file-earmark-text text-info me-1 align-bottom"></i>master-layouts.blade.php <span class="text-muted"></span></a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="javascript: void(0);"><i class="bi bi-file-earmark-text text-info me-1 align-bottom"></i>master-without-nav.blade.php <span class="text-muted"></span></a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="javascript: void(0);"><i class="bi bi-file-earmark-text text-info me-1 align-bottom"></i>right-sidebar.blade.php <span class="text-muted"></span></a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="javascript: void(0);"><i class="bi bi-file-earmark-text text-info me-1 align-bottom"></i>sidebar.blade.php <span class="text-muted"></span></a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="javascript: void(0);"><i class="bi bi-file-earmark-text text-info me-1 align-bottom"></i>topbar.blade.php <span class="text-muted"></span></a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="javascript: void(0);"><i class="bi bi-file-earmark-text text-info me-1 align-bottom"></i>vendor-scripts.blade.php <span class="text-muted"></span></a>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                    <li>
+                                                        <a href="javascript: void(0);"><i class="bi bi-file-earmark-text text-info me-1 align-bottom"></i>All blade php pages <span class="text-muted"></span></a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                        
+                                    </div>
+                                </div>
+                                
+                                
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="mb-3">
+                        <h4 class="mb-2">Laravel File Structure</h4>
+                        <p class="text-muted mb-4"></p>
+
+                        <pre class="language-markup" tabindex="0"><code class="language-markup">
+<span class="token prolog">@extends('layouts.master')</span>
+<span class="token prolog">@section('title') @lang('translation.Test') @endsection</span>
+<span class="token prolog">@section('content')</span>
+
+<span class="token prolog">@component('components.breadcrumb')</span>
+    <span class="token prolog">@slot('li_1') Skote @endslot</span>
+    <span class="token prolog">@slot('title') Test Page @endslot</span>
+<span class="token prolog">@endcomponent</span>
+
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div&gt;</span></span>
+        ...
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+                
+<span class="token prolog">@endsection</span>                                       
+</code></pre>
+                    </div>
+
+                    <div>
+                        <h3 class="mb-3">Layout setup</h3>
+                        <p class="text-muted mb-4">
+                            You can set the default layout in the <code>resources/views/layouts/master.blade.php</code> file in the body tag.
+                        </p>
+                        <pre class="language-markup p-3 rounded mb-4 bg-ligh position-relative"><button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard" title="Copy to clipboard">Copy</button><code>&lt;body data-bs-theme="light" data-topbar="light" data-sidebar="dark"&gt;</code> </pre>
+                        <div class="table-responsive">
+                            <table class="table table-bordered mb-0 mt-3">
+                                <tbody>
+                                    <tr>
+                                        <th>data-bs-theme="light"</th>
+                                        <td>To set Light layout.</td>
+                                    </tr>
+                                    <tr>
+                                        <th>data-bs-theme="dark"</th>
+                                        <td>To set Dark layout.</td>
+                                    </tr>
+                                    <tr>
+                                        <th>data-sidebar="light"</th>
+                                        <td>To set Light Sidebar.</td>
+                                    </tr>
+                                    <tr>
+                                        <th>data-sidebar="dark"</th>
+                                        <td>To set Dark Sidebar.</td>
+                                    </tr>
+                                    <tr>
+                                        <th>data-topbar="light"</th>
+                                        <td>To set Light Topbar.</td>
+                                    </tr>
+                                    <tr>
+                                        <th>data-topbar="dark"</th>
+                                        <td>To set Dark layout mode.</td>
+                                    </tr>                                    
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                @@include("partials/footer.html")
+            </div>
+            <!-- End Page-content -->
+
+        </div>
+        <!-- end main content-->
+
+    </div>
+    <!-- END layout-wrapper -->
+
+    @@include("partials/vendor-scripts.html")
+
+    <script src="../assets/libs/prismjs/prism.js"></script>
+
+
+    <!-- App js -->
+    <script src="https://themesbrand.com/docs/app.js"></script>
+</body>
+
+</html>

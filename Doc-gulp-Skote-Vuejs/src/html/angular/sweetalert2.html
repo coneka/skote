@@ -1,0 +1,413 @@
+@@include("partials/main.html")
+
+<head>
+
+  @@include("partials/title-meta.html", {"title": "SWEETALERT2"})
+
+  @@include("partials/head-css.html")
+
+</head>
+
+<!-- Begin page -->
+<div id="layout-wrapper">
+
+  @@include("partials/menu.html")
+
+  @@include("partials/sidebar.html")
+  <!-- ============================================================== -->
+  <!-- Start right Content here -->
+  <!-- ============================================================== -->
+  <div class="main-content">
+
+    <div class="page-content">
+      <div class="container">
+
+        <h3 class="mb-3">Overview <a href="https://www.npmjs.com/package/sweetalert2" target="_blank" class="float-end badge bg-success-subtle link-success fs-6">Official Website <i class="ri-external-link-line"></i></a></h3>
+
+        <p class="text-muted mb-4">A beautiful, responsive, customizable, accessible (WAI-ARIA) replacement for JavaScript's popup boxes.</p>
+
+
+        <h6 class="mt-3">Add Package</h6>
+        <div class="alert bg-light border-start border-3 rounded-start-0 border-primary-subtle border-0 mb-4">npm install sweetalert2 --save</div>
+
+        <h6 class="mt-3">Import</h6>
+        <div class="alert bg-light border-start border-3 rounded-start-0 border-primary-subtle border-0 mb-4">import Swal from 'sweetalert2';</div>
+        <h6 class="mt-3">Remove Package</h6>
+        <div class="alert bg-light border-start border-3 rounded-start-0 border-primary-subtle border-0 mb-4">npm uninstall sweetalert2 or you can remove package by removing specific package from package.json.</div>
+
+        <h5 class="mb-3">Examples:</h5>
+
+        <div class="table-responsive">
+          <table class="table mb-0">
+            <thead>
+              <tr>
+                <th scope="col" style="width:40%">Title</th>
+                <th scope="col">Typescript</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">A Basic Message</th>
+                <td>
+                  <pre class="language-js p-3 rounded"><code>Swal.fire({
+    text: 'Any fool can use a computer',
+    customClass: {
+        confirmButton: 'btn btn-primary px-4',
+    },
+    buttonsStyling: false,
+});</code></pre>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row ">A Title with a Text Under</th>
+                <td>
+                  <pre class="language-js p-3 rounded"><code>Swal.fire({
+title: "The Internet?",
+text: 'That thing is still around?',
+icon: 'question',
+iconColor: '#1ea6d3',
+buttonsStyling: false,
+customClass: {
+  confirmButton: 'btn btn-primary px-4',
+},
+});</code></pre>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row ">A Success message!</th>
+                <td>
+                  <pre class="language-js p-3 rounded"><code>Swal.fire({
+title: 'Good job!',
+text: 'You clicked the button!',
+icon: 'success',
+showCancelButton: true,
+confirmButtonText: 'OK',
+buttonsStyling: false,
+
+customClass: {
+    confirmButton: 'btn btn-primary px-4',
+    cancelButton: 'btn btn-danger ms-2 px-4',
+
+},
+});</code></pre>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">A Modal with a title, an error icon, a text, and a
+                  footer</th>
+                <td>
+                  <pre class="language-js p-3 rounded"><code>Swal.fire({
+title: 'Oops...',
+text: 'Something went wrong!',
+icon: 'error',
+footer: '<a href="">Why do I have this issue?</a>',
+confirmButtonText: 'OK',
+customClass: {
+    confirmButton: 'btn btn-primary px-4'
+},
+buttonsStyling: false,
+footer: '<a href="">Why do I have this issue?</a>',
+}).then((result) => {
+    if (result.value) {
+      Swal.fire({
+        title: 'Deleted!',
+        text: 'Your file has been deleted.',
+        buttonsStyling: false,
+        icon: 'success',
+        customClass: {
+          confirmButton: 'btn btn-primary px-4'
+        },
+      });
+
+    }
+});</code></pre>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">A Modal window with a long content inside</th>
+                <td>
+                  <pre class="language-js p-3 rounded"><code>Swal.fire({
+imageUrl: 'https://placeholder.pics/svg/300x1500',
+imageHeight: 1500,
+confirmButtonText: 'Yes, delete it!',
+showLoaderOnConfirm: true,
+allowOutsideClick: false,
+buttonsStyling: false,
+customClass: {
+    confirmButton: 'btn btn-primary px-4'
+  },
+});</code></pre>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">A Warning message, with a function attached to the
+                  "Confirm"-button...</th>
+                <td>
+                  <pre class="language-js p-3 rounded"><code>Swal.fire({
+title: "Are you sure?",
+text: "You won't be able to revert this!",
+icon: "warning",
+showCancelButton: true,
+confirmButtonText: "Yes, delete it!",
+buttonsStyling: false,
+customClass: {
+    confirmButton: 'btn btn-primary px-4',
+    cancelButton: 'btn btn-danger ms-2 px-4',
+  },
+}).then((result) {
+if (result.value) {
+Swal.fire({
+title: 'Deleted!',
+text: 'Your file has been deleted.',
+icon: 'success',
+buttonsStyling: false
+})
+}
+});</code></pre>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">By passing a parameter, you can execute something else
+                  for "Cancel".</th>
+                <td>
+                  <pre class="language-js p-3 rounded"><code>Swal.fire({
+title: "Are you sure?",
+text: "You won't be able to revert this!",
+icon: "warning",
+showCancelButton: true,
+confirmButtonText: "Yes, delete it!",
+buttonsStyling: false,
+customClass: {
+    confirmButton: 'btn btn-primary px-4',
+    cancelButton: 'btn btn-danger ms-2 px-4',
+    },
+}).then((result) {
+if (result.value) {
+Swal.fire({
+title: 'Deleted!',
+text: 'Your file has been deleted.',
+icon: 'success',
+buttonsStyling: false
+})
+}
+});</code></pre>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">A message with custom Image Header.</th>
+                <td>
+                  <pre class="language-js p-3 rounded"><code>Swal.fire({
+title: 'Sweet!',
+text: 'Modal with a custom image.',
+imageUrl: 'assets/images/logo-sm.png',
+imageHeight: 40,
+buttonsStyling: false,
+customClass: {
+    confirmButton: 'btn btn-primary px-4',
+  },
+});</code></pre>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">A message with auto close timer.</th>
+                <td>
+                  <pre class="language-js p-3 rounded"><code>let timerInterval;
+Swal.fire({
+title: 'Auto close alert!',
+html: 'I will close in <strong></strong> seconds.',
+timer: 2000,
+timerProgressBar: true,
+buttonsStyling: false,
+customClass: {
+    confirmButton: 'btn btn-primary px-4'
+  },
+  didOpen: () => {
+    // Swal.showLoading();
+    timerInterval = setInterval(() => {
+      const content = Swal.getHtmlContainer();
+      if (content) {
+        const b: any = content.querySelector('b');
+        if (b) {
+          b.textContent = Swal.getTimerLeft();
+        }
+      }
+    }, 100);
+  },
+  willClose: () => {
+    clearInterval(timerInterval);
+  },
+}).then((result) => {
+  /* Read more about handling dismissals below */
+  if (result.dismiss === Swal.DismissReason.timer) {
+  }
+});</code></pre>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Custom HTML description and buttons.</th>
+                <td>
+                  <pre class="language-js p-3 rounded"><code>Swal.fire({
+title: '<strong>HTML <u>example</u></strong>',
+icon: 'info',
+html: 'You can use <b>bold text</b>, ' +
+'<a href="//sweetalert2.github.io">links</a> ' +
+'and other HTML tags',
+showCloseButton: true,
+showCancelButton: true,
+focusConfirm: false,
+confirmButtonText: '<i class="ri-thumb-up-fill align-bottom me-1"></i> Great!',
+confirmButtonAriaLabel: 'Thumbs up, great!',
+cancelButtonText: '<i class="ri-thumb-down-fill align-bottom"></i>',
+buttonsStyling: false,
+customClass: {
+    confirmButton: 'btn btn-success px-4',
+    cancelButton: 'btn btn-danger ms-2 px-4',
+  },
+});</code></pre>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">A dialog with three buttons.</th>
+                <td>
+                  <pre class="language-js p-3 rounded"><code>const swalWithBootstrapButtons = Swal.mixin({
+customClass: {
+    confirmButton: 'btn btn-success',
+    cancelButton: 'btn btn-danger ms-2 px-4',
+    denyButton: 'btn btn-info ms-2 px-4',
+},
+buttonsStyling: false,
+});
+
+swalWithBootstrapButtons
+.fire({
+    title: 'Do you want to save the changes?',
+    confirmButtonText: 'Save',
+    denyButtonText: "Don't save",
+    cancelButtonText: 'Cancel',
+    showCancelButton: true,
+    buttonsStyling: false,
+    customClass: {
+    confirmButton: 'btn btn-primary',
+    cancelButton: 'btn btn-danger ms-2 px-4',
+    denyButton: 'btn btn-info ms-2 px-4'
+    },
+})
+.then((result) => {
+    if (result.value) {
+    Swal.fire({
+        title: 'Saved!',
+        icon: 'success',
+        buttonsStyling: false,
+    });
+    } else if (
+    /* Read more about handling dismissals below */
+    result.dismiss === Swal.DismissReason.cancel
+    ) {
+    Swal.fire({
+        title: 'Cancelled',
+        icon: 'error',
+        buttonsStyling: false,
+    });
+    }
+});</code></pre>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">A custom positioned dialog.</th>
+                <td>
+                  <pre class="language-js p-3 rounded"><code>Swal.fire({
+position: 'top-end',
+icon: 'success',
+title: 'Your work has been saved',
+showConfirmButton: false,
+timer: 1500,
+buttonsStyling: false,
+});</code></pre>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">A message with custom width, padding and background.
+                </th>
+                <td>
+                  <pre class="language-js p-3 rounded"><code>Swal.fire({
+title: 'Custom width, padding, background.',
+width: 600,
+padding: 100,
+background: '#ffff',
+buttonsStyling: false,
+customClass: {
+    confirmButton: 'btn btn-primary'
+  },
+});</code></pre>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Ajax request example.</th>
+                <td>
+                  <pre class="language-js p-3 rounded"><code>Swal.fire({
+title: 'Submit email to run ajax request',
+input: 'email',
+showCancelButton: true,
+confirmButtonText: 'Submit',
+showLoaderOnConfirm: true,
+customClass: {
+    confirmButton: 'btn btn-primary',
+    cancelButton: 'btn btn-danger ms-2 px-4',
+  },
+buttonsStyling: false,
+preConfirm: (email) => {
+    // eslint-disable-next-line no-unused-vars
+    return new Promise<void>((resolve, reject) => {
+      setTimeout(() => {
+        if (email === 'taken@example.com') {
+          Promise.reject(new Error('This email is already taken.'));
+        } else {
+          resolve();
+        }
+      }, 2000);
+    });
+  },
+
+  allowOutsideClick: false,
+}).then((email) => {
+  Swal.fire({
+    icon: 'success',
+    title: 'Ajax request finished!',
+    confirmButtonColor: '#4b93ff',
+    customClass: {
+      confirmButton: 'btn btn-success'
+    },
+    html: 'Submitted email: ' + email,
+    buttonsStyling: false,
+  });
+});</code></pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <!-- end table -->
+        </div>
+
+      </div>
+      @@include("partials/footer.html")
+    </div>
+    <!-- End Page-content -->
+
+
+  </div>
+  <!-- end main content-->
+
+</div>
+<!-- END layout-wrapper -->
+
+
+@@include("partials/vendor-scripts.html")
+
+<!-- prismjs plugin -->
+<script src="../assets/libs/prismjs/prism.js"></script>
+
+<!-- App js -->
+<script src="https://themesbrand.com/docs/app.js"></script>
+</body>
+
+</html>

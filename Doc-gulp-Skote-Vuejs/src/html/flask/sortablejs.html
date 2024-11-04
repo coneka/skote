@@ -1,0 +1,111 @@
+@@include("partials/main.html")
+
+<head>
+
+    @@include("partials/title-meta.html", {"title": "SortableJS"})
+
+    @@include("partials/head-css.html")
+
+</head>
+
+<body>
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+
+        @@include("partials/menu.html")
+        @@include("partials/sidebar.html")
+
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+
+            <div class="page-content">
+                <div class="container">
+                    <h3 class="mb-3">Overview <a href="https://sortablejs.github.io/Sortable/" target="_blank" class="float-end badge bg-success-subtle link-success fs-6">Official Website <i class="ri-external-link-line"></i></a></h3>
+                    <p class="text-muted mb-4">SortableJS JavaScript library for reorderable drag-and-drop lists.</p>
+
+                    <h5 class="mb-3">Javascript</h5>
+                    <pre class="language-markup p-3 rounded mb-3"><code>&lt;!-- sortablejs --&gt;
+&lt;script src=&quot;assets/libs/sortablejs/Sortable.min.js&quot;&gt;&lt;/script&gt;</code></pre>
+
+                    <h5 class="mb-3">Initjs (Custom js)</h5>
+                    <pre class="language-markup p-3 rounded mb-3"><code>&lt;!-- nestable init js --&gt;
+&lt;script src=&quot;assets/js/pages/nestable.init.js&quot;&gt;&lt;/script&gt;</code></pre>
+
+                    <h5 class="mb-3">Add Package</h5>
+                    <div class="alert bg-light border-start border-3 rounded-start-0 border-primary-subtle border-0 mb-4">yarn add sortablejs --save</div>
+
+                    <h5 class="mb-3">Remove Package</h5>
+                    <div class="alert bg-light border-start border-3 rounded-start-0 border-primary-subtle border-0 mb-4">yarn remove sortablejs or you can remove package by removing specific package from package.json</div>
+
+                    <h5 class="mb-3">Examples:</h5>
+
+                    <div class="table-responsive">
+                        <table class="table mb-0">
+                            <thead>
+                                <tr>
+                                    <th scope="col" style="width:40%">Title</th>
+                                    <th scope="col">Javascript</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Nested Sortables List</th>
+                                    <td>
+                                        <pre><code class="language-js">var nestedSortables = [].slice.call(document.querySelectorAll('.nested-sortable'));
+
+for (var i = 0; i <pre nestedSortables.length; i++) {
+new Sortable(nestedSortables[i], {
+group: 'nested',
+animation: 150,
+fallbackOnBody: true,
+swapThreshold: 0.65
+});
+}</code></pre>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Nested Sortables List with Handle</th>
+                                    <td>
+                                        <pre><code class="language-js">var nestedSortablesHandles = [].slice.call(document.querySelectorAll('.nested-sortable-handle'));
+
+for (var i = 0; i <pre nestedSortablesHandles.length; i++) {
+new Sortable(nestedSortablesHandles[i], {
+handle: '.handle',
+group: 'nested',
+animation: 150,
+fallbackOnBody: true,
+swapThreshold: 0.65
+});
+}</code></pre>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                        <!-- end table -->
+                    </div>
+
+                </div>
+                @@include("partials/footer.html")
+            </div>
+            <!-- End Page-content -->
+
+        </div>
+        <!-- end main content-->
+
+    </div>
+    <!-- END layout-wrapper -->
+
+    @@include("partials/vendor-scripts.html")
+
+    <!-- prismjs plugin -->
+    <script src="../assets/libs/prismjs/prism.js"></script>
+
+    <!-- App js -->
+    <script src="https://themesbrand.com/docs/app.js"></script>
+</body>
+
+</html>

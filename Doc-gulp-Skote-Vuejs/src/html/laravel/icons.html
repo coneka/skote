@@ -1,0 +1,124 @@
+@@include("partials/main.html")
+
+<head>
+
+    @@include("partials/title-meta.html", {"title": "Icons"})
+
+    @@include("partials/head-css.html")
+
+</head>
+
+<body>
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+
+        @@include("partials/menu.html")
+        @@include("partials/sidebar.html")
+
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+
+            <div class="page-content">
+                <div class="container">
+
+                    <h3 class="mb-4">Icon SCSS</h3>
+                    <p class="text-muted mb-3"><b>icons.scss</b> is source file for the all custom icon
+                        plugins.</p>
+
+                    <pre class="language-markup p-3 rounded mb-4 position-relative"><button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal">Copy</button><code>&lt;!-- icons CSS --&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;assets/css/icons.min.css&quot;&gt;  // html file 
+&lt;link rel=&quot;stylesheet&quot; href=&quot;{{ URL::asset('build/css/icons.min.css') }}&quot;&gt;  // laravel file 
+</code></pre>
+
+                    
+
+                    <div class="mb-4">
+                        <h5 class="fw-semibold mb-3">Box icons<a href="https://boxicons.com/" target="_blank" class="float-end badge bg-success-subtle link-success">Official Website <i class="ri-external-link-line"></i></a> </h5>
+                        <p class="text-muted mb-4">Boxicons is a free collection of carefully crafted open source icons.Each icon is designed on a 24px grid with the material guidelines.</p>
+
+                        <h6 class="mt-3">SCSS File:</h6>
+                        <p class="text-muted mb-3">Remix icons are scss based here.where remix icon code is
+                            written in <span>_boxicon.scss</span> </p>
+                        <pre class="language-js p-3 rounded mb-4 position-relative"><button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal">Copy</button><code>&lt;!-- box icon scss --&gt;
+@import &quot;custom/plugins/icons/boxicons&quot;; 
+</code></pre>
+
+                        <h6 class="mt-3">Example:</h6>
+                        <pre class="language-markup p-3 rounded position-relative"><button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal">Copy</button><code>&lt;i class=&quot;bx bx-**&quot;&gt;&lt;/i&gt;</code></pre>
+                    </div>
+
+                    <div class="mb-4">
+                        <h5 class="mb-4"><u>Dripicons</u><a href="http://demo.amitjakhu.com/dripicons/" target="_blank" class="float-end badge bg-success-subtle link-success">Official Website <i class="ri-external-link-line"></i></a> </h5>
+                        <p class="text-muted mb-3">Dripicons Icon Set is an Icon Set of 200 icons. Each icon is solid, which is useful for changing icon colors. It's been open sourced with the license: Creative Commons Attribution 4.0 International. All icons can be used for personal &amp; commercial purposes. Use them with or without Bootstrap in any project.</p>
+
+                        <h6 class="mt-3">SCSS File:</h6>
+                        <p class="text-muted mb-3">Dripicons are scss based here. Where Dripicons 
+                            code is written in <span>_dripicons.scss</span> </p>
+                        <pre class="p-3 rounded mb-4 position-relative language-js" tabindex="0"><button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal">Copy</button><code class="language-js"><span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> Dripicons  scss <span class="token operator">--</span><span class="token operator">&gt;</span>
+@<span class="token keyword">import</span> <span class="token string">"custom/plugins/icons/_dripicons"</span><span class="token punctuation">;</span> 
+</code></pre>
+
+                        <h6 class="mt-3">Example:</h6>
+                        <pre class="p-3 rounded position-relative language-markup" tabindex="0"><button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal">Copy</button><code class="language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>dripicons-*-*<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">&gt;</span></span></code></pre>
+
+                    </div>
+
+                    <div class="mb-4">
+                        <h5 class="mb-4"><u>Material Design Icons</u><a href="https://m3.material.io/styles/icons/overview" target="_blank" class="float-end badge bg-success-subtle link-success">Official Website <i class="ri-external-link-line"></i></a> </h5>
+                        <p class="text-muted mb-3"> Material design icons is free.
+                            Material Design Icons | Figma Community
+                            Our icons are free for everyone to use. It's available under Apache license version 2.0. In this file, over 2000 Material Design icons are built as components in 5 variants: Filled, Outlined, Sharp, 
+                            Rounded, Two-tone. You can access our icons directly on fonts.google.com/icons.</p>
+
+                        <h6 class="mt-3">SCSS File:</h6>
+                        <p class="text-muted mb-3">Material Design Icons are scss based here. Where Material Design Icons
+                            code is written in <span>_materialdesignicons.scss</span> </p>
+                        <pre class="p-3 rounded mb-4 position-relative language-js" tabindex="0"><button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal">Copy</button><code class="language-js"><span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> Material Design Icons scss <span class="token operator">--</span><span class="token operator">&gt;</span>
+@<span class="token keyword">import</span> <span class="token string">"custom/plugins/icons/_materialdesignicons"</span><span class="token punctuation">;</span> 
+</code></pre>
+
+                        <h6 class="mt-3">Example:</h6>
+                        <pre class="p-3 rounded position-relative language-markup" tabindex="0"><button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal">Copy</button><code class="language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mdi mdi-*-*<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">&gt;</span></span></code></pre>
+                    </div>
+
+                    <div>
+                        <h5 class="fw-semibold mb-3"><u>Fontawesome icons</u><a href="https://fontawesome.com/" target="_blank" class="float-end badge bg-success-subtle link-success">Official Website <i class="ri-external-link-line"></i></a> </h5>
+                        <p class="text-muted mb-4">Font Awesome is designed to be used with inline elements. The &lt;i&gt; and &lt;span&gt; elements are widely used for icons. Also note that if you change the font-size or color of the icon's container, the icon changes. Same things goes for shadow, and anything else that gets inherited using CSS.</p>
+
+                        <h6 class="mt-3">SCSS File:</h6>
+                        <p class="text-muted mb-3">Fontawesome icons are scss based here.where Fontawesome icon code is
+                            written in <span>_fontawesome-all.scss</span> </p>
+                        <pre class="p-3 rounded mb-4 position-relative language-js" tabindex="0"><button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal">Copy</button><code class="language-js"><span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> Fontawesome icon scss <span class="token operator">--</span><span class="token operator">&gt;</span>
+@<span class="token keyword">import</span> <span class="token string">"custom/plugins/icons/_fontawesome-all"</span><span class="token punctuation">;</span> 
+</code></pre>
+
+                        <h6 class="mt-3">Example:</h6>
+                        <pre class="p-3 rounded position-relative language-markup" tabindex="0"><button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal">Copy</button><code class="language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>far fa-**<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">&gt;</span></span></code></pre>
+                    </div>
+
+                </div>
+                @@include("partials/footer.html")
+            </div>
+            <!-- End Page-content -->
+
+        </div>
+        <!-- end main content-->
+
+    </div>
+    <!-- END layout-wrapper -->
+
+
+
+    @@include("partials/vendor-scripts.html")
+
+    <!-- prismjs plugin -->
+    <script src="../assets/libs/prismjs/prism.js"></script>
+
+    <!-- App js -->
+    <script src="https://themesbrand.com/docs/app.js"></script>
+</body>
+
+</html>

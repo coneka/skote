@@ -1,0 +1,443 @@
+@@include("partials/main.html")
+
+<head>
+
+    @@include("partials/title-meta.html", {"title": "Folder Structure"})
+
+    @@include("partials/head-css.html")
+
+</head>
+
+<body>
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+
+        @@include("partials/menu.html")
+
+        @@include("partials/sidebar.html")
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+
+            <div class="page-content">
+                <div class="container">
+                    <h3 class="mb-4">Folder Structure</h3>
+
+                    <div class="alert alert-danger text-danger">
+                        Presented here is the Core rendition of the folder arrangement. To facilitate layout management
+                        and expedite development through Gulp, we've meticulously designed partials. Incorporating a
+                        starter kit that serves as a launchpad for commencing projects from the ground up.
+                    </div>
+                    <div class="verti-sitemap">
+                        <ul class="list-unstyled mb-0">
+                            <li class="p-0 parent-title"><a href="javascript: void(0);"
+                                    class="fw-medium fs-14">Admin</a>
+                            </li>
+                            <li>
+                                <div class="first-list">
+                                    <div class="list-wrap">
+                                        <a href="javascript: void(0);" class="fw-medium text-primary"><i
+                                                class=" bi bi-folder2 me-1 align-bottom text-warning"></i>Judia</a>
+                                    </div>
+                                    <ul class="second-list list-unstyled">
+
+                                        <li>
+                                            <a href="javascript: void(0);"><i
+                                                    class=" bi bi-folder2 me-1 align-bottom text-warning"></i>App_Start
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // <span
+                                                    class="text-muted"> includes all launch Themes Settings
+                                                </span></a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript: void(0);"><i
+                                                    class=" bi bi-folder2 me-1 align-bottom text-warning"></i>assets
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //
+                                                <span class="text-muted"> includes all scss, fonts, images,
+                                                    lang, js files
+                                                    for the development. </span></a>
+                                            <ul class="second-list list-unstyled">
+
+                                                <li>
+                                                    <a href="javascript: void(0);"><i
+                                                            class=" bi bi-folder2 me-1 align-bottom text-warning"></i>css</a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript: void(0);"><i
+                                                            class=" bi bi-folder2 me-1 align-bottom text-warning"></i>fonts
+                                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                        //
+                                                        <span class="text-muted"> includes all ICONS
+                                                            fonts</span></a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript: void(0);"><i
+                                                            class=" bi bi-folder2 me-1 align-bottom text-warning"></i>images</a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript: void(0);"><i
+                                                            class=" bi bi-folder2 me-1 align-bottom text-warning"></i>js
+                                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                        <span class="text-muted"> // includes all custom js
+                                                            files for
+                                                            the apps, layouts & pages </a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript: void(0);"><i
+                                                            class=" bi bi-folder2 me-1 align-bottom text-warning"></i>lang
+                                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                        <span class="text-muted"> // includes all languages json
+                                                            file</a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript: void(0);"><i
+                                                            class=" bi bi-folder2 me-1 align-bottom text-warning"></i>json
+                                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                        <span class="text-muted"> // includes the json files of
+                                                            chat,invoice and other pages</a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript: void(0);"><i
+                                                            class=" bi bi-folder2 me-1 align-bottom text-warning"></i>scss</a>
+                                                </li>
+
+                                            </ul>
+                                        </li>
+                            </li>
+                            <li>
+                                <a href="javascript: void(0);"><i
+                                        class=" bi bi-folder2 me-1 align-bottom text-warning"></i>Controllers
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // <span
+                                        class="text-muted">includes all Controllers</span></a>
+                            </li>
+                            <li>
+                                <a href="javascript: void(0);"><i
+                                        class=" bi bi-folder2 me-1 align-bottom text-warning"></i>Models
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // <span
+                                        class="text-muted">all Core models. you can add your custom also</span></a>
+                            </li>
+
+                            <li>
+                                <a href="javascript: void(0);"><i
+                                        class=" bi bi-folder2 me-1 align-bottom text-warning"></i>obj
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // <span
+                                        class="text-muted">Debug folder</span></a>
+                            </li>
+                            <li>
+                                <a href="javascript: void(0);"><i
+                                        class=" bi bi-folder2 me-1 align-bottom text-warning"></i>packages
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // <span
+                                        class="text-muted">all packages</span></a>
+                            </li>
+                            <li>
+                                <a href="javascript: void(0);"><i
+                                        class=" bi bi-folder2 me-1 align-bottom text-warning"></i>Views
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // <span
+                                        class="text-muted">all pages</span></a>
+                                <ul class="second-list list-unstyled">
+
+                                    <li>
+                                        <a href="javascript: void(0);"><i
+                                                class=" bi bi-folder2 me-1 align-bottom text-warning"></i>Auth
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //
+                                            <span class="text-muted"> includes all Auth Pages</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript: void(0);"><i
+                                                class=" bi bi-folder2 me-1 align-bottom text-warning"></i>Blog
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //
+                                            <span class="text-muted"> includes all Blog
+                                                Pages</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript: void(0);"><i
+                                                class=" bi bi-folder2 me-1 align-bottom text-warning"></i>Calendar
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //
+                                            <span class="text-muted"> includes Calendar pages</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript: void(0);"><i
+                                                class=" bi bi-folder2 me-1 align-bottom text-warning"></i>Candidate
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //
+                                            <span class="text-muted"> includes Candidate pages</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript: void(0);"><i
+                                                class=" bi bi-folder2 me-1 align-bottom text-warning"></i>Charts
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //
+                                            <span class="text-muted"> includes all Charts Pages</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript: void(0);"><i
+                                                class=" bi bi-folder2 me-1 align-bottom text-warning"></i>Chat
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //
+                                            <span class="text-muted"> includes Chat Pages</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript: void(0);"><i
+                                                class=" bi bi-folder2 me-1 align-bottom text-warning"></i>Contacts
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //
+                                            <span class="text-muted"> includes all Contacts
+                                                Pages</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript: void(0);"><i
+                                                class=" bi bi-folder2 me-1 align-bottom text-warning"></i>Crypto
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //
+                                            <span class="text-muted"> includes all Crypto Pages</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript: void(0);"><i
+                                                class=" bi bi-folder2 me-1 align-bottom text-warning"></i>Dashboard
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //
+                                            <span class="text-muted"> includes all Dashboard
+                                                Pages</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript: void(0);"><i
+                                                class=" bi bi-folder2 me-1 align-bottom text-warning"></i>Ecommerce
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //
+                                            <span class="text-muted"> includes all Ecommerce
+                                                Pages</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript: void(0);"><i
+                                                class=" bi bi-folder2 me-1 align-bottom text-warning"></i>Email
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //
+                                            <span class="text-muted"> includes all Email
+                                                Pages</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript: void(0);"><i
+                                                class=" bi bi-folder2 me-1 align-bottom text-warning"></i>FileManager
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //
+                                            <span class="text-muted"> includes FileManager Pages</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript: void(0);"><i
+                                                class=" bi bi-folder2 me-1 align-bottom text-warning"></i>Forms
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //
+                                            <span class="text-muted"> includes all Forms Pages</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript: void(0);"><i
+                                                class=" bi bi-folder2 me-1 align-bottom text-warning"></i>Icons
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //
+                                            <span class="text-muted"> includes all Icons Pages</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript: void(0);"><i
+                                                class=" bi bi-folder2 me-1 align-bottom text-warning"></i>Invoices
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //
+                                            <span class="text-muted"> includes all Invoices Pages</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript: void(0);"><i
+                                                class=" bi bi-folder2 me-1 align-bottom text-warning"></i>Job
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //
+                                            <span class="text-muted"> includes all Job Pages</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript: void(0);"><i
+                                                class=" bi bi-folder2 me-1 align-bottom text-warning"></i>Layouts
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //
+                                            <span class="text-muted"> includes all Layouts Pages</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript: void(0);"><i
+                                                class=" bi bi-folder2 me-1 align-bottom text-warning"></i>Maps
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //
+                                            <span class="text-muted"> includes all Maps Pages</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript: void(0);"><i
+                                                class=" bi bi-folder2 me-1 align-bottom text-warning"></i>Pages
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //
+                                            <span class="text-muted"> includes all Extra Pages</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript: void(0);"><i
+                                                class=" bi bi-folder2 me-1 align-bottom text-warning"></i>Projects
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //
+                                            <span class="text-muted"> includes all Projects Pages</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript: void(0);"><i
+                                                class=" bi bi-folder2 me-1 align-bottom text-warning"></i>Shared
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //
+                                            <span class="text-muted"> includes all Comoponenets
+                                                Pages</span></a>
+                                        <ul class="second-list list-unstyled">
+
+                                            <li>
+                                                <a href="javascript: void(0);"><i
+                                                        class="bi bi-file-earmark-text me-1 text-info align-bottom"></i>blankLayout.cshtml
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                    //
+                                                    <span class="text-muted"> Auth pages layout.</span></a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript: void(0);"><i
+                                                        class="bi bi-file-earmark-text me-1 text-info align-bottom"></i>Footer.cshtml
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                    //
+                                                    <span class="text-muted"> footer related code. you can
+                                                        modify as per your requirements.</span></a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript: void(0);"><i
+                                                        class="bi bi-file-earmark-text me-1 text-info align-bottom"></i>HeadCSS.cshtml
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                    //
+                                                    <span class="text-muted"> All css link here.</span></a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript: void(0);"><i
+                                                        class="bi bi-file-earmark-text me-1 text-info align-bottom"></i>Horizontal.cshtml
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                    //
+                                                    <span class="text-muted"> Horizontal layout related
+                                                        code.</span></a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript: void(0);"><i
+                                                        class="bi bi-file-earmark-text me-1 text-info align-bottom"></i>_Layout.cshtml
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                    //
+                                                    <span class="text-muted"> layout master</span></a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript: void(0);"><i
+                                                        class="bi bi-file-earmark-text me-1 text-info align-bottom"></i>LayoutIcoLoading.cshtml
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                    //
+                                                    <span class="text-muted"> customizer master</span></a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript: void(0);"><i
+                                                        class="bi bi-file-earmark-text me-1 text-info align-bottom"></i>PageTitle.cshtml
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                    //
+                                                    <span class="text-muted"> pageTitle related
+                                                        code.</span></a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript: void(0);"><i
+                                                        class="bi bi-file-earmark-text me-1 text-info align-bottom"></i>RightSidebar.cshtml
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                    //
+                                                    <span class="text-muted"> Right Sidebar related code</span></a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript: void(0);"><i
+                                                        class="bi bi-file-earmark-text me-1 text-info align-bottom"></i>Sidebar.cshtml
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                    //
+                                                    <span class="text-muted">Sidebar related code</span></a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript: void(0);"><i
+                                                        class="bi bi-file-earmark-text me-1 text-info align-bottom"></i>TitleMeta.cshtml
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                    //
+                                                    <span class="text-muted"> meta title code</span></a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript: void(0);"><i
+                                                        class="bi bi-file-earmark-text me-1 text-info align-bottom"></i>Topbar.cshtml
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                    //
+                                                    <span class="text-muted"> Topbar menus related code, you
+                                                        can easily customize topbar from here.</span></a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript: void(0);"><i
+                                                        class="bi bi-file-earmark-text me-1 text-info align-bottom"></i>VendorScripts.cshtml
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                    //
+                                                    <span class="text-muted"> Common javascript files
+                                                        includes here.</span></a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="javascript: void(0);"><i
+                                                class=" bi bi-folder2 me-1 align-bottom text-warning"></i>Tables
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //
+                                            <span class="text-muted">includes all Tables Pages</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript: void(0);"><i
+                                                class=" bi bi-folder2 me-1 align-bottom text-warning"></i>Tasks
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //
+                                            <span class="text-muted"> includes all Tasks Pages</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript: void(0);"><i
+                                                class=" bi bi-folder2 me-1 align-bottom text-warning"></i>UI
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //
+                                            <span class="text-muted"> includes all Base UI Pages</span></a>
+                                    </li>
+                                </ul>
+
+                            </li>
+                            <li>
+                                <a href="javascript: void(0);"><i
+                                        class=" bi bi-folder2 me-1 text-info align-bottom text-warning"></i>
+                                    All other folders will be here.</a>
+                            </li>
+                            <div class="first-list">
+                                <div class="list-wrap">
+                                    <a href="javascript: void(0);"><i
+                                            class="bi bi-file-earmark-text me-1 text-info align-bottom"></i>gulpfile.js
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span
+                                            class="text-muted">
+                                            // custom gulpfile to compile all the files which
+                                            can create production ready build. </span> </a>
+                                </div>
+                            </div>
+                            <div class="first-list">
+                                <div class="list-wrap">
+                                    <a href="javascript: void(0);"><i
+                                            class="bi bi-file-earmark-text me-1 text-info align-bottom"></i>package.json
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span
+                                            class="text-muted">
+                                            // all the packages are in this file and you can add
+                                            new packges.</a>
+                                </div>
+                            </div>
+                            <div class="first-list">
+                                <div class="list-wrap">
+                                    <a href="javascript: void(0);"><i
+                                            class="bi bi-file-earmark-text me-1 text-info align-bottom"></i>yarn.lock</a>
+                                </div>
+                            </div>
+                        </ul>
+                    </div>
+
+                </div>
+                <footer class="footer mt-4 text-center position-absolute end-0 bottom-0 start-0">
+                    <div class="container border-top py-3">
+                        <script>
+                            document.write(new Date().getFullYear())
+                        </script> © Skote.
+                    </div>
+                </footer>
+
+            </div>
+            <!-- End Page-content -->
+
+        </div>
+        <!-- end main content-->
+
+    </div>
+    <!-- END layout-wrapper -->
+
+    @@include("partials/vendor-scripts.html")
+
+    <!-- App js -->
+    <script src="https://themesbrand.com/docs/app.js"></script>
+</body>
+
+</html>

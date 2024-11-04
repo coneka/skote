@@ -1,0 +1,114 @@
+@@include("partials/main.html")
+
+<head>
+
+    @@include("partials/title-meta.html", {"title": "Multi Language"})
+
+    @@include("partials/head-css.html")
+
+</head>
+
+<body>
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+
+        @@include("partials/menu.html")
+
+        @@include("partials/sidebar.html")
+
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+
+            <div class="page-content">
+                <div class="container">
+
+                    <h3 class=" mb-4">Multi Language Settings</h3>
+
+                    <h5 class="mb-4">Let's add the French language.</h5>
+                    <h5 class=" text-decoration-underline mb-4">HTML</h5>
+                    <ul class="mb-0 text-muted">
+                        <li>Create a new file fr.json in the fr folder in the
+                            <code>assets/lang</code> folder and copy the <code>en.json</code> file code in
+                            this file.
+                        </li>
+                        <li>
+                            Now you need to add the language in the
+                            <code>assets/js/app.js</code> file. In the
+                            function setLanguage, add the "Switch case" condition as below code and make
+                            sure to add the french.jpg file in the <code>assets/images/flags</code>
+                            folder.
+                            <pre class="language-markup p-3 rounded mb-4 bg-ligh position-relative mt-3"><button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard" title="Copy to clipboard">Copy</button><code>case "fr":
+    document.getElementById("header-lang-img").src = "assets/images/flags/french.svg";
+break;</code> </pre>
+                        </li>
+                        <li>
+                            You can simply use key attributes in the HTML tag to convert the
+                            language text. Example: &lt;div data-key="t-title">This is title.&lt;/div>
+                        </li>
+                        <li>
+                            <p>Add the below dropdown in the
+                                <code>partials/topbar.html</code> file in the
+                                language dropdown.
+                            </p>
+                            <pre class="language-markup p-3 rounded mb-4 bg-ligh position-relative"><button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard" title="Copy to clipboard">Copy</button><code>&lt;!-- item--&gt;
+&lt;a href="javascript:void(0);" class="dropdown-item notify-item language" data-lang="fr" title="French"&gt;
+    &lt;img src="assets/images/flags/french.jpg" alt="user-image" class="me-2 rounded" height="18"&gt;
+    &lt;span class="align-middle">French&lt;/span&gt;
+&lt;/a&gt;</code> </pre>
+                        </li>
+                    </ul>
+
+                    <h5 class="text-decoration-underline mb-4">Laravel</h5>
+                    <ul>
+                        <li> Create new file translation.php in the fr folder in the <code>/lang</code> folder and add the below code. 
+                            <pre class="language-markup p-3 rounded mb-4 bg-ligh position-relative"><button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard" title="Copy to clipboard">Copy</button><code>&lt;?php
+// translation.php
+return [
+'Test' =&gt; 'Test'
+];</code>
+</pre>
+                        </li>
+                        <li>
+                            Now you need to add the language in the <code>resources/views/layuots/topbar.blade.php</code> file. 
+                            <pre class="language-markup p-3 rounded mb-4 bg-ligh position-relative mt-3"><button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard" title="Copy to clipboard">Copy</button><code>@case('ru')
+    &lt;img src="{{ URL::asset('build/images/flags/russia.jpg')}}" alt="Header Language" height="16">
+@break
+
+<!-- item-->
+&lt;a href="{{ url('index/ru') }}" class="dropdown-item notify-item language" data-lang="ru">
+    <img src="{{ URL::asset ('build/images/flags/russia.jpg') }}" alt="user-image" class="me-1" height="12"> <span class="align-middle">Russian</span>
+&lt;/a></code> </pre>
+                        </li>
+                        <li> You need to add the new language option in the topbar <code>resounrces/views/layouts/topbar.blade.php</code>. Make sure to add it flag image and option in the dropdown. </li>
+                    </ul>
+
+                    <p class="mt-2">
+                        After completing these above steps you need to run the command <code>npm run build</code> 
+                         command in the project directory. After running this process you need
+                        to run the command <code>php artisan serve</code> . It will serve your app on the localhost.
+                      </p>
+
+                </div>
+                @@include("partials/footer.html")
+            </div>
+            <!-- End Page-content -->
+
+        </div>
+        <!-- end main content-->
+
+    </div>
+    <!-- END layout-wrapper -->
+
+    @@include("partials/vendor-scripts.html")
+
+    <!-- prismjs plugin -->
+    <script src="../assets/libs/prismjs/prism.js"></script>
+
+    <!-- App js -->
+    <script src="https://themesbrand.com/docs/app.js"></script>
+</body>
+
+</html>

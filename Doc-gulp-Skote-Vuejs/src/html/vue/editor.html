@@ -1,0 +1,96 @@
+@@include("partials/main.html")
+
+<head>
+
+    @@include("partials/title-meta.html", {"title": "Ck-editor"})
+
+    @@include("partials/head-css.html")
+
+</head>
+
+<body>
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+
+        @@include("partials/menu.html")
+        @@include("partials/sidebar.html")
+
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+ 
+            <div class="page-content">
+                <div class="container">
+                    <h3 class="mb-3">Overview<a href="https://www.npmjs.com/package/@ckeditor/ckeditor5-vue" target="_blank"
+                            class="float-end badge bg-success-subtle link-success fs-6">Official Website <i
+                                class="ri-external-link-line"></i></a> </h3>
+                    <p class="text-muted mb-4">Ck-editor is a javascript Package that converts the normal select or input into customizable select inputs with multi-select and autocomplete support.</p>
+
+                    <h5 class="mb-3 mt-4">Timepickr Examples:</h5>
+                    <div>
+                        <h5 class="mb-3">Add Package</h5>
+                        <div
+                            class="alert bg-light border-start border-3 rounded-start-0 border-primary-subtle border-0 mb-4">
+                            yarn add @ckeditor/ckeditor5-vue </div>
+
+                        <h5 class="mb-3">Import Package</h5>
+                        <div
+                            class="alert bg-light border-start border-3 rounded-start-0 border-primary-subtle border-0 mb-4">
+                            import CKEditor from "@ckeditor/ckeditor5-vue";</div>
+
+                        <h5 class="mb-3">Remove Package</h5>
+                        <div
+                            class="alert bg-light border-start border-3 rounded-start-0 border-primary-subtle border-0 mb-4">
+                            yarn remove @ckeditor/ckeditor5-vue ( or you can remove package by removing specific package from
+                            package.json )</div>
+                    </div>
+
+                    <div class="table-responsive">
+                        <table class="table align-middle mb-0">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Title</th>
+                                    <th scope="col">Vue</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">CK Editor</th>
+                                    <td>
+                                        <pre class="p-3 rounded language-markup"><code class="language-markup">&lt;div class="form-ckeditor"
+    &lt;ckeditor v-model="editorData" :editor="editor">&lt;/ckeditor>
+&lt;div/>
+                                        </code></pre>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                        <!-- end table -->
+                    </div>
+
+                </div>
+                @@include("partials/footer.html")
+            </div>
+            <!-- End Page-content -->
+
+        </div>
+        <!-- end main content-->
+
+    </div>
+    <!-- END layout-wrapper -->
+
+
+
+    @@include("partials/vendor-scripts.html")
+
+    <!-- prismjs plugin -->
+    <script src="../assets/libs/prismjs/prism.js"></script>
+
+    <!-- App js -->
+    <script src="https://themesbrand.com/docs/app.js"></script>
+</body>
+
+</html>

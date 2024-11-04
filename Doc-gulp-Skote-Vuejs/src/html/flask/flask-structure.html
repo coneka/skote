@@ -1,0 +1,239 @@
+@@include("partials/main.html")
+
+<head>
+
+    @@include("partials/title-meta.html", {"title": "Flask Structure"})
+
+    @@include("partials/head-css.html")
+
+</head>
+
+<body>
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+
+        @@include("partials/menu.html")
+
+        @@include("partials/sidebar.html")
+
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+
+            <div class="page-content">
+                <div class="container">
+
+                    <h3 class="mb-4">Flask Folder Structure</h3>
+
+                    <div class="verti-sitemap mb-4">
+                        <ul class="list-unstyled mb-0">
+                            <li class="p-0 parent-title"><a href="javascript: void(0);" class="fw-medium fs-14"><i class="bi bi-folder2 me-1 text-warning align-bottom"></i>Admin</a>
+                            </li>
+                            <li>
+                                <div class="first-list">
+                                    <div class="list-wrap">
+                                        <a href="javascript: void(0);" class="fw-medium text-primary"><i class="bi bi-folder2 me-1 text-warning align-bottom"></i>templates</a>
+                                        <ul class="second-list list-unstyled">
+                                            <li>
+                                                <a href="javascript: void(0);"><i class="bi bi-folder2 me-1 text-warning align-bottom"></i>partials <span class="text-muted"></span></a>
+                                                <ul class="second-list list-unstyled">
+                                                    <li>
+                                                        <a href="javascript: void(0);"><i class=" bi bi-file-earmark-text me-1 text-info align-bottom"></i>base.html &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="text-muted"> // it has HTML tag with commen css and js code. </span></a>
+                                                    </li>                                                                                         
+                                                    <li>
+                                                        <a href="javascript: void(0);"><i class=" bi bi-file-earmark-text me-1 text-info align-bottom"></i>footer.html &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="text-muted"> // it includes footer text </span></a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="javascript: void(0);"><i class=" bi bi-file-earmark-text me-1 text-info align-bottom"></i>header.html &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="text-muted"> // it includes topbar apps & logo code </span></a>
+                                                    </li>                                                 
+                                                    <li>
+                                                        <a href="javascript: void(0);"><i class=" bi bi-file-earmark-text me-1 text-info align-bottom"></i>hori-header.html &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="text-muted"> // it includes horizontal topbar apps & logo code </span></a>
+                                                    </li>   
+                                                    <li>
+                                                        <a href="javascript: void(0);"><i class=" bi bi-file-earmark-text me-1 text-info align-bottom"></i>hori-sidebar.html &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="text-muted"> // it includes horizontal sidebar content </span></a>
+                                                    </li>  
+                                                    <li>
+                                                        <a href="javascript: void(0);"><i class=" bi bi-file-earmark-text me-1 text-info align-bottom"></i>rightsidebar.html &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="text-muted"> // right sidebar for customization layouts, sidebar colors, modes etc settings </span></a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="javascript: void(0);"><i class=" bi bi-file-earmark-text me-1 text-info align-bottom"></i>sidebar.html &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="text-muted"> // it includes sidebar content </span></a>
+                                                    </li>  
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <a href="javascript: void(0);"><i class="bi bi-folder2 me-1 text-warning align-bottom"></i>pages <span class="text-muted"></span></a>
+                                                <ul class="second-list list-unstyled">
+                                                    <li>
+                                                        <a href="javascript: void(0);"><i class="bi bi-file-earmark-text text-info me-1 align-bottom"></i>All html pages <span class="text-muted"></span></a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="mb-3">Flask file structure</h3>
+                        <p class="text-muted mb-4">We have used gulp to compile the html, scss and js files.</p>
+
+                        <pre class="language-markup" tabindex="0"><code class="language-markup">
+&lt;!doctype html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+
+    &lt;head&gt;
+        
+        &lt;meta charset=&quot;utf-8&quot; /&gt;
+        &lt;title&gt;{% block title %} {% endblock title %} | Skote - Admin &amp; Dashboard Template&lt;/title&gt;
+        &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+        &lt;meta content=&quot;Premium Multipurpose Admin &amp; Dashboard Template&quot; name=&quot;description&quot; /&gt;
+        &lt;meta content=&quot;Themesbrand&quot; name=&quot;author&quot; /&gt;
+        &lt;!-- App favicon --&gt;
+        &lt;link rel=&quot;shortcut icon&quot; href=&quot;{{url_for('static' ,filename='images/favicon.ico')}}&quot;&gt;
+
+        {% block css %}
+        {% block extra_css %}
+        {% endblock extra_css %}
+        &lt;!-- Bootstrap Css --&gt;
+        &lt;link href=&quot;{{url_for('static' ,filename='css/bootstrap.min.css')}}&quot; id=&quot;bootstrap-style&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot; /&gt;
+        &lt;!-- Icons Css --&gt;
+        &lt;link href=&quot;{{url_for('static' ,filename='css/icons.min.css')}}&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot; /&gt;
+        &lt;!-- App Css--&gt;
+        &lt;link href=&quot;{{url_for('static' ,filename='css/app.min.css')}}&quot; id=&quot;app-style&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot; /&gt;
+        {% endblock css %}
+        &lt;!-- App js --&gt;
+        &lt;script src=&quot;{{url_for('static' ,filename='js/plugin.js')}}&quot;&gt;&lt;/script&gt;
+
+    &lt;/head&gt;
+
+    &lt;body data-sidebar=&quot;dark&quot;&gt;
+    
+
+
+    &lt;!-- &lt;body data-layout=&quot;horizontal&quot; data-topbar=&quot;dark&quot;&gt; --&gt;
+
+        &lt;!-- Begin page --&gt;
+        &lt;div id=&quot;layout-wrapper&quot;&gt;
+
+        {% block header %}
+        {% include 'partials/header.html' %}
+        {% endblock %}
+        {% block sidebar %}
+        {% include 'partials/sidebar.html' %}
+        {% endblock %}
+        
+        
+
+            &lt;!-- ============================================================== --&gt;
+            &lt;!-- Start right Content here --&gt;
+            &lt;!-- ============================================================== --&gt;
+            &lt;div class=&quot;main-content&quot;&gt;
+
+                &lt;div class=&quot;page-content&quot;&gt;
+                    &lt;div class=&quot;container-fluid&quot;&gt;
+
+
+                {% block content %}
+                {% endblock content %}
+
+                {% block extra_content %}
+                {% endblock extra_content %}
+
+                
+                {% block footer %}
+                {% include 'partials/footer.html' %}
+                {% endblock %}
+            &lt;/div&gt;
+            &lt;!-- end main content--&gt;
+
+        &lt;/div&gt;
+        &lt;!-- END layout-wrapper --&gt;
+        {% block right_sidebar %}
+        {% include 'partials/rightsidebar.html' %}
+        {% endblock right_sidebar %}
+
+        
+        {% block javascript %}
+        &lt;!-- JAVASCRIPT --&gt;
+        &lt;script src=&quot;{{url_for('static' ,filename='libs/jquery/dist/jquery.min.js')}}&quot;&gt;&lt;/script&gt;
+        &lt;script src=&quot;{{url_for('static' ,filename='libs/bootstrap/dist/js/bootstrap.bundle.min.js')}}&quot;&gt;&lt;/script&gt;
+        &lt;script src=&quot;{{url_for('static' ,filename='libs/metismenu/dist/metisMenu.min.js')}}&quot;&gt;&lt;/script&gt;
+        &lt;script src=&quot;{{url_for('static' ,filename='libs/simplebar/dist/simplebar.min.js')}}&quot;&gt;&lt;/script&gt;
+        &lt;script src=&quot;{{url_for('static' ,filename='libs/node-waves/dist/waves.min.js')}}&quot;&gt;&lt;/script&gt;
+
+        {% block extra_javascript %}
+        {% endblock extra_javascript%}
+
+        &lt;!-- App js --&gt;
+        &lt;script src=&quot;{{url_for('static' ,filename='js/app.js')}}&quot;&gt;&lt;/script&gt;
+        {% endblock javascript %}
+    &lt;/body&gt;
+
+&lt;/html&gt;                                        
+</code></pre>
+                    </div>
+
+                    <div>
+                        <h3 class="mb-3">Layout setup</h3>
+                        <p class="text-muted mb-4">
+                            You can set the default layout in the <code>templates/partials/base.html</code> file in the Body tag.
+                        </p>
+                        <pre class="language-markup p-3 rounded mb-4 bg-ligh position-relative"><button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard" title="Copy to clipboard">Copy</button><code>&lt;body data-bs-theme="light data-topbar="light" data-sidebar="dark" "&gt;</code> </pre>
+                        <div class="table-responsive">
+                            <table class="table table-bordered mb-0 mt-3">
+                                <tbody>
+                                    <tr>
+                                        <th>data-bs-theme="light"</th>
+                                        <td>To set Light layout.</td>
+                                    </tr>
+                                    <tr>
+                                        <th>data-bs-theme="dark"</th>
+                                        <td>To set Dark layout.</td>
+                                    </tr>
+                                    <tr>
+                                        <th>data-sidebar="light"</th>
+                                        <td>To set Light Sidebar.</td>
+                                    </tr>
+                                    <tr>
+                                        <th>data-sidebar="dark"</th>
+                                        <td>To set Dark Sidebar.</td>
+                                    </tr>
+                                    <tr>
+                                        <th>data-topbar="light"</th>
+                                        <td>To set Light Topbar.</td>
+                                    </tr>
+                                    <tr>
+                                        <th>data-topbar="dark"</th>
+                                        <td>To set Dark Topbar.</td>
+                                    </tr>                                    
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                @@include("partials/footer.html")
+            </div>
+            <!-- End Page-content -->
+
+        </div>
+        <!-- end main content-->
+
+    </div>
+    <!-- END layout-wrapper -->
+
+    @@include("partials/vendor-scripts.html")
+
+    <script src="../assets/libs/prismjs/prism.js"></script>
+
+
+    <!-- App js -->
+    <script src="https://themesbrand.com/docs/app.js"></script>
+</body>
+
+</html>

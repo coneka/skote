@@ -1,0 +1,196 @@
+@@include("partials/main.html")
+
+<head>
+
+    @@include("partials/title-meta.html", {"title": "Symfony Structure"})
+
+    @@include("partials/head-css.html")
+
+</head>
+
+<body>
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+
+        @@include("partials/menu.html")
+
+        @@include("partials/sidebar.html")
+
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+
+            <div class="page-content">
+                <div class="container">
+
+                    <h3 class="mb-4">Symfony Folder Structure</h3>
+
+                    <div class="verti-sitemap mb-4">
+                        <ul class="list-unstyled mb-0">
+                            <li class="p-0 parent-title"><a href="javascript: void(0);" class="fw-medium fs-14"><i class="bi bi-folder2 me-1 text-warning align-bottom"></i>Admin</a>
+                            </li>
+                            <li>
+                                <div class="first-list">
+                                    <div class="list-wrap">
+                                        
+                                        <a href="javascript: void(0);" class="fw-medium text-primary"><i class="bi bi-folder2 me-1 text-warning align-bottom"></i>templates</a>
+                                        <ul class="second-list list-unstyled">
+                                            <li>
+                                                <a href="javascript: void(0);"><i class="bi bi-folder2 me-1 text-warning align-bottom"></i>components <span class="text-muted"></span></a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript: void(0);"><i class="bi bi-folder2 me-1 text-warning align-bottom"></i>layouts <span class="text-muted"></span></a>
+                                                <ul class="second-list list-unstyled">
+                                                    <li>
+                                                        <a href="javascript: void(0);"><i class="bi bi-file-earmark-text text-info me-1 align-bottom"></i>_body.html.twig <span class="text-muted">/ Body tag with attributes is stored in this common file.</span></a>
+                                                    </li>
+                                                    <li> <a href="javascript: void(0);"><i class="bi bi-file-earmark-text text-info me-1 align-bottom"></i>_footer.html.twig
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="javascript: void(0);"><i class="bi bi-file-earmark-text text-info me-1 align-bottom"></i>_head-css.html.twig <span class="text-muted">/ added common css files link in this file.</span></a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="javascript: void(0);"><i class="bi bi-file-earmark-text text-info me-1 align-bottom"></i>_horizontal.html.twig  <span class="text-muted">/ horizontal layout set in this file.</span></a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="javascript: void(0);"><i class="bi bi-file-earmark-text text-info me-1 align-bottom"></i>_main.html.twig</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="javascript: void(0);"><i class="bi bi-file-earmark-text text-info me-1 align-bottom"></i>_menu.html.twig <span class="text-muted"></span></a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="javascript: void(0);"><i class="bi bi-file-earmark-text text-info me-1 align-bottom"></i>_right-sidebar.html.twig <span class="text-muted">/ Contain the right sidebar theme customization HTML code.</span></a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="javascript: void(0);"><i class="bi bi-file-earmark-text text-info me-1 align-bottom"></i>_sidebar.html.twig <span class="text-muted">/ Sidebar menu-related code is in this file.</span></a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="javascript: void(0);"><i class="bi bi-file-earmark-text text-info me-1 align-bottom"></i>_topbar.html.twig <span class="text-muted">/ Topbar-related code is in this file.</span></a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="javascript: void(0);"><i class="bi bi-file-earmark-text text-info me-1 align-bottom"></i>_vendor-scripts.html.twig <span class="text-muted">/ Common js files are linked in this file.</span></a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="javascript: void(0);"><i class="bi bi-file-earmark-text text-info me-1 align-bottom"></i>base.html.twig <span class="text-muted"></span></a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="javascript: void(0);"><i class="bi bi-file-earmark-text text-info me-1 align-bottom"></i>layouts-horizontal.html.twig <span class="text-muted"></span></a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="javascript: void(0);"><i class="bi bi-file-earmark-text text-info me-1 align-bottom"></i>layouts-vertical.html.twig <span class="text-muted"></span></a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="javascript: void(0);"><i class="bi bi-file-earmark-text text-info me-1 align-bottom"></i>layouts-without-nav.html.twig <span class="text-muted"></span></a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <a href="javascript: void(0);"><i class="bi bi-folder2 me-1 text-warning align-bottom"></i>All HTML twig pages <span class="text-muted"></span></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="mb-3">Symfony file structure</h3>
+                        <p class="text-muted mb-4"></p>
+
+                        <pre class="language-markup" tabindex="0"><code class="language-markup">
+<span class="token prolog">{% extends 'layouts/base.html.twig' %}</span>
+<span class="token prolog">{% block title %}Test Page{% endblock %}</span>
+
+<span class="token prolog">{% block stylesheets %}</span>
+
+<span class="token prolog">{% endblock %}</span>
+
+
+<span class="token prolog">{% block content %}</span>
+
+<span class="token prolog">{{ component('breadcrumb', { pagetitle: 'Skote', title: 'Test Page' }) }}</span>
+
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div&gt;</span></span>
+
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+                
+<span class="token prolog">{% endblock %}</span>
+
+
+<span class="token prolog">{% block javascripts %}</span>
+
+<span class="token prolog">{% endblock %}</span>
+
+<span class="token prolog">&lt;script src="assets/js/app.js"&gt;</script></span>
+<span class="token prolog">{% endblock %}</span>                                       
+</code></pre>
+                    </div>
+
+                    <div>
+                        <h3 class="mb-3">Layout setup</h3>
+                        <p class="text-muted mb-4">
+                            You can set the default layout in the <code>templates/layouts/_main.html.twig</code> file in the html tag.
+                        </p>
+                        <pre class="language-markup p-3 rounded mb-4 bg-ligh position-relative"><button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard" title="Copy to clipboard">Copy</button><code>&lt;html data-topbar="light" data-layout-size="boxed"&gt;</code> </pre>
+                        <div class="table-responsive">
+                            <table class="table table-bordered mb-0 mt-3">
+                                <tbody>
+                                    <tr>
+                                        <th>data-sidebar-size="small"</th>
+                                        <td>To set small layout size.</td>
+                                    </tr>
+                                    <tr>
+                                        <th>data-layout-size="boxed"</th>
+                                        <td>To set boxed layout size.</td>
+                                    </tr>
+                                    <tr>
+                                        <th>data-bs-theme="light"</th>
+                                        <td>To set Light layout mode.</td>
+                                    </tr>
+                                    <tr>
+                                        <th>data-bs-theme="dark"</th>
+                                        <td>To set Dark layout mode.</td>
+                                    </tr>
+                                    <tr>
+                                        <th>data-topbar="light"</th>
+                                        <td>To set the Light color of Topbar.</td>
+                                    </tr>
+                                    <tr>
+                                        <th>data-topbar="dark"</th>
+                                        <td>To set the dark color of Topbar.</td>
+                                    </tr>
+                                    <tr>
+                                        <th>data-topbar="colored"</th>
+                                        <td>To set the colored Topbar.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                @@include("partials/footer.html")
+            </div>
+            <!-- End Page-content -->
+
+        </div>
+        <!-- end main content-->
+
+    </div>
+    <!-- END layout-wrapper -->
+
+    @@include("partials/vendor-scripts.html")
+
+    <script src="../assets/libs/prismjs/prism.js"></script>
+
+
+    <!-- App js -->
+    <script src="https://themesbrand.com/docs/app.js"></script>
+</body>
+
+</html>

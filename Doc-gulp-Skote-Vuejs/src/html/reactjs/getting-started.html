@@ -1,0 +1,143 @@
+@@include("partials/main.html")
+
+<head>
+
+    @@include("partials/title-meta.html", {"title": "Getting Started"})
+
+    @@include("partials/head-css.html")
+
+</head>
+
+<body>
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+
+        @@include("partials/menu.html")
+
+        @@include("partials/sidebar.html")
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+
+            <div class="page-content">
+                <div class="container">
+                    <h3 class="mb-4">Getting Started</h3>
+
+                    <h5 class="mb-3">Setup Skote</h5>
+
+                    <h5 class="text-decoration-underline mt-4 mb-3">Prerequisites:</h5>
+                    <div class="alert alert-info text-info">
+                        <i class=" bi bi-exclamation-circle-fill fs-3 align-middle me-2"></i> Suggestion: Yarn is
+                        recommended over npm.
+                    </div>
+                    <p class="text-muted">Please follow the below steps to install and setup all prerequisites:</p>
+
+                    <ul>
+                        <li>
+                            <strong>Nodejs</strong>
+                            <p class="mt-1">Make sure to have <a class="text-danger" href="https://nodejs.org/"
+                                    target="_blank">Node.js</a> installed &amp; running on your computer. If you already
+                                have installed Node on your computer, you can skip this step if your existing node
+                                version is greater than 18. We suggest you to use LTS version of Node.js. </p>
+                        </li>
+                        <li>
+                            <strong>Yarn</strong>
+                            <p class="mt-1">
+                                Make sure to have the <a class="text-danger" href="https://classic.yarnpkg.com/en/"
+                                    target="_blank">Yarn</a> installed &amp; running on your computer. If you already
+                                have installed Yarn on your computer, you can skip this step. We suggest you use Yarn
+                                instead of NPM.</p>
+
+                            <pre
+                                class="language-markup p-3 rounded mb-4 bg-ligh position-relative"><button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard" title="Copy to clipboard">Copy</button> <code>npm install --global yarn </code> </pre>
+
+                        </li>
+                        <li>
+                            <strong>Git</strong>
+
+                            <p class="mt-1">Make sure to have <a class="text-danger" href="https://git-scm.com/"
+                                    target="_blank">Git</a> installed globally &amp; running on your computer. If you
+                                already have installed git on your computer, you can skip this step. <br /> To install
+                                in Linux OS please run the below commands.</p>
+
+                            <pre class="language-markup p-3 rounded mb-4 bg-ligh position-relative"><button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard" title="Copy to clipboard">Copy</button><code>sudo apt-get update
+sudo apt-get install git </code> </pre>
+                        </li>
+                    </ul>
+
+                    <p class="text-muted mt-4">Once you've completed the preceding steps, you can execute the following
+                        commands in the terminal or command prompt from the root directory of Skote. This will either
+                        run the project locally or build it for production use:</p>
+
+                    <ul class="nav nav-tabs mb-3 bg-light" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link fw-bold active" data-bs-toggle="tab" href="#react1" role="tab">
+                                React
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fw-bold" data-bs-toggle="tab" href="#vite1" role="tab">
+                                Vite
+                            </a>
+                        </li>
+                    </ul>
+
+                    <div class="tab-content text-muted">
+                        <div class="tab-pane active" id="react1" role="tabpanel">
+                            <p>This would install all the required dependencies in the <code>node_modules</code> folder.
+                            </p>
+
+                            <pre
+                                class="language-markup p-3 rounded mb-4 bg-ligh position-relative"><button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard" title="Copy to clipboard">Copy</button><code>yarn install  or  yarn </code> </pre>
+
+                            <p>Runs the project locally, starts the development server and watches for any changes in
+                                your code.
+                                The development server is accessible at <a class="text-danger"
+                                    href="http://localhost:3000">http://localhost:3000.</a></p>
+
+                            <pre
+                                class="language-markup p-3 rounded mb-4 bg-ligh position-relative"><button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard" title="Copy to clipboard">Copy</button><code>yarn start </code> </pre>
+
+                            <p>Generates a <code>/build</code> directory with all the production files.</p>
+
+                            <pre
+                                class="language-markup p-3 rounded mb-4 bg-ligh position-relative"><button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard" title="Copy to clipboard">Copy</button><code>yarn build </code> </pre>
+                        </div>
+                        <div class="tab-pane" id="vite1" role="tabpanel">
+                            <p>This would install all the required dependencies in the <code>node_modules</code> folder.
+                            </p>
+
+                            <pre
+                                class="language-markup p-3 rounded mb-4 bg-ligh position-relative"><button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard" title="Copy to clipboard">Copy</button><code>yarn install  or  yarn </code> </pre>
+
+                            <p>Runs the project locally, starts the development server and watches for any changes in
+                                your code. The development server is accessible at <a class="text-danger"
+                                    href="http://localhost:5173"> http://localhost:5173.</a></p>
+
+                            <pre
+                                class="language-markup p-3 rounded mb-4 bg-ligh position-relative"><button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard" title="Copy to clipboard">Copy</button><code>yarn run dev </code> </pre>
+                        </div>
+                    </div>
+
+
+                </div>
+                @@include("partials/footer.html")
+            </div>
+            <!-- End Page-content -->
+
+        </div>
+        <!-- end main content-->
+
+    </div>
+    <!-- END layout-wrapper -->
+
+    @@include("partials/vendor-scripts.html")
+    <script src="../assets/libs/prismjs/prism.js"></script>
+
+    <!-- App js -->
+    <script src="https://themesbrand.com/docs/app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,125 @@
+@@include("partials/main.html")
+
+<head>
+
+    @@include("partials/title-meta.html", {"title": "Swiper-Slider"})
+
+    @@include("partials/head-css.html")
+
+</head>
+
+<body>
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+
+        @@include("partials/menu.html")
+        @@include("partials/sidebar.html")
+
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+
+            <div class="page-content">
+                <div class="container">
+
+                    <h3 class="mb-3">Overview <a href="https://swiperjs.com/get-started" target="_blank"
+                            class="float-end badge bg-success-subtle link-success fs-6">Official Website <i
+                                class="ri-external-link-line"></i></a></h3>
+                    <p class="text-muted mb-4">Swiper is the most modern slider with hardware accelerated
+                        transitions and amazing native behavior.</p>
+
+                    <div>
+                        <h5 class="mb-3">Add Package</h5>
+                        <div
+                            class="alert bg-light border-start border-3 rounded-start-0 border-primary-subtle border-0 mb-4">
+                            yarn add swiper</div>
+
+                        <h5 class="mb-3">Import Package</h5>
+                        <div
+                            class="alert bg-light border-start border-3 rounded-start-0 border-primary-subtle border-0 mb-4">
+                            <pre class="mb-0">import { Swiper, SwiperSlide } from "swiper/vue";
+import { Pagination, Navigation, Autoplay } from "swiper/modules";</pre>
+                        </div>
+
+                        <h5 class="mb-3">Css</h5>
+                        <div
+                            class="alert bg-light border-start border-3 rounded-start-0 border-primary-subtle border-0 mb-4">
+                            <pre class="mb-0">import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import "swiper/css/scrollbar";</pre>
+                        </div>
+
+                        <h5 class="mb-3">Remove Package</h5>
+                        <div
+                            class="alert bg-light border-start border-3 rounded-start-0 border-primary-subtle border-0 mb-4">
+                            yarn remove swiper ( or you can remove package by removing specific package from
+                            package.json )</div>
+                    </div>
+                    <h5 class="mb-3">Examples:</h5>
+
+                    <div class="table-responsive">
+                        <table class="table mb-0">
+                            <thead>
+                                <tr>
+                                    <th scope="col" style="width:40%">Title</th>
+                                    <th scope="col">Vue</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Default Swiper</th>
+                                    <td>
+                                        <pre class="language-js p-3 rounded"><code>&lt;swiper className="swiper default-swiper rounded" :loop="true" :modules="[Autoplay]" :slides-per-view="4" 
+:space-between="20" :autoplay="{ delay: 2500, disableOnInteraction: false }">
+    &lt;div className="swiper-wrapper">
+        &lt;swiper-slide>&lt;img src=img1 alt="" className="img-fluid" />&lt;/swiper-slide>
+        &lt;swiper-slide>&lt;img src=img2 alt="" className="img-fluid" />&lt;/swiper-slide>
+        &lt;swiper-slide>&lt;img src=img3 alt="" className="img-fluid" />&lt;/swiper-slide>
+    &lt;/div>
+&lt;/swiper></code></pre>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Navigation & Pagination Swiper</th>
+                                    <td>
+                                        <pre class="language-js p-3 rounded"><code>&lt;swiper className="swiper navigation-swiper rounded" :modules=[Navigation, Pagination, Autoplay]
+:loop="true" :autoplay="{ delay: 2500, disableOnInteraction: false }">
+    &lt;div className="swiper-wrapper">
+        &lt;swiper-slide>&lt;img src=img1 alt="" className="img-fluid" />&lt;/swiper-slide>
+        &lt;swiper-slide>&lt;img src=img2 alt="" className="img-fluid" />&lt;/swiper-slide>
+        &lt;swiper-slide>&lt;img src=img3 alt="" className="img-fluid" />&lt;/swiper-slide>
+    &lt;/div>
+&lt;/swiper></code></pre>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <!-- end table -->
+                    </div>
+
+                </div>
+                @@include("partials/footer.html")
+            </div>
+            <!-- End Page-content -->
+
+        </div>
+        <!-- end main content-->
+
+    </div>
+    <!-- END layout-wrapper -->
+
+
+
+    @@include("partials/vendor-scripts.html")
+
+    <!-- prismjs plugin -->
+    <script src="../assets/libs/prismjs/prism.js"></script>
+
+    <!-- App js -->
+    <script src="https://themesbrand.com/docs/app.js"></script>
+</body>
+
+</html>

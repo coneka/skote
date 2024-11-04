@@ -1,0 +1,90 @@
+@@include("partials/main.html")
+
+<head>
+
+    @@include("partials/title-meta.html", {"title": "Multi Language"})
+
+    @@include("partials/head-css.html")
+
+</head>
+
+<body>
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+
+        @@include("partials/menu.html")
+
+        @@include("partials/sidebar.html")
+
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+
+            <div class="page-content">
+                <div class="container">
+
+                    <h3 class="mb-4">Multi Language Settings</h3>
+
+                    <h5 class="mb-4">Let's add the French language.</h5>
+
+                    <ul class="mb-0 text-muted">
+                        <li>Create a new file fr.json in the fr folder in the
+                            <code>wwwroot/assets/lang</code> folder and copy the <code>en.json</code> file code in
+                            this file.
+                        </li>
+                        <li>
+                            Now you need to add the language in the
+                            <code>wwwroot/assets/js/app.js</code> file. In the
+                            function setLanguage, add the "Switch case" condition as below code and make
+                            sure to add the french.jpg file in the <code>wwwroot/assets/images/flags</code>
+                            folder.
+                            <pre class="language-markup p-3 rounded mb-4 bg-ligh position-relative mt-3"><button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard" title="Copy to clipboard">Copy</button><code> if (lang == 'en') {
+  document.getElementById("header-lang-img").src = "/assets/images/flags/us.jpg";
+  }</code> </pre>
+                        </li>
+                        <li>
+                            You can simply use key attributes in the HTML tag to convert the
+                            language text. Example: &lt;div data-key="t-title">This is title.&lt;/div>
+                        </li>
+                        <li>
+                            <p>Add the below dropdown in the
+                                <code>Views/Shared/_topbar.html</code> file in the
+                                language dropdown.
+                            </p>
+                            <pre class="language-markup p-3 rounded mb-4 bg-ligh position-relative"><button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard" title="Copy to clipboard">Copy</button><code>&lt;!-- item--&gt;
+&lt;a href="javascript:void(0);" class="dropdown-item notify-item language" data-lang="en"&gt;
+    &lt;img src="~/assets/images/flags/us.jpg" alt="user-image" class="me-1" height="12"&gt; &lt;span class="align-middle"&gt;English&lt;/span&gt;
+&lt;/a&gt;</code> </pre>
+                        </li>
+                    </ul>
+
+                </div>
+                <footer class="footer mt-4 text-center position-absolute end-0 bottom-0 start-0">
+                    <div class="container border-top py-3">
+                        <script>
+                            document.write(new Date().getFullYear())
+                        </script> © Skote.
+                    </div>
+                </footer>
+
+            </div>
+            <!-- End Page-content -->
+
+        </div>
+        <!-- end main content-->
+
+    </div>
+    <!-- END layout-wrapper -->
+
+    @@include("partials/vendor-scripts.html")
+
+    <!-- prismjs plugin -->
+    <script src="../assets/libs/prismjs/prism.js"></script>
+
+    <!-- App js -->
+    <script src="https://themesbrand.com/docs/app.js"></script>
+</body>
+
+</html>

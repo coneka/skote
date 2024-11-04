@@ -1,0 +1,295 @@
+@@include("partials/main.html")
+
+<head>
+
+    @@include("partials/title-meta.html", {"title": "Fakebackend Setup"})
+
+    @@include("partials/head-css.html")
+
+</head>
+
+<body>
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+
+        @@include("partials/menu.html")
+        @@include("partials/sidebar.html")
+
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+
+            <div class="page-content">
+                <div class="container">
+                   
+                    <h3 class="mb-4">Fakebackend Setup</h3>
+
+                    <div class="d-xl-flex">
+
+                        <div class="w-100">
+                            <div id="fake-backend">
+                                <div>
+                                    <div class="alert alert-info">
+                                        Note : Applicable in Backend Version Only.
+                                    </div>
+
+                                    <p class="mb-1">
+                                        Set <code> REACT_APP_DEFAULTAUTH=fake </code> in the
+                                        <code>.env</code>
+                                        file. <br>
+                                        Remove the firebase
+                                        setup code from the
+                                        <code>App.tsx</code>
+                                        file. <br>
+                                        Now just uncomment
+                                        the below
+                                        fake-backend setup
+                                        code in the 
+                                        <code>App.tsx</code>
+                                        file. <br>
+                                    </p>
+                                    <pre class="p-3 rounded mb-4 bg-ligh position-relative language-markup" tabindex="0">
+<button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard">Copy</button><code>import fakeBackend from "./helpers/AuthType/fakeBackend";
+                
+// Activating fake backend
+
+fakeBackend();</code></pre>
+                                    <p class="mb-0">It is often used for development and testing
+                                        purposes, as it
+                                        allows developers to test their code without having to worry
+                                        about the
+                                        availability of a real backend.</p>
+
+                                </div>
+                                <h5 class="fs-lg">
+                                    How to Integrate custom FakeBackend?
+                                </h5>
+                                <p>Please follow the below steps:</p>
+                                <div>
+                                    <p class="mb-1">-> First you needs to create json data files,
+                                        which you can put in
+                                        the
+                                        folder <code>src/common/data</code> from where the data/json
+                                        will be called.
+                                    </p>
+                                    <pre class="p-3 rounded mb-4 bg-ligh position-relative language-markup" tabindex="0">
+<button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard">Copy</button><code>const data = [
+    {
+        id: "1",
+        orderdate: "22 Feb, 2023",
+        customer: "Deondre Fahey",
+        name: "Ratke Group",
+        paymethod: "COD",
+    },
+    {
+        id: "2",
+        orderdate: "14 Feb, 2023",
+        customer: "Warren Anderson",
+        name: "Zibra Fashion",
+        paymethod: "Mastercard",
+    },
+]
+
+export { data } </code></pre>
+                                </div>
+
+                                <p>
+                                    -> In your React component or container, you dispatch an action
+                                    to request data
+                                    from the fake backend. This action triggers the thunk.
+                                    For getting the data you should get data from the thunk.ts file.
+                                    And we can get
+                                    data in thunk as response from fakebackend_helper.ts file.
+                                </p>
+
+                                <div>
+                                    <p class="mb-1">-> Reducer is also worked as middleware for
+                                        react, which is placed
+                                        at <code>src/slices/data/reducer.ts</code> folder.
+                                    </p>
+                                    <pre class="p-3 rounded mb-4 bg-ligh position-relative language-markup" tabindex="0">
+<button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard">Copy</button><code>import { createSlice } from "@reduxjs/toolkit";
+import { getData } from "./thunk"
+
+export const initialState ={
+    dataList: [],
+}
+
+const DataSlice = createSlice({
+    name : "Data",
+    initialState,
+    reducers: {},
+
+    extraReducers: (builder) => {
+        //data
+        builder.addCase(getData.fulfilled, (state: any, action: any) => {
+            state.dataList = action.payload;
+        });
+        builder.addCase(getData.rejected, (state: any, action: any) => {
+            state.error = action.payload.error || null;
+        });
+    },
+})</code></pre>
+                                </div>
+
+                                <div>
+                                    <p class="mb-1">-> A thunk works as a middleware, which is
+                                        placed at
+                                        <code>src/slices/Data/thunk.ts</code> file.
+                                    </p>
+                                    <pre class="p-3 rounded mb-4 bg-ligh position-relative language-markup" tabindex="0">
+<button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard">Copy</button><code>import { createAsyncThunk } from "@reduxjs/toolkit";
+import {
+    getData as getDataApi,
+} from "src/helpers/fakebackend_helper"
+
+export const getData = createAsyncThunk("datas/getData", async () => {
+    try {
+        const response = getDataApi();
+        return response;
+    } catch (error) {
+        return error;
+    }
+});</code></pre>
+                                </div>
+
+                                <div>
+                                    <p class="mb-1">
+                                        -> After exporting data from reducer.ts file there was a
+                                        main file for whole
+                                        reducers files that combines all the reducers into one.
+                                        <code>src/slices/index.ts</code> here we combines the
+                                        rootReducers for store.
+                                    </p>
+                                    <pre class="p-3 rounded mb-4 bg-ligh position-relative language-markup" tabindex="0">
+<button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard">Copy</button><code>import dataReducer from "./Data/reducer"
+const rootReducer = combineReducers ({
+    Data: dataReducer,
+})
+export default rootReducer</code></pre>
+
+                                    <p class="mb-1">
+                                        -> Same as above all the thunks file are also imported and
+                                        exported in main
+                                        thunk file. <code>src/slices/thunk.ts</code> we use this
+                                        file to get response in
+                                        react component.
+                                    </p>
+                                    <pre class="p-3 rounded mb-4 bg-ligh position-relative language-markup" tabindex="0">
+<button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard">Copy</button><code>export { getData } from "./Data/thunk"</code></pre>
+                                </div>
+
+                                <div>
+                                    <p class="mb-1">-> A Fakebackend is a server that is used to
+                                        simulate the behavior
+                                        of a real backend.
+                                        <code>src/helpers/fakebackend_helper.ts</code> is path for
+                                        fakeBackend file where you have to import
+                                        <code>"./url_helper"</code> and
+                                        <code>"./api_helper"</code> file for exporting the data.
+                                    </p>
+                                    <pre class="p-3 rounded mb-4 bg-ligh position-relative language-markup" tabindex="0">
+<button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard">Copy</button><code>import * as url from "./url_helper";
+//  Api 
+import { APIClient } from "./api_helper";
+
+const api = new APIClient();
+
+export const getData = () => api.get(url.GET_DATA, null);</code></pre>
+                                </div>
+
+                                <div>
+                                    <p class="mb-1">-> The url_helper is a helper function that is
+                                        used to generate
+                                        URLs.
+                                        For that we have created file
+                                        <code>src/helpers/url_helper.ts</code>. From where
+                                        we can get fake url for functionality.
+                                    </p>
+                                    <pre class="p-3 rounded mb-4 bg-ligh position-relative language-markup" tabindex="0">
+ <button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard">Copy</button><code>export const GET_DATA = "/invoice";</code></pre>
+                                </div>
+
+
+                                <div>
+                                    <p class="mb-1">-> FakeBackend through we will getdata from
+                                        <code>common/data</code>
+                                        and with the help of axios we can pass the data, which is
+                                        placed at
+                                        <code>src/helpers/AuthType/fakeBackend.ts</code> file.
+                                    </p>
+                                    <pre class="p-3 rounded mb-4 bg-ligh position-relative language-markup" tabindex="0">
+<button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard">Copy</button><code>import MockAdapter from "axios-mock-adapter";                                
+import * as url from "../url_helpers"
+import axios from "axios";
+
+import { data } from "../../common/data";
+
+const fakeBackend = () => {
+    mock.onGet(url.GET_DATA).reply(() => {
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                if (data) {
+                    // Passing fake JSON data as response
+                    resolve([200, data]);
+                } else {
+                    reject([400, "Cannot get contact list"]);
+                }
+            });
+        });
+    });
+}
+export default fakeBackend;</code></pre>
+                                </div>
+                                <div>
+                                    <p class="mb-1">-> After following the above steps you can call
+                                        data and use it in
+                                        your components or pages where is needed by the dispatch
+                                        data method and
+                                        managing the
+                                        state.</p>
+
+                                        <pre class="p-3 rounded mb-4 bg-ligh position-relative language-markup" tabindex="0">
+<button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard">Copy</button><code>import { getData as onGetData} from "slices/thunk";  
+const datasTable = createSelector(
+
+    (state : any) => state.Data,
+    (state) => ({
+        dataList: state.dataList,
+    })
+);
+
+const { dataList } = useSelector(datasTable);
+
+useEffect(() => {
+    dispatch(onGetData())
+}, [dispatch]);     </code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                
+                </div>
+                @@include("partials/footer.html")
+            </div>
+            <!-- End Page-content -->
+
+        </div>
+        <!-- end main content-->
+
+    </div>
+    <!-- END layout-wrapper -->
+
+    @@include("partials/vendor-scripts.html")
+
+    <!-- prismjs plugin -->
+    <script src="../assets/libs/prismjs/prism.js"></script>
+
+    <!-- App js -->
+    <script src="https://themesbrand.com/docs/app.js"></script>
+</body>
+
+</html>

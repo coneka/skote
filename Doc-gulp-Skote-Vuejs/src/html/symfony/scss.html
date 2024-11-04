@@ -1,0 +1,283 @@
+@@include("partials/main.html")
+
+<head>
+
+    @@include("partials/title-meta.html", {"title": "Customization SCSS"})
+
+    @@include("partials/head-css.html")
+
+</head>
+
+<body>
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+
+        @@include("partials/menu.html")
+
+        @@include("partials/sidebar.html")
+
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+
+            <div class="page-content">
+                <div class="container">
+
+                    <h3 class="mb-4">Customization SCSS</h3>
+
+                    <div class="alert alert-info mb-4 text-info">
+                        <h5 class="fw-semibold">How to reduce unused SCSS ( CSS ) code of Light & Dark Topbar for the Light & Dark Modes? </h5>
+                        <p>Do the below changes in the <code>/assets/scss/_variables.scss</code> file.</p>
+
+                        <h6 class="mb-3">Q: If you want to use the light top bar colors from the light mode in the dark mode, follow these steps:</h6>
+                        <ul class="vstack gap-2">
+                            <li>
+                                Set $light-topbar-layout-dark to false. This means that the light top bar colors will be used in the dark mode. In other words, the top bar will have the same colors as in the light mode even when you're using dark mode.
+                            </li>
+                            <li>
+                                If you set $light-topbar-layout-dark to true, it will generate CSS for the dark mode with the light top bar colors. This means that the top bar will have different colors in each mode.
+                            </li>
+                            <li>
+                                In summary, setting $light-topbar-layout-dark to false will keep the light top bar colors in dark mode, and setting it to true will generate CSS for dark mode with light top bar colors, resulting in different colors for the top bar in each mode.
+                            </li>
+                        </ul>
+
+
+                        <h6 class="mb-3">Q: If you want to use the dark top bar colors from the light mode in the dark mode, follow these steps:</h6>
+                        <ul class="vstack gap-2">
+                            <li>
+                                Set $dark-topbar-layout-dark to false. This means that the dark top bar colors from the light mode will be used in the dark mode. In other words, the top bar will have the same colors as in the light mode even when you're using dark mode.
+                            </li>
+                            <li>
+                                If you set $dark-topbar-layout-dark to true, it will generate CSS for the dark mode with the dark top bar colors. This means that the top bar will have different colors in each mode.
+                            </li>
+                            <li>
+                                In summary, setting $dark-topbar-layout-dark to false will keep the dark top bar colors in dark mode, and setting it to true will generate CSS for dark mode with dark top bar colors, resulting in different colors for the top bar in each mode.
+                            </li>
+                        </ul>
+
+
+                       
+                    </div>
+
+                    <h5 class="mb-3">Structure</h5>
+                    <p class="text-muted mb-4">Skote has managed the scss file in the <code>( skote_v*/assets/scss )</code> folder. We have used gulp-sass for scss compilation. You can add your custom scss in the <code>custom.scss</code> file instead of doing changes in the <code>app.scss</code> or other scss files as it will create conflicts in future updates.</p>
+
+                    <div class="verti-sitemap mb-5">
+                        <ul class="list-unstyled mb-0">
+                            <li class="p-0 parent-title">
+                                <a href="javascript: void(0);" class="fw-medium fs-14"><i class="bi bi-folder2 me-1 text-warning align-bottom"></i>scss</a>
+                            </li>
+                            <li>
+                                <div class="first-list">
+                                    <div class="list-wrap">
+                                        <a href="javascript: void(0);" class="fw-medium text-primary"><i class="bi bi-folder2 me-1 text-warning align-bottom"></i>components</a>
+                                        <ul class="second-list list-unstyled">
+                                            <li>
+                                                <a href="javascript: void(0);"><i class="bi bi-folder2 me-1 text-warning align-bottom"></i>All the components scss files are here.</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="first-list">
+                                    <div class="list-wrap">
+                                        <a href="javascript: void(0);" class="fw-medium text-primary"><i class="bi bi-folder2 me-1 text-warning align-bottom"></i>fonts</a>
+                                        <ul class="second-list list-unstyled">
+                                            <li>
+                                                <a href="javascript: void(0);"><i class="bi bi-file-earmark-text me-1 text-info align-bottom"></i>_fonts.scss</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="first-list">
+                                    <div class="list-wrap">
+                                        <a href="javascript: void(0);" class="fw-medium text-primary"><i class="bi bi-folder2 me-1 text-warning align-bottom"></i>pages</a>
+                                        <ul class="second-list list-unstyled">
+                                            <li>
+                                                <a href="javascript: void(0);"><i class="bi bi-folder2 me-1 text-warning align-bottom"></i>All the pages scss files are here.</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="first-list">
+                                    <div class="list-wrap">
+                                        <a href="javascript: void(0);" class="fw-medium text-primary"><i class="bi bi-folder2 me-1 text-warning align-bottom"></i>plugins</a>
+                                        <ul class="second-list list-unstyled">
+                                            <li>
+                                                <a href="javascript: void(0);" class="fw-medium text-primary"><i class="bi bi-folder2 me-1 text-warning align-bottom"></i>icons</a>
+                                                <ul class="second-list list-unstyled">
+                                                    <li>
+                                                        <a href="javascript: void(0);"><i class="bi bi-folder2 me-1 text-warning align-bottom"></i>All the icons scss files are here</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <a href="javascript: void(0);"><i class="bi bi-folder2 me-1 text-warning align-bottom"></i>All the plugins scss files are here.</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="first-list">
+                                    <div class="list-wrap">
+                                        <a href="javascript: void(0);" class="fw-medium text-primary"><i class="bi bi-folder2 me-1 text-warning align-bottom"></i>structure</a>
+                                        <ul class="second-list list-unstyled">
+                                            <li>
+                                                <a href="javascript: void(0);"><i class="bi bi-file-earmark-text me-1 text-info align-bottom"></i>_footer.scss // Footer related scss will be in this file only.</a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript: void(0);"><i class="bi bi-file-earmark-text me-1 text-info align-bottom"></i>_general.scss</a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript: void(0);"><i class="bi bi-file-earmark-text me-1 text-info align-bottom"></i>_layouts.scss // All the layouts related scss will be in this file only</a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript: void(0);"><i class="bi bi-file-earmark-text me-1 text-info align-bottom"></i>_horizontal-nav.scss</a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript: void(0);"><i class="bi bi-file-earmark-text me-1 text-info align-bottom"></i>_layouts.scss</a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript: void(0);"><i class="bi bi-file-earmark-text me-1 text-info align-bottom"></i>_page-head.scss</a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript: void(0);"><i class="bi bi-file-earmark-text me-1 text-info align-bottom"></i>_right-sidebar.scss</a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript: void(0);"><i class="bi bi-file-earmark-text me-1 text-info align-bottom"></i>_topbar.scss</a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript: void(0);"><i class="bi bi-file-earmark-text me-1 text-info align-bottom"></i>_vertical.scss</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="first-list">
+                                    <div class="list-wrap">
+                                        <a href="javascript: void(0);" class="fw-medium text-primary"><i class="bi bi-file-earmark-text me-1 text-info align-bottom"></i>_variables.scss</a>
+                                    </div>
+                                </div>
+                                <div class="first-list">
+                                    <div class="list-wrap">
+                                        <a href="javascript: void(0);" class="fw-medium text-primary"><i class="bi bi-file-earmark-text me-1 text-info align-bottom"></i>_variables-dark.scss <span class="text-muted">// includes all dark mode's variables</span></a>
+                                    </div>
+                                </div>
+                                <div class="first-list">
+                                    <div class="list-wrap">
+                                        <a href="javascript: void(0);" class="fw-medium text-primary"><i class="bi bi-file-earmark-text me-1 text-info align-bottom"></i>app.scss <span class="text-muted">// it has imported all other scss files and create app.min.css file.</span></a>
+                                    </div>
+                                </div>
+                                <div class="first-list">
+                                    <div class="list-wrap">
+                                        <a href="javascript: void(0);" class="fw-medium text-primary"><i class="bi bi-file-earmark-text me-1 text-info align-bottom"></i>bootstrap.scss <span class="text-muted">// it has imported all the bootstrap's scss files.</span></a>
+                                    </div>
+                                </div>
+                                <div class="first-list">
+                                    <div class="list-wrap">
+                                        <a href="javascript: void(0);" class="fw-medium text-primary"><i class="bi bi-file-earmark-text me-1 text-info align-bottom"></i>icons.scss <span class="text-muted">// includes all icons files.</span></a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="mb-4">
+                        <h5 class="mb-3">Variables Structure</h5>
+                        <p class="text-muted mb-3">We have defined all the variables in the <code>/assets/scss/</code> folder.</p>
+
+                        <dl class="mb-0">
+                            <dt><code>_variables.scss</code></dt>
+                            <dd class="mb-0 fs-sm text-muted">All bootstrap variables are defined in this file.</dd>
+                        </dl>
+                    </div>
+
+                    <div>
+                        <h5 class="mb-3">Layout Structure</h5>
+                        <p class="text-muted mb-3">We have added all layouts files in the <code>/assets/scss/structure</code> folder.</p>
+
+                        <dl class="mb-0">
+                            <dt><code>_footer.scss</code></dt>
+                            <dd class="mb-3 fs-sm text-muted">Footer-related scss define in this file.
+                            </dd>
+                            <dt><code>_layouts.scss</code></dt>
+                            <dd class="mb-3 fs-sm text-muted">Manage Boxed layout scss in this file. </dd>
+                            <dt><code>_page-head.scss</code></dt>
+                            <dd class="mb-3 fs-sm text-muted">Manage page heading scss in this file. </dd>
+                            <dt><code>_topbar.scss</code></dt>
+                            <dd class="mb-3 fs-sm text-muted">Topbar scss in this file.</dd>
+                        </dl>
+                    </div>
+
+                    <div>
+                        <h5 class="mb-3">Other SCSS file Structure</h5>
+                        <p class="text-muted mb-3">We have created all the scss files in the <code>/assets/scss</code> folder.</p>
+
+                        <dl class="mb-0">
+                            <dt>components</dt>
+                            <dd class="mb-3 fs-13 text-muted">All components related scss files are created in this folder.</dd>
+                            <dt>fonts</dt>
+                            <dd class="mb-3 fs-13 text-muted">All fonts are imported in this scss file. </dd>
+                            <dt>pages</dt>
+                            <dd class="mb-3 fs-13 text-muted">All the pages related to scss are written in this folder and page wise scss created i.e. _authentication.scss, _chat.scss, _dashboard.scss etc</dd>
+                            <dt>plugins</dt>
+                            <dd class="mb-3 fs-13 text-muted">All the plugins ( Apex chart, ckeditor, full calendar etc ) are created in the plugins folder.</dd>
+                            <dt>icons.scss</dt>
+                            <dd class="mb-0 fs-13 text-muted">All icons scss are imported in this file.</dd>
+                        </dl>
+                    </div>
+
+                    <div class="mt-4">
+                        <h5 class="mb-3">Quick customization of layout using scss.</h5>
+                        <p class="text-muted mb-3">You can make changes in the <code>/assets/scss/_*.scss</code> file.</p>
+
+                        <table class="table table-bordered mb-0">
+                            <thead>
+                                <tr>
+                                    <th>Variables</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+<pre class="language-markup mb-0 rounded">$primary:       $purple;
+$secondary:     $blue;
+$success:       $green;
+$info:          $teal;
+$warning:       $yellow;
+$danger:        $red;
+$light:         $gray-200;
+$dark:          $gray-900;</pre>
+                                    </td>
+                                    <td>You can manage those colors to update the color theme.</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <pre class="language-markup mb-0 rounded">--#{$prefix}font-sans-serif:                         "Inter",sans-serif
+--#{$prefix}font-monospace:                          "Inter",sans-serif</pre>
+                                    </td>
+                                    <td>
+                                        You can set the default font in these variables.
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                @@include("partials/footer.html")
+            </div>
+            <!-- End Page-content -->
+
+        </div>
+        <!-- end main content-->
+
+    </div>
+    <!-- END layout-wrapper -->
+
+    @@include("partials/vendor-scripts.html")
+    <!-- App js -->
+    <script src="https://themesbrand.com/docs/app.js"></script>
+</body>
+
+</html>

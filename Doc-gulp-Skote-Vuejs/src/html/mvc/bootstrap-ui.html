@@ -1,0 +1,64 @@
+@@include("partials/main.html")
+
+<head>
+
+    @@include("partials/title-meta.html", {"title": "Bootstrap UI"})
+
+    @@include("partials/head-css.html")
+
+</head>
+
+<body>
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+
+        @@include("partials/menu.html")
+        @@include("partials/sidebar.html")
+
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+
+            <div class="page-content">
+                <div class="container">
+
+                    <h3 class="mb-4">Overview <a href="https://getbootstrap.com/" target="_blank" class="float-end badge bg-success-subtle fs-6 text-success">Official Website <i class="ri-external-link-line"></i></a></h3>
+                    <p class="text-muted mb-4">Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most popular front-end open-source toolkit, featuring Sass variables and mixins, a responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.</p>
+
+                    <div class="alert bg-light border-start border-3 rounded-start-0 border-primary-subtle border-0 mb-4">
+                        It is a required plugin. You can't remove this.
+                    </div>
+
+                    <h5 class="mb-3">Usage</h5>
+                    <pre class="language-markup p-3 rounded"><code>We've used bootstrap-based components.</code></pre>
+
+                </div>
+                <footer class="footer mt-4 text-center position-absolute end-0 bottom-0 start-0">
+                    <div class="container border-top py-3">
+                        <script>document.write(new Date().getFullYear())</script> © Skote.
+                    </div>
+                </footer>
+
+            </div>
+            <!-- End Page-content -->
+
+        </div>
+        <!-- end main content-->
+
+    </div>
+    <!-- END layout-wrapper -->
+
+
+
+    @@include("partials/vendor-scripts.html")
+
+    <!-- prismjs plugin -->
+    <script src="../assets/libs/prismjs/prism.js"></script>
+
+    <!-- App js -->
+    <script src="https://themesbrand.com/docs/app.js"></script>
+</body>
+
+</html>

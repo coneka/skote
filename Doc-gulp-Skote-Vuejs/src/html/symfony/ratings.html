@@ -1,0 +1,190 @@
+@@include("partials/main.html")
+
+<head>
+
+    @@include("partials/title-meta.html", {"title": "Raterjs-Ratings"})
+
+    @@include("partials/head-css.html")
+
+</head>
+
+<body>
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+
+        @@include("partials/menu.html")
+        @@include("partials/sidebar.html")
+
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+
+            <div class="page-content">
+                <div class="container">
+                    <h3 class="mb-3">Overview <a href="https://fredolss.github.io/rater-js/" target="_blank" class="float-end badge bg-success-subtle link-success fs-6">Official Website <i class="ri-external-link-line"></i></a></h3>
+                    <p class="text-muted mb-4">Rater js is the best star rater for the browser. No
+                        dependencies. Unlimited number of stars.</p>
+
+                    <div>
+                        <h5 class="mb-3">Javascript</h5>
+                        <pre class="language-markup p-3 rounded mb-3"><code>&lt;!-- rater-js plugin --&gt;
+&lt;script src=&quot;assets/libs/rater-js/index.js&quot;&gt;&lt;/script&gt;</code></pre>
+
+                        <h5 class="mb-3">Initjs (Custom js)</h5>
+                        <pre class="language-markup p-3 rounded mb-3"><code>&lt;!-- rating init --&gt;
+&lt;script src=&quot;assets/js/pages/rating.init.js&quot;&gt;&lt;/script&gt;</code></pre>
+
+                        <h5 class="mb-3">Add Package</h5>
+                        <div class="alert bg-light border-start border-3 rounded-start-0 border-primary-subtle border-0 mb-4">yarn add rater-js --save</div>
+
+                        <h5 class="mb-3">Remove Package</h5>
+                        <div class="alert bg-light border-start border-3 rounded-start-0 border-primary-subtle border-0 mb-4">yarn remove rater-js or you can remove package by removing specific package from package.json</div>
+                    </div>
+
+                    <h5 class="mb-3">Examples:</h5>
+
+                    <div class="table-responsive">
+                        <table class="table mb-0">
+                            <thead>
+                                <tr>
+                                    <th scope="col" style="width:40%">Title</th>
+                                    <th scope="col">Javascript</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Basic Rater</th>
+                                    <td>
+                                        <pre class="language-js p-3 rounded"><code>var basicRating = raterJs( {
+starSize:22, 
+rating: 3, 
+element:document.querySelector("#basic-rater"), 
+rateCallback:function rateCallback(rating, done) {
+this.setRating(rating); 
+done(); 
+}
+}); </code></pre>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Rater with Step</th>
+                                    <td>
+                                        <pre class="language-js p-3 rounded"><code>var starRatingStep = raterJs( {
+starSize:22, 
+rating:1.5, 
+element:document.querySelector("#rater-step"), 
+rateCallback:function rateCallback(rating, done) {
+this.setRating(rating); 
+done(); 
+}
+});</code></pre>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Custom Messages</th>
+                                    <td>
+                                        <pre class="language-js p-3 rounded"><code>var messageDataService =  {
+rate:function(rating) {
+return {then:function (callback) {
+setTimeout(function () {
+    callback((Math.random() * 5)); 
+}, 1000); 
+}
+}
+}
+}
+
+var starRatingmessage = raterJs( {isBusyText:"Rating in progress. Please wait...", 
+starSize:22, 
+element:document.querySelector("#rater-message"), 
+rateCallback:function rateCallback(rating, done) {
+starRatingmessage.setRating(rating); 
+messageDataService.rate().then(function (avgRating) {
+starRatingmessage.setRating(avgRating); 
+done(); 
+}); 
+}}); </code></pre>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Example with unlimited number of stars. readOnly option
+                                        is set to true</th>
+                                    <td>
+                                        <pre class="language-js p-3 rounded"><code>var starRatingunlimited = raterJs( {
+max:16, 
+readOnly:true, 
+rating:4.4, 
+element:document.querySelector("#rater-unlimitedstar")
+}); 
+</code></pre>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">On Hover Event</th>
+                                    <td>
+                                        <pre class="language-js p-3 rounded"><code>var starRatinghover = raterJs( {
+starSize:22,
+rating: 1, 
+element:document.querySelector("#rater-onhover"), 
+rateCallback:function rateCallback(rating, done) {
+this.setRating(rating); 
+done(); 
+}, 
+onHover:function(currentIndex, currentRating) {
+document.querySelector('.ratingnum').textContent = currentIndex; 
+}, 
+onLeave:function(currentIndex, currentRating) {
+document.querySelector('.ratingnum').textContent = currentRating; 
+}
+}); </code></pre>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Clear/Reset Rater</th>
+                                    <td>
+                                        <pre class="language-js p-3 rounded"><code>var starRatingreset = raterJs( {
+starSize:22,
+rating: 2, 
+element:document.querySelector("#raterreset"), 
+rateCallback:function rateCallback(rating, done) {
+this.setRating(rating); 
+done(); 
+}
+}); 
+document.querySelector('#raterreset-button').addEventListener("click", function() {
+starRatingreset.clear();
+console.log(starRatingreset.getRating());
+}, false); </code></pre>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                        <!-- end table -->
+                    </div>
+
+                </div>
+                @@include("partials/footer.html")
+            </div>
+            <!-- End Page-content -->
+
+        </div>
+        <!-- end main content-->
+
+    </div>
+    <!-- END layout-wrapper -->
+
+
+
+    @@include("partials/vendor-scripts.html")
+
+    <!-- prismjs plugin -->
+    <script src="../assets/libs/prismjs/prism.js"></script>
+
+    <!-- App js -->
+    <script src="https://themesbrand.com/docs/app.js"></script>
+</body>
+
+</html>

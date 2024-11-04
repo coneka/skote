@@ -1,0 +1,125 @@
+@@include("partials/main.html")
+
+<head>
+
+    @@include("partials/title-meta.html", {"title": "ENV"})
+
+    @@include("partials/head-css.html")
+
+</head>
+
+<body>
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+
+        @@include("partials/menu.html")
+        @@include("partials/sidebar.html")
+
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+
+            <div class="page-content">
+                <div class="container">
+                    <h3 class="mb-4">.env File</h3>
+
+                    <div>
+                        <p>Env files are used to store credentials such as API keys, Firebase Credentials. An
+                            environment variable supports storing the API link at one location so that we do not need to
+                            change the Link in each file manually.</p>
+
+                        <div class="alert alert-warning">Warning: Env file do not store any secrets (such as private API
+                            keys) in your React app's environment
+                            file (env file). Keep in mind that environment variables are included in the app's build,
+                            making
+                            them accessible to anyone who inspects your app's files.
+                        </div>
+
+                        <p>
+                            Environment variables is used to create clean and well-organized code with separating
+                            configuration from application logic, which yielding a codebase that's easier to maintain,
+                            read and debug.
+                        </p>
+
+
+
+                        <div>
+                            <h5>
+                                Is a .env file secure?
+                            </h5>
+                            <p>
+                                -: env file is a good way to keep it secure and separate from the rest of your code.
+                                Defining
+                                your API key in a .env file has several benefits: Security: Keeping your API key in a
+                                separate file ensures that it does not get accidentally committed to a public
+                                repository.
+                            </p>
+                        </div>
+                    </div>
+                    <div>
+                        <h5>
+                            Where should .env file go in the project?
+                        </h5>
+                        <p>
+                            -: Open the project root directory and create a .env file inside that directory.
+                        </p>
+                    </div>
+
+                    <div>
+                        <h5>
+                            How can use .env files?
+                        </h5>
+                        <p>
+                            -: After creating a new file named .env in the root of your project,
+                            in your new .env file, add a new key=value.
+                        </p>
+                        <pre class="language-markup"><code>REACT_APP_API_URL= "YOUR_API" // in React Hooks</code></pre>
+                        <pre class="language-markup"><code>VITE_APP_API_URL= "YOUR_API" // in React + Vite</code></pre>
+                    </div>
+
+                    <div>
+                        <h5 class="mt-3">
+                            How to create subdirectory build?
+                        </h5>
+                        <p>
+                            -: To create a subdirectory named build, you can specify the desired public URL for your
+                            project within the .env file by setting the <code>PUBLIC_URL</code>. This configuration will
+                            effectively generate the build subdirectory for your project. Additionally, the
+                            <code>PUBLIC_URL</code> will
+                            provide access to the project from the <code>index.js</code> file.
+                        </p>
+                        <pre class="language-markup"><code>PUBLIC_URL=/skote/react-ts/v-light/</code></pre>
+
+                        <p class="mt-2 mb-0">These environment variables will be defined for you on process.env. The
+                            below example for
+                            process.env is from <code>index.js</code> file.</p>
+                        <p>
+                        <pre
+                            class="language-markup"><code>&lt;BrowserRouter basename={process.env.PUBLIC_URL}>&lt;/BrowserRouter></code></pre>
+                        </p>
+                    </div>
+
+
+                </div>
+                @@include("partials/footer.html")
+            </div>
+            <!-- End Page-content -->
+
+        </div>
+        <!-- end main content-->
+
+    </div>
+    <!-- END layout-wrapper -->
+
+    @@include("partials/vendor-scripts.html")
+
+    <!-- prismjs plugin -->
+    <script src="../assets/libs/prismjs/prism.js"></script>
+
+    <!-- App js -->
+    <script src="https://themesbrand.com/docs/app.js"></script>
+</body>
+
+</html>

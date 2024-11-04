@@ -1,0 +1,81 @@
+@@include("partials/main.html")
+
+<head>
+
+    @@include("partials/title-meta.html", {"title": "Chartlist"})
+
+    @@include("partials/head-css.html")
+
+</head>
+
+<!-- Begin page -->
+<div id="layout-wrapper">
+
+    @@include("partials/menu.html")
+
+    @@include("partials/sidebar.html")
+    <!-- ============================================================== -->
+    <!-- Start right Content here -->
+    <!-- ============================================================== -->
+    <div class="main-content">
+
+        <div class="page-content">
+            <div class="container">
+
+                <h3 class="mb-3">Overview<a href="https://www.npmjs.com/package/ng-chartist" target="_blank" class="float-end badge bg-success-subtle link-success fs-6">Official Website <i class="ri-external-link-line"></i></a> </h3>
+
+                <p class="text-muted mb-4">"ng-chartist" simplifies the integration of Chartist.js charts into Angular applications, making it easier to create interactive and responsive charts for your web projects.</p>
+
+                <h5 class="mb-3">Add Package</h5>
+                <div class="alert bg-light border-start border-3 rounded-start-0 border-primary-subtle border-0 mb-4">npm i chartist<br>npm i ng-chartist </div>
+                <h5 class="mb-3">Remove Package</h5>
+                <div class="alert bg-light border-start border-3 rounded-start-0 border-primary-subtle border-0 mb-4">npm uninstall chartist <br>npm i ng-chartist
+                    <br>you can remove package by removing specific package from package.json
+                </div>
+
+
+                <h5 class="mb-3 mt-4">Examples:</h5>
+
+                <div class="table-responsive">
+                    <table class="table mb-0">
+                        <thead>
+                            <tr>
+                                <th scope="col" style="width:40%">Title</th>
+                                <th scope="col">Source</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+
+                                <th scope="row">Charts</th>
+                                <td>
+                                    <p class="mt-3 fw-medium">You can refer to the <code>src/app/pages/chart/chartist </code>directory for various professional chart examples in your project.
+                                    </p>
+                                </td>
+                        </tbody>
+                    </table>
+                    <!-- end table -->
+                </div>
+                <!-- end table responsive -->
+            </div>
+            @@include("partials/footer.html")
+        </div>
+        <!-- End Page-content -->
+
+    </div>
+    <!-- end main content-->
+
+</div>
+<!-- END layout-wrapper -->
+
+
+@@include("partials/vendor-scripts.html")
+
+<!-- prismjs plugin -->
+<script src="../assets/libs/prismjs/prism.js"></script>
+
+<!-- App js -->
+<script src="https://themesbrand.com/docs/app.js"></script>
+</body>
+
+</html>

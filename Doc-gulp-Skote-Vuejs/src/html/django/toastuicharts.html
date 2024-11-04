@@ -1,0 +1,69 @@
+@@include("partials/main.html")
+
+<head>
+
+    @@include("partials/title-meta.html", {"title": "Toast Ui Charts"})
+
+    @@include("partials/head-css.html")
+
+</head>
+
+<body>
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+
+        @@include("partials/menu.html")
+        @@include("partials/sidebar.html")
+
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+
+            <div class="page-content">
+                <div class="container">
+                    <h3 class="mb-3">Toast Ui Charts<a href="https://apexcharts.com/javascript-chart-demos/" target="_blank" class="float-end badge bg-success-subtle link-success fs-6">Official Website <i class="ri-external-link-line"></i></a> </h3>
+                    <p class="text-muted mb-4">The TOAST UI Chart provides many types of charts to visualize the various forms of data.</p>
+
+                    <div>
+                        <h5 class="mb-3">CSS</h5>
+                        <pre class="language-markup p-3 rounded mb-3"><code>&lt;!-- Toast Ui Chart js --&gt;
+&lt;script src=&quot;{% static 'libs/tui-chart/dist/tui-chart.min.css' %}&quot;&gt;&lt;/script&gt;</code></pre>
+                        <h5 class="mb-3">Javascript</h5>
+                        <pre class="language-markup p-3 rounded mb-3"><code>&lt;!-- ApexChart js --&gt;
+&lt;script src=&quot;{% static 'libs/tui-chart/dist/tui-chart-all.min.js' %}&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;{% static 'libs/tui-chart/dist/maps/usa.js' %}&quot;&gt;&lt;/script&gt;</code></pre>
+
+                        <h5 class="mb-3">Initjs (Custom js)</h5>
+                        <pre class="language-markup p-3 rounded mb-3"><code>&lt;!-- Init js --&gt;
+&lt;script src=&quot;{% static 'js/pages/tui-charts.init.js' %}&quot;&gt;&lt;/script&gt;</code></pre>
+
+                        <h5 class="mb-3">Add Package</h5>
+                        <div class="alert bg-light border-start border-3 rounded-start-0 border-primary-subtle border-0 mb-4">yarn add @toast-ui/chart --save</div>
+
+                        <h5 class="mb-3">Remove Package</h5>
+                        <div class="alert bg-light border-start border-3 rounded-start-0 border-primary-subtle border-0 mb-4">yarn remove @toast-ui/chart --save or you can remove package by removing specific package from package.json</div>
+                    </div>
+                </div>
+                @@include("partials/footer.html")
+            </div>
+            <!-- End Page-content -->
+
+        </div>
+        <!-- end main content-->
+
+    </div>
+    <!-- END layout-wrapper -->
+
+
+    @@include("partials/vendor-scripts.html")
+
+    <!-- prismjs plugin -->
+    <script src="../assets/libs/prismjs/prism.js"></script>
+
+    <!-- App js -->
+    <script src="https://themesbrand.com/docs/app.js"></script>
+</body>
+
+</html>

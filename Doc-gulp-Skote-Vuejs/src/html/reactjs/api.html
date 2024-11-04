@@ -1,0 +1,194 @@
+@@include("partials/main.html")
+
+<head>
+
+    @@include("partials/title-meta.html", {"title": "Api Integration"})
+
+    @@include("partials/head-css.html")
+
+</head>
+
+<body>
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+
+        @@include("partials/menu.html")
+        @@include("partials/sidebar.html")
+
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+
+            <div class="page-content">
+                <div class="container">
+
+                    <h3 class="mb-4">Api Integration</h3>
+                    <div>
+                        <p>
+                            In Skote React, a fake backend setup is included by default. All the files related to API
+                            integrations can be located within the
+                            <code>src/helpers</code> folder. While we've provided a fake backend for your convenience,
+                            you have the flexibility to remove it and replace it with your custom API by following the
+                            steps outlined in the
+                            <code>src/helpers</code> directory.
+
+                        </p>
+                        <ul>
+                            <li>
+                                <p class="mb-1">
+                                    <code> src/helpers/api_helper.js </code>
+                                    file contains axios setup to call server API(s) including get, put, post, delete,
+                                    etc
+                                    methods, interceptors & token set methods.
+                                </p>
+                            </li>
+                            <li>
+                                <p class="mb-1">
+                                    <code> src/helpers/fakebackend_helper.js </code> file contain all
+                                    API's call functions.
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <code> src/helpers/url_helper.js </code> file contain all
+                                    module's API's url.
+                                </p>
+                            </li>
+                        </ul>
+                        <div class="alert alert-info">
+                            <strong>Note :</strong> we have added a
+                            <strong>Fake backend setup</strong> just for user interactions, but if you are working with
+                            the real API integration, then there is no need of fake-backend so you can simply delete the
+                            file
+                            <code>src/helpers/fakeBackend.js</code>, and remove the code related to Fake-Backend from
+                            <code>app.js</code> file. you just need to update API's URL of the related module in the
+                            <code>src/helpers/url_helper</code> file,
+                            that's it!
+                        </div>
+                    </div>
+
+                    <div>
+                        <h5 class="fs-lg mb-3 text-decoration-underline">
+                            How to Integrate custom API?
+                        </h5>
+                        <p class="text-muted">Please follow the below steps : </p>
+                        <div>
+                            <p class="mb-1">-> Let's assume that our API's URL is
+                                "YOUR_API" .
+                                First we have to add this URL in <code> src/helpers/url_helper.js</code> file
+                            </p>
+
+                            <pre
+                                class="language-markup p-3 rounded mb-4 bg-ligh position-relative"><button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard" title="Copy to clipboard">Copy</button><code>export const GET_DATA = "YOUR_API";</code></pre>
+                        </div>
+                        <div>
+                            <p class="mb-1">-> Whatever methods you want to use, import it <code> import { APIClient } from
+                                  "src/helpers/api_helper";</code> and add below function in
+                                <code>src/helpers/fakebackend_helper.js</code>
+                                file. We have created new function getDemoData and exported it so it can be used
+                                in another files.
+                            </p>
+                            <pre class="p-3 rounded mb-4 bg-ligh position-relative language-markup" tabindex="0">
+<button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard">Copy</button><code>import { APIClient } from "./api_helper";
+import * as url from "./url_helper"
+import { del, get, post, put } from "./api_helper";
+
+export const getDemoData = () => get(url.GET_DATA);</code></pre>
+                        </div>
+
+                        <div>
+                            <p>In Saga middleware <code>actionTypes.js</code> file defines the type of actions
+                                triggered.</p>
+                            <pre class="p-3 rounded mb-4 bg-ligh position-relative language-markup" tabindex="0">
+<button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard">Copy</button><code>export const GET_DATA = "GET_DATA"</code></pre>
+                        </div>
+
+                        <div>
+                            <p>To trigger a saga, you dispatch an action that the saga is listening for. You'd dispatch
+                                the GET_DATA action to initiate the fetchDataSaga in <code>actions.js</code> file.</p>
+                            <pre class="p-3 rounded mb-4 bg-ligh position-relative language-markup" tabindex="0">
+<button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard">Copy</button><code>import { GET_DATA } from './actionTypes';
+export const getDatas = () => ({
+    type: GET_DATA,
+})
+</code></pre>
+                        </div>
+
+                        <div>
+                            <p class="mb-1">-> Reducer is also worked as middleware for react, which is placed
+                                at
+                                <code>src/store/Data/reducer.js</code> file.
+                            </p>
+                            <pre class="p-3 rounded mb-4 bg-ligh position-relative language-markup" tabindex="0">
+<button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard">Copy</button><code>import { GET_DATA_SUCCESS } from "./actionTypes"
+
+const INIT_STATE = {
+    datas: [],
+    data: {},
+    error: {},
+    loading: true
+};
+
+const Demodatafile = (state = INIT_STATE, action) => {
+    switch (action.type) {
+      case GET_DATA:
+        return {
+          ...state,
+          data: action.payload,
+          loading: true
+        };
+    }
+}
+
+export default Demodatafile</code></pre>
+                        </div>
+
+                        <div>
+                            <p class="mb-1">-> A saga works as a middleware, which is placed at
+                                <code>src/slices/Data/saga.js</code> folder. We have to import api from the
+                                <code>fakebackend_helper.js</code> file.
+                            </p>
+                            <pre class="p-3 rounded mb-4 bg-ligh position-relative language-markup" tabindex="0">
+<button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard">Copy</button><code>import { call, put, takeEvery } from "redux-saga/effects";
+import { GET_DATA } from "./actionTypes"
+import { getDatas } from "./actions"
+import { getDemoData } from "helpers/fakebackend_helper"
+
+function* fetchDatas() {
+    try {
+      const response = yield call(getDemoData);
+      yield put(getDemoData(response));
+    } catch (error) {
+      yield put(getDemoDataFail(error));
+    }
+} 
+</code></pre>
+                        </div>
+
+
+                    </div>
+                    </li>
+
+                </div>
+                @@include("partials/footer.html")
+            </div>
+            <!-- End Page-content -->
+
+        </div>
+        <!-- end main content-->
+
+    </div>
+    <!-- END layout-wrapper -->
+
+    @@include("partials/vendor-scripts.html")
+
+    <!-- prismjs plugin -->
+    <script src="../assets/libs/prismjs/prism.js"></script>
+
+    <!-- App js -->
+    <script src="https://themesbrand.com/docs/app.js"></script>
+</body>
+
+</html>

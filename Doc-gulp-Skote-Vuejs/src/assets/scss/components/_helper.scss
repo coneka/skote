@@ -1,0 +1,29 @@
+//
+// _helper.scss
+//
+
+@media (min-width: 1200px) {
+    .container-fluid {
+        max-width: 85%;
+    }
+}
+
+.dropdown-menu {
+    box-shadow: $dropdown-box-shadow;
+}
+
+#back-to-top {
+    width: 35px;
+    height: 35px;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    background: #3495f5;
+    border-color: transparent;
+    border-radius: 5px;
+    color: #fff;
+    -webkit-transition: all .5s ease;
+    transition: all .5s ease;
+    opacity: 0;
+    z-index: 999;
+}

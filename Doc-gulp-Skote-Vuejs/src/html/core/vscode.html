@@ -1,0 +1,131 @@
+@@include("partials/main.html")
+
+<head>
+
+    @@include("partials/title-meta.html", {"title": "Visual Studio Configuration"})
+
+    @@include("partials/head-css.html")
+
+</head>
+
+<body>
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+
+        @@include("partials/menu.html")
+
+        @@include("partials/sidebar.html")
+
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+
+            <div class="page-content">
+                <div class="container">
+
+                    <h3 class="mb-4">Visual Studio on Windows</h3>
+
+                    <div class="mb-4">
+                        <h5>Installation:</h5>
+                        <ol>
+                            <li>Download the <a href="https://visualstudio.microsoft.com/downloads/" target="_blank">Visual Studio installer</a> for Windows.</li>
+                            <li>Once it is downloaded, run the installer (VisualStudioSetup.exe). This will only take a minute.</li>
+                            <li>By default, Visual Studio is installed under <code>C:\Users\{Username}\AppData\Local\Programs\Microsoft Visual Studio</code>.</li>
+                        </ol>
+
+                        <p>Alternatively, you can also download a <a href="https://visualstudio.microsoft.com/vs/" target="_blank">Zip archive</a>, extract it and run Code from there.</p>
+
+                        <p class="alert alert-info text-info"><strong>Tip:</strong> Setup will add Visual Studio to your <code>%PATH%</code>, so from the console you can type <code>code .</code> to open Visual Studio on that folder. You will need to restart your console after the installation for the change to the <code>%PATH%</code> environmental variable to take effect.</p>
+                    </div>
+
+                    <div class="mb-4">
+                        <h5>User setup versus system setup:</h5>
+                        <p>Visual Studio provides both Windows <strong>user</strong> and <strong>system</strong> level setups.</p>
+                        <p>The <a href="https://visualstudio.microsoft.com/vs/" target="_blank">user setup</a> does not require Administrator privileges to run as the location will be under your user Local AppData ( <code>LOCALAPPDATA</code> ) folder. Since it requires no elevation, the user setup is able to provide a smoother background update experience. This is the preferred way to install Visual Studio on Windows.</p>
+
+                        <p class="alert-warning alert text-warning">
+                            <strong>Note:</strong> When running Visual Studio as Administrator in a user setup installation, updates will be disabled.
+                        </p>
+
+                        <p>The <a href="https://visualstudio.microsoft.com/vs/" target="_blank">system setup</a> requires elevation to Administrator privileges to run and will place the installation under the system's Program Files. The in-product update flow will also require elevation, making it less streamlined than the user setup. On the other hand, installing Visual Studio using the system setup means that it will be available to all users in the system.</p>
+
+                        <p>See the <a href="https://visualstudio.microsoft.com/downloads/" target="_blank">Download Visual Studio</a> page for a complete list of available installation options.</p>
+                    </div>
+
+                    <div class="mb-4">
+                        <h5>Updates:</h5>
+
+                        <p>Visual Studio ships monthly <a href="https://devblogs.microsoft.com/dotnet/dotnet-conf-2023-celebrating-the-release-of-dotnet-8-save-the-date/" target="_blank">releases</a> and supports auto-update when a new release is available. If you're prompted by Visual Studio, accept the newest update and it will be installed (you won't need to do anything else to get the latest bits).</p>
+
+                        <p class="alert-warning alert text-warning">
+                            <strong>Note:</strong> You can <a href="https://code.visualstudio.com/docs/supporting/faq.md#how-do-i-opt-out-of-vs-code-autoupdates" class="text-warning fw-semibold text-decoration-underline">disable auto-update</a> if you prefer to update Visual Studio on your own schedule.
+                        </p>
+                    </div>
+
+                    <div class="mb-4">
+                        <h5>Common questions:</h5>
+
+                        <p class="fw-semibold">1.What command-line arguments are supported by the Windows Setup?</p>
+                        <p class="mb-1">Visual Studio uses <a href="https://www.jrsoftware.org/isinfo.php" target="_blank">Inno Setup</a> to create its setup package
+                            for Windows. Thus, all the <a href="https://www.jrsoftware.org/ishelp/index.php?topic=setupcmdline" target="_blank">Inno Setup command-line switches</a> are available for use.</p>
+                        <p class="mb-5">Additionally, you can prevent the Setup from launching Visual Studio after completion with <code>/mergetasks=!runcode </code>.</p>
+
+                        <p class="fw-semibold">2.I'm having trouble with the installer</p>
+                        <p>Try using the <a href="https://visualstudio.microsoft.com/downloads/" target="_blank">zip file</a> instead of the installer. To use this, unzip Visual Studio in your <code>AppData\Local\Programs</code> folder.</p>
+
+                        <p class="alert-warning alert text-warning mb-5">
+                            <strong>Note:</strong> When Visual Studio is installed via a Zip file, you will need to manually update it for each <a href="https://code.visualstudio.com/docs/supporting/faq.md#how-do-i-opt-out-of-vs-code-autoupdates" target="_blank" class="text-warning fw-semibold text-decoration-underline">releases</a>.
+                        </p>
+
+                        <p class="fw-semibold">3.Icons are missing</p>
+                        <p class="mb-1">I installed Visual Studio Code on my Windows 8 machine. Why are some icons not appearing in the workbench and editor?</p>
+                        <p>Visual Studio uses <a href="https://en.wikipedia.org/wiki/Scalable_Vector_Graphics" target="_blank">SVG</a> icons and we have found instances where the .SVG file extension is associated with something other than <code>image/svg+xml</code>. We're considering options to fix it, but for now here's a workaround:</p>
+
+                        <p>Using the Command Prompt:</p>
+                        <ol>
+                            <li>Open an Administrator Command Prompt.</li>
+                            <li>Type <code>REG ADD HKCR\.svg /f /v "Content Type" /t REG_SZ /d image/svg+xml</code>.</li>
+                        </ol>
+
+                        <p>Using the Registry Editor (regedit):</p>
+                        <ol>
+                            <li>Start <code>regedit</code>.</li>
+                            <li>Open the <code>HKEY_CLASSES_ROOT</code> key.</li>
+                            <li>Find the <code>.svg</code> key.</li>
+                            <li>Set its <code>Content Type</code> Data value to <code>image/svg+xml</code>.</li>
+                            <li>Exit <code>regedit</code>.</li>
+                        </ol>
+                    </div>
+
+                    <p>For more information visit <a href="https://learn.microsoft.com/en-us/visualstudio/windows/?view=vs-2022" target="_blank">Visual Studio</a>.</p>
+                    
+
+                </div>
+                <footer class="footer mt-4 text-center position-absolute end-0 bottom-0 start-0">
+                    <div class="container border-top py-3">
+                        <script>document.write(new Date().getFullYear())</script> © Skote.
+                    </div>
+                </footer>
+
+            </div>
+            <!-- End Page-content -->
+
+        </div>
+        <!-- end main content-->
+
+    </div>
+    <!-- END layout-wrapper -->
+
+
+
+    @@include("partials/vendor-scripts.html")
+    <!-- prismjs plugin -->
+    <script src="../assets/libs/prismjs/prism.js"></script>
+
+    <!-- App js -->
+    <script src="https://themesbrand.com/docs/app.js"></script>
+</body>
+
+</html>

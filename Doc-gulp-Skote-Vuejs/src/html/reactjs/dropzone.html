@@ -1,0 +1,152 @@
+@@include("partials/main.html")
+
+<head>
+
+    @@include("partials/title-meta.html", {"title": "Dropzone-File Uploads"})
+
+    @@include("partials/head-css.html")
+
+</head>
+
+<body>
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+
+        @@include("partials/menu.html")
+        @@include("partials/sidebar.html")
+
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+
+            <div class="page-content">
+                <div class="container">
+                    <h3 class="mb-3">Overview<a href="https://www.dropzone.dev/js/" target="_blank"
+                            class="float-end badge bg-success-subtle link-success fs-6">Official Website <i
+                                class="ri-external-link-line"></i></a> </h3>
+                    <p class="text-muted mb-4">Dropzone.js is one of the most popular drag and drop
+                        JavaScript libraries. It is free,
+                        fully open source, and makes it easy for you to handle dropped files on your
+                        website. </p>
+
+                    <div>
+                        <h5 class="mb-3">Add Package</h5>
+                        <div
+                            class="alert bg-light border-start border-3 rounded-start-0 border-primary-subtle border-0 mb-4">
+                            yarn add react-dropzone</div>
+
+                        <h5 class="mb-3">Import Package</h5>
+                        <div
+                            class="alert bg-light border-start border-3 rounded-start-0 border-primary-subtle border-0 mb-4">
+                            import Dropzone from 'react-dropzone';</div>
+
+                        <h5 class="mb-3">Remove Package</h5>
+                        <div
+                            class="alert bg-light border-start border-3 rounded-start-0 border-primary-subtle border-0 mb-4">
+                            yarn remove react-dropzone ( or you can remove package by removing specific package from
+                            package.json )</div>
+                    </div>
+
+                    <h5 class="mb-3 mt-4">Examples:</h5>
+
+                    <div class="table-responsive">
+                        <table class="table mb-0">
+                            <thead>
+                                <tr>
+                                    <th scope="col" style="width:40%">Title</th>
+                                    <th scope="col">react</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Dropzone</th>
+                                    <td>
+                                        <pre class="language-js p-3 rounded"><code>&lt;Dropzone
+    onDrop={acceptedFiles => {
+        handleAcceptedFiles(acceptedFiles);
+    }}
+>
+    {({ getRootProps, getInputProps }) => (
+        &lt;div className="dropzone dz-clickable text-center ">
+            &lt;div className="dz-message needsclick"
+                {...getRootProps()}
+            >
+                &lt;div className="mb-3">
+                    &lt;i className="display-4 text-muted ri-upload-cloud-2-fill" />
+                &lt;/div>
+                &lt;h4>Drop files here or click to upload.</h4>
+            &lt;/div>
+        &lt;/div>
+    )}
+&lt;/Dropzone>
+
+&lt;div className="list-unstyled mb-0" id="file-previews">
+    {selectedFiles.map((f: any, i: number) => {
+        return (
+            &lt;Card
+                className="mt-1 mb-0 shadow-none border dz-processing dz-image-preview dz-success dz-complete"
+                key={i + "-file"}
+            >
+                &lt;div className="p-2">
+                    &lt;Row className="align-items-center">
+                        &lt;Col className="col-auto">
+                            &lt;Image
+                                height="80"
+                                width="100"
+                                className="avatar-sm rounded bg-light"
+                                alt={f.name}
+                                src={f.preview}
+                            />
+                        &lt;/Col>
+                        &lt;Col>
+                            &lt;Link
+                                to="#"
+                                className="text-muted font-weight-bold"
+                            >
+                               {f.name}
+                            &lt;/Link>
+                            &lt;p className="mb-0">
+                                &lt;strong>{f.formattedSize}&lt;/strong>
+                            &lt;/p>
+                        &lt;/Col>
+                    &lt;/Row>
+                &lt;/div>
+            &lt;/Card>
+        );
+    })}
+&lt;/div>
+</code></pre>
+                                    </td>
+                                </tr>
+
+
+                            </tbody>
+                        </table>
+                        <!-- end table -->
+                    </div>
+
+                </div>
+                @@include("partials/footer.html")
+            </div>
+            <!-- End Page-content -->
+
+        </div>
+        <!-- end main content-->
+
+    </div>
+    <!-- END layout-wrapper -->
+
+
+
+    @@include("partials/vendor-scripts.html")
+
+    <!-- prismjs plugin -->
+    <script src="../assets/libs/prismjs/prism.js"></script>
+
+    <!-- App js -->
+    <script src="https://themesbrand.com/docs/app.js"></script>
+</body>
+
+</html>

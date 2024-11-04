@@ -1,0 +1,101 @@
+@@include("partials/main.html")
+
+<head>
+
+    @@include("partials/title-meta.html", {"title": "Constants Layout"})
+
+    @@include("partials/head-css.html")
+
+</head>
+
+<body>
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+
+        @@include("partials/menu.html")
+        @@include("partials/sidebar.html")
+
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+
+            <div class="page-content">
+                <div class="container">
+
+                    <h3 class="mb-3">Constants</h3>
+
+                    <div>
+                        <p class="text-muted">
+                            In Skote React, you'll find the <code>src/Components/constants/layout.ts</code> file, where various
+                            layout modes are defined. </p>
+
+                        <p class="text-muted">This file serves as the foundation for configuring and customizing
+                            the layout of the admin interface. You have the flexibility to make changes to this file to
+                            modify the existing
+                            layout modes, and you can also introduce new types or modes of layout to tailor the project
+                            to your specific requirements. This central file is pivotal in setting up and managing the
+                            layout of the admin section.</p>
+
+                        <p class="text-muted">In the <code>src/slices/layouts/reducer.ts</code> file, the layouts for
+                            the admin section are
+                            defined by retrieving constants from the <code>src/Components/constants/layout.ts</code> file,
+                            as explained in the <a href="layouts.html" class="text-decoration-underline">Layout</a> page
+                            of the documentation.</p>
+
+                    </div>
+
+                    <div>
+                        <p class="text-muted">Below code is the example from the
+                            <code>src/Components/constants/layout.ts</code> file.</p>
+                        <pre><code class="language-markup">enum LAYOUT_TYPES {
+    VERTICAL = "vertical",
+    HORIZONTAL = "horizontal"
+}
+  
+enum LAYOUT_MODE_TYPES {
+    DARK = "dark",
+    LIGHT = "light",
+}
+
+enum LAYOUT_WIDTH_TYPES {
+    FLUID = "fluid",
+    BOXED = "boxed",
+    SCROLLABLE = "scrollable",
+}
+
+export { LAYOUT_TYPES, LAYOUT_MODE_TYPES, LAYOUT_WIDTH_TYPES }</code></pre>
+                    </div>
+
+                    <div>
+                        <p class="mt-3 text-muted">After making modifications to the layout constants in the
+                            <code>layout.ts</code> file located in <code>src/Components/constants/</code>, it's important to
+                            ensure that corresponding changes are made in the <code>src/slices/layouts/reducer.ts</code>
+                            file, as well as any other related files. These adjustments are necessary to see the desired
+                            effects in the admin interface.</p>
+                    </div>
+
+                </div>
+                @@include("partials/footer.html")
+            </div>
+            <!-- End Page-content -->
+
+        </div>
+        <!-- end main content-->
+
+    </div>
+    <!-- END layout-wrapper -->
+
+
+
+    @@include("partials/vendor-scripts.html")
+
+    <!-- prismjs plugin -->
+    <script src="../assets/libs/prismjs/prism.js"></script>
+
+    <!-- App js -->
+    <script src="https://themesbrand.com/docs/app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,192 @@
+@@include("partials/main.html")
+
+<head>
+
+    @@include("partials/title-meta.html", {"title": "List Js"})
+
+    @@include("partials/head-css.html")
+
+</head>
+
+<body>
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+
+        @@include("partials/menu.html")
+        @@include("partials/sidebar.html")
+
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+
+            <div class="page-content">
+                <div class="container">
+                    <h3 class="mb-3">Overview<a href="https://github.com/javve/list.js" target="_blank" class="float-end badge bg-success-subtle link-success fs-6">Official Website <i class="ri-external-link-line"></i></a> </h3>
+                    <p class="text-muted mb-4">List js is a library for adding search, sort, filters and
+                        flexibility to tables, lists and various HTML elements. </p>
+
+                    <div>
+                        <h5 class="mb-3">Javascript</h5>
+                        <pre class="language-markup p-3 rounded mb-3"><code>&lt;!-- List js --&gt;
+&lt;script src=&quot;assets/libs/list.js/list.min.js&quot;&gt;&lt;/script&gt;
+&lt;!-- Pagination js --&gt;
+&lt;script src=&quot;assets/libs/list.pagination.js/list.pagination.min.js&quot;&gt;&lt;/script&gt;</code></pre>
+
+                        <h5 class="mb-3">Initjs (Custom js)</h5>
+                        <pre class="language-markup p-3 rounded mb-3"><code>&lt;!-- listjs init --&gt;
+&lt;script src=&quot;assets/js/pages/listjs.init.js&quot;&gt;&lt;/script</code></pre>
+
+                        <h5 class="mb-3">Add Package</h5>
+                        <div class="alert bg-light border-start border-3 rounded-start-0 border-primary-subtle border-0 mb-4">yarn add list.js --save</div>
+
+                        <h5 class="mb-3">Remove Package</h5>
+                        <div class="alert bg-light border-start border-3 rounded-start-0 border-primary-subtle border-0 mb-4">yarn remove list.js or you can remove package by removing specific package from package.json</div>
+                    </div>
+
+                    <h5 class="mb-3 mt-4">Examples:</h5>
+
+                    <div class="table-responsive">
+                        <table class="table mb-0">
+                            <thead>
+                                <tr>
+                                    <th scope="col" style="width:40%">Title</th>
+                                    <th scope="col">Javascript</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Data Attributes + Custom</th>
+                                    <td>
+                                        <pre class="language-js p-3 rounded"><code>var attroptions = {
+valueNames: [
+'name',
+'born',
+{ data: ['id'] },
+{ attr: 'src', name: 'image' },
+{ attr: 'href', name: 'link' },
+{ attr: 'data-timestamp', name: 'timestamp' }
+]
+};
+var attrList = new List('users', attroptions);
+attrList.add({ name: 'Leia', born: '1954', image: 'assets/images/users/avatar-5.jpg', id: 5, timestamp: '67893' });
+</code></pre>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Existing List</th>
+                                    <td>
+                                        <pre class="language-js p-3 rounded"><code>var existOptionsList = {
+valueNames: [ 'contact-name', 'contact-message' ]
+};
+
+var existList = new List('contact-existing-list', existOptionsList);
+</code></pre>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Fuzzy Search</th>
+                                    <td>
+                                        <pre class="language-js p-3 rounded"><code>var fuzzySearchList = new List('fuzzysearch-list', { 
+valueNames: ['name']
+});
+</code></pre>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Pagination</th>
+                                    <td>
+                                        <pre class="language-js p-3 rounded"><code>var paginationList = new List('pagination-list', {
+valueNames: ['pagi-list'],
+page: 3,
+pagination: true
+});
+</code></pre>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                        <!-- end table -->
+                    </div>
+
+                    <h5 class="mt-4 mb-3">To add new field to table</h5>
+
+                    <ol>
+                        <li>
+                            <h6>Goto table-customer-list.json file and add new field to json</h6>
+                            <p class="text-muted">example=>"customer_name": "Mary Cousar"</p>
+                        </li>
+                        <li>
+                            <h6>Go to listjs.init.js file and load that json file and add field in xhttp.onload function at line number 88 or below</h6>
+                            <p class="text-muted">example =>customer_name: raw.customer_name</p>
+                        </li>
+                        <li>
+                            <h6>Goto tables-listjs.html and set attribute data-sort to attribute to th.</h6>
+                            <p class="text-muted">example=>data-sort="customer_name"</p>
+                        </li>
+                        <li>
+                            <h6>Goto listjs.init.js & at line number 108 ,Get the queryselector of required field.</h6>
+                            <p class="text-muted">example=>customerNameField = document.getElementById("customername-field")</p>
+                        </li>
+                        <li>
+                            <h6>listjs.init.js =>goto line number 191 of addbtn functionality</h6>
+                            <p class="text-muted mb-2">add required field details in if & else condition</p>
+                            <p class="text-muted mb-2">example =>in if condition line number 199</p>
+                            <p class="text-muted mb-2">customerNameField.value !== ""</p>
+                            <p class="text-muted mb-2">=>in else condition</p>
+                            <p class="text-muted">customer_name: customerNameField.value</p>
+                        </li>
+                        <li>
+                            <h6>listjs.init.js => at line number 227 of edit button functionality</h6>
+                            <p class="text-muted">follow the same procedure of add button</p>
+                        </li>
+                        <li>
+                            <h6>listjs.init.js => at line number 357 of clearFileds function & add field ad below</h6>
+                            <p class="text-muted">customerNameField.value = "";</p>
+                        </li>
+                    </ol>
+
+
+                    <h5 class="mb-3 mt-4">To delete field from table</h5>
+                    <ol>
+                        <li>
+                            <h6>To Delete a single record</h6>
+                            <p class="text-muted mb-2">listjs.init.js =>At line number 296 of refreshCallbacks() function</p>
+                            <p class="text-muted">And use removeBtns functionality to delete single record</p>
+                        </li>
+                        <li>
+                            <h6>To Delete Multiple records</h6>
+                            <p class="text-muted mb-2">listjs.init.js => At Line number 363 of deleteMultiple() function</p>
+                            <p class="text-muted">and use deleteMultiple() functionality to remove all records</p>
+                        </li>
+                    </ol>
+                </div>
+                <footer class="footer mt-4 text-center position-absolute end-0 bottom-0 start-0">
+                    <div class="container border-top py-3">
+                        <script>document.write(new Date().getFullYear())</script> © Skote.
+                    </div>
+                </footer>
+
+            </div>
+            <!-- End Page-content -->
+
+        </div>
+        <!-- end main content-->
+
+    </div>
+    <!-- END layout-wrapper -->
+
+
+
+    @@include("partials/vendor-scripts.html")
+
+    <!-- prismjs plugin -->
+    <script src="../assets/libs/prismjs/prism.js"></script>
+
+    <!-- App js -->
+    <script src="https://themesbrand.com/docs/app.js"></script>
+</body>
+
+</html>

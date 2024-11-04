@@ -1,0 +1,125 @@
+@@include("partials/main.html")
+
+<head>
+
+    @@include("partials/title-meta.html", {"title": "Time Picker"})
+
+    @@include("partials/head-css.html")
+
+</head>
+
+<body>
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+
+        @@include("partials/menu.html")
+        @@include("partials/sidebar.html")
+
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+
+            <div class="page-content">
+                <div class="container">
+
+                    <h3 class="mb-3">Time Picker <a href="https://github.com/jdewit/bootstrap-timepicker" target="_blank" class="float-end badge bg-success-subtle link-success fs-6">Official Website <i class="ri-external-link-line"></i></a></h3>
+                    <p class="text-muted mb-4">A simple timepicker component for Twitter Bootstrap.</p>
+
+                    <div>
+                        <h5 class="mb-3">CSS</h5>
+                        <pre class="language-markup p-3 rounded mb-3"><code>&lt;!--Time Picker css--&gt;
+&lt;link href=&quot;{{url_for('static' ,filename='libs/bootstrap-timepicker/css/bootstrap-timepicker.min.css')}}&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot; /&gt;</code></pre>
+
+                        <h5 class="mb-3">Javascript</h5>
+                        <pre class="language-markup p-3 rounded mb-3"><code>&lt;!--Time Picker js--&gt;
+&lt;script src=&quot;{{url_for('static' ,filename='libs/bootstrap-timepicker/js/bootstrap-timepicker.min.js')}}&quot;&gt;&lt;/script&gt;</code></pre>
+
+                        <h5 class="mb-3">Initjs (Custom js)</h5>
+                        <pre class="language-markup p-3 rounded mb-3"><code>&lt;!-- swiper.init js --&gt;
+&lt;script src=&quot;{{url_for('static' ,filename='js/pages/form-advanced.init.js')}}&quot;&gt;&lt;/script&gt;</code></pre>
+
+                        <h5 class="mb-3">Add Package</h5>
+                        <div class="alert bg-light border-start border-3 rounded-start-0 border-primary-subtle border-0 mb-4">yarn add bootstrap-timepicker --save</div>
+
+                        <h5 class="mb-3">Remove Package</h5>
+                        <div class="alert bg-light border-start border-3 rounded-start-0 border-primary-subtle border-0 mb-4">yarn remove bootstrap-timepicker or you can remove package by removing specific package from package.json</div>
+                    </div>
+                    <h5 class="mb-3">Examples:</h5>
+
+                    <div class="table-responsive">
+                        <table class="table mb-0">
+                            <thead>
+                                <tr>
+                                    <th scope="col" style="width:40%">Title</th>
+                                    <th scope="col">Javascript</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Default Time Picker</th>
+                                    <td>
+                                        <pre class="language-js p-3 rounded"><code>$('#timepicker').timepicker({
+    icons: {
+        up: 'mdi mdi-chevron-up',
+        down: 'mdi mdi-chevron-down'
+    },
+    appendWidgetTo: "#timepicker-input-group1"
+});</code></pre>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">24 Hour Mode Time Picker</th>
+                                    <td>
+                                        <pre class="language-js p-3 rounded"><code>$('#timepicker2').timepicker({
+    showMeridian: false,
+    icons: {
+        up: 'mdi mdi-chevron-up',
+        down: 'mdi mdi-chevron-down'
+    },
+    appendWidgetTo: "#timepicker-input-group2"
+});</code></pre>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Specify a step for the minute field</th>
+                                    <td>
+                                        <pre class="language-js p-3 rounded"><code>$('#timepicker3').timepicker({
+    minuteStep: 15,
+    icons: {
+        up: 'mdi mdi-chevron-up',
+        down: 'mdi mdi-chevron-down'
+    },
+    appendWidgetTo: "#timepicker-input-group3"
+});</code></pre>
+                                    </td>
+                                </tr>                                
+                            </tbody>
+                        </table>
+                        <!-- end table -->
+                    </div>
+
+                </div>
+                @@include("partials/footer.html")
+            </div>
+            <!-- End Page-content -->
+
+        </div>
+        <!-- end main content-->
+
+    </div>
+    <!-- END layout-wrapper -->
+
+
+
+    @@include("partials/vendor-scripts.html")
+
+    <!-- prismjs plugin -->
+    <script src="../assets/libs/prismjs/prism.js"></script>
+
+    <!-- App js -->
+    <script src="https://themesbrand.com/docs/app.js"></script>
+</body>
+
+</html>

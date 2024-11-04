@@ -1,0 +1,94 @@
+@@include("partials/main.html")
+
+<head>
+
+    @@include("partials/title-meta.html", {"title": "RTL Version"})
+
+    @@include("partials/head-css.html")
+
+</head>
+
+<body>
+
+<!-- Begin page -->
+<div id="layout-wrapper">
+
+    @@include("partials/menu.html")
+
+    @@include("partials/sidebar.html")
+
+    <!-- ============================================================== -->
+    <!-- Start right Content here -->
+    <!-- ============================================================== -->
+    <div class="main-content">
+
+        <div class="page-content">
+            <div class="container">
+
+                <h3 class="mb-4">RTL Mode</h3>
+
+                <div class="mb-4">
+                    <h5 class="  text-decoration-underline mb-4 mb-3">RTL Setup in the HTML folder</h5>
+                    
+                    <p class="mb-0">
+                        To have dark mode enabled, replace the reference of
+                        <code>app.min.css</code> to
+                        <code>app-rtl.min.css</code> and 
+                        <code>bootstrap.min.css</code> to
+                        <code>bootstrap-rtl.min.css</code> and in the <code>src/partials/main.html</code> file update the html tag like <code>&lt;html lang="en" dir="rtl"&gt;</code>.
+                        <br> in the <code> src/partials/head-css.html </code> and make sure to
+                        update the <code>src/assets/js/app.js </code> has initSettings()
+                        function which you need to comment out. Because it will set to default the light version.
+                    </p>
+                    <p class="text-muted">Update the below css file links in the
+                        <code>partials/head-css.html</code> file. <br />
+                        <pre class="language-markup p-3 rounded mb-4 bg-ligh position-relative"><button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard" title="Copy to clipboard">Copy</button><code>&lt;link href="assets/css/bootstrap-rtl.min.css" rel="stylesheet" type="text/css"&gt;
+&lt;link href="assets/css/app-rtl.min.css" rel="stylesheet" type="text/css"&gt;</code> </pre>
+                    </p>
+                    <p class="text-muted mb-0">and add the below attribute in the
+                        <code>src/partial/main.html</code> file to
+                        <code>html tag</code>.<br />
+                        <code>dir="rtl"</code> so you final html tag will be
+                        <code> &lt;html dir="rtl"&gt;</code>
+                    </p>
+                </div>
+
+                <h5 class=" text-decoration-underline mb-4 mb-4">RTL Setup in the Laravel folder</h5>
+                <div>
+                    <p class="mt-3">
+                        To have dark mode enabled, replace the reference of
+                        <code>app.min.css</code> to
+                        <code>app.min.rtl.css</code> and
+                        <code>bootstrap.min.css</code> to
+                        <code>bootstrap.min.rtl.css</code> in the <code> resources/views/layouts/head-css.blade.php </code>and in the <code>resources/views/layouts/master.blade.php</code> file update the html tag like <code>&lt;html lang="{{ str_replace('_', '-', app()-&gt;getLocale()) }}" dir="rtl"&gt;</code>.
+                        and
+                        make sure to update the <code>public/js/app.min.js </code> has
+                        initSettings() function which you need to comment out. Because it will set to default the light version.
+                        <pre class="language-markup p-3 rounded mb-4 bg-ligh position-relative"><button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard" title="Copy to clipboard">Copy</button><code>&lt;link href="{{ URL::asset('build/css/bootstrap.min.rtl.css') }}" rel="stylesheet" type="text/css"&gt;
+&lt;link href="{{ URL::asset('build/css/app.min.rtl.css') }}" rel="stylesheet " type="text/css"&gt;</code> </pre>
+                    </p>
+                
+                </div>
+
+            </div>
+            @@include("partials/footer.html")
+        </div>
+        <!-- End Page-content -->
+
+    </div>
+    <!-- end main content-->
+
+</div>
+<!-- END layout-wrapper -->
+
+
+
+@@include("partials/vendor-scripts.html")
+<!-- prismjs plugin -->
+<script src="../assets/libs/prismjs/prism.js"></script>
+
+<!-- App js -->
+<script src="https://themesbrand.com/docs/app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,378 @@
+@@include("partials/main.html")
+
+<head>
+
+    @@include("partials/title-meta.html", {"title": "Apexcharts"})
+
+    @@include("partials/head-css.html")
+
+</head>
+
+<body>
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+
+        @@include("partials/menu.html")
+        @@include("partials/sidebar.html")
+
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+
+            <div class="page-content">
+                <div class="container">
+                    <h3 class="mb-3">Overview<a href="https://apexcharts.com/javascript-chart-demos/" target="_blank" class="float-end badge bg-success-subtle link-success fs-6">Official Website <i class="ri-external-link-line"></i></a> </h3>
+                    <p class="text-muted mb-4">Explore the sample JavaScript charts created to show some of
+                        the enticing features packed in ApexCharts.</p>
+
+                    <h5 class="mb-3 mt-4">Examples:</h5>
+
+                    <div class="table-responsive">
+                        <table class="table mb-0">
+                            <thead>
+                                <tr>
+                                    <th scope="col" style="width:40%">Title</th>
+                                    <th scope="col">Source</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+
+                                    <th scope="row">Line Charts</th>
+                                    <td>
+                                        <h6 class="mt-3">Javascript</h6>
+                                        <pre class="language-markup p-3 rounded"><code>&lt;!-- apexcharts --&gt;
+&lt;script src=&quot;assets/libs/apexcharts/apexcharts.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;https://apexcharts.com/samples/assets/stock-prices.js&quot;&gt;&lt;/script&gt;</code></pre>
+
+                                        <h6 class="mt-3">Initjs (Custom js)</h6>
+                                        <pre class="language-markup p-3 rounded"><code>&lt;!-- linecharts init --&gt;
+&lt;script src=&quot;assets/js/pages/apexcharts-line.init.js&quot;&gt;&lt;/script&gt;</code></pre>
+
+
+                                        <h6 class="mt-3">Note</h6>
+                                        <pre class="language-markup p-3 rounded"><code>You can refer &lt;script src=&quot;assets/js/pages/apexcharts-line.init.js&quot;&gt;&lt;/script&gt;
+for various Line chart examples.</code></pre>
+                                    </td>
+                                </tr>
+
+                                <tr>
+
+                                    <th scope="row">Area Charts</th>
+                                    <td>
+                                        <h6 class="mt-3">Javascript</h6>
+                                        <pre class="language-markup p-3 rounded"><code>&lt;!-- apexcharts --&gt;
+&lt;script src=&quot;assets/libs/apexcharts/apexcharts.min.js&quot;&gt;&lt;/script&gt;
+&lt;!-- for basic area chart --&gt;
+&lt;script src=&quot;https://apexcharts.com/samples/assets/stock-prices.js&quot;&gt;&lt;/script&gt;
+&lt;!-- for github style chart --&gt;
+&lt;script src=&quot;https://apexcharts.com/samples/assets/github-data.js&quot;&gt;&lt;/script&gt;
+&lt;!-- for irregular timeseries chart --&gt;
+&lt;script src=&quot;https://apexcharts.com/samples/assets/irregular-data-series.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;assets/libs/moment/moment.js&quot;&gt;&lt;/script&gt;</code></pre>
+
+                                        <h6 class="mt-3">Initjs (Custom js)</h6>
+                                        <pre class="language-markup p-3 rounded"><code>&lt;!-- areacharts init --&gt;
+&lt;script src=&quot;/js/pages/apexcharts-area.init.js&quot;&gt;&lt;/script&gt;</code></pre>
+
+
+                                        <h6 class="mt-3">Note</h6>
+                                        <pre class="language-markup p-3 rounded"><code>You can refer &lt;script src=&quot;assets/js/pages/apexcharts-area.init.js&quot;&gt;&lt;/script&gt;
+for various Line chart examples.</code></pre>
+                                    </td>
+                                </tr>
+                                <tr>
+
+                                    <th scope="row">Column Charts</th>
+                                    <td>
+                                        <h6 class="mt-3">Javascript</h6>
+                                        <pre class="language-markup p-3 rounded"><code>&lt;!-- apexcharts --&gt;
+&lt;script src=&quot;assets/libs/apexcharts/apexcharts.min.js&quot;&gt;&lt;/script&gt;</code></pre>
+
+                                        <h6 class="mt-3">Initjs (Custom js)</h6>
+                                        <pre class="language-markup p-3 rounded"><code>&lt;!-- apexcharts init --&gt;
+&lt;script src=&quot;assets/js/pages/apexcharts-column.init.js&quot;&gt;&lt;/script&gt;</code></pre>
+
+
+                                        <h6 class="mt-3">Note</h6>
+                                        <pre class="language-markup p-3 rounded"><code>You can refer &lt;script src=&quot;assets/js/pages/apexcharts-column.init.js&quot;&gt;&lt;/script&gt;
+for various Line chart examples.</code></pre>
+                                    </td>
+                                </tr>
+                                <tr>
+
+                                    <th scope="row">Bar Charts</th>
+                                    <td>
+                                        <h6 class="mt-3">Javascript</h6>
+                                        <pre class="language-markup p-3 rounded"><code>&lt;!-- apexcharts --&gt;
+&lt;script src=&quot;assets/libs/apexcharts/apexcharts.min.js&quot;&gt;&lt;/script&gt;</code></pre>
+
+                                        <h6 class="mt-3">Initjs (Custom js)</h6>
+                                        <pre class="language-markup p-3 rounded"><code>&lt;!-- barcharts init --&gt;
+&lt;script src=&quot;assets/js/pages/apexcharts-bar.init.js&quot;&gt;&lt;/script&gt;</code></pre>
+
+
+                                        <h6 class="mt-3">Note</h6>
+                                        <pre class="language-markup p-3 rounded"><code>You can refer &lt;script src=&quot;assets/js/pages/apexcharts-bar.init.js&quot;&gt;&lt;/script&gt;
+for various Line chart examples.</code></pre>
+                                    </td>
+                                </tr>
+                                <tr>
+
+                                    <th scope="row">Mixed Charts</th>
+                                    <td>
+                                        <h6 class="mt-3">Javascript</h6>
+                                        <pre class="language-markup p-3 rounded"><code>&lt;!-- apexcharts --&gt;
+&lt;script src=&quot;assets/libs/apexcharts/apexcharts.min.js&quot;&gt;&lt;/script&gt;</code></pre>
+
+                                        <h6 class="mt-3">Initjs (Custom js)</h6>
+                                        <pre class="language-markup p-3 rounded"><code>&lt;!-- mixed charts init --&gt;
+&lt;script src=&quot;assets/js/pages/apexcharts-mixed.init.js&quot;&gt;&lt;/script&gt;</code></pre>
+
+
+                                        <h6 class="mt-3">Note</h6>
+                                        <pre class="language-markup p-3 rounded"><code>You can refer &lt;script src=&quot;assets/js/pages/apexcharts-bar.init.js&quot;&gt;&lt;/script&gt;
+for various Line chart examples.</code></pre>
+                                    </td>
+                                </tr>
+                                <tr>
+
+                                    <th scope="row">Timeline Charts</th>
+                                    <td>
+                                        <h6 class="mt-3">Javascript</h6>
+                                        <pre class="language-markup p-3 rounded"><code>&lt;!-- apexcharts --&gt;
+&lt;script src=&quot;assets/libs/apexcharts/apexcharts.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;assets/libs/moment/min/moment.min.js&quot;&gt;&lt;/script&gt;</code></pre>
+
+                                        <h6 class="mt-3">Initjs (Custom js)</h6>
+                                        <pre class="language-markup p-3 rounded"><code>&lt;!-- timeline charts init --&gt;
+&lt;script src=&quot;assets/js/pages/apexcharts-timeline.init.js&quot;&gt;&lt;/script&gt;</code></pre>
+
+
+                                        <h6 class="mt-3">Note</h6>
+                                        <pre class="language-markup p-3 rounded"><code>You can refer &lt;script src=&quot;assets/js/pages/apexcharts-timeline.init.js&quot;&gt;&lt;/script&gt;
+for various Line chart examples.</code></pre>
+                                    </td>
+                                </tr>
+                                <tr>
+
+                                    <th scope="row">Candlestick Charts</th>
+                                    <td>
+                                        <h6 class="mt-3">Javascript</h6>
+                                        <pre class="language-markup p-3 rounded"><code>&lt;!-- apexcharts --&gt;
+&lt;script src=&quot;assets/libs/apexcharts/apexcharts.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;https://apexcharts.com/samples/assets/ohlc.js&quot;&gt;&lt;/script&gt;
+&lt;!-- for Category x-axis chart --&gt;
+&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.8.17/dayjs.min.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+
+                                        <h6 class="mt-3">Initjs (Custom js)</h6>
+                                        <pre class="language-markup p-3 rounded"><code>&lt;!-- candlestick charts init --&gt;
+&lt;script src=&quot;assets/js/pages/apexcharts-candlestick.init.js&quot;&gt;&lt;/script&gt;</code></pre>
+
+
+                                        <h6 class="mt-3">Note</h6>
+                                        <pre class="language-markup p-3 rounded"><code>You can refer &lt;script src=&quot;assets/js/pages/apexcharts-candlestick.init.js&quot;&gt;&lt;/script&gt;
+for various Line chart examples.</code></pre>
+                                    </td>
+                                </tr>
+                                <tr>
+
+                                    <th scope="row">Boxplot Charts</th>
+                                    <td>
+                                        <h6 class="mt-3">Javascript</h6>
+                                        <pre class="language-markup p-3 rounded"><code>&lt;!-- apexcharts --&gt;
+&lt;script src=&quot;assets/libs/apexcharts/apexcharts.min.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+
+                                        <h6 class="mt-3">Initjs (Custom js)</h6>
+                                        <pre class="language-markup p-3 rounded"><code>&lt;!-- boxplot charts init --&gt;
+&lt;script src=&quot;assets/js/pages/apexcharts-boxplot.init.js&quot;&gt;&lt;/script&gt;</code></pre>
+
+
+                                        <h6 class="mt-3">Note</h6>
+                                        <pre class="language-markup p-3 rounded"><code>You can refer &lt;script src=&quot;assets/js/pages/apexcharts-boxplot.init.js&quot;&gt;&lt;/script&gt;
+for various Line chart examples.</code></pre>
+                                    </td>
+                                </tr>
+                                <tr>
+
+                                    <th scope="row">Bubble Charts</th>
+                                    <td>
+                                        <h6 class="mt-3">Javascript</h6>
+                                        <pre class="language-markup p-3 rounded"><code>&lt;!-- apexcharts --&gt;
+&lt;script src=&quot;assets/libs/apexcharts/apexcharts.min.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+
+                                        <h6 class="mt-3">Initjs (Custom js)</h6>
+                                        <pre class="language-markup p-3 rounded"><code>&lt;!-- bubble charts init --&gt;
+&lt;script src=&quot;assets/js/pages/apexcharts-bubble.init.js&quot;&gt;&lt;/script&gt;</code></pre>
+
+
+                                        <h6 class="mt-3">Note</h6>
+                                        <pre class="language-markup p-3 rounded"><code>You can refer &lt;script src=&quot;assets/js/pages/apexcharts-bubble.init.js&quot;&gt;&lt;/script&gt;
+for various Line chart examples.</code></pre>
+                                    </td>
+                                </tr>
+                                <tr>
+
+                                    <th scope="row">Scatter Charts</th>
+                                    <td>
+                                        <h6 class="mt-3">Javascript</h6>
+                                        <pre class="language-markup p-3 rounded"><code>&lt;!-- apexcharts --&gt;
+&lt;script src=&quot;assets/libs/apexcharts/apexcharts.min.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+
+                                        <h6 class="mt-3">Initjs (Custom js)</h6>
+                                        <pre class="language-markup p-3 rounded"><code>&lt;!-- scatter charts init --&gt;
+&lt;script src=&quot;assets/js/pages/apexcharts-scatter.init.js&quot;&gt;&lt;/script&gt;</code></pre>
+
+
+                                        <h6 class="mt-3">Note</h6>
+                                        <pre class="language-markup p-3 rounded"><code>You can refer &lt;script src=&quot;assets/js/pages/apexcharts-scatter.init.js&quot;&gt;&lt;/script&gt;
+for various Line chart examples.</code></pre>
+                                    </td>
+                                </tr>
+                                <tr>
+
+                                    <th scope="row">Heatmap Charts</th>
+                                    <td>
+                                        <h6 class="mt-3">Javascript</h6>
+                                        <pre class="language-markup p-3 rounded"><code>&lt;!-- apexcharts --&gt;
+&lt;script src=&quot;assets/libs/apexcharts/apexcharts.min.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+
+                                        <h6 class="mt-3">Initjs (Custom js)</h6>
+                                        <pre class="language-markup p-3 rounded"><code>&lt;!-- heatmapscharts init --&gt;
+&lt;script src=&quot;assets/js/pages/apexcharts-heatmap.init.js&quot;&gt;&lt;/script&gt;</code></pre>
+
+
+                                        <h6 class="mt-3">Note</h6>
+                                        <pre class="language-markup p-3 rounded"><code>You can refer &lt;script src=&quot;/js/pages/apexcharts-heatmap.init.js&quot;&gt;&lt;/script&gt;
+for various Line chart examples.</code></pre>
+                                    </td>
+                                </tr>
+                                <tr>
+
+                                    <th scope="row">Treemap Charts</th>
+                                    <td>
+                                        <h6 class="mt-3">Javascript</h6>
+                                        <pre class="language-markup p-3 rounded"><code>&lt;!-- apexcharts --&gt;
+&lt;script src=&quot;assets/libs/apexcharts/apexcharts.min.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+
+                                        <h6 class="mt-3">Initjs (Custom js)</h6>
+                                        <pre class="language-markup p-3 rounded"><code>&lt;!-- treecharts init --&gt;
+&lt;script src=&quot;assets/js/pages/apexcharts-treemap.init.js&quot;&gt;&lt;/script&gt;</code></pre>
+
+
+                                        <h6 class="mt-3">Note</h6>
+                                        <pre class="language-markup p-3 rounded"><code>You can refer &lt;script src=&quot;assets/js/pages/apexcharts-treemap.init.js&quot;&gt;&lt;/script&gt;
+for various Line chart examples.</code></pre>
+                                    </td>
+                                </tr>
+                                <tr>
+
+                                    <th scope="row">Pie Charts</th>
+                                    <td>
+                                        <h6 class="mt-3">Javascript</h6>
+                                        <pre class="language-markup p-3 rounded"><code>&lt;!-- apexcharts --&gt;
+&lt;script src=&quot;assets/libs/apexcharts/apexcharts.min.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+
+                                        <h6 class="mt-3">Initjs (Custom js)</h6>
+                                        <pre class="language-markup p-3 rounded"><code>&lt;!-- piecharts init --&gt;
+&lt;script src=&quot;assets/js/pages/apexcharts-pie.init.js&quot;&gt;&lt;/script&gt;</code></pre>
+
+
+                                        <h6 class="mt-3">Note</h6>
+                                        <pre class="language-markup p-3 rounded"><code>You can refer &lt;script src=&quot;assets/js/pages/apexcharts-pie.init.js&quot;&gt;&lt;/script&gt;
+for various Line chart examples.</code></pre>
+                                    </td>
+                                </tr>
+                                <tr>
+
+                                    <th scope="row">Radialbar Charts</th>
+                                    <td>
+                                        <h6 class="mt-3">Javascript</h6>
+                                        <pre class="language-markup p-3 rounded"><code>&lt;!-- apexcharts --&gt;
+&lt;script src=&quot;assets/libs/apexcharts/apexcharts.min.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+
+                                        <h6 class="mt-3">Initjs (Custom js)</h6>
+                                        <pre class="language-markup p-3 rounded"><code>&lt;!-- radialbar charts init --&gt;
+&lt;script src=&quot;assets/js/pages/apexcharts-radialbar.init.js&quot;&gt;&lt;/script&gt;</code></pre>
+
+
+                                        <h6 class="mt-3">Note</h6>
+                                        <pre class="language-markup p-3 rounded"><code>You can refer &lt;script src=&quot;assets/js/pages/apexcharts-radialbar.init.js&quot;&gt;&lt;/script&gt;
+for various Line chart examples.</code></pre>
+                                    </td>
+                                </tr>
+                                <tr>
+
+                                    <th scope="row">Radar Charts</th>
+                                    <td>
+                                        <h6 class="mt-3">Javascript</h6>
+                                        <pre class="language-markup p-3 rounded"><code>&lt;!-- apexcharts --&gt;
+&lt;script src=&quot;assets/libs/apexcharts/apexcharts.min.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+
+                                        <h6 class="mt-3">Initjs (Custom js)</h6>
+                                        <pre class="language-markup p-3 rounded"><code>&lt;!-- radarcharts init --&gt;
+&lt;script src=&quot;assets/js/pages/apexcharts-radar.init.js&quot;&gt;&lt;/script&gt;</code></pre>
+
+
+                                        <h6 class="mt-3">Note</h6>
+                                        <pre class="language-markup p-3 rounded"><code>You can refer &lt;script src=&quot;assets/js/pages/apexcharts-radar.init.js&quot;&gt;&lt;/script&gt;
+for various Line chart examples.</code></pre>
+                                    </td>
+                                </tr>
+                                <tr>
+
+                                    <th scope="row">Polararea Charts</th>
+                                    <td>
+                                        <h6 class="mt-3">Javascript</h6>
+                                        <pre class="language-markup p-3 rounded"><code>&lt;!-- apexcharts --&gt;
+&lt;script src=&quot;assets/libs/apexcharts/apexcharts.min.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+
+                                        <h6 class="mt-3">Initjs (Custom js)</h6>
+                                        <pre class="language-markup p-3 rounded"><code>&lt;!-- polarareacharts init --&gt;
+&lt;script src=&quot;assets/js/pages/apexcharts-polararea.init.js&quot;&gt;&lt;/script&gt;</code></pre>
+
+
+                                        <h6 class="mt-3">Note</h6>
+                                        <pre class="language-markup p-3 rounded"><code>You can refer &lt;script src=&quot;assets/js/pages/apexcharts-polararea.init.js&quot;&gt;&lt;/script&gt;
+for various Line chart examples.</code></pre>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <!-- end table -->
+                    </div>
+
+                </div>
+                @@include("partials/footer.html")
+            </div>
+            <!-- End Page-content -->
+
+        </div>
+        <!-- end main content-->
+
+    </div>
+    <!-- END layout-wrapper -->
+
+
+    @@include("partials/vendor-scripts.html")
+
+    <!-- prismjs plugin -->
+    <script src="../assets/libs/prismjs/prism.js"></script>
+
+    <!-- App js -->
+    <script src="https://themesbrand.com/docs/app.js"></script>
+</body>
+
+</html>

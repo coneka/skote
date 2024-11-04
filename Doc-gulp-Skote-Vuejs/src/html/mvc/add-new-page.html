@@ -1,0 +1,178 @@
+@@include("partials/main.html")
+
+<head>
+
+    @@include("partials/title-meta.html", {"title": "Add New Page"})
+
+    @@include("partials/head-css.html")
+
+</head>
+
+<body>
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+
+        @@include("partials/menu.html")
+        @@include("partials/sidebar.html")
+
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+
+            <div class="page-content">
+                <div class="container">
+                    <h3 class="mb-4">Add New Page</h3>
+
+
+                    <div id="desc" class="mb-2">
+
+                        <p>
+                            In the <strong> Model-View-Controller (MVC) </strong>
+                            pattern, the view handles
+                            the app's data presentation and user interaction. A view is
+                            an HTML template with embedded Razor markup. Razor markup is
+                            code that interacts with HTML markup to produce a webpage
+                            that's sent to the client.
+                        </p>
+                    </div>
+                    <div class="alert alert-warning" role="alert">
+                        <h4 class="alert-heading">Note</h4>
+                        <p class="mb-1">The <strong>Shared</strong> folder contains views, layout views, and partial
+                            views, which will be shared among multiple controllers.</p>
+                    </div>
+
+                    <div class="mb-5">
+                        <h5 class="mt-4">Base View</h5>
+                        <p>
+                            Theme base view is <code>Views/Shared/Layout.cshtml</code>,
+                            in
+                            this file we
+                            are connecting all global styles and scripts. Each layout
+                            template should be wrapped with this view.
+                        </p>
+                        <p>
+                            Content will be rendered in the place of <code>
+                                @RenderBody()
+                            </code> .
+                        </p>
+
+                    </div>
+                    <div class="mb-5">
+                        <h5 class="mt-4">Specifying a Layout</h5>
+
+                        <p class="text-muted">
+                            Razor views have a <strong>Layout</strong> property.
+                            Individual
+                            views specify a layout by setting this property.
+                        </p>
+                        <div class="mb-3">
+                            <pre class="language-markup p-3 rounded mb-4 bg-ligh position-relative"><button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard" title="Copy to clipboard">Copy</button> <code>@{
+ Layout = "~/Views/Shared/_Layout.cshtml";
+ }</code> </pre>
+                        </div>
+
+                        <p>
+                            The layout specified can use a full path (for example,
+                            ~/Views/Layout/DefaultDarkSidebar.cshtml) or a partial
+                            name
+                            (example: _Layout). When a partial name is provided, the
+                            Razor
+                            view engine searches for the layout file using its standard
+                            discovery process. The folder where the handler method (or
+                            controller) exists is searched first. This discovery process
+                            is
+                            identical to the process used to discover partial views.
+
+                            By default, every layout must call RenderBody. Wherever the
+                            call
+                            to RenderBody is placed, the contents of the view will be
+                            rendered.
+                            All available layout could be found in folder Views/Layout.
+                        </p>
+                    </div>
+                    <div id="desc" class="mb-5">
+                        <h5 class="mt-4">Partials</h5>
+                        <div id="desc" class="mb-5">
+                            <h5 class="mt-4">Pages</h5>
+
+                            <p>
+                                New pages can be added inside a Controllers. For example
+                                DashboardsController.cs represents Dashboards folder inside
+                                a Views, it has a function which returns View of
+                                Views/Dashboards/Index.cshtml.
+                            </p>
+                            <div>
+
+                                <pre class="language-markup p-3 rounded mb-4 bg-ligh position-relative"><button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard" title="Copy to clipboard">Copy</button> <code>public IActionResult Index()
+ {
+   return View();
+ }</code> </pre>
+                            </div>
+                            <p class="mt-4">
+                                You can add a new pages in the same way, add Controller and
+                                function inside it which names machs to your Razor view file
+                                name in Views/[Controller] folder.
+                            </p>
+                            <p>
+                                Also you can specify razor view which will be returned by
+                                providing a path as a parameter for View function.
+                            </p>
+                            <div>
+                                <pre class="language-markup p-3 rounded mb-4 bg-ligh position-relative"><button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard" title="Copy to clipboard">Copy</button> <code>public IActionResult Index()
+ {
+   return View("Views/Auth/SignUp.cshtml");
+ }</code> </pre>
+                            </div>
+                        </div>
+                    </div> <!-- end padding-->
+
+                    <div class="alert alert-warning" role="alert">
+                        <h4 class="alert-heading">Note</h4>
+                        <p class="mb-1">To change the theme of the project, make the necessary
+                            modifications
+                            in
+                            the SCSS
+                            (Sass)
+                            files.</p>
+                        <p class="mb-0">After making the changes, go to the terminal and run
+                            the
+                            commands "yarn"
+                            and
+                            "gulp" to apply the changes.</p>
+                    </div>
+                </div>
+                <footer class="footer mt-4 text-center position-absolute end-0 bottom-0 start-0">
+                    <div class="container border-top py-3">
+                        <script>
+                            document.write(new Date().getFullYear())
+                        </script> © Skote.
+                    </div>
+                </footer>
+
+            </div>
+            <!-- End Page-content -->
+
+        </div>
+        <!-- end main content-->
+
+    </div>
+    <!-- END layout-wrapper -->
+
+
+
+    @@include("partials/vendor-scripts.html")
+
+
+    <!-- JAVASCRIPT -->
+    <script src="../assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/libs/simplebar/simplebar.min.js"></script>
+    <script src="../assets/libs/clipboard/clipboard.min.js"></script>
+    <script src="../assets/libs/prismjs/prism.js"></script>
+
+    <!-- App js -->
+    <script src="https://themesbrand.com/docs/app.js"></script>
+</body>
+
+</html>

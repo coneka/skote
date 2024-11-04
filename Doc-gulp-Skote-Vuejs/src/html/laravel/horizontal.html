@@ -1,0 +1,163 @@
+@@include("partials/main.html")
+
+<head>
+
+    @@include("partials/title-meta.html", {"title": "Horizontal Layout"})
+
+    @@include("partials/head-css.html")
+
+</head>
+
+<body>
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+
+        @@include("partials/menu.html")
+
+        @@include("partials/sidebar.html")
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+
+            <div class="page-content">
+                <div class="container">
+                    <h3 class="mb-4">Horizontal Layout</h3>
+
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="d-xl-flex">
+                                        
+                                        <div class="w-100">
+                                            <h4 class="mt-0 mb-4">Horizontal menu configuration</h4>
+                                            <div class="p-lg-1"> 
+                                                
+                                                <div id="desc">
+                                                    <div class="row mb-2">
+                                                        <div class="col">
+                                                          
+                                                        </div>
+                                                    </div>
+                                                </div>
+                    
+                                                <div id="pre-built-layouts">
+                    
+                                                    <div class="row mb-2">
+                                                        <div class="col">
+                                                            <h5 class="mt-0 mb-2 font-size-18"><i class="mdi mdi-star text-warning"></i> How to use pre-built layouts?</h5>
+                                                            <p>
+                                                                Each of the layout options is provided below with steps you would need to perform in file <code>resources/views/master.blade.php</code> in body tag.
+                                                                and remove the line <code> @include('layouts.topbar') </code> and <code> @include('layouts.sidebar')</code> and add <code>@include('layouts.horizontal')</code> line in <code>resources/views/master.blade.php</code>.
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                    
+                                                    <div class="row">
+                                                        <div class="col-lg-4 col-md-6">
+                                                            <div class="border p-3 text-center mb-3">
+                                                                <img src="../assets/images/demo/horizontal-1.png" alt="image" class="img-fluid shadow">
+                                                                <h5 class="font-size-16 mt-3">Topbar Light</h5>
+                                                                <code>data-layout="horizontal" </code> <br>
+                                                                <code>data-topbar="light"</code>
+                                                            </div>
+                                                        </div> <!-- end col -->
+                    
+                                                        <div class="col-lg-4 col-md-6">
+                                                            <div class="border p-3 text-center mb-3">
+                                                                <img src="../assets/images/demo/horizontal-2.png" alt="image" class="img-fluid shadow">
+                                                                <h5 class="font-size-16 mt-3">Boxed Layout</h5>
+                                                                <code>data-layout="horizontal" </code> <br>
+                                                                <code>data-topbar="light" </code> <br>
+                                                                <code>data-layout-size="boxed"</code>
+                                                            </div>
+                                                        </div> <!-- end col -->
+
+                                                        <div class="col-lg-4 col-md-6">
+                                                            <div class="border p-3 text-center mb-3">
+                                                                <img src="../assets/images/demo/horizontal-3.png" alt="image" class="img-fluid shadow">
+                                                                <h5 class="font-size-16 mt-3">Colored Header</h5>
+                                                                <code>data-layout="horizontal" </code> <br>
+                                                                <code>data-topbar="colored"</code>
+                                                            </div>
+                                                        </div> <!-- end col -->
+
+                                                        <div class="col-lg-4 col-md-6">
+                                                            <div class="border p-3 text-center mb-3">
+                                                                <img src="../assets/images/demo/horizontal-1.png" alt="image" class="img-fluid shadow">
+                                                                <h5 class="font-size-16 mt-3">Scrollable</h5>
+                                                                <code>data-layout-scrollable="true"</code> <br>
+                                                                <code>data-layout="horizontal"</code>
+                                                            </div>
+                                                        </div> <!-- end col -->
+                    
+                    
+
+                                                        <div class="col-lg-4 col-md-6">
+                                                            <div class="border p-3 text-center">
+                                                                <img src="../assets/images/demo/horizontal-1.png" alt="image" class="img-fluid shadow">
+                                                                <h5 class="font-size-16 mt-3">Preloader</h5>
+                                                                <code>data-layout="horizontal" </code> <br>
+                                                                <code>data-topbar="colored"</code> <br>  
+                                                                Add below code after body tag. <br>
+                                                                <code>&lt;div id="preloader"&gt;
+                                                                    &lt;div id="status"&gt;
+                                                                        &lt;div class="spinner"&gt; 
+                                                                            &lt;i class="uil-shutter-alt spin-icon"&gt;&lt;/i&gt; 
+                                                                        &lt;/div&gt;
+                                                                    &lt;/div&gt;
+                                                                &lt;/div&gt;</code>
+                                                                <code>
+                                                                    &lt;div id="preloader"&gt;
+                                                                        &lt;div id="status"&gt;
+                                                                            &lt;div class="spinner-chase"&gt;
+                                                                                &lt;div class="chase-dot"&gt;&lt;/div&gt;
+                                                                                &lt;div class="chase-dot"&gt;&lt;/div&gt;
+                                                                                &lt;div class="chase-dot"&gt;&lt;/div&gt;
+                                                                                &lt;div class="chase-dot"&gt;&lt;/div&gt;
+                                                                                &lt;div class="chase-dot"&gt;&lt;/div&gt;
+                                                                                &lt;div class="chase-dot"&gt;&lt;/div&gt;
+                                                                            &lt;/div&gt;
+                                                                        &lt;/div&gt;
+                                                                    &lt;/div&gt;
+                                                                </code>
+                                                            </div>
+                                                        </div> <!-- end col -->
+
+                                                       
+
+                                                    </div>
+                                                    <!-- end row -->
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- end card -->
+                        </div>
+                    </div>
+
+                </div>
+                @@include("partials/footer.html")
+            </div>
+            <!-- End Page-content -->
+
+        </div>
+        <!-- end main content-->
+
+    </div>
+    <!-- END layout-wrapper -->
+
+    @@include("partials/vendor-scripts.html")
+
+    <!-- App js -->
+    <script src="https://themesbrand.com/docs/app.js"></script>
+</body>
+
+</html>

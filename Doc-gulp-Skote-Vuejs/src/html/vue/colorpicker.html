@@ -1,0 +1,379 @@
+@@include("partials/main.html")
+
+<head>
+
+    @@include("partials/title-meta.html", {"title": "Color Picker"})
+
+    @@include("partials/head-css.html")
+
+</head>
+
+<body>
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+
+        @@include("partials/menu.html")
+        @@include("partials/sidebar.html")
+
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+
+            <div class="page-content">
+                <div class="container">
+                    <h3 class="mb-3">Overview<a href="https://simonwep.github.io/pickr/" target="_blank" class="float-end badge bg-success-subtle link-success fs-6">Official Website <i class="ri-external-link-line"></i></a> </h3>
+                    <p class="text-muted mb-4">Colorpickr: Flat, simple, multi-themed, responsive and
+                        hackable Color-Picker library.</p>
+
+                    <div>
+                        <h5 class="mb-3">CSS</h5>
+                        <pre class="language-markup p-3 rounded mb-3"><code>&lt;!-- One of the following themes --&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;assets/libs/@simonwep/pickr/themes/classic.min.css&quot;/&gt; &lt;!-- 'classic' theme --&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;assets/libs/@simonwep/pickr/themes/monolith.min.css&quot;/&gt; &lt;!-- 'monolith' theme --&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;assets/libs/@simonwep/pickr/themes/nano.min.css&quot;/&gt; &lt;!-- 'nano' theme --&gt;
+</code></pre>
+
+                        <h5 class="mb-3">Javascript</h5>
+                        <pre class="language-markup p-3 rounded mb-3"><code>&lt;!-- Modern colorpicker bundle --&gt;
+&lt;script src=&quot;assets/libs/@simonwep/pickr/pickr.min.js&quot;&gt;&lt;/script&gt;</code></pre>
+
+                        <h5 class="mb-3">Initjs (Custom js)</h5>
+                        <pre class="language-markup p-3 rounded mb-3"><code>&lt;!--  color pickr init js --&gt;
+&lt;script src=&quot;assets/js/pages/form-pickers.init.js&quot;&gt;&lt;/script&gt;</code></pre>
+
+                        <h5 class="mb-3">Add Package</h5>
+                        <div class="alert bg-light border-start border-3 rounded-start-0 border-primary-subtle border-0 mb-4">yarn add @simonwep/pickr --save</div>
+
+                        <h5 class="mb-3">Remove Package</h5>
+                        <div class="alert bg-light border-start border-3 rounded-start-0 border-primary-subtle border-0 mb-4">yarn remove @simonwep/pickr or you can remove package by removing specific package from package.json</div>
+                    </div>
+                    <h5 class="mb-3">Colorpickr Examples:</h5>
+
+                    <div class="table-responsive">
+                        <table class="table mb-0">
+                            <thead>
+                                <tr>
+                                    <th scope="col" style="width:40%">Title</th>
+                                    <th scope="col">Javascript</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Classic Demo</th>
+                                    <td>
+                                        <pre class="language-js p-3 rounded"><code>var classicPickrDemo = document.querySelectorAll(".classic-colorpicker");
+
+classicPickrDemo.forEach(function () {
+Pickr.create({
+el: ".classic-colorpicker",
+theme: "classic", // or 'monolith', or 'nano'
+default: "#405189",
+swatches: [
+"rgba(244, 67, 54, 1)",
+"rgba(233, 30, 99, 0.95)",
+"rgba(156, 39, 176, 0.9)",
+"rgba(103, 58, 183, 0.85)",
+"rgba(63, 81, 181, 0.8)",
+"rgba(33, 150, 243, 0.75)",
+"rgba(3, 169, 244, 0.7)",
+"rgba(0, 188, 212, 0.7)",
+"rgba(0, 150, 136, 0.75)",
+"rgba(76, 175, 80, 0.8)",
+"rgba(139, 195, 74, 0.85)",
+"rgba(205, 220, 57, 0.9)",
+"rgba(255, 235, 59, 0.95)",
+"rgba(255, 193, 7, 1)",
+],
+
+components: {
+// Main components
+preview: true,
+opacity: true,
+hue: true,
+
+// Input / output Options
+interaction: {
+hex: true,
+rgba: true,
+hsva: true,
+input: true,
+clear: true,
+save: true,
+},
+},
+});
+});
+</code></pre>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Monolith Demo</th>
+                                    <td>
+                                        <pre class="language-js p-3 rounded"><code>var monolithColorPickr = document.querySelectorAll(".monolith-colorpicker");
+monolithColorPickr.forEach(function () {
+Pickr.create({
+el: ".monolith-colorpicker",
+theme: "monolith",
+default: "#0ab39c",
+swatches: [
+"rgba(244, 67, 54, 1)",
+"rgba(233, 30, 99, 0.95)",
+"rgba(156, 39, 176, 0.9)",
+"rgba(103, 58, 183, 0.85)",
+"rgba(63, 81, 181, 0.8)",
+"rgba(33, 150, 243, 0.75)",
+"rgba(3, 169, 244, 0.7)",
+],
+defaultRepresentation: "HEXA",
+components: {
+// Main components
+preview: true,
+opacity: true,
+hue: true,
+
+// Input / output Options
+interaction: {
+hex: false,
+rgba: false,
+hsva: false,
+input: true,
+clear: true,
+save: true,
+},
+},
+});
+});
+</code></pre>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Nano Demo</th>
+                                    <td>
+                                        <pre class="language-js p-3 rounded"><code>var nanoColorPickr = document.querySelectorAll(".nano-colorpicker");
+nanoColorPickr.forEach(function () {
+Pickr.create({
+el: ".nano-colorpicker",
+theme: "nano",
+default: "#3577f1",
+swatches: [
+"rgba(244, 67, 54, 1)",
+"rgba(233, 30, 99, 0.95)",
+"rgba(156, 39, 176, 0.9)",
+"rgba(103, 58, 183, 0.85)",
+"rgba(63, 81, 181, 0.8)",
+"rgba(33, 150, 243, 0.75)",
+"rgba(3, 169, 244, 0.7)",
+],
+defaultRepresentation: "HEXA",
+components: {
+// Main components
+preview: true,
+opacity: true,
+hue: true,
+
+// Input / output Options
+interaction: {
+hex: false,
+rgba: false,
+hsva: false,
+input: true,
+clear: true,
+save: true,
+},
+},
+});
+});
+</code></pre>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Options Demo</th>
+                                    <td>
+                                        <pre class="language-js p-3 rounded"><code>var demoColorPickr = document.querySelectorAll(".colorpicker-demo");
+demoColorPickr.forEach(function () {
+Pickr.create({
+el: ".colorpicker-demo",
+theme: "monolith",
+default: "#405189",
+components: {
+// Main components
+preview: true,
+// Input / output Options
+interaction: {
+clear: true,
+save: true,
+},
+},
+});
+}); 
+</code></pre>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Picker with Opacity & Hue</th>
+                                    <td>
+                                        <pre class="language-js p-3 rounded"><code>var opacityHueColorPickr = document.querySelectorAll(".colorpicker-opacity-hue");
+opacityHueColorPickr.forEach(function () {
+Pickr.create({
+el: ".colorpicker-opacity-hue",
+theme: "monolith",
+default: "#0ab39c",
+
+components: {
+// Main components
+preview: true,
+opacity: true,
+hue: true,
+
+// Input / output Options
+interaction: {
+clear: true,
+save: true,
+},
+},
+});
+});
+</code></pre>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Switches</th>
+                                    <td>
+                                        <pre class="language-js p-3 rounded"><code>var swatcherColorPickr = document.querySelectorAll(".colorpicker-swatches");
+swatcherColorPickr.forEach(function () {
+Pickr.create({
+el: ".colorpicker-swatches",
+theme: "monolith",
+default: "#3577f1",
+swatches: [
+"rgba(244, 67, 54, 1)",
+"rgba(233, 30, 99, 0.95)",
+"rgba(156, 39, 176, 0.9)",
+"rgba(103, 58, 183, 0.85)",
+"rgba(63, 81, 181, 0.8)",
+"rgba(33, 150, 243, 0.75)",
+"rgba(3, 169, 244, 0.7)",
+],
+components: {
+// Main components
+preview: true,
+opacity: true,
+hue: true,
+
+// Input / output Options
+interaction: {
+clear: true,
+save: true,
+},
+},
+});
+});
+
+</code></pre>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Picker with Input</th>
+                                    <td>
+                                        <pre class="language-js p-3 rounded"><code>var inputColorPickr = document.querySelectorAll(".colorpicker-input");
+inputColorPickr.forEach(function () {
+Pickr.create({
+el: ".colorpicker-input",
+theme: "monolith",
+default: "#f7b84b",
+swatches: [
+"rgba(244, 67, 54, 1)",
+"rgba(233, 30, 99, 0.95)",
+"rgba(156, 39, 176, 0.9)",
+"rgba(103, 58, 183, 0.85)",
+"rgba(63, 81, 181, 0.8)",
+"rgba(33, 150, 243, 0.75)",
+"rgba(3, 169, 244, 0.7)",
+],
+components: {
+// Main components
+preview: true,
+opacity: true,
+hue: true,
+
+// Input / output Options
+interaction: {
+input: true,
+clear: true,
+save: true,
+},
+},
+});
+});
+</code></pre>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Color Format</th>
+                                    <td>
+                                        <pre class="language-js p-3 rounded"><code>var formatColorPickr = document.querySelectorAll(".colorpicker-format");
+formatColorPickr.forEach(function () {
+Pickr.create({
+el: ".colorpicker-format",
+theme: "monolith",
+default: "#f06548",
+swatches: [
+"rgba(244, 67, 54, 1)",
+"rgba(233, 30, 99, 0.95)",
+"rgba(156, 39, 176, 0.9)",
+"rgba(103, 58, 183, 0.85)",
+"rgba(63, 81, 181, 0.8)",
+"rgba(33, 150, 243, 0.75)",
+"rgba(3, 169, 244, 0.7)",
+],
+components: {
+// Main components
+preview: true,
+opacity: true,
+hue: true,
+
+// Input / output Options
+interaction: {
+hex: true,
+rgba: true,
+hsva: true,
+input: true,
+clear: true,
+save: true,
+},
+},
+});
+});
+</code></pre>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <!-- end table -->
+                    </div>
+
+                </div>
+                @@include("partials/footer.html")
+            </div>
+            <!-- End Page-content -->
+
+        </div>
+        <!-- end main content-->
+
+    </div>
+    <!-- END layout-wrapper -->
+
+
+
+    @@include("partials/vendor-scripts.html")
+
+    <!-- prismjs plugin -->
+    <script src="../assets/libs/prismjs/prism.js"></script>
+
+    <!-- App js -->
+    <script src="https://themesbrand.com/docs/app.js"></script>
+</body>
+
+</html>

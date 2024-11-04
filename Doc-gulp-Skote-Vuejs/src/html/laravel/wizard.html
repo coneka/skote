@@ -1,0 +1,156 @@
+@@include("partials/main.html")
+
+<head>
+
+    @@include("partials/title-meta.html", {"title": "Wizard"})
+
+    @@include("partials/head-css.html")
+
+</head>
+
+<body>
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+
+        @@include("partials/menu.html")
+        @@include("partials/sidebar.html")
+
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+
+            <div class="page-content">
+                <div class="container-fluid">
+                    <h3 class="mb-3">Overview</h3>
+                    <p class="text-muted mb-4">The wizard is a component used for multiple layers of user
+                        input elements in the web application. </p>
+
+                    <h6 class="mb-3">Initjs (Custom js)</h6>
+                    <pre class="language-markup p-3 rounded mb-4"><code>&lt;!-- init js --&gt;
+&lt;script src=&quot;assets/js/pages/form-wizard.init.js&quot;&gt;&lt;/script&gt; //html file
+&lt;script src=&quot;{{ URL::asset('build/js/pages/form-wizard.init.js') }}&quot;&gt;&lt;/script&gt; // laravel file
+</code></pre>
+
+                    <h5 class="mb-3">Examples:</h5>
+
+                    <div class="table-responsive">
+                        <table class="table mb-0">
+                            <thead>
+                                <tr>
+                                    <th scope="col" style="width:40%">Title</th>
+                                    <th scope="col">Javascript</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Wizard Example</th>
+                                    <td>
+                                        <pre class="language-js rounded p-3"><code>document.querySelector("#profile-img-file-input").addEventListener("change", function () {
+var preview = document.querySelector(".user-profile-image");
+var file = document.querySelector(".profile-img-file-input").files[0];
+var reader = new FileReader();
+
+reader.addEventListener(
+"load",
+function () {
+preview.src = reader.result;
+},
+false
+);
+
+if (file) {
+reader.readAsDataURL(file);
+}
+});
+
+document.querySelectorAll(".form-steps").forEach(function (form) {
+
+// next tab
+form.querySelectorAll(".nexttab").forEach(function (nextButton) {
+console.log("nextButton");
+var tabEl = form.querySelectorAll('button[data-bs-toggle="pill"]');
+tabEl.forEach(function (item) {
+item.addEventListener('show.bs.tab', function (event) {
+event.target.classList.add('done');
+});
+});
+nextButton.addEventListener("click", function () {
+var nextTab = nextButton.getAttribute('data-nexttab');
+document.getElementById(nextTab).click();
+});
+});
+
+//Pervies tab
+form.querySelectorAll(".previestab").forEach(function (prevButton) {
+
+prevButton.addEventListener("click", function () {
+console.log("prevButton", prevButton);
+var prevTab = prevButton.getAttribute('data-previous');
+var totalDone = prevButton.closest("form").querySelectorAll(".custom-nav .done").length;
+for (var i = totalDone - 1; i < totalDone; i++) {
+(prevButton.closest("form").querySelectorAll(".custom-nav .done")[i]) ? prevButton.closest("form")
+.querySelectorAll(".custom-nav .done")[i].classList.remove('done') : '';
+}
+document.getElementById(prevTab).click();
+});
+});
+
+// Step number click
+var tabButtons = form.querySelectorAll('button[data-bs-toggle="pill"]');
+tabButtons.forEach(function (button, i) {
+button.setAttribute("data-position", i);
+button.addEventListener("click", function () {
+var getProgreebar = button.getAttribute("data-progressbar");
+if (getProgreebar) {
+var totallength = document.getElementById("custom-progress-bar").querySelectorAll("li").length - 1;
+var current = i;
+var percent = (current / totallength) * 100;
+document.getElementById("custom-progress-bar").querySelector('.progress-bar').style.width = percent + "%";
+}
+(form.querySelectorAll(".custom-nav .done").length > 0) ?
+form.querySelectorAll(".custom-nav .done").forEach(function (doneTab) {
+doneTab.classList.remove('done');
+})
+: '';
+for (var j = 0; j <= i; j++) {
+tabButtons[j].classList.contains('active') ?  tabButtons[j].classList.remove('done') :  
+tabButtons[j].classList.add('done');
+}
+});
+});
+});
+</code></pre>
+                                    </td>
+                                </tr>
+
+
+                            </tbody>
+                        </table>
+                        <!-- end table -->
+                    </div>
+
+                </div>
+                @@include("partials/footer.html")
+            </div>
+            <!-- End Page-content -->
+
+        </div>
+        <!-- end main content-->
+
+    </div>
+    <!-- END layout-wrapper -->
+
+
+
+    @@include("partials/vendor-scripts.html")
+
+    <!-- prismjs plugin -->
+    <script src="../assets/libs/prismjs/prism.js"></script>
+
+    <!-- App js -->
+    <script src="https://themesbrand.com/docs/app.js"></script>
+</body>
+
+</html>

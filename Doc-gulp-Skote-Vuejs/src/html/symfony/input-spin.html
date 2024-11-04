@@ -1,0 +1,108 @@
+@@include("partials/main.html")
+
+<head>
+
+    @@include("partials/title-meta.html", {"title": "Form Input Spin"})
+
+    @@include("partials/head-css.html")
+
+</head>
+
+<body>
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+
+        @@include("partials/menu.html")
+        @@include("partials/sidebar.html")
+
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+
+            <div class="page-content">
+                <div class="container">
+                    <h3 class="mb-3">Overview</h3>
+                    <p class="text-muted mb-4">Form input spin is used to increase and decrease the number.Various
+                        example are shown belows.
+                    </p>
+
+
+                    <h5 class="mb-3">Initjs (Custom js)</h5>
+                    <pre class="language-markup p-3 rounded mb-3"><code>&lt;!-- input spin init --&gt;
+&lt;script src=&quot;assets/js/pages/form-input-spin.init.js&quot;&gt;&lt;/script&gt;</code></pre>
+
+                    <h5 class="mb-3 mt-4">Examples:</h5>
+
+                    <div class="table-responsive">
+                        <table class="table mb-0">
+                            <thead>
+                                <tr>
+                                    <th scope="col" style="width:40%">Title</th>
+                                    <th scope="col">Javascript</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Demo Example</th>
+                                    <td>
+                                        <pre class="language-js p-3 rounded"><code>isData();
+
+function isData() {
+var plus = document.getElementsByClassName('plus');
+var minus = document.getElementsByClassName('minus');
+
+if (plus) {
+plus.forEach(function (e) {
+e.addEventListener('click', function (event) {
+// if(event.target.previousElementSibling.value )
+if (parseInt(e.previousElementSibling.value) < event.target.previousElementSibling.getAttribute('max')) {
+event.target.previousElementSibling.value++;                
+}
+});
+});
+}
+
+if (minus) {
+minus.forEach(function (e) {
+e.addEventListener('click', function (event) {
+if (parseInt(e.nextElementSibling.value) > event.target.nextElementSibling.getAttribute('min')) {
+event.target.nextElementSibling.value--;                
+}
+});
+});
+}
+}
+
+</code></pre>
+                                    </td>
+                                </tr>
+
+
+
+                            </tbody>
+                        </table>
+                        <!-- end table -->
+                    </div>
+                </div>
+                @@include("partials/footer.html")
+            </div>
+            <!-- End Page-content -->
+
+        </div>
+        <!-- end main content-->
+
+    </div>
+    <!-- END layout-wrapper -->
+
+    @@include("partials/vendor-scripts.html")
+
+    <!-- prismjs plugin -->
+    <script src="../assets/libs/prismjs/prism.js"></script>
+
+    <!-- App js -->
+    <script src="https://themesbrand.com/docs/app.js"></script>
+</body>
+
+</html>

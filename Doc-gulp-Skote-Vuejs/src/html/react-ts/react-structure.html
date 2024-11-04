@@ -1,0 +1,276 @@
+@@include("partials/main.html")
+
+<head>
+
+    @@include("partials/title-meta.html", {"title": "React Structure"})
+
+    @@include("partials/head-css.html")
+
+</head>
+
+<body>
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+
+        @@include("partials/menu.html")
+
+        @@include("partials/sidebar.html")
+
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+
+            <div class="page-content">
+                <div class="container">
+
+                    <h3 class="mb-4">React Folder Structure</h3>
+
+                    <div class="verti-sitemap mb-4">
+                        <ul class="list-unstyled mb-0">
+                            <li class="p-0 parent-title"><a href="javascript: void(0);" class="fw-medium fs-14"><i
+                                        class="bi bi-folder2 me-1 text-warning align-bottom"></i>src</a>
+                            </li>
+                            <li>
+                                <div class="first-list">
+                                    <div class="list-wrap">
+                                        <a href="javascript: void(0);" class="fw-medium text-primary"><i
+                                                class="bi bi-folder2 me-1 text-warning align-bottom"></i>assets</a>
+                                    </div>
+                                </div>
+                                <div class="first-list">
+                                    <div class="list-wrap">
+                                        <a href="javascript: void(0);" class="fw-medium text-primary"><i
+                                                class="bi bi-folder2 me-1 text-warning align-bottom"></i>Common
+                                            <span class="text-muted"> // all the common files related to
+                                                admin.</span></a>
+                                    </div>
+                                </div>
+                                <div class="first-list">
+                                    <div class="list-wrap">
+                                        <a href="javascript: void(0);" class="fw-medium text-primary"><i
+                                                class="bi bi-folder2 me-1 text-warning align-bottom"></i>helpers
+                                            <span class="text-muted"> // api, fakebackend, firebase files</span></a>
+                                    </div>
+                                </div>
+                                <div class="first-list">
+                                    <div class="list-wrap">
+                                        <a href="javascript: void(0);" class="fw-medium text-primary"><i
+                                                class="bi bi-folder2 me-1 text-warning align-bottom"></i>Components
+                                            <span class="text-muted"> // layout related files.</span></a>
+                                    </div>
+                                </div>
+                                <div class="first-list">
+                                    <div class="list-wrap">
+                                        <a href="javascript: void(0);" class="fw-medium text-primary"><i
+                                                class="bi bi-folder2 me-1 text-warning align-bottom"></i>pages</a>
+                                    </div>
+                                </div>
+                                <div class="first-list">
+                                    <div class="list-wrap">
+                                        <a href="javascript: void(0);" class="fw-medium text-primary"><i
+                                                class="bi bi-folder2 me-1 text-warning align-bottom"></i>routes</a>
+                                    </div>
+                                </div>
+                                <div class="first-list">
+                                    <div class="list-wrap">
+                                        <a href="javascript: void(0);" class="fw-medium text-primary"><i
+                                                class="bi bi-folder2 me-1 text-warning align-bottom"></i>slices</a>
+                                    </div>
+                                </div>
+                                <div class="first-list">
+                                    <div class="list-wrap">
+                                        <a href="javascript: void(0);"><i
+                                                class="bi bi-file-earmark-text text-info me-1 align-bottom"></i>App.tsx</a>
+                                    </div>
+                                </div>
+                                <div class="first-list">
+                                    <div class="list-wrap">
+                                        <a href="javascript: void(0);"><i
+                                                class="bi bi-file-earmark-text text-info me-1 align-bottom"></i>index.tsx</a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="mb-3">Overview</h3>
+                        <p class="text-muted mb-4">We have used yarn start to compile the react app files.</p>
+                        <h6 class="text-decoration-underline">index.tsx file :</h6>
+
+                        <pre class="language-markup p-3 rounded mb-4 bg-ligh position-relative"><button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard" title="Copy to clipboard">Copy</button><code>import React from 'react';
+
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
+import { BrowserRouter } from 'react-router-dom';
+import { Provider } from "react-redux";
+import { configureStore } from "@reduxjs/toolkit";
+import rootReducer from './slices';
+
+const root = ReactDOM.createRoot(
+  document.getElementById('root') as HTMLElement
+);
+const store = configureStore({ reducer: rootReducer, devTools: true });
+root.render(
+  &lt;Provider store={store}>
+    &lt;React.Fragment>
+      &lt;BrowserRouter basename={process.env.PUBLIC_URL}>
+      &lt;App />
+      &lt;/BrowserRouter>
+    &lt;/React.Fragment>
+  &lt;/Provider>
+);
+
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();
+
+</code></pre>
+                    </div>
+
+                    <div>
+                        <h3 class="mb-3">Layout setup</h3>
+                        <p class="text-muted mb-4">
+                            You can set the default layout in the <code>src/slices/layouts/reducer.ts</code> file in the html tag.
+                        </p>
+                        <pre class="language-markup p-3 rounded mb-4 bg-ligh position-relative"><button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard" title="Copy to clipboard">Copy</button><code>export const initialState: LayoutState = {
+    layoutTypes: LAYOUT_TYPES.VERTICAL,
+    layoutModeTypes: LAYOUT_MODE_TYPES.LIGHT,
+    layoutWidthTypes: LAYOUT_WIDTH_TYPES.FLUID,
+    topbarThemeTypes: TOPBAR_THEME_TYPES.LIGHT,
+    leftSidebarTypes: LEFT_SIDEBAR_TYPES.DEFAULT,
+    leftSideBarThemeTypes: LEFT_SIDEBAR_THEME_TYPES.DARK,
+    leftSidebarImageTypes: LEFTBAR_THEME_IMAGES_TYPES.NONE
+};</code></pre>
+                        <div class="table-responsive">
+                            <table class="table table-bordered mb-0 mt-3">
+                                <tbody>
+                                    <tr>
+                                        <th>layoutTypes: LAYOUT_TYPES.VERTICAL,</th>
+                                        <td>To set <b>vertical</b> layout Type.</td>
+                                    </tr>
+                                    <tr>
+                                        <th>layoutTypes: LAYOUT_TYPES.HORIZONTAL,</th>
+                                        <td>To set <b>horizontal</b> layout Type.</td>
+                                    </tr>
+                                    <tr>
+                                        <th>layoutModeTypes: LAYOUT_MODE_TYPES.LIGHT,</th>
+                                        <td>To set <b>Light</b> layout mode.</td>
+                                    </tr>
+                                    <tr>
+                                        <th>layoutModeTypes: LAYOUT_MODE_TYPES.DARK,</th>
+                                        <td>To set <b>Dark</b> layout mode.</td>
+                                    </tr>
+                                    <tr>
+                                        <th>layoutWidthType: LAYOUT_WIDTH_TYPES.FLUID,</th>
+                                        <td>To set <b>fluid</b> layout width.</td>
+                                    </tr>
+                                    <tr>
+                                        <th>layoutWidthType: LAYOUT_WIDTH_TYPES.BOXED,</th>
+                                        <td>To set <b>boxed</b> layout width.</td>
+                                    </tr>
+                                    <tr>
+                                        <th> topbarThemeTypes: TOPBAR_THEME_TYPES.LIGHT,</th>
+                                        <td>To set <b>Light</b> Color of Topbar.</td>
+                                    </tr>
+                                    <tr>
+                                        <th> topbarThemeTypes: TOPBAR_THEME_TYPES.DARK,</th>
+                                        <td>To set <b>Dark</b> Color of Topbar.</td>
+                                    </tr>
+                                    <tr>
+                                        <th> leftSidebarTypes: LEFT_SIDEBAR_TYPES.DEFAULT,</th>
+                                        <td>To set <b>default</b> layout of left sidebar.</td>
+                                    </tr>
+                                    <tr>
+                                        <th> leftSidebarTypes: LEFT_SIDEBAR_TYPES.COMPACT,</th>
+                                        <td>To set <b>compact</b> layout of left sidebar.</td>
+                                    </tr>
+                                    <tr>
+                                        <th> leftSidebarTypes: LEFT_SIDEBAR_TYPES.ICON,</th>
+                                        <td>To set <b>icon</b> layout of left sidebar.</td>
+                                    </tr>
+                                    <tr>
+                                        <th> leftSideBarThemeTypes: LEFT_SIDEBAR_THEME_TYPES.LIGHT,</th>
+                                        <td>To set <b>light</b> color layout of left sidebar.</td>
+                                    </tr>
+                                    <tr>
+                                        <th> leftSideBarThemeTypes: LEFT_SIDEBAR_THEME_TYPES.COLORED,</th>
+                                        <td>To set <b>colored</b> color layout of left sidebar.</td>
+                                    </tr>
+                                    <tr>
+                                        <th> leftSideBarThemeTypes: LEFT_SIDEBAR_THEME_TYPES.DARK,</th>
+                                        <td>To set <b>dark</b> color layout of left sidebar.</td>
+                                    </tr>
+                                    <tr>
+                                        <th> leftSideBarThemeTypes: LEFT_SIDEBAR_THEME_TYPES.WINTER,</th>
+                                        <td>To set <b>winter</b> color layout of left sidebar.</td>
+                                    </tr>
+                                    <tr>
+                                        <th> leftSideBarThemeTypes: LEFT_SIDEBAR_THEME_TYPES.LADYLIP,</th>
+                                        <td>To set <b>ladylip</b> color layout of left sidebar.</td>
+                                    </tr>
+                                    <tr>
+                                        <th> leftSideBarThemeTypes: LEFT_SIDEBAR_THEME_TYPES.PLUMPLATE,</th>
+                                        <td>To set <b>plumplate</b> color layout of left sidebar.</td>
+                                    </tr>
+                                    <tr>
+                                        <th> leftSideBarThemeTypes: LEFT_SIDEBAR_THEME_TYPES.STRONGBLISS,</th>
+                                        <td>To set <b>strongbliss</b> color layout of left sidebar.</td>
+                                    </tr>
+                                    <tr>
+                                        <th> leftSideBarThemeTypes: LEFT_SIDEBAR_THEME_TYPES.GREATWHALE,</th>
+                                        <td>To set <b>greatwhale</b> color layout of left sidebar.</td>
+                                    </tr>
+                                    <tr>
+                                        <th> leftSidebarImageTypes: LEFTBAR_THEME_IMAGES_TYPES.NONE,</th>
+                                        <td>To set <b>none</b> image of left sidebar.</td>
+                                    </tr>
+                                    <tr>
+                                        <th> leftSidebarImageTypes: LEFTBAR_THEME_IMAGES_TYPES.IMG1,</th>
+                                        <td>To set <b>img1</b> image of left sidebar.</td>
+                                    </tr>
+                                    <tr>
+                                        <th> leftSidebarImageTypes: LEFTBAR_THEME_IMAGES_TYPES.IMG2,</th>
+                                        <td>To set <b>img2</b> image of left sidebar.</td>
+                                    </tr>
+                                    <tr>
+                                        <th> leftSidebarImageTypes: LEFTBAR_THEME_IMAGES_TYPES.IMG3,</th>
+                                        <td>To set <b>img3</b> image of left sidebar.</td>
+                                    </tr>
+                                    <tr>
+                                        <th> leftSidebarImageTypes: LEFTBAR_THEME_IMAGES_TYPES.IMG4,</th>
+                                        <td>To set <b>img4</b> image of left sidebar.</td>
+                                    </tr>
+                                   
+                                    
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                @@include("partials/footer.html")
+            </div>
+            <!-- End Page-content -->
+
+        </div>
+        <!-- end main content-->
+
+    </div>
+    <!-- END layout-wrapper -->
+
+    @@include("partials/vendor-scripts.html")
+
+    <script src="../assets/libs/prismjs/prism.js"></script>
+
+
+    <!-- App js -->
+    <script src="https://themesbrand.com/docs/app.js"></script>
+</body>
+
+</html>

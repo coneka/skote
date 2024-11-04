@@ -1,0 +1,114 @@
+@@include("partials/main.html")
+
+<head>
+
+    @@include("partials/title-meta.html", {"title": "ChangeLog"})
+
+    @@include("partials/head-css.html")
+
+</head>
+
+<body>
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+
+        @@include("partials/menu.html")
+        @@include("partials/sidebar.html")
+
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+
+            <div class="page-content">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <h3 class="mb-4">ChangeLog</h3>
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="p-lg-1">
+                                        <div class="d-xl-flex">
+                                            <div class="w-100">
+                                                <div>
+                                                    <div>
+                                                        <div id="v-4-0-5" class="mb-4">
+                                                            <h4 class="mb-3">
+                                                                <span class="text-primary">v1.1.0</span>
+                                                                <small class="text-muted fs-6">
+                                                                    - 14 Sep 2023
+                                                                </small>
+                                                            </h4>
+                                                            <span
+                                                                class="badge bg-success-subtle link-success my-2 p-2">New</span>
+                                                            <ul>
+                                                                <li>Updated Bootstrap Version to 5.3.0.</li>
+                                                                <li>Added a new Kanban Board page to manage tasks and
+                                                                    workflows.</li>
+                                                                <li>Added Loading functionality.</li>
+                                                                <li>Updated Email functionality.</li>
+                                                                <li>Revamped the Chat page with new features.</li>
+                                                                <li>Added Emoji support for expressive communication.
+                                                                </li>
+                                                                <li>Introduced Image support for sharing pictures.</li>
+                                                                <li>Updated all dependency packages.</li>
+                                                                <li>Fixed minor issues.</li>
+                                                            </ul>
+                                                            <span
+                                                                class="badge bg-danger-subtle link-danger my-2 p-2">Breaking
+                                                                changes</span>
+                                                            <ul>
+                                                                <li>Removed unused code.</li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+
+                                                    <div>
+                                                        <div id="v-4-0-5" class="mb-4">
+                                                            <h4 class="mb-3">
+                                                                <span class="text-primary">v1.0.0</span>
+                                                                <small class="text-muted fs-6">
+                                                                    - 03 july 2023
+                                                                </small>
+                                                            </h4>
+                                                            <span
+                                                                class="badge bg-success-subtle link-success my-2 p-2">New</span>
+                                                            <ul>
+                                                                <li>Initial released</li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- end card -->
+                        </div>
+                    </div>
+
+                </div>
+                @@include("partials/footer.html")
+            </div>
+            <!-- End Page-content -->
+
+        </div>
+        <!-- end main content-->
+
+    </div>
+    <!-- END layout-wrapper -->
+
+
+    @@include("partials/vendor-scripts.html")
+
+    <!-- prismjs plugin -->
+    <script src="../assets/libs/prismjs/prism.js"></script>
+
+    <!-- App js -->
+    <script src="https://themesbrand.com/docs/app.js"></script>
+</body>
+
+</html>

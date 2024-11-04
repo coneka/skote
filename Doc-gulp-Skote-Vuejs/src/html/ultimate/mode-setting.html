@@ -1,0 +1,143 @@
+@@include("partials/main.html")
+
+<head>
+
+    @@include("partials/title-meta.html", {"title": "Dark Mode"})
+
+    @@include("partials/head-css.html")
+
+</head>
+
+<body>
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+
+        @@include("partials/menu.html")
+
+        @@include("partials/sidebar.html")
+
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+
+            <div class="page-content">
+                <div class="container">
+
+                    <div class="mb-5">
+                        <h3 class="mb-4"><i class="bi bi-moon-stars me-2"></i> Dark Mode Setting</h3>
+                        <div class="p-lg-1">
+                            <p class="mb-0">
+                                <img src="../../assets/images/logo/co.png" alt="" height="30"> <br>
+                                To have Dark mode enabled, replace the reference of <code>bootstrap.min.css</code> stylesheet file to <code>bootstrap-dark.min.css</code> and <code>app.min.css</code> to <code>app-dark.min.css</code>
+                                <br> in the <code> app/Views/partials/head-css.php </code> and make sure to update the <code> public/assets/js/app.js</code> has initSettings() function which you need to comment out. Because it will set to default the light version.
+                            </p>
+                            <p class="mt-3">
+                                <img src="../../assets/images/logo/php.png" alt="" height="25" width="60"> <br>
+                                You can simply change layout mode to Dark by doing the below changes in the file <code>/partials/body.php</code>.
+                                Simply set the attribute <code>data-bs-theme="dark"</code> to the body tag. It will update the layout mode to Dark mode. No need to change any css or js files.
+                                <code>&lt;⁢body data-bs-theme="dark" data-sidebar="dark"&gt;</code>
+                            </p>
+                            <p class="mt-3">
+                                <img src="../../assets/images/logo/ajax.png" alt="" height="30"> <br>
+                                You can simply change layout mode to Dark by doing the below changes in the file <code>/index.html</code>.
+                                Simply set the attribute <code>data-bs-theme="dark"</code> to the body tag. It will update the layout mode to Dark mode. No need to change any css or js files.
+                                <code>&lt;⁢body data-bs-theme="dark" data-sidebar="dark"&gt;</code>
+                            </p>
+                        </div>
+
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Attribute</th>
+                                    <th scope="col">Value</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>data-bs-theme</code></td>
+                                    <td>
+                                        <pre class="language-markup rounded"><code>&lt;!doctype html&gt;
+&lt;html lang="en" data-bs-theme="dark""&gt;</code></pre>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="mb-5">
+                        <h3 class="mb-4"><i class="bi bi-brightness-high me-2"></i> Light Mode Setting</h3>
+                        <div class="p-lg-1">
+                            <p class="mb-0">
+                                <img src="../../assets/images/logo/co.png" alt="" height="30">
+                                <br>
+                                To have Light mode enabled,
+                                replace the reference of <code>bootstrap-dark.min.css</code>
+                                stylesheet file to <code>bootstrap.min.css</code>
+                                and <code>app-dark.min.css</code>
+                                to <code>app.min.css</code>
+                                <br> in the <code>
+                                    app/Views/partials/head-css.php
+                                </code> and make sure to update
+                                the <code> public/assets/js/app.js
+                                </code> has initSettings()
+                                function which you need to
+                                comment out. Because it will set
+                                to default the light version.
+                            </p>
+                            <p class="mt-3">
+                                <img src="../../assets/images/logo/php.png" alt="" height="25" width="60"> <br>
+                                You can simply change layout mode to Dark by doing the below changes in the file <code>/partials/body.php</code>.
+                                Simply set the attribute <code>data-bs-theme="light"</code> to the body tag. It will update the layout mode to Dark mode. No need to change any css or js files.
+                                <code>&lt;⁢body data-bs-theme="light" data-sidebar="light"&gt;</code>
+                            </p>
+                            <p class="mt-3">
+                                <img src="../../assets/images/logo/ajax.png" alt="" height="30"> <br>
+                                You can simply change layout mode to Dark by doing the below changes in the file <code>/index.html</code>.
+                                Simply set the attribute <code>data-bs-theme="light"</code> to the body tag. It will update the layout mode to Dark mode. No need to change any css or js files.
+                                <code>&lt;⁢body data-bs-theme="light" data-sidebar="light"&gt;</code>
+                            </p>
+                        </div>
+
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Attribute</th>
+                                    <th scope="col">Value</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>data-bs-theme</code></td>
+                                    <td>
+                                        <pre class="language-markup rounded"><code>&lt;!doctype html&gt;
+&lt;html lang="en" data-bs-theme="light"&gt;</code></pre>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    
+
+                </div>
+                @@include("partials/footer.html")
+            </div>
+            <!-- End Page-content -->
+
+        </div>
+        <!-- end main content-->
+
+    </div>
+    <!-- END layout-wrapper -->
+
+
+
+    @@include("partials/vendor-scripts.html")
+    <script src="../assets/libs/prismjs/prism.js"></script>
+    <!-- App js -->
+    <script src="https://themesbrand.com/docs/app.js"></script>
+</body>
+
+</html>

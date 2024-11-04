@@ -1,0 +1,239 @@
+@@include("partials/main.html")
+
+<head>
+
+    @@include("partials/title-meta.html", {"title": "Getting Started"})
+
+    @@include("partials/head-css.html")
+
+</head>
+
+<body>
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+
+        @@include("partials/menu.html")
+
+        @@include("partials/sidebar.html")
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+
+            <div class="page-content">
+                <div class="container">
+                    <h3 class="mb-4">Getting Started</h3>
+
+                    <p class="text-muted">
+                        We are using <a class="text-danger" href="https://gulpjs.com/" target="_blank">gulp</a> which allows having complete automation for build flow. In case if you don't know Gulp then it's easy to use it. Gulp is a toolkit for automating
+                        painful or time-consuming tasks in the development workflow, so you can stop messing around while building any project. You can read it more about it <a class="text-danger" href="https://gulpjs.com/" target="_blank">here</a>.
+                    </p>
+                    
+                    <div>
+                        <h6 class="fs-lg text-decoration-underline mt-4 mb-3">Prerequisites:</h6>
+                        <p class="text-muted">Please follow the below steps to install and setup all prerequisites:</p>
+                    
+                        <ul>
+                            <li>
+                                <strong>Nodejs</strong>
+                                <p class="mt-1">
+                                    Make sure to have <a class="text-danger" href="https://nodejs.org/" target="_blank">Node.js</a> installed & running on your computer. If you already have installed Node on your computer, you can skip this step if your
+                                    existing node version is greater than 18.12.1. We suggest you to use LTS version of Node.js.
+                                </p>
+                            </li>
+                            <li>
+                                <strong>Yarn</strong>
+                                <p class="mt-1">
+                                    Make sure to have the <a class="text-danger" href="https://classic.yarnpkg.com/en/" target="_blank">Yarn</a> installed & running on your computer. If you already have installed Yarn on your computer, you can skip this step.
+                                    We suggest you use Yarn instead of NPM.
+                                </p>
+                            </li>
+                            <li>
+                                <strong>Gulp</strong>
+                                <p class="mt-1">
+                                    Make sure to have the <a class="text-danger" href="https://gulpjs.com/" target="_blank">Gulp</a> installed & running on your computer. If you already have installed gulp on run command <code>npm install -g gulp</code> from
+                                    your terminal.
+                                </p>
+                            </li>
+                            <li>
+                                <strong>Git</strong>
+                    
+                                <p class="mt-1">
+                                    Make sure to have <a class="text-danger" href="https://git-scm.com/" target="_blank">Git</a> installed globally & running on your computer. If you already have installed git on your computer, you can skip this step.
+                                </p>
+                            </li>
+                            <li>
+                                <strong>Python</strong>
+                                <p>
+                                    Make sure to have the <a href="https://www.python.org/downloads/" target="_blank">Python</a> installed &amp; running in your computer. If you already have installed Python on your computer, you can skip this step. Please use
+                                    Python version 3 or if you are using python version 2 then make sure to run all the below commands with python insted of python3.
+                                </p>
+                    
+                                <p></p>
+                                <h6>For windows</h6>
+                                <ul>
+                                    <li>Download python from windows store</li>
+                                    <li>Select the Python's version to download.</li>
+                                    <li>Click on the Install Now</li>
+                                    <li>Installation in Process</li>
+                                </ul>
+                                <h6 class="mt-2">For Linux</h6>
+                                <ul>
+                                    <li>sudo apt update</li>
+                                    <li>sudo apt install python3</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <strong>Check Pip version</strong>
+                                <p>
+                                    <code>py -m pip --version</code><br />
+                                    <code>upgread pip </code><br />
+                                    <code>py -m pip install --upgrade pip </code> <br />
+                                </p>
+                            </li>
+                    
+                            <li>
+                                <strong>Virtualenv</strong>
+                    
+                                <p>Make sure to have the <code>virtualenv</code> installed globally &amp; running on your computer. If you already have installed on your computer, you can skip this step.</p>
+                                <p>
+                                    Virtualenv installation command for linux & mac os
+                                    <br />
+                                    <code>python3 -m pip install --user virtualenv</code><br />
+                                    Virtualenv installation command for Windows<br />
+                                    <code>py -m pip install --user virtualenv</code>
+                                    <br />
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <p class="text-muted">
+                            After you finished with the above steps, you can run the following commands into the terminal/command prompt from the root directory <span class="fw-semibold">(Judia/Admin/ )</span> of the project to run the project locally or build
+                            for production use:
+                        </p>
+                    
+                        <table class="table table-bordered m-0 mb-4">
+                            <thead>
+                                <tr>
+                                    <th style="width: 30%;"><i class="ti-file"></i> Command</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <code>yarn install</code>
+                                    </td>
+                                    <td>This would install all the required dependencies in the <code>node_modules</code> folder.</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <code>gulp</code>
+                                    </td>
+                                    <td>
+                                        Runs the project locally, starts the development server and watches for any changes in your code, including your HTML, Javascript, sass, etc.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <code>python3 -m venv environment_name</code>
+                                    </td>
+                                    <td>
+                                        Create Virtual Environment on linux & mac OS
+                                    </td>
+                                </tr>
+                    
+                                <tr>
+                                    <td>
+                                        <code>python -m venv environment_name</code>
+                                    </td>
+                                    <td>
+                                        Create Virtual Environment on Windows OS
+                                    </td>
+                                </tr>
+                    
+                                <tr>
+                                    <td>
+                                        <code>source environment_name/bin/activate</code>
+                                    </td>
+                                    <td>
+                                        Activate Environment on Linux & mac OS
+                                    </td>
+                                </tr>
+                    
+                                <tr>
+                                    <td>
+                                        <code>environment_name\Scripts\activate</code>
+                                    </td>
+                                    <td>
+                                        Activate Environment on Windows OS
+                                    </td>
+                                </tr>
+                    
+                                <tr>
+                                    <td>
+                                        <code>pip3 install Flask
+                                    </td>
+                                    <td>
+                                        Install flask on linux & mac OS
+                                    </td>
+                                </tr>
+                    
+                                <tr>
+                                    <td>
+                                        <code>pip install Flask
+                                    </td>
+                                    <td>
+                                        Install flask on Windows OS
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="mt-4"><code>Note:</code> Depending on your installation, you may need to use either pip3 or pip and for python you may need to use either python3 or python.</p>
+                    
+                    <p class="text-muted mt-4">
+                        After you finished with the above steps, you can run the following commands into the terminal / command prompt from the root directory of the project to run the project locally:
+                    </p>
+                    <p>
+                        <b>Install few libraries </b><br />
+                        <code>pip install flask-login</code><br />
+                        <code>pip install Flask-SQLAlchemy</code><br />
+                        <code>pip install Flask-WTF</code> <br />
+                        <code>pip install Werkzeug</code> <br />
+                        <code>pip install python-dotenv</code> <br />
+                        <code>pip install pyRFC3339</code> <br />
+                        <code>pip install Jinja2</code> <br />
+                    </p>
+                    
+                    <p>
+                        <b>Run below command for run your project </b><br />
+                        <code>flask run</code> <br />
+                    </p>
+                    
+
+                    
+
+            </div>
+            @@include("partials/footer.html")
+
+        </div>
+        <!-- End Page-content -->
+
+    </div>
+    <!-- end main content-->
+
+    </div>
+    <!-- END layout-wrapper -->
+
+    @@include("partials/vendor-scripts.html")
+    <script src="../assets/libs/prismjs/prism.js"></script>
+
+    <!-- App js -->
+    <script src="https://themesbrand.com/docs/app.js"></script>
+</body>
+
+</html>

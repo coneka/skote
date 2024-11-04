@@ -1,0 +1,136 @@
+@@include("partials/main.html")
+
+<head>
+
+    @@include("partials/title-meta.html", {"title": "Create New Page"})
+
+    @@include("partials/head-css.html")
+
+</head>
+
+<body>
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+
+        @@include("partials/menu.html")
+        @@include("partials/sidebar.html")
+
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+
+            <div class="page-content">
+                <div class="container">
+
+                    <h3 class="mb-4">Create a New Page</h3>
+
+                    <div>
+
+                        <p>
+                            -> Follow the below steps to create new page.
+                        </p>
+                        <p class="text-muted">1. Create a new folder in src/pages. ex. NewPage, and then create a ts
+                            file in
+                            src/pages/NewPage with name Index.tsx file.</p>
+
+                        <h6 class="text-decoration-underline">Layout Components</h6>
+
+                        <pre class="mb-3"><code class="language-markup">import React from 'react';
+import { Container } from "reactstrap";
+
+//Import Breadcrumb
+import Breadcrumb from 'Components/Common/Breadcrumb';
+
+    const NewPage = () => {
+        //meta title
+        document.title="New Page | Skote - React Admin & Dashboard Template";
+        return (
+            &lt;>
+                &lt;div className="page-content">
+                    &lt;Container fluid>
+                        &lt;Breadcrumbs title="New Page" breadcrumbItem="New Page" />
+                        {/* write Html code or structure */}
+                    &lt;/Container>
+                &lt;/div>
+            &lt;/>
+        );
+    }
+
+export default NewPage;</code></pre>
+                    </div>
+
+                    <div>
+                        <h6 class="text-decoration-underline">Without Layout Components</h6>
+
+                        <pre><code class="language-markup">import React from 'react';
+import { Container } from 'react-bootstrap';
+                            
+const AuthLogIn = () => {
+    document.title = "Log In| Skote - Admin & Dashboard Template";
+    return (
+        &lt;React.Fragment>
+            &lt;div>
+                &lt;Container>
+                    // write the code here...
+                &lt;/Container>
+            &lt;/div>
+        &lt;/React.Fragment>
+    )
+}
+export default AuthLogIn;</code></pre>
+                    </div>
+
+                    <div>
+                        <p class="text-muted mt-3">2. Add your new page's route in src/Routes/allRoutes.tsx file.</p>
+                        <li>Check the Routes section to see how to add routes to the web application.</li>
+
+                        <div>
+                            <li>if you want to create a page with blank layout, then add your page's routes in
+                                publicRoutes :-</li>
+
+                            <pre class="mt-2 mb-2"><code class="language-markup">import newPage from "../pages/AuthLogIn";
+
+const publicRoutes = [
+    { path: "/auth-login", component: &lt;AuthLogIn /> }                                          
+]
+</code></pre>
+                        </div>
+
+
+
+                        <div>
+                            <li>if you want to create a page with full layout, then add your page's routes in
+                                authProtectedRoutes :-</li>
+
+                            <pre class="mt-2"><code class="language-markup">import newPage from "../pages/NewPage/index";
+
+const authProtectedRoutes = [
+    { path: "/index", component: &lt;Index /> }                                          
+]</code></pre>
+                        </div>
+                    </div>
+
+
+                </div>
+                @@include("partials/footer.html")
+            </div>
+            <!-- End Page-content -->
+
+        </div>
+        <!-- end main content-->
+
+    </div>
+    <!-- END layout-wrapper -->
+
+    @@include("partials/vendor-scripts.html")
+
+    <!-- prismjs plugin -->
+    <script src="../assets/libs/prismjs/prism.js"></script>
+
+    <!-- App js -->
+    <script src="https://themesbrand.com/docs/app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,127 @@
+@@include("partials/main.html")
+
+<head>
+
+    @@include("partials/title-meta.html", {"title": "Set Routing"})
+
+    @@include("partials/head-css.html")
+
+</head>
+
+<body>
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+
+        @@include("partials/menu.html")
+        @@include("partials/sidebar.html")
+
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+
+            <div class="page-content">
+                <div class="container">
+                    <h3 class="mb-4">Set Routing</h3>
+
+                    <h5 class="mb-3">Start App Setting</h5>
+                    <p class="text-muted"> In ASP.NET, routing is the process of directing the HTTP requests to the
+                        right controller. The MVC middleware must decide whether a request should go to the controller
+                        for processing or not. The middleware makes this decision based on the URL and some
+                        configuration information.</p>
+
+
+                    <h5 class="mb-3">Structure</h5>
+                    <div class="verti-sitemap mb-4">
+                        <ul class="list-unstyled mb-0">
+                            <li class="p-0 parent-title"><a href="javascript: void(0);" class="fw-medium fs-14"><i
+                                        class="bi bi-folder2 me-1 text-warning align-bottom"></i>Skote</a>
+                            </li>
+                            <li>
+                                <div class="first-list">
+                                    <div class="list-wrap">
+                                        <a href="javascript: void(0);"><i
+                                                class="bi bi-file-earmark-text me-1 text-info align-bottom""></i>Program.cs</a>
+                                    </div>
+                                </div>
+                                <div class="first-list">
+                                    <div class="list-wrap">
+                                        <a href="javascript: void(0); class=" fw-medium text-primary"><i
+                                                class="bi bi-folder2 me-1 text-warning align-bottom"></i>All Core
+                                            folder will be here of the default theme.</a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="mb-3">RouteConfig file structure</h3>
+
+                        <pre class="language-markup p-3 rounded mb-4 bg-ligh position-relative"><button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard" title="Copy to clipboard">Copy</button><code>
+ var builder = WebApplication.CreateBuilder(args);
+
+ // Add services to the container.
+ builder.Services.AddControllersWithViews();
+                            
+ var app = builder.Build();
+                            
+ // Configure the HTTP request pipeline.
+ if (!app.Environment.IsDevelopment())
+ {
+     app.UseExceptionHandler("/Home/Error");
+     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+     app.UseHsts();
+ }
+                            
+ app.UseHttpsRedirection();
+ app.UseStaticFiles();
+                            
+ app.UseRouting();
+                            
+ app.UseAuthorization();
+                            
+ app.MapControllerRoute(
+     name: "default",
+     pattern: "{controller=Dashboard}/{action=Index}/{id?}");
+                            
+ app.Run();
+               
+</code></pre>
+                    </div>
+
+                </div>
+                <footer class="footer mt-4 text-center position-absolute end-0 bottom-0 start-0">
+                    <div class="container border-top py-3">
+                        <script>
+                            document.write(new Date().getFullYear())
+                        </script> © Skote.
+                    </div>
+                </footer>
+
+            </div>
+            <!-- End Page-content -->
+
+        </div>
+        <!-- end main content-->
+
+    </div>
+    <!-- END layout-wrapper -->
+
+
+
+    @@include("partials/vendor-scripts.html")
+
+
+    <!-- JAVASCRIPT -->
+    <script src="../assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/libs/simplebar/simplebar.min.js"></script>
+    <script src="../assets/libs/clipboard/clipboard.min.js"></script>
+    <script src="../assets/libs/prismjs/prism.js"></script>
+
+    <!-- App js -->
+    <script src="https://themesbrand.com/docs/app.js"></script>
+</body>
+
+</html>

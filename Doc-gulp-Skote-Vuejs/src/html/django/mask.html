@@ -1,0 +1,140 @@
+@@include("partials/main.html")
+
+<head>
+
+    @@include("partials/title-meta.html", {"title": "Mask"})
+
+    @@include("partials/head-css.html")
+
+</head>
+
+<body>
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+
+        @@include("partials/menu.html")
+        @@include("partials/sidebar.html")
+
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+
+            <div class="page-content">
+                <div class="container">
+                    <h3 class="mb-3">Mask<a href="https://robinherbots.github.io/Inputmask/" target="_blank" class="float-end badge bg-success-subtle link-success fs-6">Official Website <i class="ri-external-link-line"></i></a> </h3>
+                    <p class="text-muted mb-4">Inputmask is a javascript library that creates an input mask. Inputmask can run against vanilla javascript, jQuery, and jqlite.</p>
+
+                    <div>
+                        <h5 class="mb-3">Javascript</h5>
+                        <pre class="language-markup p-3 rounded mb-3"><code>&lt;!-- Inputmask js --&gt;
+&lt;script src=&quot;{% static 'libs/inputmask/dist/min/jquery.inputmask.bundle.min.js' %}&quot;&gt;&lt;/script&gt;</code></pre>
+
+                        <h5 class="mb-3">Initjs (Custom js)</h5>
+                        <pre class="language-markup p-3 rounded mb-3"><code>&lt;!-- Inputmask js --&gt;
+&lt;script src=&quot;{% static 'js/pages/form-mask.init.js' %}&quot;&gt;&lt;/script&gt;</code></pre>
+
+                        <h5 class="mb-3">Add Package</h5>
+                        <div class="alert bg-light border-start border-3 rounded-start-0 border-primary-subtle border-0 mb-4">yarn add inputmask --save</div>
+
+                        <h5 class="mb-3">Remove Package</h5>
+                        <div class="alert bg-light border-start border-3 rounded-start-0 border-primary-subtle border-0 mb-4">yarn remove inputmask or you can remove package by removing specific package from package.json</div>
+                    </div>
+
+                    <h5 class="mb-3 mt-4">Examples:</h5>
+
+                    <div class="table-responsive">
+                        <table class="table mb-0">
+                            <thead>
+                                <tr>
+                                    <th scope="col" style="width:40%">Title</th>
+                                    <th scope="col">HTML</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Date Style 1</th>
+                                    <td>
+                                        <pre class="language-js p-3 rounded"><code>&lt;input id=&quot;input-date1&quot; class=&quot;form-control input-mask&quot; data-inputmask=&quot;'alias': 'datetime'&quot; data-inputmask-inputformat=&quot;dd/mm/yyyy&quot;&gt;
+</code></pre>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Date Style 2</th>
+                                    <td>
+                                        <pre class="language-js p-3 rounded"><code>&lt;input id=&quot;input-date2&quot; class=&quot;form-control input-mask&quot; data-inputmask=&quot;'alias': 'datetime'&quot; data-inputmask-inputformat=&quot;mm/dd/yyyy&quot;&gt;
+</code></pre>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Date time</th>
+                                    <td>
+                                        <pre class="language-js p-3 rounded"><code>&lt;input id=&quot;input-datetime&quot; class=&quot;form-control input-mask&quot; data-inputmask=&quot;'alias': 'datetime'&quot;&gt;
+</code></pre>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Currency</th>
+                                    <td>
+                                        <pre class="language-js p-3 rounded"><code>&lt;input id=&quot;input-currency&quot; class=&quot;form-control input-mask text-start&quot; data-inputmask=&quot;'alias': 'numeric', 'groupSeparator': ',', 'digits': 2, 'digitsOptional': false, 'prefix': '$ ', 'placeholder': '0'&quot;&gt;
+</code></pre>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Repeat</th>
+                                    <td>
+                                        <pre class="language-js p-3 rounded"><code>&lt;input id=&quot;input-date1&quot; class=&quot;form-control input-mask&quot; data-inputmask=&quot;'alias': 'datetime'&quot; data-inputmask-inputformat=&quot;dd/mm/yyyy&quot;&gt;
+</code></pre>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Mask</th>
+                                    <td>
+                                        <pre class="language-js p-3 rounded"><code>&lt;input id=&quot;input-mask&quot; class=&quot;form-control input-mask&quot; data-inputmask=&quot;'mask': '99-9999999'&quot;&gt;
+</code></pre>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">IP address</th>
+                                    <td>
+                                        <pre class="language-js p-3 rounded"><code>&lt;input id=&quot;input-ip&quot; class=&quot;form-control input-mask&quot; data-inputmask=&quot;'alias': 'ip'&quot;&gt;
+</code></pre>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Email address:</th>
+                                    <td>
+                                        <pre class="language-js p-3 rounded"><code>&lt;input id=&quot;input-email&quot; class=&quot;form-control input-mask&quot; data-inputmask=&quot;'alias': 'email'&quot;&gt;
+</code></pre>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                        <!-- end table -->
+                    </div>
+
+                </div>
+                @@include("partials/footer.html")
+            </div>
+            <!-- End Page-content -->
+
+        </div>
+        <!-- end main content-->
+
+    </div>
+    <!-- END layout-wrapper -->
+
+
+
+    @@include("partials/vendor-scripts.html")
+
+    <!-- prismjs plugin -->
+    <script src="../assets/libs/prismjs/prism.js"></script>
+
+    <!-- App js -->
+    <script src="https://themesbrand.com/docs/app.js"></script>
+</body>
+
+</html>

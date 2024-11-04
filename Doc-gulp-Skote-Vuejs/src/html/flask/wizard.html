@@ -1,0 +1,101 @@
+@@include("partials/main.html")
+
+<head>
+
+    @@include("partials/title-meta.html", {"title": "Wizard"})
+
+    @@include("partials/head-css.html")
+
+</head>
+
+<body>
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+
+        @@include("partials/menu.html")
+        @@include("partials/sidebar.html")
+
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+
+            <div class="page-content">
+                <div class="container-fluid">
+                    <h3 class="mb-3">Wizard</h3>
+                    <p class="text-muted mb-4">The wizard is a component used for multiple layers of user
+                        input elements in the web application. </p>
+
+                    <h5 class="mb-3">Javascript</h5>
+                        <pre class="language-markup p-3 rounded mb-3"><code>&lt;!-- Editable js --&gt;
+&lt;script src=&quot;{{url_for('static' ,filename='libs/jquery-steps/build/jquery.steps.min.js')}}&quot;&gt;&lt;/script&gt;
+</code></pre>    
+
+                    <h6 class="mb-3">Initjs (Custom js)</h6>
+                    <pre class="language-markup p-3 rounded mb-4"><code>&lt;!-- init js --&gt;
+&lt;script src=&quot;{{url_for('static' ,filename='js/pages/form-wizard.init.js')}}&quot;&gt;&lt;/script&gt;</code></pre>
+
+                    <h5 class="mb-3">Examples:</h5>
+
+                    <div class="table-responsive">
+                        <table class="table mb-0">
+                            <thead>
+                                <tr>
+                                    <th scope="col" style="width:40%">Title</th>
+                                    <th scope="col">Javascript</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Basic Wizard</th>
+                                    <td>
+                                    <pre class="language-js rounded p-3"><code>$("#basic-example").steps({
+    headerTag: "h3",
+    bodyTag: "section",
+    transitionEffect: "slide"
+});
+</code></pre>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Vertical Wizard</th>
+                                    <td>
+                                    <pre class="language-js rounded p-3"><code>$("#vertical-example").steps({
+    headerTag: "h3",
+    bodyTag: "section",
+    transitionEffect: "slide",
+    stepsOrientation: "vertical"
+});
+</code></pre>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                        <!-- end table -->
+                    </div>
+
+                </div>
+                @@include("partials/footer.html")
+            </div>
+            <!-- End Page-content -->
+
+        </div>
+        <!-- end main content-->
+
+    </div>
+    <!-- END layout-wrapper -->
+
+
+
+    @@include("partials/vendor-scripts.html")
+
+    <!-- prismjs plugin -->
+    <script src="../assets/libs/prismjs/prism.js"></script>
+
+    <!-- App js -->
+    <script src="https://themesbrand.com/docs/app.js"></script>
+</body>
+
+</html>

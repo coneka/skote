@@ -1,0 +1,248 @@
+@@include("partials/main.html")
+
+<head>
+
+    @@include("partials/title-meta.html", {"title": "Starter-kit"})
+
+    @@include("partials/head-css.html")
+
+</head>
+
+<body>
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+
+        @@include("partials/menu.html")
+
+        @@include("partials/sidebar.html")
+
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+
+            <div class="page-content">
+                <div class="container">
+
+                    <h4 class="mb-4">Overview:</h4>
+                    <div class="alert alert-success text-success">
+                        <p class="gw-semibold">We recommend our comprehensive starter kit. Our starter kit is designed to provide everything you need to kickstart your project development process efficiently and effectively. It includes:</p>
+                        <ul class="mb-0">
+                            <li><strong>Layouts:</strong></li>
+                            <li><strong>Authentication Pages:</strong></li>
+                            <li><strong>Error Pages:</strong></li>
+                            <li><strong>Starter Page:</strong></li>
+                        </ul>
+                    </div>
+
+                    <p class="mb-4">What is the difference between <strong>Admin</strong> vs <strong>Starterkit</strong>?</p>
+                    <table class="table table-bordered text-center">
+                        <thead>
+                            <tr>
+                                <th scope="col"></th>
+                                <th scope="col">Admin</th>
+                                <th scope="col">Starterkit</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>Layouts</th>
+                                <td><code>True</code></td>
+                                <td><code>True</code></td>
+                            </tr>
+                            <tr>
+                                <th>Pages</th>
+                                <td>130+ pages.</td>
+                                <td>Starter kit has only Auth, blank and starter pages.</td>
+                            </tr>
+                            <tr>
+                                <th>Js Include</th>
+                                <td><code>True</code></td>
+                                <td><code>True</code></td>
+                            </tr>
+                            <tr>
+                                <th>Which better for new project?</th>
+                                <td><code>False</code></td>
+                                <td><code>True</code></td>
+                            </tr>
+                            <tr>
+                                <th>Which better for customize?</th>
+                                <td><code>True</code></td>
+                                <td><code>False</code></td>
+                            </tr>
+                            <tr>
+                                <th>Support</th>
+                                <td><code>True</code></td>
+                                <td><code>True</code></td>
+                            </tr>
+                            <tr>
+                                <th>Regular Update</th>
+                                <td><code>True</code></td>
+                                <td><code>True</code></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h4 class="mb-4">Folder Structure:</h4>
+                    <div class="verti-sitemap border p-3 bg-light">
+                        <code>
+                            <ul class="list-unstyled mb-0">
+                                <li class="p-0 parent-title"><a href="javascript: void(0);" class="fw-medium fs-14">Admin</a>
+                                </li>
+                                <li>
+                                    <div class="first-list">
+                                       
+                                        <div class="list-wrap">
+                                            <a href="javascript: void(0);" class="fw-medium text-primary"><i class=" bi bi-folder2 me-1 align-bottom text-warning"></i>layout
+                                                <span class="text-muted">   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // All layout files here.</span></a>
+                                        </div>
+                                        <div class="list-wrap">
+                                            <a href="javascript: void(0);" class="fw-medium text-primary"><i class=" bi bi-folder2 me-1 align-bottom text-warning"></i>pages
+                                                <span class="text-muted">   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // All pages files here.</span></a>
+                                        </div>                                        
+                                        <div class="list-wrap">
+                                            <a href="javascript: void(0);" class="fw-medium text-primary"><i class=" bi bi-folder2 me-1 align-bottom text-warning"></i>skote
+                                                <span class="text-muted">   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // All skote files here.</span></a>
+                                        </div>                                    
+                                        <div class="list-wrap">
+                                            <a href="javascript: void(0);" class="fw-medium text-primary"><i class=" bi bi-folder2 me-1 align-bottom text-warning"></i>src</a>
+                                            <ul class="second-list list-unstyled">
+                                                <li>
+                                                    <a href="javascript: void(0);"><i class=" bi bi-folder2 me-1 align-bottom text-warning"></i>fonts &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //  <span class="text-muted"> includes all ICONS fonts</span></a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript: void(0);"><i class=" bi bi-folder2 me-1 align-bottom text-warning"></i>images</a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript: void(0);"><i class=" bi bi-folder2 me-1 align-bottom text-warning"></i>js  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="text-muted"> // includes all custom js files for the apps, layouts & pages </a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript: void(0);"><i class=" bi bi-folder2 me-1 align-bottom text-warning"></i>lang  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="text-muted"> // includes all languages json file</a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript: void(0);"><i class=" bi bi-folder2 me-1 align-bottom text-warning"></i>json  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="text-muted"> // includes the json files of chat,invoice and other pages</a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript: void(0);"><i class=" bi bi-folder2 me-1 align-bottom text-warning"></i>scss</a>
+                                                    <ul class="third-list list-unstyled">
+                                                       
+                                                        <li>
+                                                            <a href="javascript: void(0);">
+                                                                <i class=" bi bi-folder2 me-1 align-bottom text-warning"></i>custom &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="text-muted"> // includes all pages scss with separate files</span></a>
+                                                        </li>                                                    
+                                                        <li>
+                                                            <a href="javascript: void(0);"><i class=" bi bi-file-earmark-text me-1 text-info align-bottom"></i>_variables.scss  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="text-muted"> // includes all variables for quick change colors, spacing etc  </span></a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="javascript: void(0);"><i class=" bi bi-file-earmark-text me-1 text-info align-bottom"></i>_variables-dark.scss  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="text-muted"> // includes all dark variables for quick change colors, spacing etc </span></a>
+                                                        </li>
+                                                        
+                                                        <li>
+                                                            <a href="javascript: void(0);"><i class=" bi bi-file-earmark-text me-1 text-info align-bottom"></i>app.scss  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="text-muted"> // it has imported all other scss files and create app.min.css file.  </span></a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="javascript: void(0);"><i class=" bi bi-file-earmark-text me-1 text-info align-bottom"></i>bootstrap.scss  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="text-muted"> // it has imported all bootstrap's scss files </span></a>
+                                                        </li>                                                    
+                                                        <li>
+                                                            <a href="javascript: void(0);"><i class=" bi bi-file-earmark-text me-1 text-info align-bottom"></i>icons.scss  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="text-muted"> // Includes all icons files </span></a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+    
+                                            </ul>
+                                        </div>
+                                        
+                                        <div class="list-wrap">
+                                            <a href="javascript: void(0);" class="fw-medium text-primary"><i class=" bi bi-folder2 me-1 align-bottom text-warning"></i>templates
+                                                <span class="text-muted">   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // All html files here.</span></a>                                   
+                                            <ul class="second-list list-unstyled">                                           
+                                                <li>
+                                                    <a href="javascript: void(0);"><i class=" bi bi-folder2 me-1 align-bottom text-warning"></i>partials  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="text-muted"> //  all partials files here.</span></a>
+                                                    <ul class="third-list list-unstyled">
+                                                        <li>
+                                                            <a href="javascript: void(0);"><i class=" bi bi-file-earmark-text me-1 text-info align-bottom"></i>base.html &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="text-muted"> // it has HTML tag with commen css and js code. </span></a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="javascript: void(0);"><i class=" bi bi-file-earmark-text me-1 text-info align-bottom"></i>content.html &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="text-muted"> // content file </span></a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="javascript: void(0);"><i class=" bi bi-file-earmark-text me-1 text-info align-bottom"></i>css.html &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="text-muted"> // it has css files </span></a>
+                                                        </li>                                               
+                                                        <li>
+                                                            <a href="javascript: void(0);"><i class=" bi bi-file-earmark-text me-1 text-info align-bottom"></i>footer.html &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="text-muted"> // it includes footer text </span></a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="javascript: void(0);"><i class=" bi bi-file-earmark-text me-1 text-info align-bottom"></i>header.html &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="text-muted"> // it includes topbar apps & logo code </span></a>
+                                                        </li>                                                 
+                                                        <li>
+                                                            <a href="javascript: void(0);"><i class=" bi bi-file-earmark-text me-1 text-info align-bottom"></i>hori-header.html &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="text-muted"> // it includes horizontal topbar apps & logo code </span></a>
+                                                        </li>   
+                                                        <li>
+                                                            <a href="javascript: void(0);"><i class=" bi bi-file-earmark-text me-1 text-info align-bottom"></i>hori-sidebar.html &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="text-muted"> // it includes horizontal sidebar content </span></a>
+                                                        </li>   
+                                                        <li>
+                                                            <a href="javascript: void(0);"><i class=" bi bi-file-earmark-text me-1 text-info align-bottom"></i>javascript.html &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="text-muted"> // it includes javascript files </span></a>
+                                                        </li>   
+                                                        <li>
+                                                            <a href="javascript: void(0);"><i class=" bi bi-file-earmark-text me-1 text-info align-bottom"></i>rightsidebar.html &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="text-muted"> // right sidebar for customization layouts, sidebar colors, modes etc settings </span></a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="javascript: void(0);"><i class=" bi bi-file-earmark-text me-1 text-info align-bottom"></i>sidebar.html &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="text-muted"> // it includes sidebar content </span></a>
+                                                        </li>  
+                                                    </ul>
+                                                <li>
+                                                    <a href="javascript: void(0);"><i class=" bi bi-file-earmark-text me-1 text-info align-bottom"></i> All html files will be here.</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="first-list">
+                                        <div class="list-wrap">
+                                            <a href="javascript: void(0);" class="fw-medium text-primary"><i class="bi bi-file-earmark-text me-1 text-info align-bottom"></i>db.sqlite3 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="text-muted"> // All Database related migrations. </span> </a>
+                                        </div>
+                                    </div>
+                                    <div class="first-list">
+                                        <div class="list-wrap">
+                                            <a href="javascript: void(0);" class="fw-medium text-primary"><i class="bi bi-file-earmark-text me-1 text-info align-bottom"></i>manage.py &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="text-muted">  </span> </a>
+                                        </div>
+                                    </div>
+                                    <div class="first-list">
+                                        <div class="list-wrap">
+                                            <a href="javascript: void(0);" class="fw-medium text-primary"><i class="bi bi-file-earmark-text me-1 text-info align-bottom"></i>gulpfile.js &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="text-muted"> // custom gulpfile to compile all the files which can create production ready build. </span> </a>
+                                        </div>
+                                    </div>
+    
+                                    <div class="first-list">
+                                        <div class="list-wrap">
+                                            <a href="javascript: void(0);" class="fw-medium text-primary"><i class="bi bi-file-earmark-text me-1 text-info align-bottom"></i>package.json  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="text-muted"> // all the packages are in this file and you can add new packges.</a>
+                                        </div>
+                                    </div>
+                                    <div class="first-list">
+                                        <div class="list-wrap">
+                                            <a href="javascript: void(0);" class="fw-medium text-primary"><i class="bi bi-file-earmark-text me-1 text-info align-bottom"></i>yarn.lock</a>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </code>
+                    </div>
+
+                </div>
+                @@include("partials/footer.html")
+            </div>
+            <!-- End Page-content -->
+
+        </div>
+        <!-- end main content-->
+
+    </div>
+    <!-- END layout-wrapper -->
+
+    @@include("partials/vendor-scripts.html")
+
+    <!-- App js -->
+    <script src="https://themesbrand.com/docs/app.js"></script>
+</body>
+
+</html>

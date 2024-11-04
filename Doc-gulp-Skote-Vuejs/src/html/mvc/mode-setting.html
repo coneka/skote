@@ -1,0 +1,111 @@
+@@include("partials/main.html")
+
+<head>
+
+    @@include("partials/title-meta.html", {"title": "Dark Mode"})
+
+    @@include("partials/head-css.html")
+
+</head>
+
+<body>
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+
+        @@include("partials/menu.html")
+
+        @@include("partials/sidebar.html")
+
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+
+            <div class="page-content">
+                <div class="container">
+
+                    <div class="mb-5">
+                        <h3 class="mb-4"><i class="bi bi-moon-stars me-2"></i> Dark Mode Setting</h3>
+                        <p class="text-muted">You can simply change layout mode to Dark by doing the
+                            below changes in the
+                            file <code>Views/Shared/_Layout.cshtml</code>.</p>
+                        <p class="text-muted mb-4">Simply set the attribute
+                            <code>data-layout-mode="dark"</code> to the html tag. It will update the layout mode to Dark mode. No need to change any css or js files.
+                        </p>
+
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Attribute</th>
+                                    <th scope="col">Value</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>data-layout-mode</code></td>
+                                    <td>
+                                        <pre class="language-markup rounded"><code>&lt;!doctype html&gt;
+&lt;html lang="en" data-layout-mode="dark"&gt;</code></pre>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="mb-5">
+                        <h3 class="mb-4"><i class="bi bi-brightness-high me-2"></i> Light Mode Setting</h3>
+                        <p class="text-muted">You can simply change layout mode to Light by doing the
+                            below changes in the
+                            file <code>Views/Shared/_Layout.cshtml</code>.</p>
+                        <p class="text-muted mb-4">Simply set the attribute
+                            <code>data-layout-mode="light"</code> to
+                            the html tag. It will update the layout mode to Light mode. No need to change
+                            any css or js files.
+                        </p>
+
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Attribute</th>
+                                    <th scope="col">Value</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>data-layout-mode</code></td>
+                                    <td>
+                                        <pre class="language-markup rounded"><code>&lt;!doctype html&gt;
+&lt;html lang="en" data-layout-mode="light"&gt;</code></pre>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+
+                </div>
+                <footer class="footer mt-4 text-center position-absolute end-0 bottom-0 start-0">
+                    <div class="container border-top py-3">
+                        <script>document.write(new Date().getFullYear())</script> © Skote.
+                    </div>
+                </footer>
+
+            </div>
+            <!-- End Page-content -->
+
+        </div>
+        <!-- end main content-->
+
+    </div>
+    <!-- END layout-wrapper -->
+
+
+
+    @@include("partials/vendor-scripts.html")
+    <script src="../assets/libs/prismjs/prism.js"></script>
+    <!-- App js -->
+    <script src="https://themesbrand.com/docs/app.js"></script>
+</body>
+
+</html>

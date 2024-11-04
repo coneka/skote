@@ -1,0 +1,309 @@
+@@include("partials/main.html")
+
+<head>
+
+    @@include("partials/title-meta.html", {"title": "Getting Started"})
+
+    @@include("partials/head-css.html")
+
+</head>
+
+<body>
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+
+        @@include("partials/menu.html")
+
+        @@include("partials/sidebar.html")
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+
+            <div class="page-content">
+                <div class="container">
+                    <h3 class="mb-4">Getting Started</h3>
+
+                    <h5 class="mb-3">Setup Skote</h5>
+                    <p class="text-muted"> We are using <a class="text-danger" href="https://gulpjs.com/" target="_blank">gulp</a> which allows having complete automation for build flow. In case if you don't know Gulp then it's easy to use it. Gulp is a toolkit for automating painful or time-consuming tasks in the development workflow, so you can stop messing around while building any project. You can read it more about it <a class="text-danger" href="https://gulpjs.com/" target="_blank">here</a>.</p>
+
+                    <h5 class="text-decoration-underline mt-4 mb-3">Prerequisites:</h5>
+                    <p class="text-muted">Please follow the below steps to install and setup all prerequisites:</p>
+
+                    <ul>
+                        <li>
+                            <strong>Nodejs</strong>
+                            <p class="mt-1">Make sure to have <a class="text-danger" href="https://nodejs.org/" target="_blank">Node.js</a> installed &amp; running on your computer. If you already have installed Node on your computer, you can skip this step if your existing node version is greater than 18.12.1. We suggest you to use LTS version of Node.js. </p>
+                        </li>
+                        <li>
+                            <strong>Yarn</strong>
+                            <p class="mt-1">
+                                Make sure to have the <a class="text-danger" href="https://classic.yarnpkg.com/en/" target="_blank">Yarn</a> installed &amp; running on your computer. If you already have installed Yarn on your computer, you can skip this step. We suggest you use Yarn instead of NPM.</p>
+
+                            <pre class="language-markup p-3 rounded mb-4 bg-ligh position-relative"><button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard" title="Copy to clipboard">Copy</button> <code>npm install --global yarn </code> </pre>
+
+                        </li>
+                        <li>
+                            <strong>Gulp</strong>
+                            <p class="mt-1">Make sure to have the <a class="text-danger" href="https://gulpjs.com/" target="_blank">Gulp</a> installed &amp; running on your computer. If you already have installed gulp on run command <code>npm install -g gulp</code> from your terminal.</p>
+                            <pre class="language-markup p-3 rounded mb-4 bg-ligh position-relative"><button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard" title="Copy to clipboard">Copy</button> <code>npm install --global gulp-cli </code> </pre>
+                        </li>
+                        <li>
+                            <strong>Git</strong>
+
+                            <p class="mt-1">Make sure to have <a class="text-danger" href="https://git-scm.com/" target="_blank">Git</a> installed globally &amp; running on your computer. If you already have installed git on your computer, you can skip this step. <br /> To install in Linux OS please run the below commands.</p>
+
+                            <pre class="language-markup p-3 rounded mb-4 bg-ligh position-relative"><button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard" title="Copy to clipboard">Copy</button><code>sudo apt-get update
+sudo apt-get install git </code> </pre>
+                        </li>
+                        <li>
+                            <strong>Python</strong>
+
+                            <p class="mt-1">Make sure to have <a class="text-danger" href="https://www.python.org/downloads/" target="_blank">Python</a> installed &amp; running in your computer.
+                            If you already have installed Python on your computer, you can skip this step. Please use Python version 3 or if you are using python version 2 then make sure to run all the below commands with python insted of python3.</p>
+
+                            <strong>For windows</strong> 
+
+                            <pre class="mt-1 language-markup p-3 rounded mb-4 bg-ligh position-relative"><button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard" title="Copy to clipboard">Copy</button><code>Download python from windows store <br>
+Select the Python's version to download. <br>
+Click on the Install Now <br>
+Installation in Process </code> </pre>
+
+                            <strong>For Linux</strong> 
+
+                            <pre class="mt-1 language-markup p-3 rounded mb-4 bg-ligh position-relative"><button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard" title="Copy to clipboard">Copy</button><code>sudo apt update <br>                          
+sudo apt install python3 </code> </pre>
+                        </li>
+                        <li>
+                            <strong>Check Pip version</strong>
+                            
+                            <pre class="mt-1 language-markup p-3 rounded mb-4 bg-ligh position-relative"><button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard" title="Copy to clipboard">Copy</button><code>py -m pip --version <br>
+upgread pip <br>
+py -m pip install --upgrade pip <br></code> </pre>
+                        </li>
+                        <li>
+                            <strong>Virtualenv</strong>
+                            <p class="mt-1">Make sure to have the <code>virtualenv</code> installed globally &amp; running on your computer. If you already have installed on your computer, you can skip this step.</p>
+                            <p>Virtualenv installation command for linux & mac os</p>
+                            <pre class="language-markup p-3 rounded mb-4 bg-ligh position-relative"><button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard" title="Copy to clipboard">Copy</button> <code>python3 -m pip install --user virtualenv</code> </pre>                         
+                            <p>Virtualenv installation command for Windows</p>
+                            <pre class="language-markup p-3 rounded mb-4 bg-ligh position-relative"><button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard" title="Copy to clipboard">Copy</button> <code>py -m pip install --user virtualenv</code> </pre> 
+
+                        </li>
+                    </ul>
+
+                    <p class="text-muted mt-4">After you finished with the above steps, you can run the following commands into the terminal/command prompt from the root directory <span class="fw-semibold">(Skote_*/Admin/ )</span> of the project to run the project locally or build for production use:</p>
+
+                    <table class="table table-bordered m-0 mb-4">
+                        <thead>
+                            <tr>
+                                <th style="width: 30%;">
+                                    <i class="ti-file"></i> Command
+                                </th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <code>yarn install</code>
+                                </td>
+                                <td>
+                                    This would install all the required dependencies in the <code>node_modules</code> folder.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <code>gulp</code>
+                                </td>
+                                <td>
+                                    Runs the project locally, starts the development server and watches for any changes in your code, including your HTML, Javascript, sass, etc. 
+                                    
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <code>python3 -m venv environment_name</code>
+                                </td>
+                                <td>
+                                    Create Virtual Environment on linux & mac OS
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <code>python -m venv environment_name</code>
+                                </td>
+                                <td>
+                                    Create Virtual Environment on Windows OS
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <code>source environment_name/bin/activate</code>
+                                </td>
+                                <td>
+                                    Activate Environment on Linux & mac OS
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <code>environment_name\Scripts\activate</code>
+                                </td>
+                                <td>
+                                    Activate Environment on Windows OS
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <code>pip3 install django</code>
+                                </td>
+                                <td>
+                                    Install Django on linux & mac OS
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <code>pip install django</code>
+                                </td>
+                                <td>
+                                    Install Django on Windows OS
+                                </td>
+                            </tr> 
+                        </tbody>
+                    </table>
+
+                <ul>
+                    <li>
+                        <strong>Note:</strong>
+                        <p> Depending on your installation, you may need to use either pip3 or pip and for python you may need to use either python3 or python.</p>
+
+                        <p class="mt-4">
+                            After you finished with the above steps, you can run the
+                            following commands into the terminal / command prompt from the
+                            root directory of the project to run the project locally:
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Install few libraries </strong>
+
+                    <pre class="mt-1 language-markup p-3 rounded mb-4 bg-ligh position-relative"><button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard" title="Copy to clipboard">Copy</button><code>pip install django-allauth <br>
+pip3 install django-embed-video <br>
+pip install django-crispy-forms <br>
+pip install django-multiselectfield <br>
+pip install crispy-bootstrap5 <br>
+pip install Pillow  </code> </pre>
+
+                    </li>
+                    <li>
+
+                    <p>
+                        <strong>Database Connectivity </strong><br>
+                        Go to <code>settings.py</code> of main directory and update below settings.
+<pre>
+DATABASES = {
+    'default': {
+    'ENGINE': 'django.db.backends.#databaseservername#',
+    'NAME': 'Your Database Name',
+    'USER' : 'Database User Name',
+    'PASSWORD' : 'Your Password',
+    'HOST' : 'Write down Host',
+    'PORT' : 'Write down port',
+    }
+}</pre>
+                    </p>
+                    </li>
+
+                    <li>
+                        <strong>Run below command for database migration </strong><br>                       
+                        <strong>For Windows :</strong> 
+
+                        <pre class="mt-1 language-markup p-3 rounded mb-4 bg-ligh position-relative"><button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard" title="Copy to clipboard">Copy</button><code>python manage.py migrate  </code> </pre>                         
+
+                        <strong>For Linux :</strong> 
+
+                        <pre class="mt-1 language-markup p-3 rounded mb-4 bg-ligh position-relative"><button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard" title="Copy to clipboard">Copy</button><code>python3 manage.py migrate  </code> </pre>  
+                    </li>
+
+                    <li>
+                        <strong>To create a superuser run the below command </strong><br>                                                                  
+
+                        <pre class="mt-1 language-markup p-3 rounded mb-4 bg-ligh position-relative"><button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard" title="Copy to clipboard">Copy</button><code>python manage.py createsuperuser  </code> </pre>  
+enter username Your Username<br>
+enter your Email Address<br>
+enter your Password<br>
+enter your Password again <br>
+                    </li>
+
+                    <li>
+                        <strong>To load static files </strong><br>    
+                        Go to Skote/settings.py and add following command:-<br>                   
+
+                        <pre class="language-markup p-3 rounded mb-4 bg-ligh position-relative"><button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard" title="Copy to clipboard">Copy</button><code>STATIC_URL = '/static/' <br>
+STATICFILES_DIRS = [os.path.join(BASE_DIR,'static')]  <br><br> 
+
+python manage.py collectstatic
+                        </code> </pre>                         
+
+                    </li>
+
+                    <li>
+                        <strong>SMTP CONFIGURATION</strong><br>                     
+
+                        <pre class="language-markup p-3 rounded mb-4 bg-ligh position-relative"><button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard" title="Copy to clipboard">Copy</button><code>EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend' <br>
+EMAIL_HOST = 'smtp.gmail.com'  <br>
+EMAIL_PORT = 2525  <br>
+EMAIL_USE_TLS = True <br>
+EMAIL_HOST_USER = 'YOUR EMAIL ADDRESS'  <br>
+EMAIL_HOST_PASSWORD = 'YOUR HOST Password'  <br>
+DEFAULT_FROM_EMAIL = 'YOUR EMAIL ADDRESS' <br>
+                        </code> </pre>                         
+
+                    </li>
+
+                    <li>
+                        <strong>Run below command for run your project </strong><br>                       
+                        <strong>For Windows :</strong> 
+
+                        <pre class="mt-1 language-markup p-3 rounded mb-4 bg-ligh position-relative"><button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard" title="Copy to clipboard">Copy</button><code>python manage.py runserver  </code> </pre>                         
+
+                        <strong>For Linux :</strong> 
+
+                        <pre class="mt-1 language-markup p-3 rounded mb-4 bg-ligh position-relative"><button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard" title="Copy to clipboard">Copy</button><code>python3 manage.py runserver  </code> </pre>  
+                    </li>
+
+                    <li>
+                        <strong>Tips</strong>
+                        <p>
+                            SCSS: We suggest you do not change any scss files from the src/scss/custom folders because getting new updates will break your SCSS changes if any you have made. We strongly suggest you create a new custom.scss file and use that instead of overwriting any theme's custom scss files.
+                        </p>
+                    </li>
+                </ul>
+
+                    
+
+            </div>
+            @@include("partials/footer.html")
+
+        </div>
+        <!-- End Page-content -->
+
+    </div>
+    <!-- end main content-->
+
+    </div>
+    <!-- END layout-wrapper -->
+
+    @@include("partials/vendor-scripts.html")
+    <script src="../assets/libs/prismjs/prism.js"></script>
+
+    <!-- App js -->
+    <script src="https://themesbrand.com/docs/app.js"></script>
+</body>
+
+</html>

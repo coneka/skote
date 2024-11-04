@@ -1,0 +1,67 @@
+@@include("partials/main.html")
+
+<head>
+
+    @@include("partials/title-meta.html", {"title": "Third Party Plugins"})
+
+    @@include("partials/head-css.html")
+
+</head>
+
+<body>
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+
+        @@include("partials/menu.html")
+
+        @@include("partials/sidebar.html")
+
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+
+            <div class="page-content">
+                <div class="container">
+
+                    <h3 class="mb-4">Third Party Plugins</h3>
+
+                    <div>
+                        <h5 class="mb-3 mt-4">How to Add a New Third-Party Plugin?</h5>
+                        <p class="text-muted mb-4">We have added all layouts files in the <code>wwwroot/assets/js</code> folder.</p>
+                        <ul class="mb-0">
+                            <li>Install the plugin with the command i.e. <code>yarn add package-name</code> or <code>npm i package-name --save</code></li>
+                            <li>Run the gulp command so it will copy the package's dist folder in the dist/assets/libs/package-name</li>
+                            <li>You can add plugin's css or js path from <code>/assets/libs/package-name/package-name.min.css</code> </li>
+                            <li>You can add the custom scss for particular plugins then add it in the <code>wwwroot/assets/scss/plugins</code> folder. Create a file with the package-name.scss file. Also you have to import this file in the <code>wwwroot/assets/scss/app.scss file.</code></li>
+                        </ul>
+
+                        <h5 class="mb-3 mt-4">How to Remove a Third-Party Plugin?</h5>
+                        <p class="text-muted mb-4">You have to simply remove the package from the package.json file and remove all the css or js files links from the HTML pages where you have used.</p>
+
+                    </div>
+
+                </div>
+                <footer class="footer mt-4 text-center position-absolute end-0 bottom-0 start-0">
+                    <div class="container border-top py-3">
+                        <script>document.write(new Date().getFullYear())</script> © Skote.
+                    </div>
+                </footer>
+
+            </div>
+            <!-- End Page-content -->
+
+        </div>
+        <!-- end main content-->
+
+    </div>
+    <!-- END layout-wrapper -->
+
+    @@include("partials/vendor-scripts.html")
+
+    <!-- App js -->
+    <script src="https://themesbrand.com/docs/app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,132 @@
+@@include("partials/main.html")
+
+<head>
+
+    @@include("partials/title-meta.html", {"title": "RTL Version"})
+
+    @@include("partials/head-css.html")
+
+</head>
+
+<body>
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+
+        @@include("partials/menu.html")
+
+        @@include("partials/sidebar.html")
+
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+
+            <div class="page-content">
+                <div class="container">
+
+                    <h3 class="mb-4">RTL Mode</h3>
+
+                    <ul class="nav nav-tabs mb-3 bg-light" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link fw-bold active" data-bs-toggle="tab" href="#vue1" role="tab">
+                                Vue
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fw-bold" data-bs-toggle="tab" href="#laravel1" role="tab">
+                                Vue + Laravel
+                            </a>
+                        </li>
+                    </ul>
+
+                    <div class="tab-content text-muted">
+                        <div class="tab-pane active" id="vue1" role="tabpanel">
+                            <div class="mb-4">
+                                <h5 class="mb-3">RTL Setup:</h5>
+
+                                <p class="text-muted">To make the default RTL version just follow the below
+                                    steps.</p>
+                                <p>To enable RTL mode, you need to uncomment the main.vue files in the
+                                    <code>src/layouts/main.vue</code> file, just like you would also
+                                    uncomment the
+                                    following two lines:
+                                </p>
+                                <pre class="p-3 rounded mb-4 bg-ligh position-relative language-markup" tabindex="0">
+<button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard">Copy</button><code class="language-markup">mounted() {
+    // document.querySelector("html").setAttribute('dir', 'rtl');
+}</code></pre>
+
+                                <p class="mt-2 ">and uncomment RTL Mode scss files in the
+                                    <code> src/assets/scss/app.scss</code> file same as uncomment below lines
+                                </p>
+
+                                <pre class="p-3 rounded mb-4 bg-ligh position-relative language-markup" tabindex="0">
+<button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard">Copy</button><code class="language-markup">// @import "./rtl/bootstrap-rtl";
+// @import "./rtl/components-rtl";
+// @import "./rtl/float-rtl";
+// @import "./rtl/general-rtl";
+// @import "./rtl/pages-rtl";
+// @import "./rtl/plugins-rtl";
+// @import "./rtl/spacing-rtl";
+// @import "./rtl/structure-rtl";
+// @import "./rtl/text-rtl";</code></pre>
+                            </div>
+                        </div>
+
+                        <div class="tab-pane" id="laravel1" role="tabpanel">
+                            <div class="mb-4">
+                                <h5 class="mb-3">RTL Setup:</h5>
+
+                                <p class="text-muted">To make the default RTL version just follow the below
+                                    steps.</p>
+                                <p> To enable RTL mode, you need to uncomment the main.vue files in the
+                                    <code>resources/js/layouts/main.vue</code> file, just like you would also
+                                    uncomment the
+                                    following two lines:
+                                </p>
+                                <pre class="p-3 rounded mb-4 bg-ligh position-relative language-markup" tabindex="0">
+<button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard">Copy</button><code class="language-markup">mounted() {
+    // document.querySelector("html").setAttribute('dir', 'rtl');
+}</code></pre>
+
+                                <p class="mt-2 "> and uncomment RTL Mode scss files in the
+                                    <code> resources/js/sass/app.scss</code> file same as uncomment below lines
+                                </p>
+
+                                <pre class="p-3 rounded mb-4 bg-ligh position-relative language-markup" tabindex="0">
+<button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard">Copy</button><code class="language-markup">// @import "./rtl/bootstrap-rtl";
+// @import "./rtl/components-rtl";
+// @import "./rtl/float-rtl";
+// @import "./rtl/general-rtl";
+// @import "./rtl/pages-rtl";
+// @import "./rtl/plugins-rtl";
+// @import "./rtl/spacing-rtl";
+// @import "./rtl/structure-rtl";
+// @import "./rtl/text-rtl";</code></pre>
+
+                            </div>
+                        </div>
+
+                    </div>
+                    @@include("partials/footer.html")
+                </div>
+                <!-- End Page-content -->
+
+            </div>
+            <!-- end main content-->
+
+        </div>
+        <!-- END layout-wrapper -->
+
+
+
+        @@include("partials/vendor-scripts.html")
+        <!-- prismjs plugin -->
+        <script src="../assets/libs/prismjs/prism.js"></script>
+
+        <!-- App js -->
+        <script src="https://themesbrand.com/docs/app.js"></script>
+</body>
+
+</html>

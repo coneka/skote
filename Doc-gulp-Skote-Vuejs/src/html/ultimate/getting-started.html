@@ -1,0 +1,249 @@
+@@include("partials/main.html")
+
+<head>
+
+    @@include("partials/title-meta.html", {"title": "Getting Started"})
+
+    @@include("partials/head-css.html")
+
+</head>
+
+<body>
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+
+        @@include("partials/menu.html")
+
+        @@include("partials/sidebar.html")
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+
+            <div class="page-content">
+                <div class="container">
+                    <h3 class="mb-4">Getting Started</h3>
+
+                    <div class="card">
+                        <div class="card-body">
+                            
+                        </div>
+                        <div class="">
+                            <ul class="nav nav-tabs nav-border-top nav-border-top-primary mb-3" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <a class="nav-link active" data-bs-toggle="tab" href="#Codeigniter" role="tab" aria-selected="false" tabindex="-1">
+                                        Codeigniter
+                                    </a>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <a class="nav-link" data-bs-toggle="tab" href="#PHP" role="tab" aria-selected="false" tabindex="-1">
+                                        PHP
+                                    </a>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <a class="nav-link" data-bs-toggle="tab" href="#Ajax" role="tab" aria-selected="false" tabindex="-1">
+                                        Ajax
+                                    </a>
+                                </li>
+                            </ul>
+
+                            
+                            
+                        </div>
+                        <div class="card-body">
+                            <div class="tab-content text-muted">
+                                <div class="tab-pane active show" id="Codeigniter" role="tabpanel">
+                                    <div class="card mb-4">
+                                        <div class="card-body">
+                                            <p class="text-muted mb-4">
+                                                <img src="../../assets/images/logo/co.png" alt="" height="30"></p>
+                
+                                            <h5 class="mb-3">Setup Skote Codeigniter</h5>
+                                            <p class="text-muted"> Skote – Codeigniter is a fully featured premium admin dashboard template built with Bootstrap 5 and Codeigniter 4.</p>
+                                            
+                                            <h5 class="text-decoration-underline mt-4 mb-3">Prerequisites:</h5>
+                                            <p class="text-muted">Please follow the below steps to install and setup all prerequisites:</p>
+                        
+                                            <ul>
+                                                <li>
+                                                    <strong>Server Requirements</strong>
+                                                    <p>
+                                                        Please check the Server Requirements from the below link. <br>
+                                                        <a class="text-danger" href="https://codeigniter.com/user_guide/intro/requirements.html" target="_blank">https://codeigniter.com/user_guide/intro/requirements.html</a>
+                                                    </p>
+                                                </li>
+                                                <li>
+                                                    <strong>Composer</strong>
+                                                    <p class="mt-1">Make sure to have the Composer installed & running in your computer. If you already have installed composer on your computer, you can skip this step.</p>
+                                                    </li>
+                                                
+                                            </ul>
+                                            <h5 class="text-decoration-underline mt-4 mb-3">Installation:</h5>
+                                            <p>
+                                                To setup the admin theme, follow below-mentioned steps:
+                                            </p>
+                        
+                                            <ul>
+                                                <li>
+                                                    <strong>Install Prerequisites</strong>
+                                                    <p>
+                                                        Make sure to have all above prerequisites installed
+                                                        &amp; running on your computer
+                                                    </p>
+                                                </li>
+                        
+                                            </ul>
+                                            <p class="text-muted mt-4">After you finished with the above steps, you can run the following commands into the terminal/command prompt from the root directory <span class="fw-semibold">(skote_*/HTML/ )</span> of the project to run the project locally or build for production use:</p>
+                        
+                                            <p>
+                                                This would install all the required packages in
+                                                the <code>vendor</code> folder.<br>
+                                                If you getting any error when running composer install command, don't
+                                                worry please continue with : <code>composer update</code>
+                                            </p>
+                        
+                                            <pre class="language-markup p-3 rounded mb-4 bg-ligh position-relative"><button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard" title="Copy to clipboard">Copy</button><code>composer install </code> </pre>
+                                            <pre class="language-markup p-3 rounded mb-4 bg-ligh position-relative"><button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard" title="Copy to clipboard">Copy</button><code>composer update </code> </pre>
+                        
+                                            <p>
+                                                This will migrate the database tables. For more details visit <a class="text-danger" href="https://codeigniter.com/user_guide/dbmgmt/migration.html?highlight=migrate" target="_blank">https://codeigniter.com/user_guide/dbmgmt/migration.html?highlight=migrate </a>
+                                            </p>
+                        
+                                            <pre class="language-markup p-3 rounded mb-4 bg-ligh position-relative"><button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard" title="Copy to clipboard">Copy</button><code>php spark migrate </code> </pre>
+                        
+                                            <p>The development server is accessible at  <a class="text-danger" href="http://localhost:8080">http://localhost:8080.</a></p>
+                        
+                                            <pre class="language-markup p-3 rounded mb-4 bg-ligh position-relative"><button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard" title="Copy to clipboard">Copy</button><code>php spark serve </code> </pre>
+                        
+                                            <p> To run on other port just run command. The development server is accessible at  <a class="text-danger" href="http://localhost:8081">http://localhost:8081.</a></p>
+                        
+                                            <pre class="language-markup p-3 rounded mb-4 bg-ligh position-relative"><button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard" title="Copy to clipboard">Copy</button><code>php spark serve --port=8081 </code> </pre>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane" id="PHP" role="tabpanel">
+                                    <div class="card mb-4 ">
+                                        <div class="card-body">
+                                            <p class="text-muted mb-4">
+                                                <img src="../../assets/images/logo/php.png" alt="" height="30"></p>
+                                    <h5 class="mb-3">Setup Skote PHP</h5>
+                                    <p class="text-muted"> Skote – PHP is a fully featured premium admin dashboard template built with Bootstrap 5 and PHP 8.0.</p>
+                                    
+                                    <h5 class="text-decoration-underline mt-4 mb-3">Prerequisites:</h5>
+                                    <p class="text-muted">Please follow the below steps to install and setup all prerequisites:</p>
+                
+                                    <ul>
+                                        <li>
+                                            <strong>PHP 8.0</strong>
+                                            <p>
+                                                Make sure to have the <a class="text-danger" href="https://www.php.net/" target="_blank">PHP-8.0 </a>or latest version installed &amp; rrunning on your computer. If you already have installed PHP on your computer, 
+                                                    you can skip this step.
+                                                </p>
+                                        </li>
+                                        <li>
+                                            <strong>Xampp</strong>
+                                            <p>
+                                                Make sure to have the the latest version of <a class="text-danger" href="https://www.apachefriends.org/" target="_blank">xampp</a> installed &amp; running
+                                                in your computer.
+                                                If you already have installed Xampp on your computer, you can skip this step.
+                                            </p>
+                                        </li>
+                                        
+                                    </ul>
+                                    <h5 class="text-decoration-underline mt-4 mb-3">Installation:</h5>
+                                    <p>
+                                        To setup the admin theme, follow below-mentioned steps:
+                                    </p>
+                
+                                    <ul>
+                                        <li>
+                                            <strong>Install Prerequisites</strong>
+                                            <p>
+                                                Make sure to have all above prerequisites installed
+                                                &amp; running on your computer
+                                            </p>
+                                        </li>
+                
+                                    </ul>
+                                    <p class="text-muted mt-4">After you finished with the above steps, you can run the following commands into the terminal/command prompt from the root directory <span class="fw-semibold">(skote_*/HTML/ )</span> of the project to run the project locally or build for production use:</p>
+                
+                                    <table class="table table-bordered m-0">
+                                        <thead>
+                                            <tr>
+                                                <th>Description</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    Create a new database with name <code>skote_php</code>. Then import the <code>skote_php.sql</code> file in your database.
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    Configure the Database credentials in the <code>config.php</code> file.
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    You can test locally with signup as a new user to check all the pages.
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane " id="Ajax" role="tabpanel">
+                                    <div class="card mb-4">
+                                        <div class="card-body">
+                                            <p class="text-muted mb-4">
+                                                <img src="../../assets/images/logo/ajax.png" alt="" height="30" ></p>
+                                            
+                                    <h5 class="mb-3">Setup Skote Ajax</h5>
+                                    <p class="text-muted"> Skote – Ajax is a fully featured premium admin dashboard template built with Bootstrap 5 and Ajax.</p>
+                                    
+                                    <h5 class="text-decoration-underline mt-4 mb-3">Prerequisites:</h5>
+                                    <p class="text-muted">Please follow the below steps to install and setup all prerequisites:</p>
+                
+                                    <ul>
+                                        <li>
+                                            <strong>Server Requirements</strong>
+                                            <p>
+                                                Need WAMP or LAMP or XAMPP or NGINX or Apache setup on your server or machine.
+                                                </p>
+                                        </li> 
+                                    </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- end card-body -->
+                    </div>
+
+                
+                    
+                    
+
+                    
+                
+            </div>
+            @@include("partials/footer.html")
+        </div>
+        <!-- End Page-content -->
+
+    </div>
+    <!-- end main content-->
+
+    </div>
+    <!-- END layout-wrapper -->
+
+    @@include("partials/vendor-scripts.html")
+    <script src="../assets/libs/prismjs/prism.js"></script>
+
+    <!-- App js -->
+    <script src="https://themesbrand.com/docs/app.js"></script>
+</body>
+
+</html>

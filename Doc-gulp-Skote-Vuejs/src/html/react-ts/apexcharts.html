@@ -1,0 +1,69 @@
+@@include("partials/main.html")
+
+<head>
+
+    @@include("partials/title-meta.html", {"title": "Apexcharts"})
+
+    @@include("partials/head-css.html")
+
+</head>
+
+<body>
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+
+        @@include("partials/menu.html")
+        @@include("partials/sidebar.html")
+
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+
+            <div class="page-content">
+                <div class="container">
+                    <h3 class="mb-3">Overview<a href="https://apexcharts.com/" target="_blank"
+                            class="float-end badge bg-success-subtle link-success fs-6">Official Website <i
+                                class="ri-external-link-line"></i></a> </h3>
+                    <p class="text-muted mb-4">Explore the sample React charts created to show some of
+                        the enticing features packed in ApexCharts.</p>
+
+                    <h5 class="mb-3">Add Package</h5>
+                    <div
+                        class="alert bg-light border-start border-3 rounded-start-0 border-primary-subtle border-0 mb-4">
+                        yarn add react-apexcharts</div>
+
+                    <h5 class="mb-3">Import Package</h5>
+                    <div
+                        class="alert bg-light border-start border-3 rounded-start-0 border-primary-subtle border-0 mb-4">
+                        import ReactApexChart from 'react-apexcharts';</div>
+
+                    <h5 class="mb-3">Remove Package</h5>
+                    <div
+                        class="alert bg-light border-start border-3 rounded-start-0 border-primary-subtle border-0 mb-4">
+                        yarn add react-apexcharts ( or you can remove package by removing specific package from
+                        package.json )</div>
+
+                </div>
+                @@include("partials/footer.html")
+            </div>
+            <!-- End Page-content -->
+
+        </div>
+        <!-- end main content-->
+
+    </div>
+    <!-- END layout-wrapper -->
+
+
+    @@include("partials/vendor-scripts.html")
+
+    <!-- prismjs plugin -->
+    <script src="../assets/libs/prismjs/prism.js"></script>
+
+    <!-- App js -->
+    <script src="https://themesbrand.com/docs/app.js"></script>
+</body>
+
+</html>

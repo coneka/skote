@@ -1,0 +1,84 @@
+@@include("partials/main.html")
+
+<head>
+
+    @@include("partials/title-meta.html", {"title": "Changelog"})
+
+    @@include("partials/head-css.html")
+
+</head>
+
+<body>
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+
+        @@include("partials/menu.html")
+
+        @@include("partials/sidebar.html")
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+
+            <div class="page-content">
+                <div class="container">
+                    <div class="mt-4 pt-md-2">
+                        <h3 class="mb-4">Changelog</h3>
+                        <div class="card-body">
+                            <div class="p-lg-1">
+
+                                <div class="d-xl-flex">
+                                    <div class="w-100">
+                                        <div id="v-1-1">
+                                            <h4 class="mb-3">
+                                                <span class="text-primary">v1.1.0</span>
+                                                <small class="text-muted font-size-14"> - 29 Aug 2023 </small>
+                                            </h4>
+                                            <ul>
+                                                <li>Updated Bootstrap version 5.3.0.</li>
+                                                <li>Updated CakePHP version to 4.4.</li>
+                                                <li>Updated Authentication Component.</li>
+                                                <li>Update light &amp; dark mode. (Bootstrap support)</li>
+                                                <li>Update packages.</li>
+                                                <li>Added javascript functionality in some app pages.</li>
+                                                <li>Fixed Minor Issues.</li>
+
+                                            </ul>
+                                        </div>
+                                        <div id="v-1-0">
+                                            <h4 class="mb-3">
+                                                <span class="text-primary">v1.0.0</span>
+                                                <small class="text-muted font-size-14"> - 14 June 2022 </small>
+                                            </h4>
+                                            <ul>
+                                                <li>
+                                                    Initial released.
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @@include("partials/footer.html")
+            </div>
+            <!-- End Page-content -->
+            
+        </div>
+        <!-- end main content-->
+
+    </div>
+    <!-- END layout-wrapper -->
+
+    @@include("partials/vendor-scripts.html")
+
+    <!-- App js -->
+    <script src="https://themesbrand.com/docs/app.js"></script>
+</body>
+
+</html>

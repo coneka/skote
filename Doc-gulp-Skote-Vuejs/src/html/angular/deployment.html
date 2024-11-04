@@ -1,0 +1,73 @@
+@@include("partials/main.html")
+
+<head>
+
+  @@include("partials/title-meta.html", {"title": "Deployment"})
+
+  @@include("partials/head-css.html")
+
+</head>
+
+<body>
+
+  <!-- Begin page -->
+  <div id="layout-wrapper">
+
+    @@include("partials/menu.html")
+
+    @@include("partials/sidebar.html")
+    <!-- ============================================================== -->
+    <!-- Start right Content here -->
+    <!-- ============================================================== -->
+    <div class="main-content">
+
+      <div class="page-content">
+        <div class="container">
+          <h3 class="mb-4">Deployment</h3>
+
+          <h5 class="mb-3">Angular for production</h5>
+          <p class="text-muted"> Generates a /dist directory with all the production files.</p>
+
+          <pre class="language-markup p-3 rounded mb-4 bg-ligh position-relative"><button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard" title="Copy to clipboard">Copy</button> <code>ng build --prod </code> </pre>
+
+          <p>To create build as per your sub directory or sub folder requirement.</p>
+          <p>set path in <a class="text-success">index.html</a> file</p>
+
+          <pre class="language-markup p-3 rounded mb-4 bg-ligh position-relative"><button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard" title="Copy to clipboard">Copy</button> <code>&lt;base href='/my/app/'&gt; </code> </pre>
+
+          <p>You also can set the base href right in the <a class="text-success">ng build</a> command</p>
+
+          <pre class="language-markup p-3 rounded mb-4 bg-ligh position-relative"><button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard" title="Copy to clipboard">Copy</button> <code> ng build --prod --base-href='/my/app/' </code> </pre>
+
+          <p><strong>You may face following issue while generating build</strong> </p>
+          <div class="alert alert-danger"> JavaScript heap out of memory </div>
+
+          <p>For Windows users:</p>
+
+          <pre class="language-markup p-3 rounded mb-4 bg-ligh position-relative"><button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard" title="Copy to clipboard">Copy</button> <code> node --max_old_space_size=8192 'node_modules\@angular\cli\bin\ng' build --prod </code> </pre>
+
+          <p>For Linux and Mac users:</p>
+
+          <pre class="language-markup p-3 rounded mb-4 bg-ligh position-relative"><button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard" title="Copy to clipboard">Copy</button> <code> node --max_old_space_size=8192 ./node_modules/.bin/ng build --prod </code> </pre>
+
+        </div>
+        @@include("partials/footer.html")
+      </div>
+      <!-- End Page-content -->
+
+    </div>
+    <!-- End Page-content -->
+  </div>
+  <!-- end main content-->
+
+  </div>
+  <!-- END layout-wrapper -->
+
+  @@include("partials/vendor-scripts.html")
+  <script src="../assets/libs/prismjs/prism.js"></script>
+
+  <!-- App js -->
+  <script src="https://themesbrand.com/docs/app.js"></script>
+</body>
+
+</html>

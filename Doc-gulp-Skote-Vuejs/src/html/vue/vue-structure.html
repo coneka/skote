@@ -1,0 +1,299 @@
+@@include("partials/main.html")
+
+<head>
+
+    @@include("partials/title-meta.html", {"title": "Vue Structure"})
+
+    @@include("partials/head-css.html")
+
+</head>
+
+<body>
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+
+        @@include("partials/menu.html")
+
+        @@include("partials/sidebar.html")
+
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+
+            <div class="page-content">
+                <div class="container">
+
+                    <h3 class="mb-4">Vue Folder Structure</h3>
+
+                    <div class="verti-sitemap mb-4">
+                        <ul class="list-unstyled mb-0">
+                            <li class="p-0 parent-title"><a href="javascript: void(0);" class="fw-medium fs-14"><i
+                                        class="bi bi-folder2 me-1 text-warning align-bottom"></i>src</a>
+                            </li>
+                            <li>
+                                <div class="first-list">
+                                    <div class="list-wrap">
+                                        <a href="javascript: void(0);" class="fw-medium text-primary"><i
+                                                class="bi bi-folder2 me-1 text-warning align-bottom"></i>assets</a>
+                                    </div>
+                                </div>
+                                <div class="first-list">
+                                    <div class="list-wrap">
+                                        <a href="javascript: void(0);" class="fw-medium text-primary"><i
+                                                class="bi bi-folder2 me-1 text-warning align-bottom"></i>components
+                                            <span class="text-muted"> // all the common files related to
+                                                admin.</span></a>
+                                    </div>
+                                </div>
+                                <div class="first-list">
+                                    <div class="list-wrap">
+                                        <a href="javascript: void(0);" class="fw-medium text-primary"><i
+                                                class="bi bi-folder2 me-1 text-warning align-bottom"></i>helpers
+                                            <span class="text-muted"> // api, fakebackend, firebase files</span></a>
+                                    </div>
+                                </div>
+                                <div class="first-list">
+                                    <div class="list-wrap">
+                                        <a href="javascript: void(0);" class="fw-medium text-primary"><i
+                                                class="bi bi-folder2 me-1 text-warning align-bottom"></i>layout
+                                            <span class="text-muted"> // layout related files.</span></a>
+                                    </div>
+                                </div>
+                                <div class="first-list">
+                                    <div class="list-wrap">
+                                        <a href="javascript: void(0);" class="fw-medium text-primary"><i
+                                                class="bi bi-folder2 me-1 text-warning align-bottom"></i>locales</a>
+                                    </div>
+                                </div>
+                                <div class="first-list">
+                                    <div class="list-wrap">
+                                        <a href="javascript: void(0);" class="fw-medium text-primary"><i
+                                                class="bi bi-folder2 me-1 text-warning align-bottom"></i>router</a>
+                                    </div>
+                                </div>
+                                <div class="first-list">
+                                    <div class="list-wrap">
+                                        <a href="javascript: void(0);" class="fw-medium text-primary"><i
+                                                class="bi bi-folder2 me-1 text-warning align-bottom"></i>state</a>
+                                    </div>
+                                </div>
+                                <div class="first-list">
+                                    <div class="list-wrap">
+                                        <a href="javascript: void(0);" class="fw-medium text-primary"><i
+                                                class="bi bi-folder2 me-1 text-warning align-bottom"></i>views</a>
+                                    </div>
+                                </div>
+                                <div class="first-list">
+                                    <div class="list-wrap">
+                                        <a href="javascript: void(0);"><i
+                                                class="bi bi-file-earmark-text text-info me-1 align-bottom"></i>app.config.json</a>
+                                    </div>
+                                </div>
+                                <div class="first-list">
+                                    <div class="list-wrap">
+                                        <a href="javascript: void(0);"><i
+                                                class="bi bi-file-earmark-text text-info me-1 align-bottom"></i>App.vue</a>
+                                    </div>
+                                </div>
+                                <div class="first-list">
+                                    <div class="list-wrap">
+                                        <a href="javascript: void(0);"><i
+                                                class="bi bi-file-earmark-text text-info me-1 align-bottom"></i>i18n.js</a>
+                                    </div>
+                                </div>
+                                <div class="first-list">
+                                    <div class="list-wrap">
+                                        <a href="javascript: void(0);"><i
+                                                class="bi bi-file-earmark-text text-info me-1 align-bottom"></i>main.js</a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                        <ul class="list-unstyled mb-0">
+                            <li>
+                                <div class="first-list">
+                                    <div class="list-wrap">
+                                        <a href="javascript: void(0);"><i
+                                                class="bi bi-file-earmark-text text-info me-1 align-bottom"></i>vue.config.js</a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="mb-3">Overview</h3>
+                        <p class="text-muted mb-4">We have used yarn serve to compile the vue app files.</p>
+                        <h6 class="text-decoration-underline">main.js file :</h6>
+
+                        <pre class="language-markup p-3 rounded mb-4 bg-ligh position-relative"><button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard" title="Copy to clipboard">Copy</button><code>import { createApp } from 'vue'
+import App from './App.vue'
+import router from "./router";
+import VueApexCharts from "vue3-apexcharts";
+import vClickOutside from "click-outside-vue3";
+import { registerScrollSpy } from 'vue3-scroll-spy';
+
+import { vMaska } from "maska"
+import i18n from "./i18n"
+import { initFirebaseBackend } from './authUtils'
+import { configureFakeBackend } from './helpers/fake-backend';
+
+import BootstrapVueNext from 'bootstrap-vue-next'
+
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue-next/dist/bootstrap-vue-next.css'
+import "@/assets/scss/app.scss";
+import "@vueform/multiselect/themes/default.css"
+
+// PINIA
+import pinia from '@/state/pinia'
+
+const firebaseConfig = {
+  apiKey: process.env.VUE_APP_APIKEY,
+  authDomain: process.env.VUE_APP_AUTHDOMAIN,
+  databaseURL: process.env.VUE_APP_VUE_APP_DATABASEURL,
+  projectId: process.env.VUE_APP_PROJECTId,
+  storageBucket: process.env.VUE_APP_STORAGEBUCKET,
+  messagingSenderId: process.env.VUE_APP_MESSAGINGSENDERID,
+  appId: process.env.VUE_APP_APPId,
+  measurementId: process.env.VUE_APP_MEASUREMENTID
+};
+
+if (process.env.VUE_APP_DEFAULT_AUTH === "firebase") {
+  initFirebaseBackend(firebaseConfig);
+} else {
+  configureFakeBackend();
+}
+
+import 'sweetalert2/dist/sweetalert2.min.css';
+import '@vueform/slider/themes/default.css';
+
+createApp(App)
+  .use(pinia)
+  .use(router)
+  .use(require('vue-chartist'))
+  .use(BootstrapVueNext)
+  .use(VueApexCharts)
+  .use(vClickOutside)
+  .use(i18n)
+  .use(registerScrollSpy)
+  .directive("maska", vMaska)
+  .mount('#app')
+                                                            </code></pre>
+                    </div>
+
+                    <div>
+                        <h3 class="mb-3">Layout setup</h3>
+                        <p class="text-muted mb-4">
+                            You can set the default layout in the <code>src/state/pinia/layout.js</code> file.
+                        </p>
+                        <pre class="language-markup p-3 rounded mb-4 bg-ligh position-relative"><button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard" title="Copy to clipboard">Copy</button><code>import { defineStore } from "pinia";
+export const useLayoutStore = defineStore("layout", {
+    state: () => ({
+        layoutType: "vertical",
+        leftSidebarType: "dark",
+        layoutWidth: "fluid",
+        topbar: "dark",
+        loader: false,
+        mode: "light"
+      }),
+      actions: {
+        changeLayoutType(layoutType) {
+          this.layoutType = layoutType;
+        },
+        changeLayoutWidth(layoutWidth) {
+          this.layoutWidth = layoutWidth;
+        },
+        changeLeftSidebarType(leftSidebarType) {
+          this.leftSidebarType = leftSidebarType;
+        },
+        changeTopbar(topbar) {
+          this.topbar = topbar;
+        },
+        changeLoaderValue(loader) {
+          this.loader = loader;
+        },
+        changeMode(mode) {
+            this.mode = mode
+        }
+      }
+    });                                               
+</code> </pre>
+                        <div class="table-responsive">
+                            <table class="table table-bordered mb-0 mt-3">
+                                <tbody>
+                                    <tr>
+                                        <th>layoutType: "vertical",</th>
+                                        <td>To set vertical layout width.</td>
+                                    </tr>
+                                    <tr>
+                                        <th>layoutType: "horizontal",</th>
+                                        <td>To set horizontal layout width.</td>
+                                    </tr>
+                                    <tr>
+                                        <th>leftSidebarType: "dark",</th>
+                                        <td>To set light sidebar type.</td>
+                                    </tr>
+                                    <tr>
+                                        <th>leftSidebarType: "light",</th>
+                                        <td>To set dark sidebar type.</td>
+                                    </tr>
+                                    <tr>
+                                        <th>layoutWidth: "fluid",</th>
+                                        <td>To set fluid layout width.</td>
+                                    </tr>
+                                    <tr>
+                                        <th>layoutWidth: "boxed",</th>
+                                        <td>To set boxed layout width.</td>
+                                    </tr>
+                                    <tr>
+                                        <th>topbar: "dark",</th>
+                                        <td>To set the Dark color of Topbar.</td>
+                                    </tr>
+                                    <tr>
+                                        <th>topbar: "light",</th>
+                                        <td>To set the Light color of Topbar.</td>
+                                    </tr>
+                                    <tr>
+                                        <th>loader:false,</th>
+                                        <td>set false the preloader on the Page.</td>
+                                    </tr>
+                                    <tr>
+                                        <th>loader:true,</th>
+                                        <td>set true the preloader on the Page.</td>
+                                    </tr>
+                                    <tr>
+                                        <th>mode:"light",</th>
+                                        <td>To set the Light Mode.</td>
+                                    </tr>
+                                    <tr>
+                                        <th>mode:"dark",</th>
+                                        <td>To set the Dark Mode.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                @@include("partials/footer.html")
+            </div>
+            <!-- End Page-content -->
+
+        </div>
+        <!-- end main content-->
+
+    </div>
+    <!-- END layout-wrapper -->
+
+    @@include("partials/vendor-scripts.html")
+
+    <script src="../assets/libs/prismjs/prism.js"></script>
+
+
+    <!-- App js -->
+    <script src="https://themesbrand.com/docs/app.js"></script>
+</body>
+
+</html>

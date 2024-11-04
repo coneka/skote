@@ -1,0 +1,124 @@
+@@include("partials/main.html")
+
+<head>
+
+    @@include("partials/title-meta.html", {"title": "Pinia Store"})
+
+    @@include("partials/head-css.html")
+
+</head>
+
+<body>
+    <div id="layout-wrapper">
+
+        @@include("partials/menu.html")
+        @@include("partials/sidebar.html")
+
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+
+            <div class="page-content">
+                <div class="container">
+                    <h3 class="mb-4">Pinia setup <a href="https://pinia.vuejs.org/getting-started.html" target="_blank"
+                            class="float-end badge bg-success-subtle fs-6 text-success">Official Website <i
+                                class="ri-external-link-line"></i></a></h3>
+
+                    <div class="alert alert-warning">Note : The <strong>Pinia</strong> state management library is
+                        exclusively use for Vue 3.
+                    </div>
+                    <p>Install <code>pinia</code> with your favorite package manager:</p>
+
+                    <h5 class="mb-3">Add Package</h5>
+                    <div
+                        class="alert bg-light border-start border-3 rounded-start-0 border-primary-subtle border-0 mb-3">
+                        yarn add pinia</div>
+
+                    <h5 class="mt-3">Import Package</h5>
+                    <div
+                        class="alert bg-light border-start border-3 rounded-start-0 border-primary-subtle border-0 mb-3">
+                        import { createPinia } from "pinia"; <br />
+                        const pinia = createPinia();</div>
+
+                    <h5 class="mb-3">Remove Package</h5>
+                    <div class="alert bg-light border-start border-3 rounded-start-0 border-primary-subtle border-0">
+                        yarn remove pinia ( you can remove package by removing specific package from package.json )
+                    </div>
+
+
+
+
+
+
+                    <div> Here let's have one store name layout. Create store in <code>src/state/pinia/layout.js</code>
+                        <div class="pt-3">
+                            <pre class="p-3 rounded mb-4 bg-ligh position-relative language-markup" tabindex="0">
+<button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard">Copy</button><code class="language-markup">import { defineStore } from "pinia";
+export const useLayoutStore = defineStore("layout", {
+    state: () => ({
+        layoutType: "vertical",
+        leftSidebarType: "dark",
+        layoutWidth: "fluid",
+        topbar: "dark",
+        loader: false,
+        mode: "light"
+        }),
+        actions: {
+        changeLayoutType(layoutType) {
+        this.layoutType = layoutType;
+        },
+        changeLayoutWidth(layoutWidth) {
+        this.layoutWidth = layoutWidth;
+        },
+        changeLeftSidebarType(leftSidebarType) {
+        this.leftSidebarType = leftSidebarType;
+        },
+        changeTopbar(topbar) {
+        this.topbar = topbar;
+        },
+        changeLoaderValue(loader) {
+        this.loader = loader;
+        },
+        changeMode(mode) {
+        this.mode = mode
+        }
+    }
+});</code></pre>
+                        </div>
+                    </div>
+                    <div>
+                        To centralize all stores, create one file name pinia.js at <code>src/state/</code>. Import store
+                        here as per bellow,
+                        <div class="pt-3">
+                            <pre class="p-3 rounded mb-4 bg-ligh position-relative language-markup" tabindex="0">
+<button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard">Copy</button><code class="language-markup">import { useLayoutStore } from "./pinia/layout";
+const pinia = createPinia();
+export default pinia;
+export { useLayoutStore };</code></pre>
+                        </div>
+
+                        This code is having layout store and also pinia instance. To configure pinia to the project make
+                        changes to <code>main.js</code> file as per bellow.
+
+                        <div class="pt-3">
+                            <pre class="p-3 rounded mb-4 bg-ligh position-relative language-markup" tabindex="0">
+<button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard">Copy</button><code class="language-markup">import pinia from '@/state/pinia'
+createApp(App)
+    ...
+    .use(pinia)</code></pre>
+                        </div>
+                    </div>
+                    @@include("partials/footer.html")
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @@include("partials/vendor-scripts.html")
+    <!-- prismjs plugin -->
+    <script src="../assets/libs/prismjs/prism.js"></script>
+
+    <!-- App js -->
+    <script src="https://themesbrand.com/docs/app.js"></script>
+</body>

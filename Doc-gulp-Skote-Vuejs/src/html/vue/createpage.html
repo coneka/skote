@@ -1,0 +1,227 @@
+@@include("partials/main.html")
+
+<head>
+
+    @@include("partials/title-meta.html", {"title": "Create New Page"})
+
+    @@include("partials/head-css.html")
+
+</head>
+
+<body>
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+
+        @@include("partials/menu.html")
+        @@include("partials/sidebar.html")
+
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+
+            <div class="page-content">
+                <div class="container">
+
+                    <h3 class="mb-4">Create a New Page</h3>
+
+                    <div>
+
+
+                        <ul class="nav nav-tabs mb-3 bg-light" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link fw-bold active" data-bs-toggle="tab" href="#vue1" role="tab">
+                                    Vue
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link fw-bold" data-bs-toggle="tab" href="#laravel1" role="tab">
+                                    Vue + Laravel
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="tab-content text-muted">
+                            <div class="tab-pane active" id="vue1" role="tabpanel">
+                                <p>
+                                    -> Here is the example on how to create your custom page and add it to the
+                                    leftsidebar menu and breadcrumbs.
+                                </p>
+                                <p>
+                                    -> Follow the below steps to create new page.
+                                </p>
+                                <p class="text-muted">1. Create a component in the
+                                    <code>src/router/views/demo.vue</code> with name
+                                    <code>demo.vue</code>.
+                                </p>
+
+                                <p class="ml-3">Ex :-</p>
+
+                                <pre class="mb-3"><code class="language-markup">&lt;script&gt;
+    import Layout from '@/layouts/main'
+    import PageHeader from '@/components/page-header'
+    
+    export default {
+        components: { Layout, PageHeader },
+    }
+&lt;/script&gt;
+                                        
+&lt;template&gt;
+    &lt;Layout&gt;
+        &lt;PageHeader title="title here" pageTitle="pageTitle here" /&gt;
+        This is New Page
+    &lt;/Layout&gt;
+&lt;/template&gt;
+                                    </code></pre>
+                                <div class="pt-2">
+                                    <p>2. Set the route in <code>/src/router/routes.js</code></p>
+                                    <p class="ml-3">Ex :-</p>
+
+                                    <pre><code class="language-markup">{
+    path: "/demo",
+    name: "sample-page',
+    meta: { authRequired: true },
+    component: () => import('./views/demo')
+},</code></pre>
+                                </div>
+                                <div>
+                                    <p>3. Add link of the page in Vertical Layout and Horizontal Layout. Add menu id,
+                                        label
+                                        and link in JSON object.
+                                    </p>
+                                    <p>For Vertical Layout :- <code>/src/components/menu.js</code></p>
+                                    <p>For Horizontal Layout :- <code>/src/components/horizontal-menu.js</code></p>
+                                    <p class="ml-3">Ex :-</p>
+
+                                    <div>
+                                        <pre class="mt-2 mb-2"><code class="language-markup">{
+    id: 1,
+    label: "menuitems.demo.text",
+    icon: "bx-file",
+    link: "/demo"
+},
+                                       </code></pre>
+                                    </div>
+
+
+
+                                    <div class="pt-3">
+                                        <p>4. Add page name in <code>src/locales/en.json </code> file.</p>
+                                        <p class="ml-3">Ex :-</p>
+
+                                        <pre class="mt-2"><code class="language-markup">{
+    "menuitems": {
+        "demo": {
+            "text": "Demo"
+        }
+    }
+},
+                                        </code></pre>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="laravel1" role="tabpanel">
+                                <p>
+                                    -> Here is the example on how to create your custom page and add it to the
+                                    leftsidebar menu and breadcrumbs.
+                                </p>
+                                <p>
+                                    -> Follow the below steps to create new page.
+                                </p>
+                                <p class="text-muted">1. Create a new folder in <code>resources/js/views</code>. ex.
+                                    NewPage, and
+                                    then create a vue file in <code>resources/js/views/NewPage</code> with name
+                                    <code>index.vue</code>
+                                </p>
+
+                                <p class="ml-3">Ex :-</p>
+                                <ul>
+                                    <li>Add pageHeader component. it's a common component, it's used to add breadcrumbs
+                                        in your page.</li>
+                                </ul>
+                                <p class="text-muted ms-4"> - You have to pass 2 props here, first is title and second
+                                    is
+                                    item.</p>
+                                <p class="text-muted ms-4"> - the title prop refers to page title and the items array
+                                    refers
+                                    to page's breadcrumb item's title. and page title</p>
+                                <pre class="mb-3"><code class="language-markup">&lt;script&gt;
+    import Layout from '@/layouts/main'
+    import PageHeader from '@/components/page-header'
+    
+    export default {
+        components: { Layout, PageHeader },
+    }
+&lt;/script&gt;
+                                        
+&lt;template&gt;
+    &lt;Layout&gt;
+        &lt;PageHeader title="title here" pageTitle="pageTitle here" /&gt;
+        This is New Page
+    &lt;/Layout&gt;
+&lt;/template&gt;
+                                    </code></pre>
+                                <div>
+                                    <p>2. How to add new route ?</p>
+                                    <p class="ml-3 ms-2">You can easily add, change or remove any route by simply making
+                                        changes described below:</p>
+                                    <p>1. Open <code>resources/js/routes/index.js</code> file, declare your route. E.g.
+                                    </p>
+                                    <pre><code class="language-markup">{
+    path: "/newpage/index",
+    name: "index",
+    meta: { title: "index", authRequired: true },
+    component: () => import("../views/newpage/index"),
+},</code></pre>
+                                    <p class="pt-2">Each of these properties are explained below:</p>
+                                    <ul>
+                                        <li>
+                                            path : Url relative path
+                                        </li>
+                                        <li>
+                                            component : Actual component name which would get rendered when user visits
+                                            the path
+                                        </li>
+                                    </ul>
+
+                                    <div class="alert alert-success pb-0">
+                                        <p>Note : you don't need to restart the development server in order to see the
+                                            menu changes getting in effect</p>
+                                    </div>
+                                </div>
+
+                                <div class="pt-3">
+                                    <p>3. Add a navigation in the layouts</p>
+                                    <p>For more details, check the Layouts page to see how to add menu item in your template.</p>
+                                    <ul>
+                                        <li>
+                                            For Vertical Layout :- <code>/resources/js/components/menu.js</code>
+                                        </li>
+                                        <li>
+                                            For Horizontal Layout :- <code>/resources/js/components/horizontal-menu.js</code>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    @@include("partials/footer.html")
+                </div>
+                <!-- End Page-content -->
+
+            </div>
+            <!-- end main content-->
+
+        </div>
+        <!-- END layout-wrapper -->
+
+        @@include("partials/vendor-scripts.html")
+
+        <!-- prismjs plugin -->
+        <script src="../assets/libs/prismjs/prism.js"></script>
+
+        <!-- App js -->
+        <script src="https://themesbrand.com/docs/app.js"></script>
+</body>
+
+</html>

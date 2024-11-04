@@ -1,0 +1,414 @@
+@@include("partials/main.html")
+
+<head>
+
+    @@include("partials/title-meta.html", {"title": "Grid Js"})
+
+    @@include("partials/head-css.html")
+
+</head>
+
+<body>
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+
+        @@include("partials/menu.html")
+        @@include("partials/sidebar.html")
+
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+
+            <div class="page-content">
+                <div class="container">
+                    <h3 class="mb-3">Overview<a href="https://gridjs.io/" target="_blank" class="float-end badge bg-success-subtle link-success fs-6">Official Website <i class="ri-external-link-line"></i></a></h3>
+                    <p class="text-muted mb-4">Grid.js is a Free and open-source JavaScript table plugin. It
+                        works with most JavaScript frameworks. </p>
+
+
+                    <div>
+                        <h5 class="mb-3">CSS</h5>
+                        <pre class="language-markup p-3 rounded mb-3"><code>&lt;!-- gridjs css --&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;assets/libs/gridjs/theme/mermaid.min.css&quot;&gt;
+</code></pre>
+
+                        <h5 class="mb-3">Javascript</h5>
+                        <pre class="language-markup p-3 rounded mb-3"><code>&lt;!-- gridjs js --&gt;
+&lt;script src=&quot;assets/libs/gridjs/gridjs.umd.js&quot;&gt;&lt;/script&gt;</code></pre>
+
+                        <h5 class="mb-3">Initjs (Custom js)</h5>
+                        <pre class="language-markup p-3 rounded mb-3"><code>&lt;!-- gridjs init --&gt;
+&lt;script src=&quot;assets/js/pages/gridjs.init.js&quot;&gt;&lt;/script&gt;</code></pre>
+
+                        <h5 class="mb-3">Add Package</h5>
+                        <div class="alert bg-light border-start border-3 rounded-start-0 border-primary-subtle border-0 mb-4">yarn add gridjs --save</div>
+
+                        <h5 class="mb-3">Remove Package</h5>
+                        <div class="alert bg-light border-start border-3 rounded-start-0 border-primary-subtle border-0 mb-4">yarn remove gridjs or you can remove package by removing specific package from package.json</div>
+                    </div>
+                    <h5 class="mb-3 mt-4">Examples:</h5>
+
+                    <div class="table-responsive">
+                        <table class="table mb-0">
+                            <thead>
+                                <tr>
+                                    <th scope="col" style="width:40%">Title</th>
+                                    <th scope="col">Javascript</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Base Example</th>
+                                    <td>
+                                        <pre class="language-js p-3 rounded"><code>new gridjs.Grid({
+columns: [
+{
+name: 'ID',
+formatter: (function (cell) {
+return gridjs.html('<span class="fw-semibold">' + cell + '</span>');
+})
+},
+"Name", 
+{
+name: 'Email',
+formatter: (function (cell) {
+return gridjs.html('<a href="">' + cell + '</a>');
+})
+},
+"Position", "Company", "Country",
+{
+name: 'Actions',
+width: '120px',
+formatter: (function (cell) {
+return gridjs.html("<a href='#' class='text-reset text-decoration-underline'>" +
+"Details" +
+"</a>");
+})
+},
+],
+pagination: {
+limit: 5
+},
+sort: true,
+search: true,
+data: [
+["01", "Jonathan", "jonathan@example.com","Senior Implementation Architect", 
+"Hauck Inc", "Holy See"],
+["02", "Harold", "harold@example.com", "Forward Creative Coordinator",
+"Metz Inc", "Iran"],
+["03", "Shannon", "shannon@example.com","Legacy Functionality Associate",
+"Zemlak Group", "South Georgia"],
+["04", "Robert", "robert@example.com","Product Accounts Technician",
+"Hoeger", "San Marino"],
+["05", "Noel", "noel@example.com","Customer Data Director",
+"Howell - Rippin", "Germany"],
+["06", "Traci", "traci@example.com","Corporate Identity Director",
+"Koelpin - Goldner", "Vanuatu"],
+["07", "Kerry", "kerry@example.com","Lead Applications Associate",
+"Feeney, Langworth and Tremblay", "Niger"],
+["08", "Patsy", "patsy@example.com","Dynamic Assurance Director",
+"Streich Group", "Niue"],
+["09", "Cathy", "cathy@example.com","Customer Data Director",
+"Ebert, Schamberger and Johnston", "Mexico"],
+["10", "Tyrone", "tyrone@example.com", "Senior Response Liaison",
+"Raynor, Rolfson and Daugherty", "Qatar"],
+]
+}).render(document.getElementById("table-gridjs"));
+
+</code></pre>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Card Table</th>
+                                    <td>
+                                        <pre class="language-js p-3 rounded"><code>new gridjs.Grid({
+columns: ["Name", "Email", "Position", "Company", "Country"],
+sort: true,
+pagination: {
+limit: 5
+},
+data: [
+["Jonathan", "jonathan@example.com", "Senior Implementation Architect",
+"Hauck Inc", "Holy See"],
+["Harold", "harold@example.com", "Forward Creative Coordinator",
+"Metz Inc", "Iran"],
+["Shannon", "shannon@example.com", "Legacy Functionality Associate",
+"Zemlak Group", "South Georgia"],
+["Robert", "robert@example.com", "Product Accounts Technician",
+"Hoeger", "San Marino"],
+["Noel", "noel@example.com", "Customer Data Director",
+"Howell - Rippin", "Germany"],
+["Traci", "traci@example.com", "Corporate Identity Director",
+"Koelpin - Goldner", "Vanuatu"],
+["Kerry", "kerry@example.com", "Lead Applications Associate",
+"Feeney, Langworth and Tremblay", "Niger"],
+["Patsy", "patsy@example.com", "Dynamic Assurance Director",
+"Streich Group", "Niue"],
+["Cathy", "cathy@example.com", "Customer Data Director",
+"Ebert, Schamberger and Johnston", "Mexico"],
+["Tyrone", "tyrone@example.com", "Senior Response Liaison",
+"Raynor, Rolfson and Daugherty", "Qatar"],
+]
+}).render(document.getElementById("table-card"));
+</code></pre>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Pagination</th>
+                                    <td>
+                                        <pre class="language-js p-3 rounded"><code>new gridjs.Grid({
+columns: [{
+name: 'ID',
+width: '120px',
+formatter: (function (cell) {
+return gridjs.html('<a href="" class="fw-medium">' + cell + '</a>');
+})
+},"Name", "Date", "Total", "Status",
+{
+name: 'Actions',
+width: '100px',
+formatter: (function (cell) {
+return gridjs.html("<button type='button' class='btn btn-sm btn-light'>" +
+"Details" +
+"</button>");
+})
+},
+],
+pagination: {
+limit: 5
+},
+
+data: [
+["#VL2111", "Jonathan", "07 Oct, 2021", "$24.05", "Paid",],
+["#VL2110", "Harold", "07 Oct, 2021", "$26.15", "Paid"],
+["#VL2109", "Shannon", "06 Oct, 2021", "$21.25", "Refund"],
+["#VL2108", "Robert", "05 Oct, 2021", "$25.03", "Paid"],
+["#VL2107", "Noel", "05 Oct, 2021", "$22.61", "Paid"],
+["#VL2106", "Traci", "04 Oct, 2021", "$24.05", "Paid"],
+["#VL2105", "Kerry", "04 Oct, 2021", "$26.15", "Paid"],
+["#VL2104", "Patsy", "04 Oct, 2021", "$21.25", "Refund"],
+["#VL2103", "Cathy", "03 Oct, 2021", "$22.61", "Paid"],
+["#VL2102", "Tyrone", "03 Oct, 2021", "$25.03", "Paid"],
+]
+}).render(document.getElementById("table-pagination"));
+</code></pre>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Search</th>
+                                    <td>
+                                        <pre class="language-js p-3 rounded"><code>new gridjs.Grid({
+columns: ["Name", "Email", "Position", "Company", "Country"],
+pagination: {
+limit: 5
+},
+search: true,
+data: [
+["Jonathan", "jonathan@example.com", "Senior Implementation Architect",
+"Hauck Inc", "Holy See"],
+["Harold", "harold@example.com", "Forward Creative Coordinator",
+"Metz Inc", "Iran"],
+["Shannon", "shannon@example.com", "Legacy Functionality Associate",
+"Zemlak Group", "South Georgia"],
+["Robert", "robert@example.com", "Product Accounts Technician",
+"Hoeger", "San Marino"],
+["Noel", "noel@example.com", "Customer Data Director",
+"Howell - Rippin", "Germany"],
+["Traci", "traci@example.com", "Corporate Identity Director",
+"Koelpin - Goldner", "Vanuatu"],
+["Kerry", "kerry@example.com", "Lead Applications Associate",
+"Feeney, Langworth and Tremblay", "Niger"],
+["Patsy", "patsy@example.com", "Dynamic Assurance Director",
+"Streich Group", "Niue"],
+["Cathy", "cathy@example.com", "Customer Data Director",
+"Ebert, Schamberger and Johnston", "Mexico"],
+["Tyrone", "tyrone@example.com", "Senior Response Liaison",
+"Raynor, Rolfson and Daugherty", "Qatar"],
+]
+}).render(document.getElementById("table-search"));
+</code></pre>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Sorting</th>
+                                    <td>
+                                        <pre class="language-js p-3 rounded"><code>new gridjs.Grid({
+columns: ["Name", "Email", "Position", "Company", "Country"],
+pagination: {
+limit: 5
+},
+sort: true,
+data: [
+["Jonathan", "jonathan@example.com", "Senior Implementation Architect",
+"Hauck Inc", "Holy See"],
+["Harold", "harold@example.com", "Forward Creative Coordinator",
+"Metz Inc", "Iran"],
+["Shannon", "shannon@example.com", "Legacy Functionality Associate",
+"Zemlak Group", "South Georgia"],
+["Robert", "robert@example.com", "Product Accounts Technician",
+"Hoeger", "San Marino"],
+["Noel", "noel@example.com", "Customer Data Director",
+"Howell - Rippin", "Germany"],
+["Traci", "traci@example.com", "Corporate Identity Director",
+"Koelpin - Goldner", "Vanuatu"],
+["Kerry", "kerry@example.com", "Lead Applications Associate",
+"Feeney, Langworth and Tremblay", "Niger"],
+["Patsy", "patsy@example.com", "Dynamic Assurance Director",
+"Streich Group", "Niue"],
+["Cathy", "cathy@example.com", "Customer Data Director",
+"Ebert, Schamberger and Johnston", "Mexico"],
+["Tyrone", "tyrone@example.com", "Senior Response Liaison"
+, "Raynor, Rolfson and Daugherty", "Qatar"],
+]
+}).render(document.getElementById("table-sorting"));
+</code></pre>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Loading State</th>
+                                    <td>
+                                        <pre class="language-js p-3 rounded"><code>vnew gridjs.Grid({
+columns: ["Name", "Email", "Position", "Company", "Country"],
+pagination: {
+limit: 5
+},
+sort: true,
+data: function () {
+return new Promise(function (resolve) {
+setTimeout(function () {
+resolve([
+    ["Jonathan", "jonathan@example.com", "Senior Implementation Architect",
+     "Hauck Inc", "Holy See"],
+    ["Harold", "harold@example.com", "Forward Creative Coordinator",
+     "Metz Inc", "Iran"],
+    ["Shannon", "shannon@example.com", "Legacy Functionality Associate",
+     "Zemlak Group", "South Georgia"],
+    ["Robert", "robert@example.com", "Product Accounts Technician",
+     "Hoeger", "San Marino"],
+    ["Noel", "noel@example.com", "Customer Data Director",
+     "Howell - Rippin", "Germany"],
+    ["Traci", "traci@example.com", "Corporate Identity Director",
+     "Koelpin - Goldner", "Vanuatu"],
+    ["Kerry", "kerry@example.com", "Lead Applications Associate",
+     "Feeney, Langworth and Tremblay", "Niger"],
+    ["Patsy", "patsy@example.com", "Dynamic Assurance Director",
+     "Streich Group", "Niue"],
+    ["Cathy", "cathy@example.com", "Customer Data Director",
+     "Ebert, Schamberger and Johnston", "Mexico"],
+    ["Tyrone", "tyrone@example.com", "Senior Response Liaison",
+     "Raynor, Rolfson and Daugherty", "Qatar"]
+])
+}, 2000);
+});
+}
+}).render(document.getElementById("table-loading-state"));
+</code></pre>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Fixed Header</th>
+                                    <td>
+                                        <pre class="language-js p-3 rounded"><code>new gridjs.Grid({
+columns: ["Name", "Email", "Position", "Company", "Country"],
+sort: true,
+pagination: true,
+fixedHeader: true,
+height: '400px',
+data: [
+["Jonathan", "jonathan@example.com", "Senior Implementation Architect",
+"Hauck Inc", "Holy See"],
+["Harold", "harold@example.com", "Forward Creative Coordinator",
+"Metz Inc", "Iran"],
+["Shannon", "shannon@example.com", "Legacy Functionality Associate",
+"Zemlak Group", "South Georgia"],
+["Robert", "robert@example.com", "Product Accounts Technician",
+"Hoeger", "San Marino"],
+["Noel", "noel@example.com", "Customer Data Director", 
+"Howell - Rippin", "Germany"],
+["Traci", "traci@example.com", "Corporate Identity Director",
+"Koelpin - Goldner", "Vanuatu"],
+["Kerry", "kerry@example.com", "Lead Applications Associate",
+"Feeney, Langworth and Tremblay", "Niger"],
+["Patsy", "patsy@example.com", "Dynamic Assurance Director",
+"Streich Group", "Niue"],
+["Cathy", "cathy@example.com", "Customer Data Director",
+"Ebert, Schamberger and Johnston", "Mexico"],
+["Tyrone", "tyrone@example.com", "Senior Response Liaison",
+"Raynor, Rolfson and Daugherty", "Qatar"],
+]
+}).render(document.getElementById("table-fixed-header"));
+</code></pre>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Hidden Columns</th>
+                                    <td>
+                                        <pre class="language-js p-3 rounded"><code>new gridjs.Grid({
+columns: ["Name", "Email", "Position", "Company",
+{
+name: 'Country',
+hidden: true
+},],
+pagination: {
+limit: 5
+},
+sort: true,
+data: [
+["Jonathan", "jonathan@example.com", "Senior Implementation Architect",
+"Hauck Inc", "Holy See"],
+["Harold", "harold@example.com", "Forward Creative Coordinator",
+"Metz Inc", "Iran"],
+["Shannon", "shannon@example.com", "Legacy Functionality Associate",
+"Zemlak Group", "South Georgia"],
+["Robert", "robert@example.com", "Product Accounts Technician",
+"Hoeger", "San Marino"],
+["Noel", "noel@example.com", "Customer Data Director",
+"Howell - Rippin", "Germany"],
+["Traci", "traci@example.com", "Corporate Identity Director",
+"Koelpin - Goldner", "Vanuatu"],
+["Kerry", "kerry@example.com", "Lead Applications Associate",
+"Feeney, Langworth and Tremblay", "Niger"],
+["Patsy", "patsy@example.com", "Dynamic Assurance Director",
+"Streich Group", "Niue"],
+["Cathy", "cathy@example.com", "Customer Data Director",
+"Ebert, Schamberger and Johnston", "Mexico"],
+["Tyrone", "tyrone@example.com", "Senior Response Liaison",
+"Raynor, Rolfson and Daugherty", "Qatar"],
+]
+}).render(document.getElementById("table-hidden-column"));
+</code></pre>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                        <!-- end table -->
+                    </div>
+                
+                </div>
+                <footer class="footer mt-4 text-center position-absolute end-0 bottom-0 start-0">
+                    <div class="container border-top py-3">
+                        <script>document.write(new Date().getFullYear())</script> © Skote.
+                    </div>
+                </footer>
+
+            </div>
+            <!-- End Page-content -->
+
+        </div>
+        <!-- end main content-->
+    </div>
+    <!-- END layout-wrapper -->
+
+    @@include("partials/vendor-scripts.html")
+
+    <!-- prismjs plugin -->
+    <script src="../assets/libs/prismjs/prism.js"></script>
+
+    <!-- App js -->
+    <script src="https://themesbrand.com/docs/app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,106 @@
+@@include("partials/main.html")
+
+<head>
+
+  @@include("partials/title-meta.html", {"title": "Getting Started"})
+
+  @@include("partials/head-css.html")
+
+</head>
+
+<body>
+
+  <!-- Begin page -->
+  <div id="layout-wrapper">
+
+    @@include("partials/menu.html")
+
+    @@include("partials/sidebar.html")
+    <!-- ============================================================== -->
+    <!-- Start right Content here -->
+    <!-- ============================================================== -->
+    <div class="main-content">
+
+      <div class="page-content">
+        <div class="container">
+          <h3 class="mb-4">Getting Started</h3>
+
+          <h5 class="mb-3">Setup Skote</h5>
+          <p class="text-muted"> We are using <a class="text-danger" href="https://angular.io/cli" target="_blank">Angular CLI</a> is a command-line interface tool that you use to initialize, develop, scaffold, and maintain Angular applications directly from a command shell.</p>
+
+          <h5 class="text-decoration-underline mt-4 mb-3">Prerequisites:</h5>
+          <p class="text-muted">Please follow the below steps to install and setup all prerequisites:</p>
+
+          <ul>
+            <li>
+              <strong>Nodejs</strong>
+              <p class="mt-1">Make sure to have <a class="text-danger" href="https://nodejs.org/" target="_blank">Node.js</a> installed &amp; running on your computer. If you already have installed Node on your computer, you can skip this step if your existing node version is greater than 18. We suggest you to use LTS version of Node.js. </p>
+            </li>
+            <li>
+              <strong>NPM</strong>
+              <p class="mt-1">
+                Make sure to have the <a class="text-danger" href="https://docs.npmjs.com/cli/v8/commands/npm-install" target="_blank">NPM</a> installed &amp; running on your computer. If you already have installed NPM on your computer, you can skip this step.</p>
+
+              <pre class="language-markup p-3 rounded mb-4 bg-ligh position-relative"><button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard" title="Copy to clipboard">Copy</button> <code>npm install -g npm </code> </pre>
+
+            </li>
+            <li>
+              <strong>Angular CLI</strong>
+              <p class="mt-1">Make sure to have the <a class="text-danger" href="https://gulpjs.com/" target="_blank">Angular cli</a> installed &amp; running on your computer. Install it before start with the Angular app</p>
+              <pre class="language-markup p-3 rounded mb-4 bg-ligh position-relative"><button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard" title="Copy to clipboard">Copy</button> <code>npm install --global @angular/cli@latest</code> </pre>
+
+              <div class="alert alert-danger text-danger">
+                <i class=" bi bi-exclamation-circle-fill fs-3 align-middle me-2"></i> Warning: If you have Angular CLI installed previously, update it to the latest Angular CLI. Remove the older version and re-install it.
+              </div>
+              <pre class="language-markup p-3 rounded mb-4 bg-ligh position-relative"><button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard" title="Copy to clipboard">Copy</button> <code>npm uninstall --global @angular/cli</code> </pre>
+
+              <pre class="language-markup p-3 rounded mb-4 bg-ligh position-relative"><button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard" title="Copy to clipboard">Copy</button> <code>npm install --global @angular/cli@latest</code> </pre>
+            </li>
+            <li>
+              <strong>Git</strong>
+
+              <p class="mt-1">Make sure to have <a class="text-danger" href="https://git-scm.com/" target="_blank">Git</a> installed globally &amp; running on your computer. If you already have installed git on your computer, you can skip this step. <br /> To install in Linux OS please run the below commands.</p>
+
+              <pre class="language-markup p-3 rounded mb-4 bg-ligh position-relative"><button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard" title="Copy to clipboard">Copy</button><code>sudo apt-get update
+sudo apt-get install git </code> </pre>
+            </li>
+          </ul>
+
+          <p class="text-muted mt-4">After you finished with the above steps, you can run the following commands into the terminal/command prompt from the root directory <span class="fw-semibold">(Skote_*/HTML/ )</span> of the project to run the project locally or build for production use:</p>
+
+          <strong>Install the Angular local project dependencies by executing following commands:</strong>
+
+          <p>This command will clear your old cached node_modules.</p>
+
+          <pre class="language-markup p-3 rounded mb-4 bg-ligh position-relative"><button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard" title="Copy to clipboard">Copy</button><code>npm clear cache --force </code> </pre>
+
+          <p>This command will install the dependencies in the local node_modules folder. By default, <a class="text-danger" href="#">npm install --legacy-peer-deps</a> will install all modules listed as dependencies in <a class="text-danger" href="#">package.json</a>.</p>
+
+          <pre class="language-markup p-3 rounded mb-4 bg-ligh position-relative"><button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard" title="Copy to clipboard">Copy</button><code>npm install --legacy-peer-deps </code> </pre>
+
+          <p>This command launches the server, watches your files, and rebuilds the app as you make changes to those files. Using the <a class="text-danger" href="#">--open (or use -o)</a> option will automatically open your browser on <a class="text-danger" href="http://localhost:4200">http://localhost:4200/.</a> This command will take some time to finsh. Please wait for it to complete.</p>
+
+          <pre class="language-markup p-3 rounded mb-4 bg-ligh position-relative"><button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard" title="Copy to clipboard">Copy</button><code>ng serve </code> </pre>
+
+          <p>For more detailed information to install the Angular application, visit this official Angular <a class="text-danger" href="https://angular.io/start"></a>documentation website.</a></p>
+        </div>
+        @@include("partials/footer.html")
+      </div>
+      <!-- End Page-content -->
+
+    </div>
+    <!-- End Page-content -->
+  </div>
+  <!-- end main content-->
+
+  </div>
+  <!-- END layout-wrapper -->
+
+  @@include("partials/vendor-scripts.html")
+  <script src="../assets/libs/prismjs/prism.js"></script>
+
+  <!-- App js -->
+  <script src="https://themesbrand.com/docs/app.js"></script>
+</body>
+
+</html>

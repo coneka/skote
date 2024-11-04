@@ -1,0 +1,185 @@
+@@include("partials/main.html")
+
+<head>
+
+    @@include("partials/title-meta.html", {"title": "Select 2"})
+
+    @@include("partials/head-css.html")
+
+</head>
+
+<body>
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+
+        @@include("partials/menu.html")
+        @@include("partials/sidebar.html")
+
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+
+            <div class="page-content">
+                <div class="container">
+                    <h3 class="mb-3">Select 2<a href="https://choices-js.github.io/Choices/" target="_blank" class="float-end badge bg-success-subtle link-success fs-6">Official Website <i class="ri-external-link-line"></i></a> </h3>
+                    <p class="text-muted mb-4">Select2 gives you a customizable select box with support for searching, tagging, remote data sets, infinite scrolling, and many other highly used options.</p>
+
+                    <div>
+                        <h5 class="mb-3">CSS</h5>
+                        <pre class="language-markup rounded p-3 mb-3"><code>&lt;!-- select 2 css --&gt;
+&lt;script type='text/javascript' src='{{url_for('static' ,filename='libs/select2/dist/css/select2.min.css')}}'&gt;&lt;/script&gt;</code></pre>
+
+<h5 class="mb-3">CSS</h5>
+            <pre class="language-markup rounded p-3 mb-3"><code>&lt;!-- select 2 js --&gt;
+&lt;script type='text/javascript' src='{{url_for('static' ,filename='libs/select2/dist/js/select2.min.js')}}'&gt;&lt;/script&gt;</code></pre>    
+
+                        <h5 class="mb-3">Initjs (Custom js)</h5>
+                        <pre class="language-markup rounded p-3 mb-3"><code>&lt;!-- app js --&gt;
+&lt;script src=&quot;{{url_for('static' ,filename='js/pages/form-advanced.init.js')}}&quot;&gt;&lt;/script&gt;</code></pre>
+
+                        <h5 class="mb-3">Add Package</h5>
+                        <div class="alert bg-light border-start border-3 rounded-start-0 border-primary-subtle border-0 mb-4">yarn add select2 --save</div>
+
+                        <h5 class="mb-3">Remove Package</h5>
+                        <div class="alert bg-light border-start border-3 rounded-start-0 border-primary-subtle border-0 mb-4">yarn remove select2 or you can remove package by removing specific package from package.json</div>
+                    </div>
+
+                    <h5 class="mb-3">Examples:</h5>
+
+                    <div class="table-responsive">
+                        <table class="table mb-0">
+                            <thead>
+                                <tr>
+                                    <th scope="col" style="width:40%">Title</th>
+                                    <th scope="col">HTML</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Single Select</th>
+                                    <td>
+                                        <pre class="language-markup p-3 rounded"><code>&lt;select class=&quot;form-control select2&quot;&gt;
+&lt;option&gt;Select&lt;/option&gt;
+&lt;optgroup label=&quot;Alaskan/Hawaiian Time Zone&quot;&gt;
+    &lt;option value=&quot;AK&quot;&gt;Alaska&lt;/option&gt;
+    &lt;option value=&quot;HI&quot;&gt;Hawaii&lt;/option&gt;
+&lt;/optgroup&gt;
+&lt;optgroup label=&quot;Pacific Time Zone&quot;&gt;
+    &lt;option value=&quot;CA&quot;&gt;California&lt;/option&gt;
+    &lt;option value=&quot;NV&quot;&gt;Nevada&lt;/option&gt;
+&lt;/optgroup&gt;
+&lt;optgroup label=&quot;Mountain Time Zone&quot;&gt;
+    &lt;option value=&quot;AZ&quot;&gt;Arizona&lt;/option&gt;
+    &lt;option value=&quot;CO&quot;&gt;Colorado&lt;/option&gt;    
+&lt;/optgroup&gt;
+&lt;optgroup label=&quot;Central Time Zone&quot;&gt;
+    &lt;option value=&quot;AL&quot;&gt;Alabama&lt;/option&gt;
+    &lt;option value=&quot;AR&quot;&gt;Arkansas&lt;/option&gt;   
+&lt;/optgroup&gt;
+&lt;optgroup label=&quot;Eastern Time Zone&quot;&gt;
+    &lt;option value=&quot;CT&quot;&gt;Connecticut&lt;/option&gt;
+    &lt;option value=&quot;DE&quot;&gt;Delaware&lt;/option&gt;    
+&lt;/optgroup&gt;
+&lt;/select&gt;</code></pre>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <th scope="row">Multiple Select</th>
+                                    <td>
+                                        <pre class="language-markup p-3 rounded"><code>&lt;select class=&quot;select2 form-control select2-multiple&quot;
+    multiple=&quot;multiple&quot; data-placeholder=&quot;Choose ...&quot;&gt;
+    &lt;optgroup label=&quot;Alaskan/Hawaiian Time Zone&quot;&gt;
+        &lt;option value=&quot;AK&quot;&gt;Alaska&lt;/option&gt;
+        &lt;option value=&quot;HI&quot;&gt;Hawaii&lt;/option&gt;
+    &lt;/optgroup&gt;
+    &lt;optgroup label=&quot;Pacific Time Zone&quot;&gt;
+        &lt;option value=&quot;CA&quot;&gt;California&lt;/option&gt;
+        &lt;option value=&quot;NV&quot;&gt;Nevada&lt;/option&gt;       
+    &lt;/optgroup&gt;
+    &lt;optgroup label=&quot;Mountain Time Zone&quot;&gt;
+        &lt;option value=&quot;AZ&quot;&gt;Arizona&lt;/option&gt;
+        &lt;option value=&quot;CO&quot;&gt;Colorado&lt;/option&gt;
+    &lt;/optgroup&gt;
+    &lt;optgroup label=&quot;Central Time Zone&quot;&gt;
+        &lt;option value=&quot;AL&quot;&gt;Alabama&lt;/option&gt;
+        &lt;option value=&quot;AR&quot;&gt;Arkansas&lt;/option&gt;
+    &lt;/optgroup&gt;
+    &lt;optgroup label=&quot;Eastern Time Zone&quot;&gt;
+        &lt;option value=&quot;CT&quot;&gt;Connecticut&lt;/option&gt;
+        &lt;option value=&quot;DE&quot;&gt;Delaware&lt;/option&gt;
+    &lt;/optgroup&gt;
+&lt;/select&gt;</code></pre>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Search Disable</th>
+                                    <td>
+                                        <pre class="language-markup p-3 rounded"><code>&lt;select class=&quot;form-control select2-search-disable&quot;&gt;
+    &lt;option&gt;Select&lt;/option&gt;
+    &lt;optgroup label=&quot;Alaskan/Hawaiian Time Zone&quot;&gt;
+        &lt;option value=&quot;AK&quot;&gt;Alaska&lt;/option&gt;
+        &lt;option value=&quot;HI&quot;&gt;Hawaii&lt;/option&gt;
+    &lt;/optgroup&gt;
+    &lt;optgroup label=&quot;Pacific Time Zone&quot;&gt;
+        &lt;option value=&quot;CA&quot;&gt;California&lt;/option&gt;
+        &lt;option value=&quot;NV&quot;&gt;Nevada&lt;/option&gt;        
+    &lt;/optgroup&gt;
+&lt;/select&gt;</code></pre>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Ajax (remote data)</th>
+                                    <td>
+                                        <pre class="language-markup p-3 rounded"><code>&lt;select class=&quot;form-control select2-ajax&quot;&gt;&lt;/select&gt;</code></pre>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Templating</th>
+                                    <td>
+                                        <pre class="language-markup p-3 rounded"><code>&lt;select class=&quot;form-control select2-templating&quot;&gt;
+    &lt;optgroup label=&quot;Alaskan/Hawaiian Time Zone&quot;&gt;
+        &lt;option value=&quot;AK&quot;&gt;Alaska&lt;/option&gt;
+        &lt;option value=&quot;HI&quot;&gt;Hawaii&lt;/option&gt;
+    &lt;/optgroup&gt;
+    &lt;optgroup label=&quot;Pacific Time Zone&quot;&gt;
+        &lt;option value=&quot;CA&quot;&gt;California&lt;/option&gt;
+        &lt;option value=&quot;NV&quot;&gt;Nevada&lt;/option&gt;
+        &lt;option value=&quot;OR&quot;&gt;Oregon&lt;/option&gt;
+        &lt;option value=&quot;WA&quot;&gt;Washington&lt;/option&gt;
+    &lt;/optgroup&gt;
+&lt;/select&gt;</code></pre>
+                                    </td>
+                                </tr>
+                               
+                                
+                            </tbody>
+                        </table>
+                        <!-- end table -->
+                    </div>
+
+                </div>
+                @@include("partials/footer.html")
+            </div>
+            <!-- End Page-content -->
+
+        </div>
+        <!-- end main content-->
+
+    </div>
+    <!-- END layout-wrapper -->
+
+
+
+    @@include("partials/vendor-scripts.html")
+
+    <!-- prismjs plugin -->
+    <script src="../assets/libs/prismjs/prism.js"></script>
+
+    <!-- App js -->
+    <script src="https://themesbrand.com/docs/app.js"></script>
+</body>
+
+</html>

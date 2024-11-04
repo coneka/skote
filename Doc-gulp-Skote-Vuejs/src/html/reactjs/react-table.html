@@ -1,0 +1,80 @@
+@@include("partials/main.html")
+
+<head>
+
+    @@include("partials/title-meta.html", {"title": "React-table"})
+
+    @@include("partials/head-css.html")
+
+</head>
+
+<body>
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+
+        @@include("partials/menu.html")
+        @@include("partials/sidebar.html")
+
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+
+            <div class="page-content">
+                <div class="container">
+                    <h3 class="mb-3">Overview<a href="https://www.npmjs.com/package/react-table" target="_blank"
+                            class="float-end badge bg-success-subtle link-success fs-6">Official Website <i
+                                class="ri-external-link-line"></i></a></h3>
+
+                    <p class="text-muted mb-4">The React-table package is a popular open-source library for building
+                        flexible and feature-rich tables in React applications. It offers a wide range of
+                        functionalities and customization options, making it a go-to choice for managing tabular data.
+                    </p>
+
+                    <h5 class="mt-3">Add Package</h5>
+                    <div
+                        class="alert bg-light border-start border-3 rounded-start-0 border-primary-subtle border-0 mb-4">
+                        yarn add react-table
+                    </div>
+
+                    <h5 class="mt-3">Import Package</h5>
+                    <div
+                        class="alert bg-light border-start border-3 rounded-start-0 border-primary-subtle border-0 mb-4">
+                        import {
+                            useTable,
+                            useGlobalFilter,
+                            useSortBy,
+                            useFilters,
+                            useExpanded,
+                            usePagination
+                          } from "react-table";
+                    </div>
+
+                    <h5 class="mt-3">Remove Package</h5>
+                    <div
+                        class="alert bg-light border-start border-3 rounded-start-0 border-primary-subtle border-0 mb-4">
+                        yarn remove react-table ( or you can remove package by removing specific package from package.json )
+                    </div>
+
+                </div>
+                @@include("partials/footer.html")
+            </div>
+            <!-- End Page-content -->
+
+        </div>
+        <!-- end main content-->
+
+    </div>
+    <!-- END layout-wrapper -->
+
+    @@include("partials/vendor-scripts.html")
+
+    <!-- prismjs plugin -->
+    <script src="../assets/libs/prismjs/prism.js"></script>
+
+    <!-- App js -->
+    <script src="https://themesbrand.com/docs/app.js"></script>
+</body>
+
+</html>

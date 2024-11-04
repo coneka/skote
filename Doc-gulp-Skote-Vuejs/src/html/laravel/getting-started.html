@@ -1,0 +1,319 @@
+@@include("partials/main.html")
+
+<head>
+
+    @@include("partials/title-meta.html", {"title": "Getting Started"})
+
+    @@include("partials/head-css.html")
+
+</head>
+
+<body>
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+
+        @@include("partials/menu.html")
+
+        @@include("partials/sidebar.html")
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+
+            <div class="page-content">
+                <div class="container">
+                    <h3 class="mb-4">Getting Started</h3>
+
+
+                    <div class="card">
+                        <div class="card-body">
+                            
+                        </div>
+                        <div class="">
+                            <ul class="nav nav-tabs nav-border-top nav-border-top-primary mb-3" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <a class="nav-link active" data-bs-toggle="tab" href="#HTML" role="tab" aria-selected="false" tabindex="-1">
+                                        HTML
+                                    </a>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <a class="nav-link" data-bs-toggle="tab" href="#Laravel" role="tab" aria-selected="false" tabindex="-1">
+                                        Laravel
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="card-body">
+                            <div class="tab-content text-muted">
+                                <div class="tab-pane active show" id="HTML" role="tabpanel">
+                                    <div class="card mb-4">
+                                        <div class="card-body">
+                                            <h4 class="text-decoration-underline mb-3">Setup Skote - HTML</h4>
+                                            
+                                                <p>
+                                                    We are using
+                                                    <a class="text-danger" href="https://gulpjs.com/" target="_blank">gulp</a> which
+                                                    allows having complete automation for build flow. In case if you
+                                                    don't know Gulp then it's easy to use it. Gulp is a toolkit for
+                                                    automating painful or time-consuming tasks in the development
+                                                    workflow, so you can stop messing around while building any
+                                                    project. You can read it more about it <a class="text-danger" href="https://gulpjs.com/" target="_blank">here</a>.
+                                                    Please follow below steps to install and setup all
+                                                    prerequisites:
+                                                </p>
+                                                <div id="prerequisites" class="mb-5">
+                                                    <h5 class="text-decoration-underline mt-4 mb-3">Prerequisites</h5>
+
+                                                    <p>
+                                                        Please follow below steps to install and setup all
+                                                        prerequisites:
+                                                    </p>
+
+
+                                                    <ul>
+                                                        <li>
+                                                            <strong>Yarn</strong>
+                                                            <p>
+                                                                Make sure to have the <a class="text-danger" href="https://classic.yarnpkg.com/en/" target="_blank">Yarn</a> installed &amp; running
+                                                                in your computer.
+                                                                If you already have installed Yarn on your computer, you
+                                                                can skip this step. We suggest you to use Yarn instead
+                                                                of NPM.</p>
+                                                        </li>
+                                                        <li>
+                                                            <strong>Nodejs</strong>
+                                                            <p>
+                                                                Make sure to have the <a class="text-danger" href="https://nodejs.org/" target="_blank">Node.js</a> installed &amp; running
+                                                                in your computer.
+                                                                If you already have installed Node on your computer, you
+                                                                can skip this step if your existing node version is
+                                                                greater than 18. </p>
+                                                        </li>
+
+                                                        <li>
+                                                            <strong>Gulp</strong>
+
+                                                            <p>Make sure to have the <a class="text-danger" href="https://gulpjs.com/" target="_blank">Gulp</a> installed &amp; running in
+                                                                your computer. If you already have installed gulp on run
+                                                                command <code>npm install -g gulp</code> from your
+                                                                terminal.</p>
+                                                        </li>
+
+                                                        <li>
+                                                            <strong>Git</strong>
+
+                                                            <p>Make sure to have the <a class="text-danger" href="https://git-scm.com/" target="_blank">Git</a> installed globally &amp;
+                                                                running on your computer. If you already have installed
+                                                                git on your computer, you can skip this step.</p>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <h5 class="text-decoration-underline mt-4 mb-3">Installation:</h5>
+                                                <p>
+                                                    To setup the admin theme, follow below-mentioned steps:
+                                                </p>
+
+                                                <ul>
+                                                    <li>
+                                                        <strong>Install Prerequisites</strong>
+                                                        <p>
+                                                            Make sure to have all above prerequisites installed
+                                                            &amp; running on your computer
+                                                        </p>
+                                                    </li>
+
+                                                </ul>
+                                                <p class="text-muted mt-4">After you finished with the above steps, you can run the following commands into the terminal / command prompt from the root directory of the project to run the project locally or build for production use:</p>
+
+                                                <p>This would install all the required dependencies in the <code>node_modules</code> folder.</p>
+
+                                                <pre class="language-markup p-3 rounded mb-4 bg-ligh position-relative"><button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard" title="Copy to clipboard">Copy</button><code>yarn install </code> </pre>
+
+
+                                                <p>Runs the project locally, starts the development server and watches for any changes in your code, including your HTML, javascript, sass, etc. The development server is accessible at <a class="text-danger" href="http://localhost:3000">http://localhost:3000.</a></p>
+
+                                                <pre class="language-markup p-3 rounded mb-4 bg-ligh position-relative"><button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard" title="Copy to clipboard">Copy</button><code>gulp </code> </pre>
+
+                                                <p>
+                                                    Generates a <code>/dist</code> directory with all
+                                                    the production files.
+                                                </p>
+
+                                                <pre class="language-markup p-3 rounded mb-4 bg-ligh position-relative"><button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard" title="Copy to clipboard">Copy</button><code>gulp build</code> </pre>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane" id="Laravel" role="tabpanel">
+                                    <div class="card mb-4 ">
+                                        <div class="card-body">
+                                            <h4 class="text-decoration-underline mb-3">Setup Skote - Laravel</h4>
+                                        <p class="mb-4">
+                                            <a class="text-danger" href="https://laravel.com/docs/10.x/vite" target="_blank">Laravel Vite</a> provides a clean, fluent API for defining basic build steps for your Laravel application. Mix supports several common CSS and JavaScript pre-processors.<br>
+                                            
+                                        </p>
+                                        <div id="prerequisites" class="mb-5">
+                                            <h5 class="mt-4">Prerequisites</h5>
+
+                                            <p>
+                                                Please follow below steps to install and setup all prerequisites:
+                                            </p>
+
+                                            <ul>
+                                                <li>
+                                                    <strong>Server</strong>
+                                                    <br>
+                                                        Make sure to have the <a class="text-danger" href="https://www.apachefriends.org/" target="_blank">Xampp/Wampp</a> installed &amp; running in your computer. 
+                                                        If you already have installed Xampp/Wampp on your computer, you can skip this step.<br>
+                                                        Note: PHP Version must be greater than <strong>8.0</strong>.<p></p>
+                                                </li>
+                                                <li>
+                                                    <strong>Composer</strong>
+                                                    <p>
+                                                        Make sure to have the <a class="text-danger" href="https://getcomposer.org/" target="_blank">Composer</a> installed &amp; running in your computer. </p>
+                                                </li>
+                                                <li>
+                                                    <strong>Nodejs</strong>
+                                                    <p>
+                                                        Make sure to have the <a class="text-danger" href="https://nodejs.org/" target="_blank">Node.js</a> installed &amp; running in your computer.
+                                                        If you already have installed Node on your computer, you can skip this step if your existing node version is greater than 14. </p>
+                                                </li>
+
+                                                <li>
+                                                    <strong>Git</strong>
+
+                                                    <p>Make sure to have the <a class="text-danger" href="https://git-scm.com/" target="_blank">Git</a> installed globally &amp; running on your
+                                                        computer. If you already have installed git on your computer, you can
+                                                        skip this step.</p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <h5 class="text-decoration-underline mt-4 mb-3">Installation:</h5>
+                                        <p>
+                                            To setup the admin theme, follow below-mentioned steps:
+                                        </p>
+
+                                        <ul>
+                                            <li>
+                                                <strong>Install Prerequisites</strong>
+                                                <p>
+                                                    Make sure to have all above prerequisites installed
+                                                    &amp; running on your computer
+                                                </p>
+                                            </li>
+
+                                        </ul>
+                                        <p class="text-muted mt-4">After you finished with the above steps, you can run the following commands to run the project locally or build for production use:</p>
+
+                                        <p>
+                                            This would install all the required packages in
+                                            the <code>vendor</code> folder.<br>
+                                            If you getting any error when running composer install command, don't
+                                            worry please continue with : <code>composer update</code>
+                                        </p>
+
+                                        <pre class="language-markup p-3 rounded mb-4 bg-ligh position-relative"><button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard" title="Copy to clipboard">Copy</button><code>npm install </code> </pre>
+                                        <pre class="language-markup p-3 rounded mb-4 bg-ligh position-relative"><button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard" title="Copy to clipboard">Copy</button><code>composer install </code> </pre>
+
+                                        <p colspan="2">
+                                            <h6 class="mb-3"><strong>
+                                                Please run the below command to generate the new key.
+                                            </strong></h6>
+                                            
+                                            <div class="custom-pre">
+                                                <pre class="language-markup p-3 rounded mb-4 bg-ligh position-relative"><button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard" title="Copy to clipboard">Copy</button><code>php artisan key:generate </code> </pre>
+                                                
+                                            </div>
+                                            <strong>
+                                                Please fill your DB credentials in the .env file and make sure you have created database with name "skote".
+                                            </strong>
+                                            <div class="card">
+                                                <div class="card-body">
+                                                    DB_CONNECTION=mysql<br>
+                                                    DB_HOST=127.0.0.1<br>
+                                                    DB_PORT=3306<br>
+                                                    DB_DATABASE=skote<br>
+                                                    DB_USERNAME=root<br>
+                                                    DB_PASSWORD=
+                                                </div>
+
+                                            </div>
+                                        </p>
+
+
+                                        <p colspan="2">
+                                            <h6 class="mb-3">
+                                                Please fill your Email credentials in the .env file.
+                                            </h6>
+                                            <div class="card">
+                                                <div class="card-body">
+                                                    MAIL_MAILER= <br>
+                                                    MAIL_HOST= <br>
+                                                    MAIL_PORT= <br>
+                                                    MAIL_USERNAME= <br>
+                                                    MAIL_PASSWORD= <br>
+                                                    MAIL_ENCRYPTION= <br>
+                                                    MAIL_FROM_ADDRESS= <br>
+                                                    MAIL_FROM_NAME="${APP_NAME}" 
+                                                </div>
+                                                            </div>
+                                            <br>
+                                            <p>If you don't have an credentials for email you can create it from <a class="text-danger" href="https://developers.google.com/">Google Developer Console </a> or you can use <a class="text-danger" href="https://mailtrap.io/">Mailtrap</a> or any other, it's mandatory for forget password or other mail functionality.</p>
+                                        </p>
+
+                                        <p>
+                                            To compile all CSS and will copy all images, Js, Libs into the public directory. Run this command to get minify output for the production server.
+                                        </p>
+
+                                        <pre class="language-markup p-3 rounded mb-4 bg-ligh position-relative"><button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard" title="Copy to clipboard">Copy</button><code>npm run build</code> </pre>
+
+                                        <p>
+                                            To Generate RTL CSS From LTR CSS.
+                                        </p>
+
+                                        <pre class="language-markup p-3 rounded mb-4 bg-ligh position-relative"><button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard" title="Copy to clipboard">Copy</button><code>npm run build-rtl</code> </pre>
+
+                                        <p>
+                                            This will migrate the database tables. For more details visit <a class="text-danger" href="https://laravel.com/docs/10.x/migrations" target="_blank">https://laravel.com/docs/10.x/migrations </a>
+                                        </p>
+
+                                        <pre class="language-markup p-3 rounded mb-4 bg-ligh position-relative"><button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard" title="Copy to clipboard">Copy</button><code>php artisan migrate </code> </pre>
+
+                                        <p>
+                                            This will seed the database records. For more details visit <a class="text-danger" href="https://laravel.com/docs/10.x/seeding" target="_blank">https://laravel.com/docs/10.x/seeding </a>
+                                        </p>
+
+                                        <pre class="language-markup p-3 rounded mb-4 bg-ligh position-relative"><button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard" title="Copy to clipboard">Copy</button><code>php artisan db:seed</code> </pre>
+
+                                        <p>The development server is accessible at <a class="text-danger" href="http://localhost:8000">http://localhost:8000.</a>To run on other port just run command : php artisan serve --port=8001</p>
+
+                                        <pre class="language-markup p-3 rounded mb-4 bg-ligh position-relative"><button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard" title="Copy to clipboard">Copy</button><code>php artisan serve</code> </pre>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div><!-- end card-body -->
+                    </div>
+            </div>
+            @@include("partials/footer.html")
+        </div>
+        <!-- End Page-content -->
+
+    </div>
+    <!-- end main content-->
+
+    </div>
+    <!-- END layout-wrapper -->
+
+    @@include("partials/vendor-scripts.html")
+    <script src="../assets/libs/prismjs/prism.js"></script>
+
+    <!-- App js -->
+    <script src="https://themesbrand.com/docs/app.js"></script>
+</body>
+
+</html>

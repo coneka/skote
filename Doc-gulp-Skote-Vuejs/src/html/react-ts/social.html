@@ -1,0 +1,168 @@
+@@include("partials/main.html")
+
+<head>
+
+    @@include("partials/title-meta.html", {"title": "Social Authentication"})
+
+    @@include("partials/head-css.html")
+
+</head>
+
+<body>
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+
+        @@include("partials/menu.html")
+        @@include("partials/sidebar.html")
+
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+
+            <div class="page-content">
+                <div class="container">
+
+                    <h3 class="mb-4">Social Authentication</h3>
+
+                    <div class="w-100">
+                        <div id="firebase" class="mb-3">
+
+                            <div>
+                                <p class="text-muted pt-3">Social authentication in React typically
+                                    involves allowing users
+                                    to log in to your application using their social media accounts,
+                                    such as <b class="text-primary">Google and Facebook</b>. This approach
+                                    offers a convenient way for users to access your application
+                                    without the need to create a separate account.</p>
+                            </div>
+
+                            <div>
+                                <p>
+                                   In Skote Google and Facebook authentication is implemented in the project without relying on third-party plugins, but by leveraging Firebase, and the authentication functionality is located in the <code>src/pages/Authentication/login.tsx</code> file.
+                                </p>
+                                <pre class="p-3 rounded mb-4 bg-ligh position-relative language-markup" tabindex="0">
+<button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard">Copy</button><code>import { socialLogin } from "slices/thunks";
+
+const validation: any = useFormik({
+    // enableReinitialize : use this flag when initial values needs to be changed
+    enableReinitialize: true,
+
+     initialValues: {
+        email: userLogin.email ||"admin@themesbrand.com" || '',
+        password: userLogin.password ||"123456" || '',
+    },
+    validationSchema: Yup.object({
+        email: Yup.string().required("Please Enter Your Email"),
+        password: Yup.string().required("Please Enter Your Password"),
+    }),
+    onSubmit: (values) => { 
+        dispatch(loginUser(values, props.router.navigate));
+    }
+});
+
+ const signIn = (type:any) => {
+    dispatch(socialLogin(type, props.router.navigate));
+};
+
+ //for facebook and google authentication
+const socialResponse = (type: any) => {
+    signIn(type);
+};
+
+&lt;Link
+    to="#"
+    className="social-list-item bg-primary text-white border-primary"
+    onClick={(e: any) => {
+    e.preventDefault();
+    socialResponse("facebook")
+    }}
+>
+    &lt;i className="mdi mdi-facebook" />
+&lt;/Link>
+&lt;Link
+    to="#"
+    className="social-list-item bg-danger text-white border-danger"
+    onClick={(e: any) => {
+    e.preventDefault();
+    socialResponse("google")
+    }}
+>
+    &lt;i className="mdi mdi-google" />
+&lt;/Link>
+                            </div>
+
+                            <div>
+                                <p class="text-muted mt-3">
+                                    Skote is retrieving the SocialLogin response through a thunk,
+                                    capitalizing on the integration with Firebase. This procedure
+                                    necessitates the inclusion of the Firebase Configuration file.
+                                    The
+                                    provided code snippet is located in<code> App.tsx</code> files.
+                                </p>
+
+                                <p>
+                                    By removing the
+                                    comments from the
+                                    provided code and appending the necessary credentials in the
+                                    <code>.env</code>
+                                    file, the authentication for Google and Facebook will be
+                                    activated. After following the steps descripbed in <a href="firebase.html"
+                                        class="text-decoration-underline text-success"><b>
+                                            Firebase</b></a> Setup given in the previous page.
+                                </p>
+                                <pre class="p-3 rounded mb-4 bg-ligh position-relative language-markup" tabindex="0">
+<button class="position-absolute badge bg-light text-white bg-opacity-10 top-0 end-0 m-3 rounded border-0 fs-6 fw-normal btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Copy to clipboard">Copy</button><code>import { initFirebaseBackend } from "./helpers/firebase_helper";
+                                    
+const firebaseConfig = {
+    apiKey: process.env.REACT_APP_APIKEY,
+    authDomain: process.env.REACT_APP_AUTHDOMAIN,
+    databaseURL: process.env.REACT_APP_DATABASEURL,
+    projectId: process.env.REACT_APP_PROJECTID,
+    storageBucket: process.env.REACT_APP_STORAGEBUCKET,
+    messagingSenderId: process.env.REACT_APP_MESSAGINGSENDERID,
+    appId: process.env.REACT_APP_APPID,
+    measurementId: process.env.REACT_APP_MEASUREMENTID,
+};
+                                        
+//init firebase backend
+initFirebaseBackend(firebaseConfig);
+</code></pre>
+                            </div>
+
+                            <div>
+                                <p>After that you need to replace the "fake" and add "firebase" in <code>.env</code> file to access the firebase credentials,
+                                    From <code>REACT_APP_DEFAULTAUTH</code> with adding firebase credentials.</p>
+                                <p>
+                                <pre class="language-markup"><code>REACT_APP_DEFAULTAUTH = firebase</code></pre>
+                                </p>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+
+
+
+                    @@include("partials/footer.html")
+                </div>
+                <!-- End Page-content -->
+
+            </div>
+            <!-- end main content-->
+
+        </div>
+        <!-- END layout-wrapper -->
+
+        @@include("partials/vendor-scripts.html")
+
+        <!-- prismjs plugin -->
+        <script src="../assets/libs/prismjs/prism.js"></script>
+
+        <!-- App js -->
+        <script src="https://themesbrand.com/docs/app.js"></script>
+</body>
+
+</html>

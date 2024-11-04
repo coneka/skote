@@ -1,0 +1,132 @@
+@@include("partials/main.html")
+
+<head>
+
+    @@include("partials/title-meta.html", {"title": "Detached"})
+
+    @@include("partials/head-css.html")
+
+</head>
+
+<body>
+
+<!-- Begin page -->
+<div id="layout-wrapper">
+
+    @@include("partials/menu.html")
+
+    @@include("partials/sidebar.html")
+    <!-- ============================================================== -->
+    <!-- Start right Content here -->
+    <!-- ============================================================== -->
+      <div class="main-content">
+        <div class="page-content">
+          <div class="container">
+
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="card">
+                  <div class="card-header">
+                    <h4 class="card-title mb-0">Navigation</h4>
+                  </div>
+                  <div class="card-body">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <p class="text-muted">You can change or customize the left side navigation very
+                                easily.</p>
+                            <h4 class="card-title my-3 fw-semibold">How to add new menu items/change menu
+                                items?</h4>
+                            <p class="text-muted mb-0">In order to add, change or remove menu items from the
+                                left side navigation, simply edit in file <code>/src/app/layouts/sidebar/menu.ts</code>.
+                            </p>
+                            <div>
+                                <h4 class="card-title my-3 fw-semibold">How to add Menu Title?</h4>
+                                <p class="text-muted">Add Menu label and isHeader property pass in the JSON object.</p>
+                                <pre class="language-markup">
+                                    <code class="language-markup">
+{
+  label: "MENUITEMS.MENU.TEXT",
+  isTitle: true
+}</code></pre>
+                                <h4 class="card-title my-3 fw-semibold">How to add Single Menu Item ?</h4>
+                                <p class="text-muted">Add Menu id, label, icon, link and click function(for collapse menu) property pass in the JSON object.</p>
+                                <pre class="language-markup">
+                                    <code class="language-markup">
+{
+  id: "1",
+  label: "MENUITEMS.WIDGETS.TEXT",
+  icon: "ri-honour-line",
+  link: "/widgets"
+  }
+}</code></pre>
+
+                                <h4 class="card-title my-3 fw-semibold">How to add Nested Menu Item ?</h4>
+                                <p class="text-muted">Add Menu id, label, icon, link, stateVariables, click function(for collapse menu) and ismainMenu property pass in the JSON object.</p>
+                                <pre class="language-markup">
+                                    <code class="language-markup">
+{
+  id: 2,
+  label: 'MENUITEMS.DASHBOARD.TEXT',
+  icon: 'ri-dashboard-2-line',
+  subItems: [
+    {
+      id: 3,
+      label: 'MENUITEMS.DASHBOARD.LIST.ANALYTICS',
+      link: '/analytics',
+      parentId: 2
+    },
+    {
+      id: 4,
+      label: 'MENUITEMS.DASHBOARD.LIST.CRM',
+      link: '/crm',
+      parentId: 2
+    },
+    {
+      id: 5,
+      label: 'MENUITEMS.DASHBOARD.LIST.ECOMMERCE',
+      link: '',
+      parentId: 2
+    },
+    {
+      id: 6,
+      label: 'MENUITEMS.DASHBOARD.LIST.CRYPTO',
+      link: '/crypto',
+      parentId: 2
+    },
+    {
+      id: 7,
+      label: 'MENUITEMS.DASHBOARD.LIST.PROJECTS',
+      link: '/projects',
+      parentId: 2
+    }
+  ]
+},</code></pre>
+                            </div>
+
+                        </div>
+                        <!--end col-->
+                    </div>
+                    <!--end row-->
+                </div>
+                </div>
+              </div>
+            </div>
+            <!-- end row -->
+          </div>
+          <!-- container-fluid -->
+        </div>
+        <!-- End Page-content -->
+
+        @@include("partials/footer.html")
+      </div>
+      <!-- end main content-->
+    </div>
+    <!-- END layout-wrapper -->
+</body>
+    @@include("partials/vendor-scripts.html")
+
+    <!-- App js -->
+    <script src="../assets/js/app.js"></script>
+    </body>
+    
+    </html>

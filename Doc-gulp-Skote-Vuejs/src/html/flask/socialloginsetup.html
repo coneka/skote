@@ -1,0 +1,125 @@
+@@include("partials/main.html")
+
+<head>
+
+    @@include("partials/title-meta.html", {"title": "Social Setup"})
+
+    @@include("partials/head-css.html")
+
+</head>
+
+<body>
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+
+        @@include("partials/menu.html")
+
+        @@include("partials/sidebar.html")
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+
+            <div class="page-content">
+                <div class="container">
+                    <h3 class="mb-4">Social Setup</h3>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="p-lg-1">
+
+                                        <div class="d-xl-flex">
+
+                                            <div class="w-100">
+                                                <div id="firebase" class="mb-3">                         
+
+                                                <h5 class="mt-4">***Google Authentication Setup***</h5>                                                    
+                                                <h6 class="mt-4">Step 1 Google Login:- Go to below Link</h6>
+
+                                                <div class="alert alert-warning">Go to Google cloud platform developers Site <a target="_blank" href="https://console.cloud.google.com/">
+                                                https://console.cloud.google.com/</a>
+                                                </div>
+                                                <h6 class="mt-4">Step 2 :- Click on Create Project.</h6>
+                                                <img src="../assets/images/socialauth/google-2.png" alt="image" class="img-fluid shadow">
+                                                <h6 class="mt-4">Step 3 :-  Add Project name then click on CREATE.</h6>
+                                                <img src="../assets/images/socialauth/google-3.png" alt="image" class="img-fluid shadow">    
+                                                <h6 class="mt-4">Step 4 :-  Open Sidebar.Click on API and services then click on OAuth consent screen.</h6>
+                                                <img src="../assets/images/socialauth/google-4.png" alt="image" class="img-fluid shadow">   
+                                                <h6 class="mt-4">Step 5 :-  Click on Select a Project.</h6>
+                                                <img src="../assets/images/socialauth/google-5.png" alt="image" class="img-fluid shadow"> 
+                                                <h6 class="mt-4">Step 6 :-  Select your Project.</h6>
+                                                <img src="../assets/images/socialauth/google-6.png" alt="image" class="img-fluid shadow">  
+                                                <h6 class="mt-4">Step 7 :-  Click on External as user type.</h6>
+                                                <img src="../assets/images/socialauth/google-7.png" alt="image" class="img-fluid shadow"> 
+                                                <h6 class="mt-4">Step 8 :-  Add App name,User support email,Develepors contact informantion email and then
+                                                click on SAVE AND CONTINUE.</h6>
+                                                <img src="../assets/images/socialauth/google-8.png" alt="image" class="img-fluid shadow"> 
+                                                <h6 class="mt-4">Step 9 :-Click on SAVE AND CONTINUE.</h6>
+                                                <img src="../assets/images/socialauth/google-9.png" alt="image" class="img-fluid shadow">  
+                                                <h6 class="mt-4">Step 10 :-Click on SAVE AND CONTINUE.</h6>
+                                                <img src="../assets/images/socialauth/google-10.png" alt="image" class="img-fluid shadow"> 
+                                                <h6 class="mt-4">Step 11 :-Click on BACK TO DASHBOARD.</h6>
+                                                <img src="../assets/images/socialauth/google-11.png" alt="image" class="img-fluid shadow"> 
+                                                <h6 class="mt-4">Step 12 :-Click on Credentials then Click on CREATE CREDENTIALS n Select OAuth client ID.</h6>
+                                                <img src="../assets/images/socialauth/google-12.png" alt="image" class="img-fluid shadow">                                                                  
+                                                <h6 class="mt-4">Step 13 :-Select Web Application as Application Type.</h6>
+                                                <img src="../assets/images/socialauth/google-13.png" alt="image" class="img-fluid shadow"> 
+                                                <h6 class="mt-4">Step 14 :-Add project name in name field and ADD URL one by one</h6>
+                                                <img src="../assets/images/socialauth/google-14.png" alt="image" class="img-fluid shadow">   
+                                                <h6 class="mt-4">Step 15 :-Add your Site URL in Authorised Javascript Urls and Autherised Redirect URLs.</h6>
+                                                <img src="../assets/images/socialauth/google-15.png" alt="image" class="img-fluid shadow"> 
+                                                <h6 class="mt-4">Step 16 :-Finally,Client ID and Secret Key Generated.</h6>
+                                                <img src="../assets/images/socialauth/google-16.png" alt="image" class="img-fluid shadow"> 
+
+                                                
+
+                                                <h4 class="mt-3">***Social Authentication Configuration***</h4>
+                                                
+
+                                                <h4 class="mt-5">Follow the below step to setup your Social Authentication Configuration :-</h4>
+                                                <div class="alert alert-warning">Go to Django Admin Site <a target="_blank" href="Yoursite/admin">yoursite/admin</a>
+                                                </div>
+
+                                                <h5>Step 1 :- <b>Enter username and password</b> then click on Log in </h5>
+                                                <img src="../assets/images/socialauth/admin-1.png" alt="image" class="img-fluid">
+
+                                                <h5 class="mt-4">Step 2 :- Go to sites and then click on ADD SITE</h5>
+                                                <img src="../assets/images/socialauth/admin-2.png" alt="image" class="img-fluid">
+
+                                                <h6 class="mt-4">Step 3 :- Enter your Domain name and Display name then click on save button</h6>
+                                                <img src="../assets/images/socialauth/admin-3.png" alt="image" class="img-fluid">
+
+                                                <h6 class="mt-4">Step 4 :-  Go to Social applications and then click on ADD SOCIAL APPLICATIONS</h6>
+                                                <img src="../assets/images/socialauth/admin-4.png" alt="image" class="img-fluid shadow">
+
+                                                <h6 class="mt-4">Step 5 Google API:- Add Required details and click on save button</h6>
+                                                <img src="../assets/images/socialauth/admin-5.png" alt="image" class="img-fluid shadow">
+                                                                                                   
+                                            </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @@include("partials/footer.html")
+            </div>
+            <!-- End Page-content -->
+
+        </div>
+        <!-- end main content-->
+
+    </div>
+    <!-- END layout-wrapper -->
+
+    @@include("partials/vendor-scripts.html")
+
+    <!-- App js -->
+    <script src="https://themesbrand.com/docs/app.js"></script>
+</body>
+
+</html>
